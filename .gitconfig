@@ -1,0 +1,79 @@
+[user]
+name = Antoine Neveux
+email = antoine.neveux@gmail.com
+
+[core]
+excludesfile = ~/.gitignore
+editor = vim
+filemode = false
+trustctime = false
+autocrlf = input
+
+[color]
+diff = auto
+status = auto
+branch = auto
+interactive = auto
+ui = true
+
+# Aliases
+[alias]
+# Basic aliases
+co = checkout
+ci = commit
+stat = status
+st = status
+br = branch
+unstage = reset HEAD
+uns = reset HEAD
+
+# Logs
+gl = log -16 --color=always --all --graph --topo-order --pretty='format: %Cgreen%h%Creset %s%Cred%d%Creset%n'
+gll = log --color=always --all --graph --topo-order --pretty='format: %Cgreen%h%Creset %s%Cred%d%Creset%n'
+lol = log --graph --decorate --pretty=oneline --abbrev-commit
+lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+lg = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
+
+# Dealing with remote repositories
+currentbranch = !git branch --contains HEAD | tr -s ' ' | cut -d ' ' -f2
+fo = fetch origin
+fu = fetch upstream
+po = push origin
+lo = pull origin
+mo = !git merge --no-ff origin/`git currentbranch`
+uo = !git merge --ff-only origin/`git currentbranch`
+
+# Code reviews
+rdiff = !git diff $1...$2 --no-merges
+rlog = !git log $1..$2 --no-merges --format='%h | %an | %ad | %s' --date=local
+
+# Tools
+head = rev-list --max-count=1 HEAD
+pack = !git archive HEAD --format=tar | gzip > ./`git h`.tar.gz
+ignore = !([ ! -e .gitignore ] && touch .gitignore) | echo $1 >>.gitignore
+last = log -1 --stat
+cp = cherry-pick
+cl = clone
+dc = diff --cached
+
+[url "git@github.com:"]
+insteadOf = gh:
+pushInsteadOf = github:
+pushInsteadOf = git://github.com/
+[url "git://github.com/"]
+insteadOf = github:
+[url "git@gist.github.com:"]
+insteadOf = gst:
+pushInsteadOf = gist:
+pushInsteadOf = git://gist.github.com/
+[url "git://gist.github.com/"]
+
+[push]
+default = matching
+[merge]
+tool = vimdiff
+[mergetool]
+keeptemporaries = false
+keepbackups = false
+prompt = false
+trustexitcode = false

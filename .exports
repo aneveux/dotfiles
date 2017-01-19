@@ -1,0 +1,12 @@
+export EDITOR='vim'
+
+export JAVA_HOME='/home/antoine/tools/jdk1.8.0_111'
+export JAVA_OPTS='-Xms128m -Xmx256m'
+
+export MAVEN_HOME='/home/antoine/.sdkman/candidates/maven/current/'
+
+export PATH=$JAVA_HOME/bin:$PATH
+
+# Docker Hosts configuration & kinda aliases
+export DOCKER_DEFAULT=tcp://127.0.0.1:2375
+export DOCKER_HOST=$DOCKER_DEFAULT
