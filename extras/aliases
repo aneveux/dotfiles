@@ -35,7 +35,7 @@ alias egrep='egrep --color=auto'
 
 # System helpers
 
-alias update='chmod +x ~/manjaro_update.sh && ~/manjaro_update.sh'
+alias update='chmod +x ~/.manjaro_update.sh && ~/.manjaro_update.sh'
 alias unlock_pacman='sudo rm /var/lib/pacman/db.lck'
 
 # Tools Shortcuts

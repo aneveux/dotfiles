@@ -1,0 +1,39 @@
+- defaults:
+    link:
+      create: true
+      relink: true
+
+- clean: ['~']
+
+- link:
+    ~/.bash_profile:
+      path: bash/bash_profile
+    ~/.bashrc:
+      path: bash/bashrc
+    ~/.extend.bashrc:
+      path: bash/extend.bashrc
+    ~/.config/terminator/config:
+      path: extras/terminator/config
+    ~/.aliases:
+      path: extras/aliases
+    ~/.exports:
+      path: extras/exports
+    ~/.gitattributes:
+      path: git/gitattributes
+    ~/.gitconfig:
+      path: git/gitconfig
+    ~/.manjaro_update.sh:
+      path: scripts/manjaro_update.sh
+    ~/.powerlevel9k:
+      path: zsh/powerlevel9k
+    ~/.zshrc:
+      path: zsh/zshrc
+
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]
+  - [mkdir -p ~/git, Creating a working directory for git repositories]
+  - [mkdir -p ~/tools, Creating a directory for storing tools]
+  - |
+      if ! type sdk > /dev/null; then
+        curl -s "https://get.sdkman.io" | bash
+      fi

@@ -2,9 +2,15 @@
 
 Nothing fancy in there... Just the dotfiles I'm using as well as some information/scripts about my installation. In case it helps anyone I'm really glad you found some information here :)
 
-## dotfiles?
+## Howto?
 
-That's basically all of the valuable files I want to keep in sync across all the computers I'm using...
+I'm relying on [dotbot](https://github.com/anishathalye/dotbot), a simple and really good tool allowing to easily provision and update my dotfiles, as well as running a couple shell commands to provision some basic stuff on my workstation.
+
+Usage is really simple: clone the repository, then `./install`.
+
+Of course in case you'd like to take stuff from my dotfiles, be sure to modify the files accordingly to your computer ;)
+
+In order to update dotbot, simply run `git submodule update --remote dotbot`.
 
 ## Environment
 
@@ -29,3 +35,13 @@ I'm also using a couple additional tools:
 - [Sublime Text](http://www.sublimetext.com/3) which I use more than Atom I believe... (but I'm like changing editors all the time...)
 - [IntelliJ IDEA](https://www.jetbrains.com/idea/) for Java, Kotlin, and all those JVM related stuff.
 - [Vim Bundles by spf13](http://vim.spf13.com/) cause they just contain all the things I want in vim.
+
+## Thank you!
+
+I really wanted to thank all those really nice projects for the great help/inspiration:
+
+- [GitHub does dotfiles](https://dotfiles.github.io/)
+- [Mathias Bynens' dotfiles](https://github.com/mathiasbynens/dotfiles)
+- [dotbot](https://github.com/anishathalye/dotbot)
+
+As well as all the really nice tools I already mentionned before :)
