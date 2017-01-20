@@ -35,5 +35,5 @@
   - [mkdir -p ~/tools, Creating a directory for storing tools]
   - |
       if ! type sdk > /dev/null; then
-        curl -s "https://get.sdkman.io" | bash
+        cd ; curl -s "https://get.sdkman.io" | bash
       fi
