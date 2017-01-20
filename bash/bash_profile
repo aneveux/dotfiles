@@ -7,5 +7,5 @@
 
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="~/.sdkman"
-[[ -s "~/.sdkman/bin/sdkman-init.sh" ]] && source "~/.sdkman/bin/sdkman-init.sh"
+export SDKMAN_DIR="/home/antoine/.sdkman"
+[[ -s "/home/antoine/.sdkman/bin/sdkman-init.sh" ]] && source "/home/antoine/.sdkman/bin/sdkman-init.sh"
