@@ -10,7 +10,7 @@ That's basically all of the valuable files I want to keep in sync across all the
 
 I'm running [Manjaro](https://manjaro.github.io/). Here are a few things I installed on it (alphabetical order):
 
-`sudo pacman -S ansible atom docker docker-compose dropbox filezilla firefox git gvim keepass numix-manjaro-themes numix-reborn-icon-themes numix-themes terminator thefuck thunderbird tmux vim yaourt zsh`
+`sudo pacman -S ansible atom corkscrew docker docker-compose dropbox filezilla firefox git gvim keepass numix-manjaro-themes numix-reborn-icon-themes numix-themes pgadmin3 terminator thefuck thunderbird tmux vim yaourt zsh`
 
 But also from AUR:
 

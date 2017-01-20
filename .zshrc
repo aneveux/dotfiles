@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/home/antoine/.oh-my-zsh
+export ZSH=~/.oh-my-zsh
 DEFAULT_USER=antoine
 
 [[ -f ~/.powerlevel9k  ]] && source ~/.powerlevel9k
@@ -92,5 +92,5 @@ source $ZSH/oh-my-zsh.sh
 [[ -f ~/.exports ]] && source ~/.exports
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/home/antoine/.sdkman"
-[[ -s "/home/antoine/.sdkman/bin/sdkman-init.sh" ]] && source "/home/antoine/.sdkman/bin/sdkman-init.sh"
+export SDKMAN_DIR="~/.sdkman"
+[[ -s "~/.sdkman/bin/sdkman-init.sh" ]] && source "~/.sdkman/bin/sdkman-init.sh"
