@@ -2,6 +2,14 @@
 
 Nothing fancy in there... Just the dotfiles I'm using as well as some information/scripts about my installation. In case it helps anyone I'm really glad you found some information here :)
 
+## Making it yours?
+
+In case you'd like to use that repository for setting up your environment, you can simply fork it. No problem for me.
+
+**Do not forget to change values in the `me` file though, since they contain information related to me :)**
+
+I know I could just retain that `me` file for myself, but at least it can be used as kind of an example on how I use it.
+
 ## Howto?
 
 I'm relying on [dotbot](https://github.com/anishathalye/dotbot), a simple and really good tool allowing to easily provision and update my dotfiles, as well as running a couple shell commands to provision some basic stuff on my workstation.
