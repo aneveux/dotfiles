@@ -90,6 +90,7 @@ source $ZSH/oh-my-zsh.sh
 
 [[ -f ~/.aliases ]] && source ~/.aliases
 [[ -f ~/.exports ]] && source ~/.exports
+[[ -f ~/.me ]] && source ~/.me
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/antoine/.sdkman"

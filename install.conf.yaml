@@ -22,6 +22,7 @@
       if [ ! -d ~/.oh-my-zsh/ ]; then
         sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
       fi
+  - [source me, Setting up git credentials in case it's not done yet]
 
 - link:
     ~/.bash_profile:
@@ -42,6 +43,8 @@
       path: git/gitconfig
     ~/.manjaro_update.sh:
       path: scripts/manjaro_update.sh
+    ~/.me:
+      path: me
     ~/.powerlevel9k:
       path: zsh/powerlevel9k
     ~/.zshrc:

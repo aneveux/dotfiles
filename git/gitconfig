@@ -1,7 +1,3 @@
-[user]
-name = Antoine Neveux
-email = antoine.neveux@gmail.com
-
 [core]
 excludesfile = ~/.gitignore
 editor = vim
@@ -77,3 +73,6 @@ keeptemporaries = false
 keepbackups = false
 prompt = false
 trustexitcode = false
+[user]
+	name = Antoine Neveux
+	email = antoine.neveux@gmail.com
