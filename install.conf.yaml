@@ -5,6 +5,24 @@
 
 - clean: ['~']
 
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]
+  - [mkdir -p ~/git, Creating a working directory for git repositories]
+  - [mkdir -p ~/tools, Creating a directory for storing tools]
+  - [./awesome-terminal-fonts/install.sh, Installing  awesome terminal fonts]
+  - |
+      if ! type sdk > /dev/null; then
+        cd ; curl -s "https://get.sdkman.io" | bash
+      fi
+  - |
+      if [ ! -d ~/.spf13-vim-3/ ]; then
+        curl http://j.mp/spf13-vim3 -L -o - | sh
+      fi
+  - |
+      if [ ! -d ~/.oh-my-zsh/ ]; then
+        sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+      fi
+
 - link:
     ~/.bash_profile:
       path: bash/bash_profile
@@ -28,12 +46,5 @@
       path: zsh/powerlevel9k
     ~/.zshrc:
       path: zsh/zshrc
-
-- shell:
-  - [git submodule update --init --recursive, Installing submodules]
-  - [mkdir -p ~/git, Creating a working directory for git repositories]
-  - [mkdir -p ~/tools, Creating a directory for storing tools]
-  - |
-      if ! type sdk > /dev/null; then
-        cd ; curl -s "https://get.sdkman.io" | bash
-      fi
+    ~/.oh-my-zsh/custom/themes/powerlevel9k:
+      path: powerlevel9k
