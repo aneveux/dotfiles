@@ -1,6 +1,6 @@
 [user]
-name = Antoine Neveux
-email = antoine.neveux@gmail.com
+	name = Antoine Neveux
+	email = antoine.neveux@gmail.com
 
 [core]
 excludesfile = ~/.gitignore
