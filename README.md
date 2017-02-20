@@ -28,7 +28,7 @@ I'm running [Manjaro](https://manjaro.github.io/). Here are a few things I insta
 
 But also from AUR:
 
-`yaourt -S flux franz`
+`yaourt -S flux franz ruby-jekyll ruby-jekyll-gist ruby-jekyll-paginate ruby-jekyll-sitemap ruby-jekyll-watch`
 
 Of course there are already a lot of things included in Manjaro out of the box. But do not hesitate to mention me anything that you might think would be worth a try :)
 
