@@ -1,0 +1,28 @@
+{
+    // Using Monokai as the default color scheme
+    "color_scheme": "Packages/Color Scheme - Default/Monokai.tmTheme",
+    // Font settings
+    "font_face": "",
+    "font_size": 10,
+
+    // Turning off spell check
+    "spell_check": false,
+
+    // Allowing to see where we are in a file
+    "draw_minimap_border": true,
+
+    // Highlighting lines
+    "highlight_line": true,
+    "caret_style": "smooth",
+
+    // Auto save kind of
+    "save_on_focus_lost": true,
+
+    // UTF8 encoding
+    "default_encoding": "UTF-8",
+
+    // Application behavior
+	"hot_exit": false,
+	"remember_open_files": false,
+	"remember_full_screen": true,
+}

@@ -51,3 +51,5 @@
       path: zsh/zshrc
     ~/.oh-my-zsh/custom/themes/powerlevel9k:
       path: powerlevel9k
+    ~/.config/sublime-text-3/Packages/User/Preferences.sublime-settings:
+      path: sublime/preferences.sublime-settings
