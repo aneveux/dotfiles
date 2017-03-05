@@ -44,6 +44,16 @@ I'm also using a couple additional tools:
 - [IntelliJ IDEA](https://www.jetbrains.com/idea/) for Java, Kotlin, and all those JVM related stuff.
 - [Vim Bundles by spf13](http://vim.spf13.com/) cause they just contain all the things I want in vim.
 
+## Sublime Text 3 Installation
+
+1. Download it from here: [Sublime Text 3](http://www.sublimetext.com/3)
+2. Extract the archive content in `~/tools`: `tar jxf sublime_text_3_....tar.bz2 -C ~/tools/sublime_text_3`
+3. Install Package Control for Sublime Text 3 from here: [Package Control](https://packagecontrol.io/installation)
+4. Packages I install from Package Control:
+
+- `MaterialTheme`
+- `MaterialTheme-AppBar`
+
 ## Thank you!
 
 I really wanted to thank all those really nice projects for the great help/inspiration:

@@ -1,28 +1,35 @@
 {
-    // Using Monokai as the default color scheme
-    "color_scheme": "Packages/Color Scheme - Default/Monokai.tmTheme",
-    // Font settings
-    "font_face": "",
-    "font_size": 10,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
 
-    // Turning off spell check
-    "spell_check": false,
+	"default_encoding":"UTF-8",
+	
+	"theme":"Material-Theme.sublime-theme",
+	"color_scheme":"Packages/Material Theme/schemes/Material-Theme.tmTheme",
+	"material_theme_tree_headings":true,
+	"material_theme_small_statusbar":true,
+	"material_theme_compact_panel":true,
+	"material_theme_compact_sidebar":true,
 
-    // Allowing to see where we are in a file
-    "draw_minimap_border": true,
+	"caret_style":"smooth",
+	"always_show_minimap_viewport":true,
+	"draw_minimap_border":true,
+	"bold_folder_labels":true,
+	"highlight_line":true,
 
-    // Highlighting lines
-    "highlight_line": true,
-    "caret_style": "smooth",
+	"font_size":10,
+	"font_options":["gray_antialias","subpixel_antialias"],
+	
+	"indent_guide_options":["draw_normal","draw_active"],
+	"line_padding_bottom":3,
+	"line_padding_top":3,
+	"overlay_scroll_bars":"enabled",
 
-    // Auto save kind of
-    "save_on_focus_lost": true,
-
-    // UTF8 encoding
-    "default_encoding": "UTF-8",
-
-    // Application behavior
-	"hot_exit": false,
-	"remember_open_files": false,
-	"remember_full_screen": true,
+	"hot_exit":false,
+	"remember_full_screen":true,
+	"remember_open_files":false,
+	"save_on_focus_lost":true,
+	"spell_check":false,
 }
