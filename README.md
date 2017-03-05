@@ -43,6 +43,7 @@ I'm also using a couple additional tools:
 - [Sublime Text](http://www.sublimetext.com/3) which I use more than Atom I believe... (but I'm like changing editors all the time...)
 - [IntelliJ IDEA](https://www.jetbrains.com/idea/) for Java, Kotlin, and all those JVM related stuff.
 - [Vim Bundles by spf13](http://vim.spf13.com/) cause they just contain all the things I want in vim.
+- [MaterialTheme](http://equinsuocha.io/material-theme/) which looks awesome :)
 
 ## Sublime Text 3 Installation
 
@@ -51,8 +52,17 @@ I'm also using a couple additional tools:
 3. Install Package Control for Sublime Text 3 from here: [Package Control](https://packagecontrol.io/installation)
 4. Packages I install from Package Control:
 
-- `MaterialTheme`
-- `MaterialTheme-AppBar`
+- `AceJump`
+- `Ansible`
+- `Ansible Vault`
+- `Git`
+- `Git Config`
+- `JavaScript Ultimate`
+- `MarkdownEditing`
+- `Material Theme`
+- `Material Theme - AppBar`
+- `Origami`
+- `Pretty YAML`
 
 ## Thank you!
 

@@ -1,35 +1,37 @@
 {
+	"always_show_minimap_viewport": true,
+	"bold_folder_labels": true,
+	"caret_style": "smooth",
+	"color_scheme": "Packages/Material Theme/schemes/Material-Theme.tmTheme",
+	"default_encoding": "UTF-8",
+	"draw_minimap_border": true,
+	"font_options":
+	[
+		"gray_antialias",
+		"subpixel_antialias"
+	],
+	"font_size": 9,
+	"highlight_line": true,
+	"hot_exit": false,
 	"ignored_packages":
 	[
 		"Vintage"
 	],
-
-	"default_encoding":"UTF-8",
-	
-	"theme":"Material-Theme.sublime-theme",
-	"color_scheme":"Packages/Material Theme/schemes/Material-Theme.tmTheme",
-	"material_theme_tree_headings":true,
-	"material_theme_small_statusbar":true,
-	"material_theme_compact_panel":true,
-	"material_theme_compact_sidebar":true,
-
-	"caret_style":"smooth",
-	"always_show_minimap_viewport":true,
-	"draw_minimap_border":true,
-	"bold_folder_labels":true,
-	"highlight_line":true,
-
-	"font_size":10,
-	"font_options":["gray_antialias","subpixel_antialias"],
-	
-	"indent_guide_options":["draw_normal","draw_active"],
-	"line_padding_bottom":3,
-	"line_padding_top":3,
-	"overlay_scroll_bars":"enabled",
-
-	"hot_exit":false,
-	"remember_full_screen":true,
-	"remember_open_files":false,
-	"save_on_focus_lost":true,
-	"spell_check":false,
+	"indent_guide_options":
+	[
+		"draw_normal",
+		"draw_active"
+	],
+	"line_padding_bottom": 3,
+	"line_padding_top": 3,
+	"material_theme_compact_panel": true,
+	"material_theme_compact_sidebar": true,
+	"material_theme_small_statusbar": true,
+	"material_theme_tree_headings": true,
+	"overlay_scroll_bars": "enabled",
+	"remember_full_screen": true,
+	"remember_open_files": false,
+	"save_on_focus_lost": true,
+	"spell_check": false,
+	"theme": "Material-Theme.sublime-theme"
 }
