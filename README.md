@@ -55,6 +55,8 @@ I'm also using a couple additional tools:
 - `AceJump`
 - `Ansible`
 - `Ansible Vault`
+- `Color Highlighter`
+- `ColorPicker`
 - `Git`
 - `Git Config`
 - `JavaScript Ultimate`
@@ -63,6 +65,7 @@ I'm also using a couple additional tools:
 - `Material Theme - AppBar`
 - `Origami`
 - `Pretty YAML`
+- `Shell Exec`
 
 ## Thank you!
 
