@@ -67,6 +67,14 @@ I'm also using a couple additional tools:
 - `Pretty YAML`
 - `Shell Exec`
 
+## KeePass plugins
+
+I'm using those [KeePass plugins](http://keepass.info/plugins.html):
+
+- `KeeAgent`
+- `KeeOTP`
+- `KeePassRPC`
+
 ## Thank you!
 
 I really wanted to thank all those really nice projects for the great help/inspiration:
