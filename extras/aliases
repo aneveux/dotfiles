@@ -8,6 +8,8 @@ alias ....='cd ../../..'
 alias .....='cd ../../../..'
 alias -- -='cd -'
 
+alias open='exo-open'
+
 # Folder Shortcuts
 
 alias d='cd ~/Dropbox'
