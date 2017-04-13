@@ -24,7 +24,7 @@ In order to update dotbot, simply run `git submodule update --remote dotbot`.
 
 I'm running [Manjaro](https://manjaro.github.io/). Here are a few things I installed on it (alphabetical order):
 
-`sudo pacman -S ansible atom cherrytree compiz corkscrew cowsay docker docker-compose dropbox filezilla firefox git gvim htop keepass lolcat numix-manjaro-themes numix-reborn-icon-themes numix-themes pgadmin3 terminator thefuck thunderbird tmux tree vim workrave yaourt zsh`
+`sudo pacman -S ansible atom cherrytree compiz corkscrew cowsay docker docker-compose dropbox filezilla firefox git gvim htop keepass lolcat numix-manjaro-themes numix-reborn-icon-themes numix-themes pgadmin3 ranger terminator thefuck thunderbird tmux tree vim workrave yaourt zsh`
 
 But also from AUR:
 
