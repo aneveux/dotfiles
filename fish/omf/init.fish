@@ -11,3 +11,12 @@ begin
         source $AUTOJUMP_PATH
     end
 end
+
+set -xg JAVA_OPTS '-Xms128m -Xmx256m'
+set -xg DOCKER_DEFAULT tcp://127.0.0.1:2375 
+set -xg DOCKER_HOST $DOCKER_DEFAULT
+
+set -xg ANSIBLE_VAULT_PASSWORD_FILE ~/.ansible-vault/default_vault_pass
+
+set -xg EDITOR vim
+set -xg MANPAGER 'less -X'
