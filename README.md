@@ -46,6 +46,14 @@ I'm also using a couple additional tools:
 - [MaterialTheme](http://equinsuocha.io/material-theme/) which looks awesome :)
 - [Oh My Fish!](https://github.com/oh-my-fish/oh-my-fish) because I'm trying [Fish Shell](http://fishshell.com/)
 
+## Oh My Fish?
+
+Yep. Just run: `curl -L https://get.oh-my.fish | fish`.
+
+Then, I'm installing:
+
+- `omf install budspencer`
+
 ## Sublime Text 3 Installation
 
 1. Download it from here: [Sublime Text 3](http://www.sublimetext.com/3)

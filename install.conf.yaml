@@ -22,10 +22,6 @@
       if [ ! -d ~/.oh-my-zsh/ ]; then
         sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
       fi
-  - |
-      if [ ! -d ~/.config/omf ]; then
-        cd ; curl -L https://get.oh-my.fish | fish
-      fi
   - [source me, Setting up git credentials in case it's not done yet]
 
 - link:
@@ -57,9 +53,9 @@
       path: powerlevel9k
     ~/.config/sublime-text-3/Packages/User/Preferences.sublime-settings:
       path: sublime/preferences.sublime-settings
-    ~/.config/fish/config.fish:
-      path: fish/config.fish
     ~/.config/fish/completions:
       path: fish/completions
     ~/.config/fish/functions:
       path: fish/functions
+    ~/.config/omf:
+      path: fish/omf

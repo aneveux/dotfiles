@@ -1,4 +1,3 @@
-set -xg SHELL /usr/bin/fish
 set -xg VISUAL vim
 set -xg LC_ALL en_US.UTF-8
 set -xg GPG_TTY (tty)
