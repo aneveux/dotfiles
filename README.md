@@ -24,11 +24,11 @@ In order to update dotbot, simply run `git submodule update --remote dotbot`.
 
 I'm running [Manjaro](https://manjaro.github.io/). Here are a few things I installed on it (alphabetical order):
 
-`sudo pacman -S ansible atom cherrytree compiz corkscrew cowsay docker docker-compose dropbox filezilla firefox git gvim htop keepass lolcat numix-manjaro-themes numix-reborn-icon-themes numix-themes pgadmin3 ranger terminator thefuck thunderbird tmux tree vim workrave yaourt zsh`
+`sudo pacman -S ansible atom cherrytree compiz corkscrew cowsay docker docker-compose dropbox filezilla firefox fish git gvim htop keepass lolcat numix-manjaro-themes numix-reborn-icon-themes numix-themes pgadmin3 ranger terminator thefuck thunderbird tmux tree vim workrave yaourt zsh`
 
 But also from AUR:
 
-`yaourt -S flux franz ruby-jekyll ruby-jekyll-gist ruby-jekyll-paginate ruby-jekyll-sitemap ruby-jekyll-watch terminix`
+`yaourt -S flux franz ruby-jekyll ruby-jekyll-gist ruby-jekyll-paginate ruby-jekyll-sitemap ruby-jekyll-watch signal terminix`
 
 Of course there are already a lot of things included in Manjaro out of the box. But do not hesitate to mention me anything that you might think would be worth a try :)
 
@@ -44,6 +44,7 @@ I'm also using a couple additional tools:
 - [IntelliJ IDEA](https://www.jetbrains.com/idea/) for Java, Kotlin, and all those JVM related stuff.
 - [Vim Bundles by spf13](http://vim.spf13.com/) cause they just contain all the things I want in vim.
 - [MaterialTheme](http://equinsuocha.io/material-theme/) which looks awesome :)
+- [Oh My Fish!](https://github.com/oh-my-fish/oh-my-fish) because I'm trying [Fish Shell](http://fishshell.com/)
 
 ## Sublime Text 3 Installation
 
