@@ -53,11 +53,15 @@ Yep. Just run: `curl -L https://get.oh-my.fish | fish`.
 Then, I'm installing:
 
 - `omf install budspencer`
+- `omf install ansible`
+- `omf install mvn`
+- `omf install sublime`
+- `omf install thefuck`
 
 ## Sublime Text 3 Installation
 
 1. Download it from here: [Sublime Text 3](http://www.sublimetext.com/3)
-2. Extract the archive content in `~/tools`: `tar jxf sublime_text_3_....tar.bz2 -C ~/tools/sublime_text_3`
+2. Extract the archive content in `~/opt`: `tar jxf sublime_text_3_....tar.bz2 -C ~/opt/sublime_text_3`
 3. Install Package Control for Sublime Text 3 from here: [Package Control](https://packagecontrol.io/installation)
 4. Packages I install from Package Control:
 
