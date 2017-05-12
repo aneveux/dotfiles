@@ -54,7 +54,6 @@ Then, I'm installing:
 
 - `omf install budspencer`
 - `omf install ansible`
-- `omf install mvn`
 - `omf install sublime`
 - `omf install thefuck`
 

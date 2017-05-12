@@ -1,5 +1,4 @@
 package ansible
-package mvn
 package sublime
 package thefuck
 theme budspencer
