@@ -69,6 +69,7 @@ Then, I'm installing:
 - `Ansible Vault`
 - `Color Highlighter`
 - `ColorPicker`
+- `fish-shell`
 - `Git`
 - `Git Config`
 - `JavaScript Ultimate`
