@@ -20,3 +20,6 @@ set -xg ANSIBLE_VAULT_PASSWORD_FILE ~/.ansible-vault/default_vault_pass
 
 set -xg EDITOR vim
 set -xg MANPAGER 'less -X'
+
+abbr setclip "xclip -selection c"
+abbr getclip "xclip -selection c -o"
