@@ -8,8 +8,13 @@
   title_transmit_bg_color = "#ff7717"
   window_state = maximise
 [keybindings]
-  split_horiz = <Primary><Alt>Down
-  split_vert = <Primary><Alt>Right
+  broadcast_off = <Primary><Shift><Alt>o
+  go_down = <Primary><Alt>Down
+  go_left = <Primary><Alt>Left
+  go_right = <Primary><Alt>Right
+  go_up = <Primary><Alt>Up
+  split_horiz = <Alt>h
+  split_vert = <Alt>v
 [layouts]
   [[default]]
     [[[child1]]]
