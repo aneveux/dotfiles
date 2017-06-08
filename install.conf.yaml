@@ -34,8 +34,6 @@
       path: git/gitignore
     ~/.manjaro_update.sh:
       path: scripts/manjaro_update.sh
-    ~/.me:
-      path: me
     ~/.powerlevel9k:
       path: zsh/powerlevel9k
     ~/.zshrc:
@@ -50,3 +48,5 @@
       path: fish/functions
     ~/.config/omf:
       path: fish/omf
+    ~/.me:
+      path: me
