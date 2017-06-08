@@ -42,6 +42,8 @@
       path: powerlevel9k
     ~/.config/sublime-text-3/Packages/User/Preferences.sublime-settings:
       path: sublime/preferences.sublime-settings
+    ~/.config/fish/config.fish:
+      path: fish/config.fish
     ~/.config/fish/completions:
       path: fish/completions
     ~/.config/fish/functions:
