@@ -10,8 +10,10 @@
   - [mkdir -p ~/git, Creating a working directory for git repositories]
   - [mkdir -p ~/tools, Creating a directory for storing tools]
   - [./awesome-terminal-fonts/install.sh, Installing  awesome terminal fonts]
-  - [./install/gitconfig.bash, Generate git config]
-
+  - [./install/gitconfig.bash, Generating .gitconfig]
+  - [./install/sdkman.bash, Installing SDKMAN]
+  - [./install/oh-my-zsh.bash, Installing oh-my-zsh]
+  - [./install/spf13-vim3.bash, Installing spf13-vim3]
 
 - link:
     ~/.bash_profile:
