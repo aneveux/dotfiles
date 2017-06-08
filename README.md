@@ -14,7 +14,7 @@ I know I could just retain that `me` file for myself, but at least it can be use
 
 I'm relying on [dotbot](https://github.com/anishathalye/dotbot), a simple and really good tool allowing to easily provision and update my dotfiles, as well as running a couple shell commands to provision some basic stuff on my workstation.
 
-Usage is really simple: clone the repository, then `./install`.
+Usage is really simple: clone the repository, then `./install.sh`.
 
 Of course in case you'd like to take stuff from my dotfiles, be sure to modify the files accordingly to your computer ;)
 
@@ -24,7 +24,7 @@ In order to update dotbot, simply run `git submodule update --remote dotbot`.
 
 I'm running [Manjaro](https://manjaro.github.io/). Here are a few things I installed on it (alphabetical order):
 
-`sudo pacman -S ansible atom cherrytree compiz corkscrew cowsay docker docker-compose dropbox filezilla firefox fish git gvim htop keepass lolcat numix-manjaro-themes numix-reborn-icon-themes numix-themes pgadmin3 ranger terminator thefuck thunderbird tmux tree vim workrave xclip yaourt zsh`
+`sudo pacman -S ansible atom cherrytree corkscrew cowsay docker docker-compose dropbox filezilla firefox fish git gvim htop keepass lolcat numix-manjaro-themes numix-reborn-icon-themes numix-themes pgadmin3 ranger terminator thefuck thunderbird tmux tree vim workrave xclip yaourt zsh`
 
 But also from AUR:
 
@@ -56,6 +56,9 @@ Then, I'm installing:
 - `omf install ansible`
 - `omf install sublime`
 - `omf install thefuck`
+- `omf install archlinux`
+
+Or simply run `omf install` if you have the dotfiles installed, it'll install automatically of the bundles from the omf directory.
 
 ## Sublime Text 3 Installation
 
@@ -95,5 +98,6 @@ I really wanted to thank all those really nice projects for the great help/inspi
 - [GitHub does dotfiles](https://dotfiles.github.io/)
 - [Mathias Bynens' dotfiles](https://github.com/mathiasbynens/dotfiles)
 - [dotbot](https://github.com/anishathalye/dotbot)
+- [Jean-Marc Desprez](https://github.com/jmdesprez)
 
 As well as all the really nice tools I already mentionned before :)
