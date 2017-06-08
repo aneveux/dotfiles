@@ -6,3 +6,5 @@ set -xg ANSIBLE_VAULT_PASSWORD_FILE ~/.ansible-vault/default_vault_pass
 
 abbr setclip "xclip -selection c"
 abbr getclip "xclip -selection c -o"
+
+abbr dl "cd ~/Downloads"
