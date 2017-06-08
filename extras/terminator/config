@@ -35,3 +35,4 @@
     scrollback_infinite = True
     scrollbar_position = hidden
     show_titlebar = False
+    font = Liberation Mono for Powerline 11

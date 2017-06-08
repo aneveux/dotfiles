@@ -47,6 +47,9 @@ eval $(thefuck --alias)
 alias subl='~/tools/sublime_text_3/sublime_text'
 alias compose='docker-compose'
 
+alias pacman='sudo -E pacman'
+alias systemctl='sudo -E systemctl'
+
 # Git tweaks
 
 alias status='git status'
