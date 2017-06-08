@@ -28,6 +28,8 @@
       path: extras/exports
     ~/.gitattributes:
       path: git/gitattributes
+    ~/.gitignore:
+      path: git/gitignore
     ~/.manjaro_update.sh:
       path: scripts/manjaro_update.sh
     ~/.me:
