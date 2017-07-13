@@ -1,11 +1,14 @@
-function project -a project_name --description "Interact with your projects"
+function project -a project --description "Interact with your projects"
   set -l path
-
-  # Erase the first parameter as it's the project_name
+  set PROJECTS $HOME/git
+  # Erase the first parameter as it's the project
   set -e argv[1]
 
-  if test -d "$HOME/git/$project_name"
-    set path "$HOME/git/$project_name"
+  for project_dir in $PROJECTS
+    if test -d "$project_dir/$project"
+      set path "$project_dir/$project"
+      break
+    end
   end
 
   set -q $argv[1]

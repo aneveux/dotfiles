@@ -8,3 +8,4 @@ abbr setclip "xclip -selection c"
 abbr getclip "xclip -selection c -o"
 
 abbr dl "cd ~/Downloads"
+abbr dotfiles "cd ~/dotfiles"

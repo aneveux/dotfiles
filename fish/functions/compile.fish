@@ -12,7 +12,7 @@ function compile --description "Compile a maven or gradle project"
   colorize blue -iu "Compile $path"
 
   if test -f "$path/pom.xml"
-    mvn -f $path/pom.xml clean compile
+    mvn -f $path/pom.xml clean install
   else if test -f $path/build.gradle
     set -l cmd
     if test -f "$path/gradlew"
