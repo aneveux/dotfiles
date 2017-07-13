@@ -10,6 +10,16 @@ In case you'd like to use that repository for setting up your environment, you c
 
 I know I could just retain that `me` file for myself, but at least it can be used as kind of an example on how I use it.
 
+Also you can create a `local` folder in this dotfiles repository, and have a `gitconfig_user` file with those lines:
+
+```
+[user]
+name = <Your Name Here>
+email = <Your Mail Here>
+```
+
+While installing, it'll create your `~/.gitconfig` without synchronizing your personal information on your repository.
+
 ## Howto?
 
 I'm relying on [dotbot](https://github.com/anishathalye/dotbot), a simple and really good tool allowing to easily provision and update my dotfiles, as well as running a couple shell commands to provision some basic stuff on my workstation.
@@ -93,7 +103,7 @@ I'm using those [KeePass plugins](http://keepass.info/plugins.html):
 
 ## Thank you!
 
-I really wanted to thank all those really nice projects for the great help/inspiration:
+I really wanted to thank all those really nice projects/people for the great help/inspiration:
 
 - [GitHub does dotfiles](https://dotfiles.github.io/)
 - [Mathias Bynens' dotfiles](https://github.com/mathiasbynens/dotfiles)
