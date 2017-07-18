@@ -9,3 +9,5 @@ abbr getclip "xclip -selection c -o"
 
 abbr dl "cd ~/Downloads"
 abbr dotfiles "cd ~/dotfiles"
+
+set -g theme_nerd_fonts yes
