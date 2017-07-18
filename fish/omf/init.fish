@@ -10,4 +10,6 @@ abbr getclip "xclip -selection c -o"
 abbr dl "cd ~/Downloads"
 abbr dotfiles "cd ~/dotfiles"
 
+# bobthefish options
+set -g theme_powerline_fonts no
 set -g theme_nerd_fonts yes
