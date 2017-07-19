@@ -17,3 +17,5 @@ set -g theme_display_docker_machine yes
 set -g theme_display_vi no
 set -g theme_display_date yes
 set -g theme_color_scheme gruvbox
+
+fish_default_key_bindings
