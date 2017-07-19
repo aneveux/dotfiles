@@ -11,5 +11,9 @@ abbr dl "cd ~/Downloads"
 abbr dotfiles "cd ~/dotfiles"
 
 # bobthefish options
-set -g theme_powerline_fonts no
+set -g theme_powerline_fonts yes
 set -g theme_nerd_fonts yes
+set -g theme_display_docker_machine yes
+set -g theme_display_vi no
+set -g theme_display_date yes
+set -g theme_color_scheme gruvbox
