@@ -101,6 +101,31 @@ I'm using those [KeePass plugins](http://keepass.info/plugins.html):
 - `KeeOTP`
 - `KeePassRPC`
 
+## IDEA Plugins
+
+Here's a quick list of all the IDEA plugins I'm using:
+
+- `AceJump`
+- `BashSupport`
+- `CheckMate`
+- `Docker Integration`
+- `Error-Prone compiler integration`
+- `FindBugs-IDEA`
+- `GitToolBox`
+- `.ignore`
+- `GitLab Projects`
+- `Ansible Support`
+- `Java8 Generators`
+- `Kotlin`
+- `Scala`
+- `Lombok`
+- `Markdown Support`
+- `Maven Helper`
+- `Presentation Assistant`
+- `Upsource Integration`
+
+All my IDEA settings are automatically managed through [https://github.com/aneveux/idea-settings](https://github.com/aneveux/idea-settings).
+
 ## Thank you!
 
 I really wanted to thank all those really nice projects/people for the great help/inspiration:
