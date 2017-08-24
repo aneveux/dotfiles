@@ -120,8 +120,8 @@ mode $launcher_mode {
   bindsym f exec firefox, mode "default"
   bindsym k exec keepassxc, mode "default"
   bindsym s exec spotify, mode "default"
-  bindsym t exec termite, mode "default"
-  bindsym Return exec termite, mode "default"
+  bindsym t exec terminator, mode "default"
+  bindsym Return exec terminator, mode "default"
 
   bindsym Escape mode "default"
 }
@@ -157,11 +157,19 @@ bar {
 # https://i3wm.org/docs/userguide.html#command_criteria
 # assign application to workspace
 # use xprop to found information about the app
-assign [class="Firefox"] $WS4
+# WARN: https://github.com/i3/i3/issues/2060
+
+# /shell
+assign [class="Terminator"] $WS1
+# /text
+for_window [class="sublime_text"] move to workspace $WS2
+# /dev
 assign [class="jetbrains"] $WS3
-assign [class="sublime_text"] $WS2
-# https://github.com/i3/i3/issues/2060
+# /web
+assign [class="Firefox"] $WS4
+# /media
 for_window [class="Spotify"] move to workspace $WS5
+# /blabla
 
 # AutoStart
 # https://forum.manjaro.org/t/pamac-manager-issues/9813/26
