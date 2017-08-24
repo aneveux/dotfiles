@@ -1,9 +1,6 @@
 [submodule "dotbot"]
 	path = dotbot
 	url = https://github.com/anishathalye/dotbot
-[submodule "awesome-terminal-fonts"]
-	path = awesome-terminal-fonts
-	url = https://github.com/gabrielelana/awesome-terminal-fonts.git
 [submodule "powerlevel9k"]
 	path = powerlevel9k
 	url = https://github.com/bhilburn/powerlevel9k.git
