@@ -9,6 +9,7 @@ set $WS3 3: /dev
 set $WS4 4: /web
 set $WS5 5: /media
 set $WS6 6: /blabla
+set $WS7 7: /misc
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -83,7 +84,7 @@ bindsym $mod+quotedbl workspace $WS3
 bindsym $mod+apostrophe workspace $WS4
 bindsym $mod+parenleft workspace $WS5
 bindsym $mod+minus workspace $WS6
-bindsym $mod+egrave workspace 7
+bindsym $mod+egrave workspace $WS7
 bindsym $mod+underscore workspace 8
 bindsym $mod+ccedilla workspace 9
 bindsym $mod+agrave workspace 10
@@ -95,7 +96,7 @@ bindsym $mod+Shift+quotedbl move container to workspace $WS3
 bindsym $mod+Shift+apostrophe move container to workspace $WS4
 bindsym $mod+Shift+5 move container to workspace $WS5
 bindsym $mod+Shift+minus move container to workspace $WS6
-bindsym $mod+Shift+egrave move container to workspace 7
+bindsym $mod+Shift+egrave move container to workspace $WS7
 bindsym $mod+Shift+underscore move container to workspace 8
 bindsym $mod+Shift+ccedilla move container to workspace 9
 bindsym $mod+Shift+agrave move container to workspace 10
@@ -161,8 +162,11 @@ bar {
 
 # /shell
 assign [class="Terminator"] $WS1
+assign [class="Termite"] $WS1
 # /text
-for_window [class="sublime_text"] move to workspace $WS2
+assign [class="Sublime_text"] $WS2
+assign [class="Atom"] $WS2
+assign [class="Gvim"] $WS2
 # /dev
 assign [class="jetbrains"] $WS3
 # /web
@@ -170,9 +174,18 @@ assign [class="Firefox"] $WS4
 # /media
 for_window [class="Spotify"] move to workspace $WS5
 # /blabla
+assign [class="Franz"] $WS6
+# /misc
+assign [class="keepassxc"] $WS7
 
 # AutoStart
 # https://forum.manjaro.org/t/pamac-manager-issues/9813/26
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 # numlock on
 exec --no-startup-id numlockx on
+# Start Franz
+exec --no-startup-id franz-bin
+# Start KeepassXC
+exec --no-startup-id keepassxc
+# Start DropBox
+exec --no-startup-id dropbox
