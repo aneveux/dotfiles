@@ -6,7 +6,7 @@ sudo -E pacman -S --needed yaourt
 # Window Manager
 sudo -E pacman -S --needed  i3-theme-dark i3-wm i3blocks i3lock lxappearance-gtk3 rofi
 
-# Shell
+# Terminal
 sudo -E pacman -S --needed zsh zsh-completions fish thefuck terminator termite
 chsh -s /usr/bin/fish
 
