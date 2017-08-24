@@ -4,10 +4,11 @@
 set $mod Mod4
 
 set $WS1 1: /shell
-set $WS2 2: /dev
-set $WS3 3: /web
-set $WS4 4: /media
-set $WS5 5: /blabla
+set $WS2 2: /text
+set $WS3 3: /dev
+set $WS4 4: /web
+set $WS5 5: /media
+set $WS6 6: /blabla
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -81,7 +82,7 @@ bindsym $mod+eacute workspace $WS2
 bindsym $mod+quotedbl workspace $WS3
 bindsym $mod+apostrophe workspace $WS4
 bindsym $mod+parenleft workspace $WS5
-bindsym $mod+minus workspace 6
+bindsym $mod+minus workspace $WS6
 bindsym $mod+egrave workspace 7
 bindsym $mod+underscore workspace 8
 bindsym $mod+ccedilla workspace 9
@@ -93,7 +94,7 @@ bindsym $mod+Shift+eacute move container to workspace $WS2
 bindsym $mod+Shift+quotedbl move container to workspace $WS3
 bindsym $mod+Shift+apostrophe move container to workspace $WS4
 bindsym $mod+Shift+5 move container to workspace $WS5
-bindsym $mod+Shift+minus move container to workspace 6
+bindsym $mod+Shift+minus move container to workspace $WS6
 bindsym $mod+Shift+egrave move container to workspace 7
 bindsym $mod+Shift+underscore move container to workspace 8
 bindsym $mod+Shift+ccedilla move container to workspace 9
@@ -156,10 +157,11 @@ bar {
 # https://i3wm.org/docs/userguide.html#command_criteria
 # assign application to workspace
 # use xprop to found information about the app
-assign [class="Firefox"] $WS3
-assign [class="jetbrains"] $WS2
+assign [class="Firefox"] $WS4
+assign [class="jetbrains"] $WS3
+assign [class="sublime_text"] $WS2
 # https://github.com/i3/i3/issues/2060
-for_window [class="Spotify"] move to workspace $WS4
+for_window [class="Spotify"] move to workspace $WS5
 
 # AutoStart
 # https://forum.manjaro.org/t/pamac-manager-issues/9813/26
