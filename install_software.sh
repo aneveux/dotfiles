@@ -11,10 +11,10 @@ sudo -E pacman -S --needed zsh zsh-completions fish thefuck terminator termite
 chsh -s /usr/bin/fish
 
 # Utils
-sudo -E pacman -S --needed cowsay dropbox filezilla firefox gnupg gpa htop keepassxc lolcat playerctl ranger thunderbird tmux tree workrave xclip
+sudo -E pacman -S --needed cowsay dropbox dunst filezilla firefox gnupg gpa htop keepassxc lolcat playerctl ranger thunderbird tmux tree workrave xclip
 
 # Tooling
-sudo -E pacman -S --needed ansible corkscrew docker docker-compose docker-machine git pgadmin3 ruby ruby-docs
+sudo -E pacman -S --needed ansible corkscrew docker docker-compose docker-machine git jq pgadmin3 ruby ruby-docs
 
 # Editors
 sudo -E pacman -S --needed atom cherrytree gvim vim 

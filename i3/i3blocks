@@ -1,0 +1,81 @@
+# http://vivien.github.io/i3blocks
+
+command=/usr/lib/i3blocks/$BLOCK_NAME
+separator_block_width=15
+markup=none
+
+[message]
+markup=pango
+command=$HOME/.config/i3/scripts/message
+interval=once
+signal=12
+
+# Volume indicator
+#
+# The first parameter sets the step (and units to display)
+# The second parameter overrides the mixer selection
+# See the script for details.
+# will need a signal to update
+# https://github.com/vivien/i3blocks/issues/207#issuecomment-290077192
+[volume]
+label=♪
+instance=Master
+interval=once
+signal=10
+
+# Generic media player support
+#
+# This displays "ARTIST - SONG" if a music is playing.
+# Supported players are: spotify, vlc, audacious, xmms2, mplayer, and others.
+[mediaplayer]
+instance=spotify
+interval=5
+#signal=10
+
+# Memory usage
+#
+# The type defaults to "mem" if the instance is not specified.
+[memory]
+label=M:
+interval=30
+
+[memory]
+label=SWAP
+instance=swap
+interval=30
+
+[bandwidth]
+instance=eth0
+interval=5
+
+# CPU usage
+#
+# The script may be called with -w and -c switches to specify thresholds,
+# see the script for details.
+[cpu_usage]
+label=CPU
+interval=10
+min_width=CPU: 100.00%
+
+[load_average]
+label=L:
+separator=false
+separator_block_width=5
+interval=30
+
+# Battery indicator
+#
+# The battery instance defaults to 0.
+[battery]
+label=⚡
+interval=30
+
+# Date Time
+[time]
+command=date '+%Y-%m-%d %H:%M'
+interval=60
+
+# Dunst
+[dunst]
+command=$HOME/.config/i3/scripts/notify
+signal=12

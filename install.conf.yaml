@@ -36,14 +36,19 @@
     # Terminal configuration
     ~/.config/terminator/config: terminator/config
     ~/.config/termite/config: termite/config
+    # Window Manager
+    ~/.config/rofi: rofi
+    ~/.config/dunst: dunst
+    ~/.config/i3: i3
+    ~/.config/ranger/rc.conf: ranger/rc.conf
+    ~/.config/ranger/scripts: ranger/scripts
     # Git configuration
     ~/.gitattributes: git/gitattributes
     ~/.gitignore: git/gitignore
-    # Misc. scripts
-    ~/.manjaro_update.sh: scripts/manjaro_update.sh
     # Sublime Text configuration
     ~/.config/sublime-text-3/Packages/User/Preferences.sublime-settings: sublime/preferences.sublime-settings
     # SSH Configuration
     ~/.config/systemd/user/ssh-agent.service: systemd/ssh-agent.service
     ~/.pam_environment: ssh/pam_environment
-    
+    # Misc. scripts
+    ~/.manjaro_update.sh: scripts/manjaro_update.sh
