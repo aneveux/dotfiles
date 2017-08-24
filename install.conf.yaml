@@ -35,6 +35,7 @@
     ~/.config/omf: fish/omf
     # Terminal configuration
     ~/.config/terminator/config: extras/terminator/config
+    ~/.config/termite/config: termite/config
     # Git configuration
     ~/.gitattributes: git/gitattributes
     ~/.gitignore: git/gitignore
