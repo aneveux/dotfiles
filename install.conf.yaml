@@ -10,7 +10,7 @@
   - [mkdir -p ~/git, Creating a working directory for git repositories]
   - [mkdir -p ~/tools, Creating a directory for storing tools]
   - [./install/fira.bash, Installing Fira fonts]
-  - [./nerd-fonts/install.sh, Installing  nerd-fonts]
+  - [./nerd-fonts/install.sh -q, Installing  nerd-fonts]
   - [./install/gitconfig.bash, Generating .gitconfig]
   - [./install/sdkman.bash, Installing SDKMAN]
   - [./install/oh-my-zsh.bash, Installing oh-my-zsh]
