@@ -21,8 +21,8 @@
     ~/.bash_profile: bash/bash_profile
     ~/.bashrc: bash/bashrc
     ~/.extend.bashrc: bash/extend.bashrc
-    ~/.aliases: extras/aliases
-    ~/.exports: extras/exports
+    ~/.aliases: bash/aliases
+    ~/.exports: bash/exports
     # ZSH configuration
     ~/.powerlevel9k: zsh/powerlevel9k
     ~/.zshrc: zsh/zshrc
@@ -34,7 +34,7 @@
     ~/.config/fish/functions: fish/functions
     ~/.config/omf: fish/omf
     # Terminal configuration
-    ~/.config/terminator/config: extras/terminator/config
+    ~/.config/terminator/config: terminator/config
     ~/.config/termite/config: termite/config
     # Git configuration
     ~/.gitattributes: git/gitattributes
@@ -45,5 +45,5 @@
     ~/.config/sublime-text-3/Packages/User/Preferences.sublime-settings: sublime/preferences.sublime-settings
     # SSH Configuration
     ~/.config/systemd/user/ssh-agent.service: systemd/ssh-agent.service
-    ~/.pam_environment: extras/pam_environment
+    ~/.pam_environment: ssh/pam_environment
     
