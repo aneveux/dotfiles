@@ -6,7 +6,7 @@
 	autocrlf = input
 
 [fetch]
-    prune = true
+	prune = true
 
 [push]
 	default = matching
