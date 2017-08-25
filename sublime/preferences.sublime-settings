@@ -2,7 +2,7 @@
 	"always_show_minimap_viewport": true,
 	"bold_folder_labels": true,
 	"caret_style": "smooth",
-	"color_scheme": "Packages/Material Theme/schemes/Material-Theme.tmTheme",
+	"color_scheme": "Packages/Boxy Theme/schemes/Boxy Nova.tmTheme",
 	"default_encoding": "UTF-8",
 	"draw_minimap_border": true,
 	"font_options":
@@ -33,5 +33,23 @@
 	"remember_open_files": false,
 	"save_on_focus_lost": true,
 	"spell_check": false,
-	"theme": "Material-Theme.sublime-theme"
+	"theme": "Boxy Nova.sublime-theme",
+	"theme_accent_mono": true,
+	"theme_button_rounded": true,
+	"theme_find_panel_close_hidden": true,
+	"theme_find_panel_size_xs": true,
+	"theme_grid_border_size_sm": true,
+	"theme_icons_atomized": true,
+	"theme_minimap_viewport_opacity_xh": true,
+	"theme_sidebar_folder_arrow": true,
+	"theme_sidebar_heading_bold": true,
+	"theme_sidebar_highlight_selected_text_only": true,
+	"theme_sidebar_highlight_text_only": true,
+	"theme_sidebar_indent_top_level_disabled": true,
+	"theme_sidebar_indent_xl": false,
+	"theme_size_md": true,
+	"theme_tab_arrows_hidden": true,
+	"theme_tab_close_always_visible": true,
+	"theme_tab_size_xxl": false,
+	"theme_unified": true
 }
