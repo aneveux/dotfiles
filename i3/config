@@ -189,3 +189,7 @@ exec --no-startup-id franz-bin
 exec --no-startup-id keepassxc
 # Start DropBox
 exec --no-startup-id dropbox
+# Multiple Screens
+# https://www.reddit.com/r/archlinux/comments/2k2aym/how_can_i_get_i3_to_properly_do_multimonitor/?st=j62ony4b&sh=06185201
+# Using a local script for having different configuration over different PCs
+exec --no-startup-id $HOME/dotfiles/local/monitor_configuration
