@@ -178,6 +178,11 @@ assign [class="Franz"] $WS6
 # /misc
 assign [class="keepassxc"] $WS7
 
+# set floating mode for password like apps
+# If you are using floating windows for anything that is not a password pop-up
+# dialog or similar, you are not using i3 as intended.
+for_window [class="Pinentry"] floating enable
+
 # AutoStart
 # https://forum.manjaro.org/t/pamac-manager-issues/9813/26
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
