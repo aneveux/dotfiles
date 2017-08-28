@@ -184,7 +184,11 @@ Here are links towards really interesting tools/resources I'm using:
 - [i3](https://i3wm.org/) - the Window Manager I was searching for,
 - [Rofi](https://davedavenport.github.io/rofi/) - a powerful window switcher,
 
-And more to come... Maybe.
+And some useless, but absolutely necessary resources:
+
+- [Table flipping emoticons](http://japaneseemoticons.me/table-flipping-emoticons/) - cause commit messages,
+- [Shields](http://shields.io/) - cause opensource projects are all doing it,
+- [Commit Message](http://whatthecommit.com/) - when you lack inspiration,
 
 # Thanks!
 
