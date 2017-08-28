@@ -14,6 +14,7 @@
   - [./install/gitconfig.bash, Generating .gitconfig]
   - [./install/sdkman.bash, Installing SDKMAN]
   - [./install/oh-my-zsh.bash, Installing oh-my-zsh]
+  - [./install/oh-my-fish.bash, Installing oh-my-fish]
   - [./install/spf13-vim3.bash, Installing spf13-vim3]
   
 - link:

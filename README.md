@@ -92,10 +92,7 @@ Note that it'll also take care of managing all the required environment variable
 
 ## 8. Installing omf plugins
 
-I'm using [Oh My Fish!](https://github.com/oh-my-fish/oh-my-fish) for some fish themes and plugins. All the configuration is already in the dotfiles, but you'll need to:
-
-- Install it: `curl -L https://get.oh-my.fish | fish`
-- Install the plugins: `omf install`
+I'm using [Oh My Fish!](https://github.com/oh-my-fish/oh-my-fish) for some fish themes and plugins. The installation is managed by the dotfiles provisioning, but you'll have to run `omf install` in order to download all the plugins and themes. All the configuration is already set up by the dotfiles.
 
 ## 9. Installing Sublime
 
