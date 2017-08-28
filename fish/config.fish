@@ -1,6 +1,6 @@
 set -xg SHELL /usr/bin/fish
 set -xg VISUAL vim
-set -xg MANPAGER 'less -X'
+set -xg MANPAGER 'less'
 set -xg LC_ALL en_US.UTF-8
 set -xg GPG_TTY (tty)
 
