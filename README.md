@@ -1,87 +1,118 @@
 ![](https://img.shields.io/badge/ponies-%E2%9D%A4-ff69b4.svg) ![](https://img.shields.io/badge/%E2%94%AC%E2%94%80%E2%94%80%E2%94%AC%E2%97%A1%EF%BE%89(%C2%B0%20--%C2%B0%EF%BE%89)-4-brightgreen.svg) ![](https://img.shields.io/badge/Totally%20Spies%3F-%5Co%5C%20%5Co%2F%20%2Fo%2F-yellow.svgl)
 
-# .files
+# .files / environment bootstrap
 
-Nothing fancy in there... Just the dotfiles I'm using as well as some information/scripts about my installation. In case it helps anyone I'm really glad you found some information here :)
+Hi there! This whole repository contains all the resources I'm using in order to install and configure my development environment.
 
-## Making it yours?
+There's basically nothing too fancy, but I'm glad it helps in case you're searching to do something a bit similar. Otherwise, it'll help me at least ;)
 
-In case you'd like to use that repository for setting up your environment, you can simply fork it. No problem for me.
+## 1. Installing Operating System
 
-**Do not forget to change values in the `me` file though, since they contain information related to me :)**
+I'm using [Manjaro](https://manjaro.org/), a [Linux](https://en.wikipedia.org/wiki/Linux) distribution based on [Arch](https://www.archlinux.org/).
 
-I know I could just retain that `me` file for myself, but at least it can be used as kind of an example on how I use it.
+It's fairly easy to install, and you'll get all the information from their [Download Page](https://manjaro.org/get-manjaro/).
 
-Also you can create a `local` folder in this dotfiles repository, and have a `gitconfig_user` file with those lines:
+## 2. Cloning dotfiles
+
+In case you don't have `git` installed already, you can simply install it quickly from `pacman` through `sudo pacman -S git`, but it should be present by default I believe.
+
+Then, the only thing you want to do is to clone that project in your `HOME` folder (basically `~/`, which means something like `/home/<your username>`).
+
+You can do that with `git clone git@github.com:aneveux/dotfiles.git`
+
+## 3. Installing software
+
+From the dotfiles directory, you can execute the following script: `./install_software.sh` which will rely on `pacman` and `yaourt` in order to install all the software I'm using on my Linux installation (or most of it at least).
+
+Among lots of others, it'll take care of installing [i3](https://i3wm.org/), the Window Manager I'm using. It'll also change the shell to [Fish Shell](http://fishshell.com/).
+
+Do not hesitate to have a look at the script to see all the things which will be installed.
+
+## 4. Customizing some configuration
+
+There are a few things you can customize easily from this repository:
+
+- Update the `me` file to match with your user id, it's used only for `zsh` though, which I'm not using that much.
+- Create a `local` folder in the dotfiles repository, it's ignored by git, and will allow you to store some local configuration values.
+- Create a `gitconfig_user` file in that `local` folder, in which you can store the `user` section of your `~/.gitconfig` file. It allows you to keep that local. (the `gitconfig` file will be generated later on).
+- Create a `monitor_configuration` in the `local` folder, in which you can specify `xrandr` commands to be executed by `i3` while starting up to configure your monitors.
+
+As an example, here's how the `gitconfig_user` could look:
 
 ```
 [user]
-name = <Your Name Here>
-email = <Your Mail Here>
+    name = <Your Name Here>
+    email = <Your Mail Here>
 ```
 
-While installing, it'll create your `~/.gitconfig` without synchronizing your personal information on your repository.
+## 5. Provisionning dotfiles (and a bit more)
 
-## Howto?
+I'm relying on [dotbot](https://github.com/anishathalye/dotbot) for that. You can have a look at `install.conf.yaml` for more information on what's done.
 
-I'm relying on [dotbot](https://github.com/anishathalye/dotbot), a simple and really good tool allowing to easily provision and update my dotfiles, as well as running a couple shell commands to provision some basic stuff on my workstation.
+It'll basically install some stuff (a few fonts, zsh, vim plugins, sdkman, etc.), and then create symlinks to all the dotfiles which are required to configure those tools.
 
-Usage is really simple: clone the repository, then `./install.sh`.
+The `gitconfig` file will be generated during that step as well.
 
-Of course in case you'd like to take stuff from my dotfiles, be sure to modify the files accordingly to your computer ;)
+In order to actually perform this step, simply run `./install.sh` from the dotfiles folder.
 
-In order to update dotbot, simply run `git submodule update --remote dotbot`.
+## 6. Configuring SSH (additional steps)
 
-## Environment
+In order to load automatically my SSH keys in a running agent, and to share those with all the software I'm using, you'll need a small additional SSH configuration. Some files will be populated by dotbot, and then you'll need to execute:
 
-I'm running [Manjaro](https://manjaro.github.io/). Here are a few things I installed on it (alphabetical order):
+```shell
+$ systemctl --user enable ssh-agent.service
+$ systemctl --user start ssh-agent.service
+```
 
-`sudo pacman -S ansible atom cherrytree corkscrew cowsay docker docker-compose dropbox filezilla firefox fish git gvim htop keepass lolcat numix-manjaro-themes numix-reborn-icon-themes numix-themes pgadmin3 ranger terminator thefuck thunderbird tmux tree vim workrave xclip yaourt zsh`
+You can verify that it's working properly by executing:
 
-But also from AUR:
+```shell
+$ systemctl --user status ssh-agent.service
+```
 
-`yaourt -S flux franz nerd-fonts-complete ruby-jekyll ruby-jekyll-gist ruby-jekyll-paginate ruby-jekyll-sitemap ruby-jekyll-watch signal spotify terminix`
+Then, put that in your `~/.ssh/config` file as well: `AddKeysToAgent yes`.
 
-Of course there are already a lot of things included in Manjaro out of the box. But do not hesitate to mention me anything that you might think would be worth a try :)
+All of this will allow to start an SSH agent while your environment is starting up, and then store the keys which are loaded in that agent when they're used for the first time.
 
-## Bonuses?
+## 7. Installing SDKs
 
-I'm also using a couple additional tools:
+I'm relying on [SDKMan](http://sdkman.io/) for installing all the SDKs I need. It'll be installed directly by dotbot, so now you only need to use it for installing what you need.
 
-- [SDKMan](http://sdkman.io/install.html) for managing stuff like Maven, Gradle, Kotlin, Java, Groovy, etc. binaries.
-- [Oh My ZSH!](http://ohmyz.sh/) for all the goodies it includes :)
-- [Powerlevel9k](https://github.com/bhilburn/powerlevel9k) for a fancy looking prompt!
-- [Awesome Terminal Fonts](https://github.com/gabrielelana/awesome-terminal-fonts) cause I like fancy stuff a lot.
-- [Sublime Text](http://www.sublimetext.com/3) which I use more than Atom I believe... (but I'm like changing editors all the time...)
-- [IntelliJ IDEA](https://www.jetbrains.com/idea/) for Java, Kotlin, and all those JVM related stuff.
-- [Vim Bundles by spf13](http://vim.spf13.com/) cause they just contain all the things I want in vim.
-- [MaterialTheme](http://equinsuocha.io/material-theme/) which looks awesome :)
-- [Oh My Fish!](https://github.com/oh-my-fish/oh-my-fish) because I'm trying [Fish Shell](http://fishshell.com/)
+On my side, I'm using it for:
 
-## Oh My Fish?
+```shell
+$ sdk install java
+$ sdk install kotlin
+$ sdk install groovy
+$ sdk install maven
+$ sdk install gradle
+```
 
-Yep. Just run: `curl -L https://get.oh-my.fish | fish`.
+Note that it'll also take care of managing all the required environment variables such as `JAVA_HOME` and so on.
 
-Then, I'm installing:
+## 8. Installing omf plugins
 
-- `omf install budspencer`
-- `omf install ansible`
-- `omf install sublime`
-- `omf install thefuck`
-- `omf install archlinux`
+I'm using [Oh My Fish!](https://github.com/oh-my-fish/oh-my-fish) for some fish themes and plugins. All the configuration is already in the dotfiles, but you'll need to:
 
-Or simply run `omf install` if you have the dotfiles installed, it'll install automatically of the bundles from the omf directory.
+- Install it: `curl -L https://get.oh-my.fish | fish`
+- Install the plugins: `omf install`
 
-## Sublime Text 3 Installation
+## 9. Installing Sublime
+
+My main text editor is Sublime (even if I'm using Atom or vim sometimes). Here are the steps to follow to install and configure it:
 
 1. Download it from here: [Sublime Text 3](http://www.sublimetext.com/3)
-2. Extract the archive content in `~/opt`: `tar jxf sublime_text_3_....tar.bz2 -C ~/opt/sublime_text_3`
+2. Extract the archive content in `~/tools`: `tar jxf sublime_text_3_....tar.bz2 -C ~/tools/sublime_text_3`
 3. Install Package Control for Sublime Text 3 from here: [Package Control](https://packagecontrol.io/installation)
 4. Packages I install from Package Control:
 
+- `A File Icon`
 - `AceJump`
 - `Ansible`
 - `Ansible Vault`
+- `Boxy Theme`
+- `Boxy Theme Addon - Font Face`
+- `Boxy Theme Addon - Unified Mode`
 - `Color Highlighter`
 - `ColorPicker`
 - `fish-shell`
@@ -89,23 +120,19 @@ Or simply run `omf install` if you have the dotfiles installed, it'll install au
 - `Git Config`
 - `JavaScript Ultimate`
 - `MarkdownEditing`
-- `Material Theme`
-- `Material Theme - AppBar`
 - `Origami`
 - `Pretty YAML`
 - `Shell Exec`
 
-## KeePass plugins
+Then the whole configuration is made by the dotfiles.
 
-I'm using those [KeePass plugins](http://keepass.info/plugins.html):
+## 10. Installing IntelliJ IDEA
 
-- `KeeAgent`
-- `KeeOTP`
-- `KeePassRPC`
+I'm using [IntelliJ IDEA](https://www.jetbrains.com/idea/) as my IDE. Download it directly from the [JetBrains website](https://www.jetbrains.com/idea/download/#section=linux).
 
-## IDEA Plugins
+I'm not using the version available in AUR cause I like to update it as soon as possible and always use the latest version possible, which is delayed a bit by the AUR packaging.
 
-Here's a quick list of all the IDEA plugins I'm using:
+Here's a list of all the IDEA plugins I'm installing:
 
 - `AceJump`
 - `BashSupport`
@@ -126,15 +153,46 @@ Here's a quick list of all the IDEA plugins I'm using:
 - `Presentation Assistant`
 - `Upsource Integration`
 
-All my IDEA settings are automatically managed through [https://github.com/aneveux/idea-settings](https://github.com/aneveux/idea-settings).
+All my configuration is available in a separate github repository though: [https://github.com/aneveux/idea-settings](https://github.com/aneveux/idea-settings). Which is used directly by IntelliJ settings manager in order to synchronize my configuration across all the installation I have.
 
-## Thank you!
+# Updates
+
+For updating the submodules, use this command: `git submodule update --remote dotbot`. You can replace dotbot by the name of the submodule you want to update.
+
+If you modify the files which are already symlinked, you have nothing to do for updating your environment.
+
+If you add more files, simply run again that `./install.sh` script and it'll set up the links for you.
+
+# Resources
+
+Here are links towards really interesting tools/resources I'm using:
+
+- [Manjaro](https://manjaro.org/) - my favourite Linux distro,
+- [Fish Shell](http://fishshell.com/) - friendliest shell I met,
+- [Oh My Fish!](https://github.com/oh-my-fish/oh-my-fish) - like fish wasn't easy enough,
+- [ZSH](http://www.zsh.org/) - my former shell... Keeping it for memories,
+- [Oh My ZSH!](http://ohmyz.sh/) - making zsh easier,
+- [Powerlevel9k](https://github.com/bhilburn/powerlevel9k) - prompt I was using in ZSH,
+- [SDKMan](http://sdkman.io/install.html) - easiest way to manage SDKs,
+- [Nerd Fonts](http://nerdfonts.com/) - biggest fancy fonts collection I found,
+- [Vim Bundles by spf13](http://vim.spf13.com/) - simply all the things I want in vim,
+- [IntelliJ IDEA](https://www.jetbrains.com/idea/) - my favourite IDE,
+- [Sublime Text](http://www.sublimetext.com/3) - my favourite text editor,
+- [Terminal Sexy](http://terminal.sexy/) - for generating color themes,
+- [Idea Color Themes](http://color-themes.com/?view=index) - color themes for IntelliJ,
+- [Boxy Theme](https://packagecontrol.io/packages/Boxy%20Theme) - favourite theme for sublime,
+- [i3](https://i3wm.org/) - the Window Manager I was searching for,
+- [Rofi](https://davedavenport.github.io/rofi/) - a powerful window switcher,
+
+And more to come... Maybe.
+
+# Thanks!
 
 I really wanted to thank all those really nice projects/people for the great help/inspiration:
 
+- [Jean-Marc Desprez](https://github.com/jmdesprez)
 - [GitHub does dotfiles](https://dotfiles.github.io/)
 - [Mathias Bynens' dotfiles](https://github.com/mathiasbynens/dotfiles)
 - [dotbot](https://github.com/anishathalye/dotbot)
-- [Jean-Marc Desprez](https://github.com/jmdesprez)
 
 As well as all the really nice tools I already mentionned before :)
