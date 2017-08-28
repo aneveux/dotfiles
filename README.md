@@ -1,4 +1,4 @@
-![](https://img.shields.io/badge/ponies-%E2%9D%A4-ff69b4.svg) ![](https://img.shields.io/badge/%E2%94%AC%E2%94%80%E2%94%80%E2%94%AC%E2%97%A1%EF%BE%89(%C2%B0%20--%C2%B0%EF%BE%89)-4-brightgreen.svg) ![](https://img.shields.io/badge/Totally%20Spies%3F-%5Co%5C%20%5Co%2F%20%2Fo%2F-yellow.svgl)
+![](https://img.shields.io/badge/ponies-%E2%9D%A4-ff69b4.svg) ![](https://img.shields.io/badge/%E2%94%AC%E2%94%80%E2%94%80%E2%94%AC%E2%97%A1%EF%BE%89(%C2%B0%20--%C2%B0%EF%BE%89)-4-brightgreen.svg) ![](https://img.shields.io/badge/Totally%20Spies%3F-%5Co%5C%20%5Co%2F%20%2Fo%2F-yellow.svg)
 
 # .files / environment bootstrap
 
