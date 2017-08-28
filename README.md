@@ -1,3 +1,5 @@
+![](https://img.shields.io/badge/ponies-%E2%9D%A4-ff69b4.svg) ![](https://img.shields.io/badge/(%E2%95%AF%C2%B0%E2%96%A1%C2%B0%EF%BC%89%E2%95%AF%EF%B8%B5%20%E2%94%BB%E2%94%81%E2%94%BB-4-orange.svg) ![](https://img.shields.io/badge/%E2%94%AC%E2%94%80%E2%94%80%E2%94%AC%E2%97%A1%EF%BE%89(%C2%B0%20--%C2%B0%EF%BE%89)-4-brightgreen.svg)
+
 # .files
 
 Nothing fancy in there... Just the dotfiles I'm using as well as some information/scripts about my installation. In case it helps anyone I'm really glad you found some information here :)
