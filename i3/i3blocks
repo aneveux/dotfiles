@@ -1,80 +1,80 @@
 # http://vivien.github.io/i3blocks
-
 command=/usr/lib/i3blocks/$BLOCK_NAME
-separator_block_width=15
-markup=none
+markup=pango
+
+full_text=&#xf0da;
+align=center
+separator_block_width=8
+separator=false
+color=#F3F4F5
+
+[separator]
+
+[message_text]
+full_text=&#xf004;
+color=#ff69b4
 
 [message]
-markup=pango
 command=$HOME/.config/i3/scripts/message
 interval=once
 signal=12
 
-# Volume indicator
-#
-# The first parameter sets the step (and units to display)
-# The second parameter overrides the mixer selection
-# See the script for details.
-# will need a signal to update
-# https://github.com/vivien/i3blocks/issues/207#issuecomment-290077192
+[separator]
+
+[volume_text]
+full_text=&#xf028;
+color=#9fbc00
+
 [volume]
-label=♪
 instance=Master
 interval=once
 signal=10
 
-# Generic media player support
-#
-# This displays "ARTIST - SONG" if a music is playing.
-# Supported players are: spotify, vlc, audacious, xmms2, mplayer, and others.
+[separator]
+
+[mediaplayer_text]
+full_text=&#xf1bc;
+color=#9fbc00
+
 [mediaplayer]
 instance=spotify
 interval=5
-#signal=10
 
-# Memory usage
-#
-# The type defaults to "mem" if the instance is not specified.
+[separator]
+
+[memory_text]
+full_text=&#xf1fe;
+color=#9fbc00
+
 [memory]
-label=M:
+label=R:
 interval=30
 
 [memory]
-label=SWAP
+label=S:
 instance=swap
 interval=30
 
-[ethernet]
-interval=30
+[separator]
 
-# CPU usage
-#
-# The script may be called with -w and -c switches to specify thresholds,
-# see the script for details.
-[cpu_usage]
-label=CPU
-interval=10
-min_width=CPU: 100.00%
+[date_text]
+full_text=&#xf073;
+color=#9fbc00
 
-[load_average]
-label=L:
-separator=false
-separator_block_width=5
-interval=30
+[date]
+command=date '+%d/%m/%Y'
+interval=360
 
-# Battery indicator
-#
-# The battery instance defaults to 0.
-[battery]
-label=⚡
-interval=30
+[separator]
 
-# Date Time
+[time_text]
+full_text=&#xf017;
+color=#9fbc00
+
 [time]
-command=date '+%Y-%m-%d %H:%M'
-interval=60
+command=date '+%H:%M:%S' # | sed 's/:/h/'
+interval=1
 
-# Dunst
 [dunst]
 command=$HOME/.config/i3/scripts/notify
 signal=12
