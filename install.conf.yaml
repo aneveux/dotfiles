@@ -44,6 +44,7 @@
     ~/.config/ranger/rc.conf: ranger/rc.conf
     ~/.config/ranger/scripts: ranger/scripts
     ~/.config/compton.conf: compton/compton.conf
+    ~/.wlppr: wlppr
     # Git configuration
     ~/.gitattributes: git/gitattributes
     ~/.gitignore: git/gitignore
