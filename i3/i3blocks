@@ -8,8 +8,6 @@ separator_block_width=8
 separator=false
 color=#F3F4F5
 
-[separator]
-
 [message_text]
 full_text=&#xf004;
 color=#ff69b4
@@ -20,6 +18,7 @@ interval=once
 signal=12
 
 [separator]
+color=#777777
 
 [volume_text]
 full_text=&#xf028;
@@ -31,6 +30,7 @@ interval=once
 signal=10
 
 [separator]
+color=#777777
 
 [mediaplayer_text]
 full_text=&#xf1bc;
@@ -41,6 +41,7 @@ instance=spotify
 interval=5
 
 [separator]
+color=#777777
 
 [memory_text]
 full_text=&#xf1fe;
@@ -56,6 +57,7 @@ instance=swap
 interval=30
 
 [separator]
+color=#777777
 
 [cpu_text]
 full_text=&#xf085;
@@ -65,6 +67,7 @@ color=#9fbc00
 interval=1
 
 [separator]
+color=#777777
 
 [date_text]
 full_text=&#xf073;
@@ -75,6 +78,7 @@ command=date '+%d/%m/%Y'
 interval=360
 
 [separator]
+color=#777777
 
 [time_text]
 full_text=&#xf017;
