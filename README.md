@@ -115,6 +115,7 @@ My main text editor is Sublime (even if I'm using Atom or vim sometimes). Here a
 - `fish-shell`
 - `Git`
 - `Git Config`
+- `i3 wm`
 - `JavaScript Ultimate`
 - `MarkdownEditing`
 - `Origami`
