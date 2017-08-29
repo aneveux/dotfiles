@@ -10,7 +10,10 @@ set $WS3 "3: "
 set $WS4 "4: "
 set $WS5 "5: "
 set $WS6 "6: "
-set $WS7 "7: "
+set $WS7 "7: "
+set $WS8 "8: "
+set $WS9 "9: "
+set $WS10 "10: "
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -86,9 +89,9 @@ bindsym $mod+apostrophe workspace $WS4
 bindsym $mod+parenleft workspace $WS5
 bindsym $mod+minus workspace $WS6
 bindsym $mod+egrave workspace $WS7
-bindsym $mod+underscore workspace 8
-bindsym $mod+ccedilla workspace 9
-bindsym $mod+agrave workspace 10
+bindsym $mod+underscore workspace $WS8
+bindsym $mod+ccedilla workspace $WS9
+bindsym $mod+agrave workspace $WS10
 
 # move focused container to workspace
 bindsym $mod+Shift+ampersand move container to workspace $WS1
@@ -98,9 +101,9 @@ bindsym $mod+Shift+apostrophe move container to workspace $WS4
 bindsym $mod+Shift+5 move container to workspace $WS5
 bindsym $mod+Shift+minus move container to workspace $WS6
 bindsym $mod+Shift+egrave move container to workspace $WS7
-bindsym $mod+Shift+underscore move container to workspace 8
-bindsym $mod+Shift+ccedilla move container to workspace 9
-bindsym $mod+Shift+agrave move container to workspace 10
+bindsym $mod+Shift+underscore move container to workspace $WS8
+bindsym $mod+Shift+ccedilla move container to workspace $WS9
+bindsym $mod+Shift+agrave move container to workspace $WS10
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
