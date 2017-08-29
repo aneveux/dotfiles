@@ -162,24 +162,29 @@ new_window pixel 3
 bar {
     status_command i3blocks -c $HOME/.config/i3/i3blocks
     tray_output primary
-    position bottom
+    position top
     workspace_buttons yes
     
     colors {
-        statusline    #999999
-        background    #131D24
-
-        focused_workspace #232D34 #232D34 #93AE03
-        active_workspace  #232D34 #232D34 #999999
-        inactive_workspace  #131D24 #131D24 #999999
-        urgent_workspace  #999999 #999999 #B33A3A
+        background  #212121
+        statusline  #DDDDDD
+        separator   #666666
+        # class             border  backgr. text
+        focused_workspace   #2B83A6 #2B83A6 #FFFFFF
+        active_workspace    #212121 #212121 #FFFFFF
+        inactive_workspace  #212121 #212121 #86888C
+        urgent_workspace    #2F343A #D64E4E #FFFFFF
     }
 }
 
-client.focused        #9fbc00 #9fbc00 #111111
-client.unfocused      #505E00 #505E00 #cccccc
-client.focused_inactive     #315858 #315858 #cccccc
-client.urgent #383a3b #383a3b #cccccc
+
+# class                 border  backgr. text    indicator
+client.focused          #2B83A6 #2B83A6 #FFFFFF #DDDDDD
+client.focused_inactive #212121 #212121 #86888C #292D2E
+client.unfocused        #212121 #212121 #86888C #292D2E
+client.urgent           #2F343A #D64E4E #FFFFFF #D64E4E
+client.placeholder      #212121 #0C0C0C #FFFFFF #212121
+client.background #212121
 
 hide_edge_borders smart
 
