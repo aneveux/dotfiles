@@ -178,6 +178,8 @@ client.unfocused      #505E00 #505E00 #cccccc
 client.focused_inactive     #315858 #315858 #cccccc
 client.urgent #383a3b #383a3b #cccccc
 
+hide_edge_borders smart
+
 # Assign Applications
 # https://i3wm.org/docs/userguide.html#command_criteria
 # assign application to workspace
