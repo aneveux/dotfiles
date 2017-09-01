@@ -12,6 +12,7 @@
   - [./install/fira.bash, Installing Fira fonts]
   - [./nerd-fonts/install.sh -q, Installing  nerd-fonts]
   - [./install/gitconfig.bash, Generating .gitconfig]
+  - [./install/sshconfig.bash, Generating SSH config]
   - [./install/sdkman.bash, Installing SDKMAN]
   - [./install/oh-my-zsh.bash, Installing oh-my-zsh]
   - [./install/oh-my-fish.bash, Installing oh-my-fish]
