@@ -203,7 +203,7 @@ assign [class="Atom"] $WS2
 assign [class="Gvim"] $WS2
 # /dev
 assign [class="jetbrains"] $WS3
-assign [class="jetbrains-toolbox"] $WS3
+assign [class="Toolbox"] $WS3
 # /web
 assign [class="Firefox"] $WS4
 # /media
