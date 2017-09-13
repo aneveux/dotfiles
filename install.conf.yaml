@@ -17,6 +17,7 @@
   - [./install/oh-my-zsh.bash, Installing oh-my-zsh]
   - [./install/oh-my-fish.bash, Installing oh-my-fish]
   - [./install/spf13-vim3.bash, Installing spf13-vim3]
+  - [./install/sublime.bash, Installing sublime-text-3]
   
 - link:
     # Basic bash configuration

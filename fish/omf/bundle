@@ -1,6 +1,5 @@
 package ansible
 package archlinux
-package sublime
 package thefuck
 theme bobthefish
 theme budspencer

@@ -23,4 +23,4 @@ sudo -E pacman -S --needed atom cherrytree gvim vim
 sudo -E pacman -S --needed numix-manjaro-themes numix-reborn-icon-themes
 
 # AUR
-yaourt --needed --noconfirm -S franz-bin ruby-jekyll ruby-jekyll-gist ruby-jekyll-paginate ruby-jekyll-sitemap ruby-jekyll-watch signal spotify xflux
+yaourt --needed --noconfirm -S franz-bin jetbrains-toolbox ruby-jekyll ruby-jekyll-gist ruby-jekyll-paginate ruby-jekyll-sitemap ruby-jekyll-watch signal spotify xflux

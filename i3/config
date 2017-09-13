@@ -123,7 +123,7 @@ bindsym $mod+Return mode $launcher_mode
 mode $launcher_mode {
   bindsym a exec atom, mode "default"
   bindsym f exec firefox, mode "default"
-  bindsym i exec idea, mode "default"
+  bindsym i exec jetbrains-toolbox, mode "default"
   bindsym k exec keepassxc, mode "default"
   bindsym s exec spotify, mode "default"
   bindsym t exec terminator, mode "default"
@@ -203,6 +203,7 @@ assign [class="Atom"] $WS2
 assign [class="Gvim"] $WS2
 # /dev
 assign [class="jetbrains"] $WS3
+assign [class="jetbrains-toolbox"] $WS3
 # /web
 assign [class="Firefox"] $WS4
 # /media
