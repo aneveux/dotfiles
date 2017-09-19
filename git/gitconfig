@@ -72,6 +72,9 @@
 	cl = clone
 	dc = diff --cached
 
+	# LOL
+	dad = !curl https://icanhazdadjoke.com/ && git add
+
 [url "git@github.com:"]
 	insteadOf = gh:
 	pushInsteadOf = github:
