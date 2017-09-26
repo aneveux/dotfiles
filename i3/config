@@ -214,7 +214,7 @@ assign [class="Franz"] $WS6
 # /misc
 assign [class="keepassxc"] $WS7
 # /servers
-assign [class="pgAdmin4"] $WS8
+assign [class="pgadmin4"] $WS8
 
 # set floating mode for password like apps
 # If you are using floating windows for anything that is not a password pop-up
