@@ -22,3 +22,5 @@ set -g theme_git_worktree_support yes
 set -g theme_display_cmd_duration yes
 
 fish_default_key_bindings
+
+load-local

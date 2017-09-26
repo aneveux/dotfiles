@@ -154,6 +154,12 @@ Here's a list of all the IDEA plugins I'm installing:
 
 All my configuration is available in a separate github repository though: [https://github.com/aneveux/idea-settings](https://github.com/aneveux/idea-settings). Which is used directly by IntelliJ settings manager in order to synchronize my configuration across all the installation I have.
 
+## 11. Contributing local fish functions
+
+From the `~/dotfiles/local` directory, you can create a `fish` folder containing as much functions as you'd like, and those we'll be loaded while your shell is starting. This means you can have some local functions that you're not sharing on the repository.
+
+An example would be something like: `~/dotfiles/local/fish/validate.fish` which would let you run `validate` from your shell without sharing the actual file. Useful when writing some pretty personal commands :)
+
 # Updates
 
 For updating the submodules, use this command: `git submodule update --remote dotbot`. You can replace dotbot by the name of the submodule you want to update.
