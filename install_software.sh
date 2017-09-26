@@ -14,7 +14,7 @@ chsh -s /usr/bin/fish
 sudo -E pacman -S --needed acpi cowsay dropbox dunst feh filezilla firefox gnupg gpa htop httpie keepassxc lolcat nitrogen playerctl ranger sysstat thunderbird tmux tree w3m workrave xclip
 
 # Tooling
-sudo -E pacman -S --needed ansible corkscrew docker docker-compose docker-machine git jq pgadmin3 qutebrowser ruby ruby-docs
+sudo -E pacman -S --needed ansible corkscrew docker docker-compose docker-machine git jq pgadmin4 qutebrowser ruby ruby-docs
 
 # Editors
 sudo -E pacman -S --needed atom cherrytree gvim vim 
