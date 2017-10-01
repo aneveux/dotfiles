@@ -2,7 +2,7 @@
 	"always_show_minimap_viewport": true,
 	"bold_folder_labels": true,
 	"caret_style": "smooth",
-	"color_scheme": "Packages/Boxy Theme/schemes/Boxy Nova.tmTheme",
+	"color_scheme": "Packages/ayu/ayu-mirage.tmTheme",
 	"default_encoding": "UTF-8",
 	"draw_minimap_border": true,
 	"font_options":
@@ -33,7 +33,7 @@
 	"remember_open_files": false,
 	"save_on_focus_lost": true,
 	"spell_check": false,
-	"theme": "Boxy Nova.sublime-theme",
+	"theme": "ayu-dark.sublime-theme",
 	"theme_accent_mono": true,
 	"theme_button_rounded": true,
 	"theme_find_panel_close_hidden": true,
