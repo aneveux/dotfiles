@@ -11,7 +11,7 @@ sudo -E pacman -S --needed zsh zsh-completions fish thefuck terminator termite
 chsh -s /usr/bin/fish
 
 # Utils
-sudo -E pacman -S --needed acpi cowsay dmenu dropbox dunst feh filezilla firefox gnupg gpa htop httpie keepassxc lolcat nitrogen pacli playerctl ranger sysstat thunderbird tmux tree w3m workrave xclip
+sudo -E pacman -S --needed acpi cowsay dmenu dropbox dunst feh filezilla firefox gnupg gpa htop httpie keepassxc lolcat nitrogen pacli playerctl ranger sysstat termite thunderbird tmux tree w3m workrave xclip
 
 # Tooling
 sudo -E pacman -S --needed ansible corkscrew docker docker-compose docker-machine git jq pgadmin4 qutebrowser ruby ruby-docs
@@ -23,4 +23,4 @@ sudo -E pacman -S --needed atom cherrytree gvim vim
 sudo -E pacman -S --needed numix-manjaro-themes numix-reborn-icon-themes
 
 # AUR
-yaourt --needed --noconfirm -S franz-bin ruby-jekyll ruby-jekyll-gist ruby-jekyll-paginate ruby-jekyll-sitemap ruby-jekyll-watch signal spotify xflux
+yaourt --needed --noconfirm -S franz-bin ruby-jekyll ruby-jekyll-gist ruby-jekyll-paginate ruby-jekyll-sitemap ruby-jekyll-watch signal spotify trello xflux
