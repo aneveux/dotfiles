@@ -36,9 +36,8 @@ bindsym $mod+Shift+q kill
 # start dmenu (a program launcher)
 # bindsym $mod+d exec dmenu_run
 # https://i3wm.org/docs/userguide.html#exec_quoting
-# bindsym $mod+Tab exec "rofi -modi workspace:$HOME/.config/rofi/i3_switch_workspaces.sh,window -show window"
 bindsym $mod+Tab exec "fish -c 'i3-switch'"
-bindsym $mod+d exec "rofi -combi-modi window,drun -show combi -modi combi"
+bindsym $mod+d exec "rofi -combi-modi window,drun -modi combi,ssh,run -show combi"
 
 # free command
 # need i3 > 4.12 for focus to work correctly: https://github.com/i3/i3/issues/2597
