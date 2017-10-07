@@ -38,7 +38,7 @@ bindsym $mod+Shift+q kill
 # https://i3wm.org/docs/userguide.html#exec_quoting
 # bindsym $mod+Tab exec "rofi -modi workspace:$HOME/.config/rofi/i3_switch_workspaces.sh,window -show window"
 bindsym $mod+Tab exec "fish -c 'i3-switch'"
-bindsym $mod+d exec "rofi -modi drun,run -show drun"
+bindsym $mod+d exec "rofi -combi-modi window,drun -show combi -modi combi"
 
 # free command
 # need i3 > 4.12 for focus to work correctly: https://github.com/i3/i3/issues/2597
