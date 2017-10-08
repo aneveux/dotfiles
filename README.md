@@ -109,9 +109,6 @@ My main text editor is Sublime (even if I'm using Atom or vim sometimes). Here a
 - `Ansible`
 - `Ansible Vault`
 - `Ayu`
-- `Boxy Theme`
-- `Boxy Theme Addon - Font Face`
-- `Boxy Theme Addon - Unified Mode`
 - `Color Highlighter`
 - `ColorPicker`
 - `fish-shell`
@@ -119,7 +116,7 @@ My main text editor is Sublime (even if I'm using Atom or vim sometimes). Here a
 - `Git Config`
 - `i3 wm`
 - `JavaScript Ultimate`
-- `MarkdownEditing`
+- `MarkDown Preview`
 - `Origami`
 - `Pretty YAML`
 - `Shell Exec`
