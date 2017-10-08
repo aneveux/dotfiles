@@ -20,4 +20,6 @@ begin
     end
 end
 
+set -xg PATH $PATH (ruby -rubygems -e 'puts Gem.user_dir')/bin
+
 # Bare bind statements in config.fish won't have any effect because it is sourced before the default keybindings are setup
