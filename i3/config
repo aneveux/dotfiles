@@ -36,7 +36,7 @@ bindsym $mod+Shift+q kill
 # start dmenu (a program launcher)
 # bindsym $mod+d exec dmenu_run
 # https://i3wm.org/docs/userguide.html#exec_quoting
-bindsym $mod+Tab exec "rofi -combi-modi window -show combi -modi combi"
+bindsym $mod+Tab exec "fish -c 'i3-switch'"
 bindsym $mod+d exec "rofi -combi-modi window,drun -modi combi,ssh,run -show combi"
 
 # free command
