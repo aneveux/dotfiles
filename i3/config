@@ -38,6 +38,7 @@ bindsym $mod+Shift+q kill
 # https://i3wm.org/docs/userguide.html#exec_quoting
 bindsym $mod+Tab exec "fish -c 'i3-switch'"
 bindsym $mod+d exec "rofi -combi-modi window,drun -modi combi,ssh,run -show combi"
+bindsym $mod+Shift+d exec "rofi -combi-modi ssh -modi ssh -show combi"
 
 # free command
 # need i3 > 4.12 for focus to work correctly: https://github.com/i3/i3/issues/2597
