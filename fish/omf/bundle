@@ -2,5 +2,4 @@ package ansible
 package archlinux
 package thefuck
 theme bobthefish
-theme budspencer
 theme default
