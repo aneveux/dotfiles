@@ -1,18 +1,72 @@
+[commit]
+	gpgsign = true
+
+[push]
+	followTags = true
+	default = current
+
+[pull]
+	default = simple
+
+[fetch]
+	prune = true
+
+[merge]
+	tool = vimdiff
+
+[rebase]
+	autostash = true
+	autosquash = true
+
+[diff]
+	indentHeuristic = true
+	wordRegex = [A-Za-z0-9]+|[^[:space:]]
+
+[log]
+	date = format:%a %b %-d %Y @ %-I:%M %p
+	decorate = yes
+
 [core]
 	excludesfile = ~/.gitignore
 	editor = vim
 	filemode = false
 	trustctime = false
 	autocrlf = input
+	pager = diff-so-fancy | less --tabs=4 -RFX
 
-[fetch]
-	prune = true
+[interactive]
+	diffFilter = diff-so-fancy
 
-[push]
-	default = matching
+[advice]
+	commitBeforeMerge = false
+	detachedHead = false
+	pushUpdateRejected = false
+	statusHints = false
 
-[merge]
-	tool = vimdiff
+[color]
+	status = auto
+	branch = auto
+	interactive = auto
+	ui = true
+
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
+
+[color "diff"]
+	meta = 227
+	frag = magenta bold
+	commit = 227 bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
+
+[color "status"]
+  added = green reverse
+  changed = yellow reverse
+	untracked = red reverse
 
 [mergetool]
 	keeptemporaries = false
@@ -20,25 +74,29 @@
 	prompt = false
 	trustexitcode = false
 
-[color]
-	diff = auto
-	status = auto
-	branch = auto
-	interactive = auto
-	ui = true
-
 [alias]
 	# Basic
+	addp = add -p
 	co = checkout
 	ci = commit
+	ca = commit -a
+	cm = commit -m
+	cam = commit -am
+	amend = commit --amend
 	stat = status
-	st = status
+	st = status -sb
 	br = branch
 	unstage = reset HEAD
 	uns = reset HEAD
+	garbage = gc --prune=now
+	pullr = pull --rebase
+	surr = submodule update --recursive --remote
+	sclone = clone --depth=1
 
 	# Logs
-	l = log --all --pretty=format:'--%h--%ad--%aN'
+	l = log --graph --pretty=custom
+	ll = log --stat --abbrev-commit
+	lc = shortlog --summary --numbered
 	gl = log -16 --color=always --all --graph --topo-order --pretty='format: %Cgreen%h%Creset %s%Cred%d%Creset%n'
 	gll = log --color=always --all --graph --topo-order --pretty='format: %Cgreen%h%Creset %s%Cred%d%Creset%n'
 	lol = log --graph --decorate --pretty=oneline --abbrev-commit
@@ -75,6 +133,14 @@
 	# LOL
 	dad = !curl https://icanhazdadjoke.com/ && git add
 
+[pretty]
+  custom = "%C(magenta)%h%C(red)%d %C(yellow)%ar %C(green)%s %C(yellow)(%an)"
+  #                     ¦        ¦            ¦            ¦             +- author name
+  #                     ¦        ¦            ¦            +- message
+  #                     ¦        ¦            +- date (relative)
+  #                     ¦        +- decorations (branch, heads or tags)
+	#                     +- hash (abbreviated)
+
 [url "git@github.com:"]
 	insteadOf = gh:
 	pushInsteadOf = github:
@@ -87,5 +153,5 @@
 	insteadOf = gst:
 	pushInsteadOf = gist:
 	pushInsteadOf = git://gist.github.com/
-	
+
 [url "git://gist.github.com/"]
