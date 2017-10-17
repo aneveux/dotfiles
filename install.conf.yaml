@@ -52,6 +52,10 @@
     # Git configuration
     ~/.gitattributes: git/gitattributes
     ~/.gitignore: git/gitignore
+    # Atom configuration
+    ~/.atom/config.cson: atom/config.cson
+    ~/.atom/keymap.cson: atom/keymap.cson
+    ~/.atom/packages.cson: atom/packages.cson
     # Sublime Text configuration
     ~/.config/sublime-text-3/Packages/User/Preferences.sublime-settings: sublime/preferences.sublime-settings
     # QuteBrowser configuration

@@ -1,0 +1,2 @@
+'.platform-win32, .platform-linux':
+  'alt-:': 'tree-view:toggle'

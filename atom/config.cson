@@ -1,0 +1,27 @@
+"*":
+  core:
+    autoHideMenuBar: true
+    closeDeletedFileTabs: true
+    projectHome: "/home/antoine/git"
+    restorePreviousWindowsOnStart: "no"
+    telemetryConsent: "no"
+    themes: [
+      "isotope-ui"
+      "monokai"
+    ]
+  editor:
+    fontFamily: "Fira Sans"
+    preferredLineLength: 150
+    softWrap: true
+    softWrapAtPreferredLineLength: true
+  "exception-reporting":
+    userId: "3d70995d-b586-040a-e1db-d8c447315024"
+  "isotope-ui":
+    backgroundGradient: true
+    fontFamily: "Open Sans"
+    minimalMode: true
+  "one-dark-ui":
+    fontSize: 10
+  "pristine-ui": {}
+  welcome:
+    showOnStartup: false
