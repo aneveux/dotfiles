@@ -19,8 +19,6 @@
   - [./install/spf13-vim3.bash, Installing spf13-vim3]
   - [./install/sublime.bash, Installing sublime-text-3]
   - [./install/trello.bash, Installing trello for command line]
-  - [./install/pip.bash, Installing pip]
-  - [./install/ansible-vault.bash, Installing Ansible Vault]
   - [./install/atom-plugins.bash, Installing Atom plugins]
   
 - link:
