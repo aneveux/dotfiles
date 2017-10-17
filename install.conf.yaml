@@ -20,6 +20,7 @@
   - [./install/sublime.bash, Installing sublime-text-3]
   - [./install/trello.bash, Installing trello for command line]
   - [./install/pip.bash, Installing pip]
+  - [./install/ansible-vault.bash, Installing Ansible Vault]
   
 - link:
     # Basic bash configuration
