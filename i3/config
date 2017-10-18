@@ -166,7 +166,7 @@ bar {
     tray_output primary
     position top
     workspace_buttons yes
-    
+
     colors {
         background  #212121
         statusline  #DDDDDD
@@ -212,6 +212,7 @@ assign [class="Firefox"] $WS4
 for_window [class="Spotify"] move to workspace $WS5
 # /blabla
 assign [class="Franz"] $WS6
+assign [class="Keybase"] $WS6
 # /misc
 assign [class="keepassxc"] $WS7
 # /servers
