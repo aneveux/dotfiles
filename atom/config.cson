@@ -1,8 +1,12 @@
 "*":
+  "ansible-vault":
+    path: "/bin/ansible-vault"
+    vault_password_file_forcing: true
+    vault_password_file_path: "~/.ansible-vault/default_vault_pass"
   core:
     autoHideMenuBar: true
     closeDeletedFileTabs: true
-    projectHome: "/home/antoine/git"
+    projectHome: "~/git"
     restorePreviousWindowsOnStart: "no"
     telemetryConsent: "no"
     themes: [
@@ -22,6 +26,5 @@
     minimalMode: true
   "one-dark-ui":
     fontSize: 10
-  "pristine-ui": {}
   welcome:
     showOnStartup: false
