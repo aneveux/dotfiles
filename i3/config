@@ -220,6 +220,8 @@ assign [class="pgadmin4"] $WS8
 # /me
 assign [class="Trello"] $WS9
 
+assign [class="Thunderbird"] $WS10
+
 # set floating mode for password like apps
 # If you are using floating windows for anything that is not a password pop-up
 # dialog or similar, you are not using i3 as intended.
