@@ -4,18 +4,6 @@
 # - Some local scripts to load while fish is starting
 # - All my exports and shortcuts
 
-# Bob The Fish configuration
-
-set -g theme_powerline_fonts yes
-set -g theme_nerd_fonts yes
-set -g theme_display_docker_machine yes
-set -g theme_display_vi no
-set -g theme_display_date yes
-set -g theme_color_scheme gruvbox
-set -g theme_display_git yes
-set -g theme_git_worktree_support yes
-set -g theme_display_cmd_duration yes
-
 # Reset to default key bindings (I don't like the vim stuff in my shell)
 
 fish_default_key_bindings
@@ -45,7 +33,7 @@ set -xg JAVA_OPTS '-Xms128m -Xmx256m'
 
 # Docker related stuff
 
-set -xg DOCKER_DEFAULT tcp://127.0.0.1:2375 
+set -xg DOCKER_DEFAULT tcp://127.0.0.1:2375
 set -xg DOCKER_HOST $DOCKER_DEFAULT
 
 # Ansible related stuff

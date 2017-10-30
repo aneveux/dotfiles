@@ -1,5 +1,5 @@
 package ansible
 package archlinux
 package thefuck
-theme bobthefish
 theme default
+theme sushi
