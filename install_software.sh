@@ -17,7 +17,7 @@ sudo -E pacman -S --needed acpi cowsay diff-so-fancy dmenu dropbox dunst feh fil
 sudo -E pacman -S --needed ansible corkscrew docker docker-compose docker-machine git jq pgadmin4 python qutebrowser ruby ruby-docs tig
 
 # Editors
-sudo -E pacman -S --needed atom cherrytree gvim vim
+sudo -E pacman -S --needed atom cherrytree mousepad vim
 
 # Themes
 sudo -E pacman -S --needed numix-manjaro-themes numix-reborn-icon-themes

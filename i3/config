@@ -3,6 +3,8 @@
 # Variables
 set $mod Mod4
 
+focus_follows_mouse no
+
 # Symbols are copied from there: http://fontawesome.io/cheatsheet/
 set $WS1 "1: "
 set $WS2 "2: "
@@ -66,6 +68,12 @@ bindsym $mod+Ctrl+Shift+j move workspace to output left
 bindsym $mod+Ctrl+Shift+Left move workspace to output left
 bindsym $mod+Ctrl+Shift+m move workspace to output right
 bindsym $mod+Ctrl+Shift+Right move workspace to output right
+
+# Make the currently focused window a scratchpad
+bindsym $mod+Shift+b move scratchpad
+
+# Show the first scratchpad window
+bindsym $mod+b scratchpad show
 
 # split in horizontal orientation
 bindsym $mod+h split h
