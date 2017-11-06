@@ -7,7 +7,7 @@ packages: [
 	"clipboard-plus"
 	"color-picker"
 	"docblockr"
-	"emmet"
+	"editorconfig"
 	"file-icons"
 	"fonts"
 	"git-plus"
