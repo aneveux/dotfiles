@@ -236,8 +236,6 @@ assign [class="Keybase"] $WS6
 assign [class="keepassxc"] $WS7
 # /servers
 assign [class="pgadmin4"] $WS8
-# /me
-assign [class="Trello"] $WS9
 
 assign [class="Thunderbird"] $WS10
 
@@ -259,8 +257,6 @@ exec --no-startup-id franz-bin
 exec --no-startup-id keepassxc
 # Start DropBox
 exec --no-startup-id dropbox
-# Start Trello
-exec --no-startup-id trello
 exec --no-startup-id fluxgui
 exec --no-startup-id dunst
 # Multiple Screens
