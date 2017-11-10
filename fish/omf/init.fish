@@ -58,3 +58,19 @@ abbr dotfiles "cd ~/dotfiles"
 abbr dt "cd ~/Desktop"
 abbr g "cd ~/git"
 abbr tools "cd ~/tools"
+
+function ...
+  cd ../..
+end
+
+function ....
+  cd ../../..
+end
+
+function .....
+  cd ../../../..
+end
+
+function ......
+  cd ../../../../..
+end
