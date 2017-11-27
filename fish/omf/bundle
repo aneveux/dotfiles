@@ -2,4 +2,4 @@ package ansible
 package archlinux
 package thefuck
 theme default
-theme sushi
+theme harleen
