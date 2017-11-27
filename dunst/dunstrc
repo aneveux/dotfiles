@@ -5,14 +5,14 @@
     geometry = "300x5-30+20"
     indicate_hidden = yes
     shrink = no
-    
+
     notification_height = 0
     separator_height = 2
     padding = 8
     horizontal_padding = 8
     frame_width = 3
 
-    frame_color = "#aaaaaa"
+    frame_color = "#f2f2f2"
     transparency = 0
     separator_color = frame
 
@@ -56,19 +56,19 @@
     close_all = ctrl+shift+space
 
 [urgency_low]
-    background = "#222222"
-    foreground = "#888888"
+    background = "#1d2021"
+    foreground = "#f2f2f2"
     timeout = 10
 
 [urgency_normal]
-    background = "#285577"
-    foreground = "#ffffff"
+    background = "#1d2021"
+    foreground = "#03adf1"
     timeout = 10
 
 [urgency_critical]
-    background = "#900000"
-    foreground = "#ffffff"
-    frame_color = "#ff0000"
+    background = "#1d2021"
+    foreground = "#f02093"
+    frame_color = "#a23095"
     timeout = 0
 
 [i3blocks]
