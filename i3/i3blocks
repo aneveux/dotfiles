@@ -1,51 +1,105 @@
-# http://vivien.github.io/i3blocks
+# ---------------------------------------------------
+# i3blocks configuration
+# ----------------------
+#
+# Using i3-gaps built for Manjaro + i3blocks.
+#
+# References:
+# - http://vivien.github.io/i3blocks/
+#
+# Resources:
+# - Colors from: http://www.colourlovers.com/palette/4537580/lisa_frank_rainbow%7E
+# - Font Icons: http://fontawesome.io/cheatsheet/
+#
+
+# ---------------------------------------------------
+# Global Configuration
+# --------------------
+
 command=/usr/lib/i3blocks/$BLOCK_NAME
 markup=pango
 
-full_text=&#xf0da;
+# ---------------------------------------------------
+# Global Look'n'Feel
+# ------------------
+
+# colors
+
+# $pink #f02093
+# $yellow #fdf215
+# $green #abd543
+# $blue #03adf1
+# $purple #a23095
+# $grey #c0c0c0
+# $black #1d2021
+# $darkblack #0c0c0c
+# $white #f2f2f2
+
+color=#f2f2f2
 align=center
+
+# ---------------------------------------------------
+# Global Separator Style
+# ----------------------
+
+full_text=&#xf0da;
 separator_block_width=8
 separator=false
-color=#F3F4F5
+
+# ---------------------------------------------------
+# Free Message Block
+# ------------------
 
 [message_text]
 full_text=&#xf004;
-color=#ff69b4
+color=#f02093
 
 [message]
 command=$HOME/.config/i3/scripts/message
 interval=once
 signal=12
 
+# ---------------------------------------------------
+# Volume Block
+# ------------
+
 [separator]
-color=#777777
+color=#fdf215
 
 [volume_text]
 full_text=&#xf028;
-color=#9fbc00
+color=#abd543
 
 [volume]
 instance=Master
 interval=once
 signal=10
 
+# ---------------------------------------------------
+# Spotify Block
+# -------------
+
 [separator]
-color=#777777
+color=#fdf215
 
 [mediaplayer_text]
 full_text=&#xf1bc;
-color=#9fbc00
+color=#abd543
 
-[mediaplayer]
-instance=spotify
+[spotify]
+command=~/.config/i3/scripts/spotify.py
 interval=5
 
+# ---------------------------------------------------
+# Memory Block
+# ------------
+
 [separator]
-color=#777777
+color=#fdf215
 
 [memory_text]
 full_text=&#xf1fe;
-color=#9fbc00
+color=#abd543
 
 [memory]
 label=R:
@@ -56,37 +110,53 @@ label=S:
 instance=swap
 interval=30
 
+# ---------------------------------------------------
+# CPU Block
+# ---------
+
 [separator]
-color=#777777
+color=#fdf215
 
 [cpu_text]
 full_text=&#xf085;
-color=#9fbc00
+color=#abd543
 
 [cpu_usage]
 interval=1
 
+# ---------------------------------------------------
+# Date Block
+# ----------
+
 [separator]
-color=#777777
+color=#fdf215
 
 [date_text]
 full_text=&#xf073;
-color=#9fbc00
+color=#abd543
 
 [date]
 command=date '+%d/%m/%Y'
 interval=360
 
+# ---------------------------------------------------
+# Time Block
+# ----------
+
 [separator]
-color=#777777
+color=#fdf215
 
 [time_text]
 full_text=&#xf017;
-color=#9fbc00
+color=#abd543
 
 [time]
 command=date '+%H:%M:%S' # | sed 's/:/h/'
 interval=1
+
+# ---------------------------------------------------
+# Dunst Block
+# -----------
 
 [dunst]
 command=$HOME/.config/i3/scripts/notify

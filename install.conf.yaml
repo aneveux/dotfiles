@@ -43,6 +43,7 @@
     ~/.config/termite/config: termite/config
     # Window Manager configuration
     ~/.config/i3: i3
+    ~/.config/i3blocks/config: i3/i3blocks
     # Desktop tooling configuration
     ~/.config/rofi: rofi
     ~/.config/dunst: dunst

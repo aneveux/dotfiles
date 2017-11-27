@@ -1,11 +1,48 @@
-# Please see http://i3wm.org/docs/userguide.html for a complete reference!
+# ---------------------------------------------------
+# i3 configuration
+# ----------------
+#
+# Using i3-gaps built for Manjaro + i3blocks.
+#
+# References:
+# - https://github.com/Airblader/i3
+# - http://i3wm.org/docs/userguide.html
+# - http://vivien.github.io/i3blocks/
+# - https://wiki.archlinux.org/index.php/I3
+# - https://www.reddit.com/r/archlinux/comments/2k2aym/how_can_i_get_i3_to_properly_do_multimonitor/?st=j62ony4b&sh=06185201
+#
+# Resources:
+# - Colors from: http://www.colourlovers.com/palette/4537580/lisa_frank_rainbow%7E
+# - Font Icons: http://fontawesome.io/cheatsheet/
+# - `xprop` for information about the windows
+# - `lxappearance` for setting some visual look'n'feel
+#
+# Take care of:
+# - https://i3wm.org/docs/userguide.html#command_criteria
+# - https://github.com/i3/i3/issues/2060
+#
 
-# Variables
+# ---------------------------------------------------
+# Variables Declaration
+# ---------------------
+
 set $mod Mod4
 
-focus_follows_mouse no
+set $pink #f02093
+set $yellow #fdf215
+set $green #abd543
+set $blue #03adf1
+set $purple #a23095
 
-# Symbols are copied from there: http://fontawesome.io/cheatsheet/
+set $grey #c0c0c0
+set $black #1d2021
+set $darkblack #0c0c0c
+set $white #f2f2f2
+
+# ---------------------------------------------------
+# Defining Workspaces
+# -------------------
+
 set $WS1 "1: "
 set $WS2 "2: "
 set $WS3 "3: "
@@ -17,91 +54,109 @@ set $WS8 "8: "
 set $WS9 "9: "
 set $WS10 "10: "
 
-# Font for window titles. Will also be used by the bar unless a different font
-# is used in the bar {} block below.
-font pango:DejaVu Sans Mono, FontAwesome 10
+# ---------------------------------------------------
+# Global Configuration
+# --------------------
 
-# Use Mouse+$mod to drag floating windows to their wanted position
-floating_modifier $mod
+focus_follows_mouse no
 
-# Automatic back-and-forth when switching to the current workspace
 # https://i3wm.org/docs/userguide.html#_automatic_back_and_forth_when_switching_to_the_current_workspace
 workspace_auto_back_and_forth yes
 
-# Delaying urgency hint reset on workspace change
+# https://i3wm.org/docs/userguide.html#floating_modifier
+floating_modifier $mod
+
 # https://i3wm.org/docs/userguide.html#_delaying_urgency_hint_reset_on_workspace_change
 force_display_urgency_hint 500 ms
 
-# kill focused window
+# reload
+bindsym $mod+Shift+c reload
+# restart i3
+bindsym $mod+Shift+r restart
+
+# exit i3
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# ---------------------------------------------------
+# Window Management
+# -----------------
+
+# quit / exit / kill
 bindsym $mod+Shift+q kill
 
-# start dmenu (a program launcher)
-# bindsym $mod+d exec dmenu_run
-# https://i3wm.org/docs/userguide.html#exec_quoting
-bindsym $mod+Tab exec "fish -c 'i3-switch'"
-bindsym $mod+d exec "rofi -combi-modi window,drun -modi combi,ssh,run -show combi"
-bindsym $mod+Shift+d exec "rofi -combi-modi ssh -modi ssh -show combi"
-
-# free command
-# need i3 > 4.12 for focus to work correctly: https://github.com/i3/i3/issues/2597
-bindsym $mod+colon exec i3-input -P ":"
-
-# change focus
+# focus management
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
-# move focused window
+# move windows
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-bindsym $mod+Ctrl+j workspace prev
-bindsym $mod+Ctrl+Left workspace prev
-bindsym $mod+Ctrl+m workspace next
-bindsym $mod+Ctrl+Right workspace next
-
-# move workspace to another output
-bindsym $mod+Ctrl+Shift+j move workspace to output left
-bindsym $mod+Ctrl+Shift+Left move workspace to output left
-bindsym $mod+Ctrl+Shift+m move workspace to output right
-bindsym $mod+Ctrl+Shift+Right move workspace to output right
-
-# Make the currently focused window a scratchpad
-bindsym $mod+Shift+b move scratchpad
-
-# Show the first scratchpad window
-bindsym $mod+b scratchpad show
-
-# split in horizontal orientation
-bindsym $mod+h split h
-
-# split in vertical orientation
-bindsym $mod+v split v
-
-# enter fullscreen mode for the focused container
+# fullscreen
 bindsym $mod+f fullscreen toggle
 
-# change container layout (stacked, tabbed, toggle split)
+# window layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
 bindsym $mod+z layout tabbed
 bindsym $mod+e layout toggle split
 
-# toggle tiling / floating
+# toggle floating
 bindsym $mod+Shift+space floating toggle
 
-# change focus between tiling / floating windows
+# toggle focus between floating & tiling windows
 bindsym $mod+space focus mode_toggle
 
-# focus the parent container
+# focus parent or child
 bindsym $mod+Shift+a focus parent
-
-# focus the child container
 bindsym $mod+a focus child
 
-# switch to workspace
+# jump to urgent window
+bindsym $mod+x [urgent=latest] focus
+
+# make window a scratchpad
+bindsym $mod+Shift+b move scratchpad
+
+# show scratchpad window
+bindsym $mod+b scratchpad show
+
+# ---------------------------------------------------
+# Resize Mode
+# -----------
+
+set $resize_mode "resize"
+
+# resize shortcut
+bindsym $mod+r mode $resize_mode
+
+mode $resize_mode {
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+# ---------------------------------------------------
+# Workspace Management
+# --------------------
+
+# workspace selection
+bindsym $mod+Ctrl+Left workspace prev
+bindsym $mod+Ctrl+Right workspace next
+
+# horizontal split
+bindsym $mod+h split h
+
+# vertical split
+bindsym $mod+v split v
+
+# workspace direct switch
 bindsym $mod+ampersand workspace $WS1
 bindsym $mod+eacute workspace $WS2
 bindsym $mod+quotedbl workspace $WS3
@@ -113,7 +168,7 @@ bindsym $mod+underscore workspace $WS8
 bindsym $mod+ccedilla workspace $WS9
 bindsym $mod+agrave workspace $WS10
 
-# move focused container to workspace
+# move window to workspace
 bindsym $mod+Shift+ampersand move container to workspace $WS1
 bindsym $mod+Shift+eacute move container to workspace $WS2
 bindsym $mod+Shift+quotedbl move container to workspace $WS3
@@ -125,143 +180,176 @@ bindsym $mod+Shift+underscore move container to workspace $WS8
 bindsym $mod+Shift+ccedilla move container to workspace $WS9
 bindsym $mod+Shift+agrave move container to workspace $WS10
 
-# reload the configuration file
-bindsym $mod+Shift+c reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
-# exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
-
+# rename workspace
 bindsym $mod+t exec i3-input -F 'rename workspace to "%s"' -P 'New name: '
 
-# https://wiki.archlinux.org/index.php/I3#Jump_to_urgent_window
-bindsym $mod+x [urgent=latest] focus
+# move workspaces to other outputs (ie. screens)
+bindsym $mod+Ctrl+Shift+Left move workspace to output left
+bindsym $mod+Ctrl+Shift+Right move workspace to output right
 
-# Mode Launcher
+# ---------------------------------------------------
+# Program Launchers & Switchers
+# -----------------------------
+
+# custom dmenu script for switching through open applications
+bindsym $mod+Tab exec "fish -c 'i3-switch'"
+
+# rofi for running applications or ssh-ing to machines
+bindsym $mod+d exec "rofi -combi-modi window,drun -modi combi,ssh,run -show combi"
+bindsym $mod+Shift+d exec "rofi -combi-modi ssh -modi ssh -show combi"
+
+# i3-input for i3 commands interpretation
+bindsym $mod+colon exec i3-input -P ":"
+
+# ---------------------------------------------------
+# Launcher Mode
+# -------------
+
 set $launcher_mode "launcher"
+
 bindsym $mod+Return mode $launcher_mode
+
 mode $launcher_mode {
   bindsym a exec atom, mode "default"
   bindsym f exec firefox, mode "default"
   bindsym i exec idea, mode "default"
   bindsym k exec keepassxc, mode "default"
   bindsym s exec spotify, mode "default"
-  bindsym t exec trello, mode "default"
   bindsym p exec pgadmin4, mode "default"
   bindsym Return exec terminator, mode "default"
 
   bindsym Escape mode "default"
 }
 
-# resize window (you can also use the mouse for that)
-set $resize_mode "resize"
-# bind modes shortcuts
-bindsym $mod+r mode $resize_mode
-mode $resize_mode {
-        # These bindings trigger as soon as you enter the resize mode
+# ---------------------------------------------------
+# Look'n'Feel
+# -----------
 
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+new_window pixel 0
+hide_edge_borders smart
 
-        # back to normal: Enter or Escape
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
+font pango: FontAwesome, DejaVu Sans Mono 9
 
-# Tryin' some look'n'feel
-hide_edge_borders none
-new_window pixel 3
+smart_borders on
+smart_gaps on
+gaps inner 10
+gaps outer 0
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
+for_window [class="^.*"] border pixel 1
+
+# colors
+# class                 border      backgr      text      indicator
+client.focused          $green      $green      $white    $grey
+client.focused_inactive $blue       $blue       $grey     $black
+client.unfocused        $purple     $black      $grey     $black
+client.urgent           $pink       $pink       $white    $pink
+client.placeholder      $black      $darkblack  $white    $black
+client.background       $black
+
+# ---------------------------------------------------
+# i3bar with i3blocks
+# -------------------
+
 bar {
-    status_command i3blocks -c $HOME/.config/i3/i3blocks
+    status_command i3blocks
+    i3bar_command i3bar -t { \
+      "border_top": 0, \
+      "border_right": 0, \
+      "border_bottom": 5, \
+      "border_left": 0 \
+    }
+
     tray_output primary
+    tray_padding 5
+
     position top
+    height 22
+    font pango: FontAwesome, DejaVu Sans Mono 9
+
     workspace_buttons yes
 
     colors {
-        background  #212121
-        statusline  #DDDDDD
-        separator   #666666
-        # class             border  backgr. text
-        focused_workspace   #2B83A6 #2B83A6 #FFFFFF
-        active_workspace    #212121 #212121 #FFFFFF
-        inactive_workspace  #212121 #212121 #86888C
-        urgent_workspace    #2F343A #D64E4E #FFFFFF
+        background  $black
+        statusline  $white
+        separator   $yellow
+        # class             border  backgr  text
+        focused_workspace   $green  $green  $black
+        active_workspace    $black  $black  $white
+        inactive_workspace  $black  $black  $grey
+        urgent_workspace    $pink   $pink   $white
+        binding_mode        $black  $blue   $white
     }
 }
 
+# ---------------------------------------------------
+# Applications Assignements
+# -------------------------
 
-# class                 border  backgr. text    indicator
-client.focused          #2B83A6 #2B83A6 #FFFFFF #DDDDDD
-client.focused_inactive #212121 #212121 #86888C #292D2E
-client.unfocused        #212121 #212121 #86888C #292D2E
-client.urgent           #2F343A #D64E4E #FFFFFF #D64E4E
-client.placeholder      #212121 #0C0C0C #FFFFFF #212121
-client.background #212121
-
-hide_edge_borders smart
-
-# Assign Applications
-# https://i3wm.org/docs/userguide.html#command_criteria
-# assign application to workspace
-# use xprop to found information about the app
-# WARN: https://github.com/i3/i3/issues/2060
-
-# /shell
+# WS1: Terminals
 assign [class="Terminator"] $WS1
 assign [class="Termite"] $WS1
-# /text
+
+# WS2: Text Editors
 assign [class="Sublime_text"] $WS2
 assign [class="Atom"] $WS2
 assign [class="Gvim"] $WS2
-# /dev
+
+# WS3: IDE
 assign [class="jetbrains"] $WS3
 assign [class="Toolbox"] $WS3
-# /web
+
+# WS4: Browsers
 assign [class="Firefox"] $WS4
-# /media
+
+# WS5: Media
 for_window [class="Spotify"] move to workspace $WS5
-# /blabla
+
+# WS6: Social / Chat
 assign [class="Franz"] $WS6
 assign [class="Keybase"] $WS6
-# /misc
+
+# WS7: Keepass / Security
 assign [class="keepassxc"] $WS7
-# /servers
+
+# WS8: Server tooling / Database Management
 assign [class="pgadmin4"] $WS8
 
+# WS10: Mail client
 assign [class="Thunderbird"] $WS10
 
-# set floating mode for password like apps
-# If you are using floating windows for anything that is not a password pop-up
-# dialog or similar, you are not using i3 as intended.
+# enabling floating for particular popup windows
 for_window [class="Pinentry"] floating enable
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="bubble"] floating enable
+for_window [window_role="task_dialog"] floating enable
+for_window [window_role="Preferences"] floating enable
+for_window [window_type="dialog"] floating enable
+for_window [window_type="menu"] floating enable
 
-# AutoStart
-# Update notifier
+# ---------------------------------------------------
+# Applications Autostart
+# ----------------------
+
+# system
+
+# update notifier
 exec --no-startup-id pamac-tray
 # https://forum.manjaro.org/t/pamac-manager-issues/9813/26
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 # numlock on
 exec --no-startup-id numlockx on
-# Start Franz
+# wallpaper
+exec --no-startup-id feh --bg-center $HOME/.wlppr/wallpaper.png
+
+# user
+
 exec --no-startup-id franz-bin
-# Start KeepassXC
 exec --no-startup-id keepassxc
-# Start DropBox
 exec --no-startup-id dropbox
 exec --no-startup-id fluxgui
 exec --no-startup-id dunst
-# Multiple Screens
-# https://www.reddit.com/r/archlinux/comments/2k2aym/how_can_i_get_i3_to_properly_do_multimonitor/?st=j62ony4b&sh=06185201
-# Using a local script for having different configuration over different PCs
+
+# hacks
+
+# used to have different configurations on different PCs
 exec --no-startup-id $HOME/dotfiles/local/monitor_configuration
-# For wallpaper management
-exec --no-startup-id feh --bg-center $HOME/.wlppr/wallpaper.png
