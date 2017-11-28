@@ -252,12 +252,7 @@ client.background       $black
 
 bar {
     status_command i3blocks
-    i3bar_command i3bar -t { \
-      "border_top": 0, \
-      "border_right": 0, \
-      "border_bottom": 5, \
-      "border_left": 0 \
-    }
+    i3bar_command i3bar -t
 
     tray_output primary
     tray_padding 5
@@ -276,7 +271,7 @@ bar {
         focused_workspace   $green  $green  $black
         active_workspace    $black  $black  $white
         inactive_workspace  $black  $black  $grey
-        urgent_workspace    $pink   $pink   $white
+        urgent_workspace    $pink   $pink   $black
         binding_mode        $black  $blue   $white
     }
 }
