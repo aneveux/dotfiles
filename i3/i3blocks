@@ -23,6 +23,13 @@ markup=pango
 # Global Look'n'Feel
 # ------------------
 
+# borders
+
+border_top=0
+border_left=0
+border_right=0
+border_bottom=2
+
 # colors
 
 # $pink #f02093
@@ -59,12 +66,12 @@ command=$HOME/.config/i3/scripts/message
 interval=once
 signal=12
 
+[separator]
+color=#c0c0c0
+
 # ---------------------------------------------------
 # Volume Block
 # ------------
-
-[separator]
-color=#fdf215
 
 [volume_text]
 full_text=&#xf028;
@@ -74,13 +81,11 @@ color=#abd543
 instance=Master
 interval=once
 signal=10
+border=#fdf215
 
 # ---------------------------------------------------
 # Spotify Block
 # -------------
-
-[separator]
-color=#fdf215
 
 [mediaplayer_text]
 full_text=&#xf1bc;
@@ -89,13 +94,11 @@ color=#abd543
 [spotify]
 command=~/.config/i3/scripts/spotify.py
 interval=5
+border=#abd543
 
 # ---------------------------------------------------
 # Memory Block
 # ------------
-
-[separator]
-color=#fdf215
 
 [memory_text]
 full_text=&#xf1fe;
@@ -104,18 +107,17 @@ color=#abd543
 [memory]
 label=R:
 interval=30
+border=#a23095
 
 [memory]
 label=S:
 instance=swap
 interval=30
+border=#a23095
 
 # ---------------------------------------------------
 # CPU Block
 # ---------
-
-[separator]
-color=#fdf215
 
 [cpu_text]
 full_text=&#xf085;
@@ -123,13 +125,11 @@ color=#abd543
 
 [cpu_usage]
 interval=1
+border=#03adf1
 
 # ---------------------------------------------------
 # Date Block
 # ----------
-
-[separator]
-color=#fdf215
 
 [date_text]
 full_text=&#xf073;
@@ -138,13 +138,11 @@ color=#abd543
 [date]
 command=echo "`date +'%a %d %b'`"; [[ -z "${BLOCK_BUTTON}" ]] || gsimplecal &
 interval=360
+border=#c0c0c0
 
 # ---------------------------------------------------
 # Time Block
 # ----------
-
-[separator]
-color=#fdf215
 
 [time_text]
 full_text=&#xf017;
@@ -153,6 +151,7 @@ color=#abd543
 [time]
 command=date '+%H:%M:%S' # | sed 's/:/h/'
 interval=1
+border=#c0c0c0
 
 # ---------------------------------------------------
 # Dunst Block

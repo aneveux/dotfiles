@@ -258,7 +258,7 @@ bar {
     tray_padding 5
 
     position top
-    height 22
+    height 25
     font pango: FontAwesome, DejaVu Sans Mono 9
 
     workspace_buttons yes
@@ -267,6 +267,7 @@ bar {
         background  $black
         statusline  $white
         separator   $yellow
+
         # class             border  backgr  text
         focused_workspace   $green  $green  $black
         active_workspace    $black  $black  $white
