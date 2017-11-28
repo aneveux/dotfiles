@@ -136,7 +136,7 @@ full_text=&#xf073;
 color=#abd543
 
 [date]
-command=date '+%d/%m/%Y'
+command=echo "`date +'%a %d %b'`"; [[ -z "${BLOCK_BUTTON}" ]] || gsimplecal &
 interval=360
 
 # ---------------------------------------------------

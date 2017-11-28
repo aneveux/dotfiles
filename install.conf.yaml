@@ -65,6 +65,8 @@
     # SSH configuration
     ~/.config/systemd/user/ssh-agent.service: systemd/ssh-agent.service
     ~/.pam_environment: ssh/pam_environment
+    # GSimpleCal configuration
+    ~/.config/gsimplecal: gsimplecal
     # Misc. scripts
     ~/.manjaro_update.sh: scripts/manjaro_update.sh
     # X
