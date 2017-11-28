@@ -186,6 +186,8 @@ Here are links towards really interesting tools/resources I'm using:
 - [Boxy Theme](https://packagecontrol.io/packages/Boxy%20Theme) - favourite theme for sublime,
 - [i3](https://i3wm.org/) - the Window Manager I was searching for,
 - [Rofi](https://davedavenport.github.io/rofi/) - a powerful window switcher,
+- [i3-gaps](https://github.com/Airblader/i3) - a fork of i3 I'm using for advanced features,
+- [i3blocks-gaps](https://github.com/Airblader/i3blocks-gaps) - a fork of i3blocks for i3gaps,
 
 And some useless, but absolutely necessary resources:
 
@@ -201,5 +203,6 @@ I really wanted to thank all those really nice projects/people for the great hel
 - [GitHub does dotfiles](https://dotfiles.github.io/)
 - [Mathias Bynens' dotfiles](https://github.com/mathiasbynens/dotfiles)
 - [dotbot](https://github.com/anishathalye/dotbot)
+- [Airblader's dotfiles](https://github.com/Airblader/dotfiles-manjaro)
 
 As well as all the really nice tools I already mentionned before :)
