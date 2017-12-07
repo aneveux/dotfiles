@@ -216,7 +216,7 @@ mode $launcher_mode {
   bindsym k exec keepassxc, mode "default"
   bindsym s exec spotify, mode "default"
   bindsym p exec pgadmin4, mode "default"
-  bindsym Return exec terminator, mode "default"
+  bindsym Return exec termite, mode "default"
 
   bindsym Escape mode "default"
 }
@@ -336,6 +336,7 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id numlockx on
 # wallpaper
 exec --no-startup-id feh --bg-center $HOME/.wlppr/wallpaper.png
+exec --no-startup-id xcompmgr
 
 # user
 

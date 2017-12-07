@@ -20,6 +20,7 @@
   - [./install/sublime.bash, Installing sublime-text-3]
   - [./install/trello.bash, Installing trello for command line]
   - [./install/atom-plugins.bash, Installing Atom plugins]
+  - [ranger --copy-config=scope, Setup ranger to preview images]
 
 - link:
     # Basic bash configuration

@@ -11,7 +11,7 @@ sudo -E pacman -S --needed zsh zsh-completions fish thefuck terminator termite
 chsh -s /usr/bin/fish
 
 # Utils
-sudo -E pacman -S --needed acpi cowsay diff-so-fancy dmenu dropbox dunst feh filezilla firefox gnupg gpa gsimplecal htop httpie keepassxc lolcat nitrogen pacli playerctl ranger sysstat termite thunderbird tmux tree w3m workrave xclip
+sudo -E pacman -S --needed acpi cowsay diff-so-fancy dmenu dropbox dunst feh filezilla firefox gnupg gpa gsimplecal htop httpie keepassxc lolcat nitrogen pacli playerctl ranger sysstat termite thunderbird tmux tree w3m workrave xclip xcompmgr
 
 # Tooling
 sudo -E pacman -S --needed ansible chromium corkscrew docker docker-compose docker-machine git jq pgadmin4 python qutebrowser ruby ruby-docs tig

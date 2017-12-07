@@ -26,6 +26,7 @@
   [[default]]
     [[[child1]]]
       parent = window0
+      profile = default
       type = Terminal
     [[[window0]]]
       parent = ""
@@ -33,8 +34,7 @@
 [plugins]
 [profiles]
   [[default]]
-    background_color = "#282828"
-    background_darkness = 0.95
+    background_type = transparent
     copy_on_selection = True
     cursor_color = "#f2f2f2"
     cursor_shape = ibeam
