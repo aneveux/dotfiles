@@ -216,7 +216,7 @@ mode $launcher_mode {
   bindsym k exec keepassxc, mode "default"
   bindsym s exec spotify, mode "default"
   bindsym p exec pgadmin4, mode "default"
-  bindsym Return exec termite, mode "default"
+  bindsym Return exec terminator, mode "default"
 
   bindsym Escape mode "default"
 }
