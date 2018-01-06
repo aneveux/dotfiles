@@ -335,7 +335,7 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 # numlock on
 exec --no-startup-id numlockx on
 # wallpaper
-exec --no-startup-id feh --bg-center $HOME/.wlppr/wallpaper.png
+exec --no-startup-id feh --bg-center $HOME/.wlppr/wallpaper.jpg
 exec --no-startup-id compton -b -f --backend glx --vsync opengl-swc --glx-no-stencil --paint-on-overlay --config $HOME/.config/compton.conf
 
 # user
