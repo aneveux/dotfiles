@@ -1,6 +1,7 @@
 "*":
   "ansible-vault":
-    path: "/bin/ansible-vault"
+    path: "/usr/bin/ansible-vault"
+    vault_automatic_de_and_encrypt: true
     vault_password_file_forcing: true
     vault_password_file_path: "~/.ansible-vault/default_vault_pass"
   core:
