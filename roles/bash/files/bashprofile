@@ -1,0 +1,11 @@
+#                    /)
+#           /\___/\ ((
+#           \`@_@'/  ))
+#           {_:Y:.}_//
+# ----------{_}^-'{_}-------------------------
+# ~/.bash_profile
+# Ensures bashrc is sourced.
+#
+
+[[ -f ~/.extend.bash_profile ]] && . ~/.extend.bash_profile
+[[ -f ~/.bashrc ]] && . ~/.bashrc

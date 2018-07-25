@@ -1,0 +1,23 @@
+---
+- name: "Installing git and associated tooling."
+  pacman: name={{item}} state=present
+  with_items:
+    - git
+    - diff-so-fancy
+  become: True
+
+- name: "Deploying a global gitignore file."
+  copy:
+    src: files/gitignore
+    dest: ~/.gitignore
+
+- name: "Deploying a global gitattributes file."
+  copy:
+    src: files/gitattributes
+    dest: ~/.gitattributes
+
+- name: "Deploying git configuration file."
+  template:
+    src: templates/gitconfig.j2
+    dest: ~/.gitconfig
+    backup: yes

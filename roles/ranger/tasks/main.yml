@@ -1,0 +1,13 @@
+---
+- name: "Installing ranger."
+  pacman: name=ranger state=present
+  become: True
+
+- name: "Configuring ranger to allow images preview."
+  shell: "ranger --copy-config=scope"
+  changed_when: no
+
+- name: "Deploying ranger configuration file."
+  copy:
+    src: files/rc.conf
+    dest: ~/.config/ranger/rc.conf

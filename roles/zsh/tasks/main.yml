@@ -1,0 +1,47 @@
+---
+- name: "Installing zsh and associated tooling."
+  pacman: name={{item}} state=present
+  with_items:
+    - zsh
+    - most
+    - zsh-syntax-highlighting
+    - bat # TODO to be moved in some "shell stuff"
+  become: True
+
+- name: "Installing oh-my-zsh."
+  shell: creates=~/.oh-my-zsh sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh) ||:"
+  changed_when: no
+
+- name: "Searching for zsh-syntax-highlighting script."
+  shell: find /usr -name zsh-syntax-highlighting.zsh 2>/dev/null
+  become: True
+  check_mode: no
+  register: zsh_syntax_highlighting_dir
+  changed_when: no
+
+- name: "Deploying zsh configuration file."
+  template:
+    src: templates/zshrc.j2
+    dest: ~/.zshrc backup=yes
+
+- name: "Creating zsh configuration directories."
+  file: path={{item}} state=directory
+  with_items:
+    - ~/.zfunctions
+    - ~/.zsh
+    - ~/.zshrc.d
+
+- name: "Deploying zsh additional configuration files."
+  copy:
+    src: files/zshrc.d/
+    dest: ~/.zshrc.d/
+
+- name: "Deploying custom zsh functions."
+  copy:
+    src: files/zfunctions/
+    dest: ~/.zfunctions/
+
+- name: "Cloning zsh-ausuggestions for installation."
+  git:
+    repo: https://github.com/zsh-users/zsh-autosuggestions
+    dest: ~/.zsh/zsh-autosuggestions

@@ -1,0 +1,26 @@
+---
+- name: "Creating user groups."
+  group:
+    name: "{{ item.name }}"
+    system: "{{ item.system }}"
+    state: present
+  with_items:
+    - name: "wheel"
+      system: yes
+    - name: "{{ user.id }}"
+      system: no
+  loop_control:
+    label: "{{ item.name }}"
+
+- name: "Creating main user."
+  user:
+    name: "{{ user.id }}"
+    comment: "{{ user.name }}"
+    group: "{{ user.id }}"
+    groups: "wheel,audio,video"
+    password: "{{ user.password }}"
+    shell: "{{ user.preferences.shell }}"
+    createhome: yes
+    update_password: on_create
+    state: present
+  become: True

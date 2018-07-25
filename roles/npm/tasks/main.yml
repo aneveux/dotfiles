@@ -1,0 +1,10 @@
+---
+- name: "Installing npm."
+  pacman: name=npm state=present
+  become: True
+
+- name: "Deploying npm configuration file."
+  template:
+    src: templates/npmrc.j2
+    dest: ~/.npmrc
+  when: system.proxy.enabled

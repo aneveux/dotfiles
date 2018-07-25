@@ -1,0 +1,50 @@
+---
+- name: "Installing openssh."
+  pacman: name=openssh state=present
+  become: True
+
+- name: "Deploying ssh configuration file."
+  copy:
+    src: files/config
+    dest: ~/.ssh/config
+    backup: yes
+
+- name: "Searching for local ssh configuration files."
+  stat: path="{{ local_location }}/ssh/config.d"
+  register: _ssh_local_configuration
+
+- name: "Deploying local ssh configuration files."
+  copy:
+    src: "{{ local_location }}/ssh/config.d"
+    dest: ~/.ssh/
+  when: _ssh_local_configuration.stat.exists
+
+- name: "Creating c_master directory."
+  file:
+    path: ~/.ssh/c_master
+    state: directory
+
+- name: "Deploying ssh pam environment."
+  copy:
+    src: files/pam
+    dest: ~/.pam_environment
+    backup: yes
+
+- name: "Creating ssh-agent service configuration directory."
+  file:
+    path: ~/.config/systemd/user
+    state: directory
+
+- name: "Deploying ssh-agent service configuration."
+  copy:
+    src: files/ssh-agent.service
+    dest: ~/.config/systemd/user/ssh-agent.service
+    backup: yes
+
+- name: "Enabling ssh-agent service."
+  systemd:
+    daemon_reload: yes
+    user: yes
+    name: ssh-agent.service
+    enabled: yes
+    state: started

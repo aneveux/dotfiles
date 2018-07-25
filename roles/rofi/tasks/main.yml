@@ -1,0 +1,31 @@
+---
+- name: "Installing rofi."
+  packer: name=rofi state=present
+
+- name: "Creating rofi configuration directory."
+  file:
+    path: ~/.config/rofi
+    state: directory
+
+- name: "Deploying powermenu configuration script."
+  copy:
+    src: files/powermenu.sh
+    dest: ~/.config/rofi/powermenu.sh
+    mode: 0755
+
+- name: "Creating .Xresources.d configuration directory."
+  file:
+    path: ~/.Xresources.d
+    state: directory
+
+- name: "Deploying rofi configuration file."
+  copy:
+    src: files/rofi
+    dest: ~/.Xresources.d/rofi
+
+- name: "Initializing rofi from Xresources configuration file."
+  lineinfile:
+    path: ~/.Xresources
+    create: yes
+    state: present
+    line: '#include ".Xresources.d/rofi"'

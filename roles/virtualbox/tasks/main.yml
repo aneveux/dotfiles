@@ -1,0 +1,33 @@
+---
+- name: "Installing VirtualBox additions and associated tooling."
+  pacman: name={{item}} state=present
+  with_items:
+    - linux-headers
+    - virtualbox-guest-dkms
+    - virtualbox-guest-utils
+  become: True
+  when: (ansible_virtualization_type == 'virtualbox') and (ansible_virtualization_role == 'guest')
+
+- name: "Appending group vboxsf to main user groups."
+  user:
+    name: "{{ user.id }}"
+    groups:
+      - vboxsf
+    append: yes
+  become: True
+  when: (ansible_virtualization_type == 'virtualbox') and (ansible_virtualization_role == 'guest')
+
+- name: "Enabling vboxservice."
+  service:
+    name: "vboxservice.service"
+    enabled: "yes"
+  become: True
+  when: (ansible_virtualization_type == 'virtualbox') and (ansible_virtualization_role == 'guest')
+
+- name: "Lauching VirtualBox client from xprofile."
+  lineinfile:
+    path: ~/.xprofile
+    create: yes
+    state: present
+    line: 'VBoxClient-all'
+  when: (ansible_virtualization_type == 'virtualbox') and (ansible_virtualization_role == 'guest')

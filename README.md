@@ -1,193 +1,87 @@
-![](https://img.shields.io/badge/ponies-%E2%9D%A4-ff69b4.svg) ![](https://img.shields.io/badge/%E2%94%AC%E2%94%80%E2%94%80%E2%94%AC%E2%97%A1%EF%BE%89(%C2%B0%20--%C2%B0%EF%BE%89)-4-brightgreen.svg) ![](https://img.shields.io/badge/Totally%20Spies%3F-%5Co%5C%20%5Co%2F%20%2Fo%2F-yellow.svg)
+# My Dotfiles.
 
-# .files / environment bootstrap
+![Archlinux Logo](https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Archlinux-vert-dark.svg/1280px-Archlinux-vert-dark.svg.png)
 
-Hi there! This whole repository contains all the resources I'm using in order to install and configure my development environment.
+Hi people!
 
-There's basically nothing too fancy, but I'm glad it helps in case you're searching to do something a bit similar. Otherwise, it'll help me at least ;)
+This repository contains all the things I'm using in order to set up my development environment! There's nothing too crazy in it, but I'd be really happy if it could help you in case you'd like to set up kind of a similar environment!
 
-## 1. Installing Operating System
+Otherwise, it'll actually help me provisioning my laptops!
 
-I'm using [Manjaro](https://manjaro.org/), a [Linux](https://en.wikipedia.org/wiki/Linux) distribution based on [Arch](https://www.archlinux.org/).
+## Operating System.
 
-It's fairly easy to install, and you'll get all the information from their [Download Page](https://manjaro.org/get-manjaro/).
+I've been converted to [Archlinux](https://www.archlinux.org/) by [@ThomasFerreira](https://github.com/ThomasFerreira/) and I'm really happy about it!
 
-## 2. Cloning dotfiles
+This repository doesn't intend to deal with the whole Operating System installation, so I'll instead let you rely on the [awesome installation guide from arch wiki](https://wiki.archlinux.org/index.php/Installation_guide)!
 
-In case you don't have `git` installed already, you can simply install it quickly from `pacman` through `sudo pacman -S git`, but it should be present by default I believe.
+But as soon as you have a running system (by the end of the wiki page actually), you'll be able to use this repository! There is a small playbook provided in the `playbooks` directory allowing to let you deal with the *locale* and *user* creation. If you never played with Ansible, have a look at the `install.sh` script to get examples of how to use the `ansible-playbook` command.
 
-Then, the only thing you want to do is to clone that project in your `HOME` folder (basically `~/`, which means something like `/home/<your username>`).
+Once your user is created, you can directly run the installation script :)
 
-You can do that with `git clone git@github.com:aneveux/dotfiles.git`
+## Customizing the dotfiles.
 
-## 3. Installing software
+I'm using a particular variables loader allowing you to override some properties of the playbooks! All you have to do is create a `local` folder at the root of the repository, and put a `local.yml` file in it. You can then customize values used to provision the system!
 
-From the dotfiles directory, you can execute the following script: `./install_software.sh` which will rely on `pacman` and `yaourt` in order to install all the software I'm using on my Linux installation (or most of it at least).
+Here's an example of a `local/local.yml` file you could be using:
 
-Among lots of others, it'll take care of installing [i3](https://i3wm.org/), the Window Manager I'm using. It'll also change the shell to [Fish Shell](http://fishshell.com/).
+```yml
+---
+usr:
+  id: john_doe
+  name: John Doe
+  mail: john@doe.org
+  gpg_key: ABCDEFXXXXX
+  preferences:
+    shell: /usr/bin/zsh
+    xsession: i3
+    keymap: fr
+    locales:
+      - "en_US.UTF-8"
 
-Do not hesitate to have a look at the script to see all the things which will be installed.
-
-## 4. Customizing some configuration
-
-There are a few things you can customize easily from this repository:
-
-- Update the `me` file to match with your user id, it's used only for `zsh` though, which I'm not using that much.
-- Create a `local` folder in the dotfiles repository, it's ignored by git, and will allow you to store some local configuration values.
-- Create a `gitconfig_user` file in that `local` folder, in which you can store the `user` section of your `~/.gitconfig` file. It allows you to keep that local. (the `gitconfig` file will be generated later on).
-- Create a `monitor_configuration` file in the `local` folder, in which you can specify `xrandr` commands to be executed by `i3` while starting up to configure your monitors.
-- Create a `sshconfig` file in the `local` folder, in which you can add any personal SSH configuration you'd have.
-
-As an example, here's how the `gitconfig_user` could look:
-
-```
-[user]
-    name = <Your Name Here>
-    email = <Your Mail Here>
-```
-
-## 5. Provisionning dotfiles (and a bit more)
-
-I'm relying on [dotbot](https://github.com/anishathalye/dotbot) for that. You can have a look at `install.conf.yaml` for more information on what's done.
-
-It'll basically install some stuff (a few fonts, zsh, vim plugins, sdkman, etc.), and then create symlinks to all the dotfiles which are required to configure those tools.
-
-The `gitconfig` file will be generated during that step as well.
-
-In order to actually perform this step, simply run `./install.sh` from the dotfiles folder.
-
-## 6. Configuring SSH (additional steps)
-
-In order to load automatically my SSH keys in a running agent, and to share those with all the software I'm using, you'll need a small additional SSH configuration. Some files will be populated by dotbot, and then you'll need to execute:
-
-```shell
-$ systemctl --user enable ssh-agent.service
-$ systemctl --user start ssh-agent.service
+sys:
+  proxy:
+    enabled: False
+    host: none
+    port: 0
+    noproxy: none
+  preferences:
+    sudo_nopassword: yes
 ```
 
-You can verify that it's working properly by executing:
+Basically, it allows you to customize your user's information, as well as the shell you'd like to use, or the keymap and locales to use.
 
-```shell
-$ systemctl --user status ssh-agent.service
-```
+Please note that it is a bit linked to what's in the playbooks though. For example, I'm only provisioning i3 as a window manager, so if you put gnome or kde here, it won't work instead you actually install and configure it yourself ;)
 
-Your `~/.ssh/config` file will be generated by the provisioning, and will contain some configuration allowing to remember the keys you're using. You can complete your SSH config with a local file, see information above for more information.
+Do not hesitate to have a look at `inventory/localhost.yml` as well. It is the main inventory for these playbooks, and contains all the information used to provision the environment.
 
-All of this will allow to start an SSH agent while your environment is starting up, and then store the keys which are loaded in that agent when they're used for the first time.
+## Provisioning the environment.
 
-## 7. Installing SDKs
+This repository comes with a small shell script allowing to easily run the Ansible playbooks! Simply run `./install.sh all` to provision everything in one command line!
 
-I'm relying on [SDKMan](http://sdkman.io/) for installing all the SDKs I need. It'll be installed directly by dotbot, so now you only need to use it for installing what you need.
+If you'd like to only provision a particular tool, you can simply name it like this: `./install.sh git` for example.
 
-On my side, I'm using it for:
+The provided shell script allows to dry run the execution as well so you can have a look at the changes it would cause on your environment.
 
-```shell
-$ sdk install java
-$ sdk install kotlin
-$ sdk install groovy
-$ sdk install maven
-$ sdk install gradle
-```
+## Updating some files.
 
-Note that it'll also take care of managing all the required environment variables such as `JAVA_HOME` and so on.
+These playbooks are idempotent. Which means you can run them again and again and they won't do anything if nothing has changed on your system.
 
-## 8. Installing omf plugins
+To update anything, simply do the modifications in this repository, and run the provisioning again, it'll simply modify the things which changed ;)
 
-I'm using [Oh My Fish!](https://github.com/oh-my-fish/oh-my-fish) for some fish themes and plugins. The installation is managed by the dotfiles provisioning, but you'll have to run `omf install` in order to download all the plugins and themes. All the configuration is already set up by the dotfiles.
+## Resources I use.
 
-## 9. Installing Sublime
-
-My main text editor is Sublime (even if I'm using Atom or vim sometimes). Here are the steps to follow to install and configure it:
-
-1. Download it from here: [Sublime Text 3](http://www.sublimetext.com/3)
-2. Extract the archive content in `~/tools`: `tar jxf sublime_text_3_....tar.bz2 -C ~/tools/sublime_text_3`
-3. Install Package Control for Sublime Text 3 from here: [Package Control](https://packagecontrol.io/installation)
-4. Packages I install from Package Control:
-
-- `A File Icon`
-- `AceJump`
-- `Ansible`
-- `Ansible Vault`
-- `Ayu`
-- `Color Highlighter`
-- `ColorPicker`
-- `fish-shell`
-- `Git`
-- `Git Config`
-- `i3 wm`
-- `JavaScript Ultimate`
-- `MarkDown Preview`
-- `Origami`
-- `Pretty YAML`
-- `Shell Exec`
-
-Then the whole configuration is made by the dotfiles.
-
-## 10. Installing IntelliJ IDEA
-
-I'm using [IntelliJ IDEA](https://www.jetbrains.com/idea/) as my IDE. Download it directly from the [JetBrains website](https://www.jetbrains.com/idea/download/#section=linux).
-
-I'm not using the version available in AUR cause I like to update it as soon as possible and always use the latest version possible, which is delayed a bit by the AUR packaging.
-
-Here's a list of all the IDEA plugins I'm installing:
-
-- `AceJump`
-- `BashSupport`
-- `CheckMate`
-- `Docker Integration`
-- `Error-Prone compiler integration`
-- `FindBugs-IDEA`
-- `GitToolBox`
-- `.ignore`
-- `GitLab Projects`
-- `Ansible Support`
-- `Java8 Generators`
-- `Kotlin`
-- `Scala`
-- `Lombok`
-- `Markdown Support`
-- `Maven Helper`
-- `Presentation Assistant`
-- `Upsource Integration`
-
-All my configuration is available in a separate github repository though: [https://github.com/aneveux/idea-settings](https://github.com/aneveux/idea-settings). Which is used directly by IntelliJ settings manager in order to synchronize my configuration across all the installation I have.
-
-## 11. Contributing local fish functions
-
-From the `~/dotfiles/local` directory, you can create a `fish` folder containing as much functions as you'd like, and those we'll be loaded while your shell is starting. This means you can have some local functions that you're not sharing on the repository.
-
-An example would be something like: `~/dotfiles/local/fish/validate.fish` which would let you run `validate` from your shell without sharing the actual file. Useful when writing some pretty personal commands :)
-
-# Updates
-
-For updating the submodules, use this command: `git submodule update --remote dotbot`. You can replace dotbot by the name of the submodule you want to update.
-
-If you modify the files which are already symlinked, you have nothing to do for updating your environment.
-
-If you add more files, simply run again that `./install.sh` script and it'll set up the links for you.
-
-# Resources
-
-Here are links towards really interesting tools/resources I'm using:
-
-- [Manjaro](https://manjaro.org/) - my favourite Linux distro,
-- [Fish Shell](http://fishshell.com/) - friendliest shell I met,
-- [Oh My Fish!](https://github.com/oh-my-fish/oh-my-fish) - like fish wasn't easy enough,
-- [ZSH](http://www.zsh.org/) - my former shell... Keeping it for memories,
-- [Oh My ZSH!](http://ohmyz.sh/) - making zsh easier,
-- [Powerlevel9k](https://github.com/bhilburn/powerlevel9k) - prompt I was using in ZSH,
-- [SDKMan](http://sdkman.io/install.html) - easiest way to manage SDKs,
-- [Nerd Fonts](http://nerdfonts.com/) - biggest fancy fonts collection I found,
-- [Vim Bundles by spf13](http://vim.spf13.com/) - simply all the things I want in vim,
+- [Archlinux](https://www.archlinux.org/) - My favorite Linux distribution for a development environment!
+   - Note that you could have a look at [Manjaro](https://manjaro.org/) if you struggle with Arch installation ;)
+- [zsh](http://www.zsh.org/) - The shell I'm using, even though I'm still switching to fish once in a while.
+- [oh-my-zsh](http://ohmyz.sh/) - Making zsh a bit easier to extend :)
+- [fish shell](http://fishshell.com/) - A really friendly shell I'm sometimes using.
+- [oh-my-fish](https://github.com/oh-my-fish/oh-my-fish) - Kinda similar to *oh-my-zsh* but for fish.
+- [git](https://git-scm.com/) - I love Git.
+- [i3-gaps](https://github.com/Airblader/i3) - A fork of *i3wm* which I love. I never found a better window manager ever.
+- [atom](https://atom.io/) - I'd like to use vim more but I'm still kinda bad with it.
+- [terminal sexy](http://terminal.sexy/) - For nice terminal color schemes
+- [rofi](https://davedavenport.github.io/rofi/) - A powerful window switcher!
 - [IntelliJ IDEA](https://www.jetbrains.com/idea/) - my favourite IDE,
-- [Sublime Text](http://www.sublimetext.com/3) - my favourite text editor,
-- [Terminal Sexy](http://terminal.sexy/) - for generating color themes,
-- [Idea Color Themes](http://color-themes.com/?view=index) - color themes for IntelliJ,
-- [Boxy Theme](https://packagecontrol.io/packages/Boxy%20Theme) - favourite theme for sublime,
-- [i3](https://i3wm.org/) - the Window Manager I was searching for,
-- [Rofi](https://davedavenport.github.io/rofi/) - a powerful window switcher,
-- [i3-gaps](https://github.com/Airblader/i3) - a fork of i3 I'm using for advanced features,
-- [i3blocks-gaps](https://github.com/Airblader/i3blocks-gaps) - a fork of i3blocks for i3gaps,
 
 And some useless, but absolutely necessary resources:
 
@@ -195,14 +89,14 @@ And some useless, but absolutely necessary resources:
 - [Shields](http://shields.io/) - cause opensource projects are all doing it,
 - [Commit Message](http://whatthecommit.com/) - when you lack inspiration,
 
-# Thanks!
+## Thanks!
 
-I really wanted to thank all those really nice projects/people for the great help/inspiration:
+I really wanted to thank a lot all those really nice people/projects for the great inspiration:
 
 - [Jean-Marc Desprez](https://github.com/jmdesprez)
+- [Thomas Ferreira](https://github.com/ThomasFerreira)
 - [GitHub does dotfiles](https://dotfiles.github.io/)
 - [Mathias Bynens' dotfiles](https://github.com/mathiasbynens/dotfiles)
 - [dotbot](https://github.com/anishathalye/dotbot)
 - [Airblader's dotfiles](https://github.com/Airblader/dotfiles-manjaro)
-
-As well as all the really nice tools I already mentionned before :)
+- [eoli3n](https://github.com/eoli3n/dotfiles)

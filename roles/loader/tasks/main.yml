@@ -1,0 +1,12 @@
+---
+- block:
+    - name: "Searching for local variables."
+      stat:
+        path: "{{ local_configuration }}"
+      register: _local_variables_file_lookup
+
+    - name: "Loading local variables."
+      include_vars: "{{ local_configuration }}"
+      when: _local_variables_file_lookup.stat.exists
+
+  check_mode: no

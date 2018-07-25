@@ -1,14 +1,36 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
-set -e
+cd "$( dirname "${BASH_SOURCE[0]}" )"
 
-CONFIG="install.conf.yaml"
-DOTBOT_DIR="dotbot"
+command -v ansible-playbook >/dev/null 2>&1 || { echo >&2 "I require ansible but it's not installed.  Aborting."; exit 1; }
 
-DOTBOT_BIN="bin/dotbot"
-BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+if [[ -z ${1+x} ]]
+then
+    echo "Please choose a tag to install as param:"
+    ansible-playbook -i "inventory/localhost.yaml" -c local install.yml --list-tags
+    exit 1
+fi
 
-cd "${BASEDIR}"
-git submodule update --init --recursive "${DOTBOT_DIR}"
+echo "### LIST TASKS #################################################################"
 
-"${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" "${@}"
+ansible-playbook -i "inventory/localhost.yaml" -c local install.yml --list-tasks -t $1 | grep TAGS | egrep -v 'play|debug|include_role' | sed 's/\ *\(.*\)TAGS.*$/\1/'
+
+echo "Do you want to dryrun ? (y/N)"
+read ok
+ok=${ok:-N}
+
+if [[ "$ok" == "y" ]]
+then
+    echo "### DRYRUN ###################################################################"
+    ansible-playbook -i "inventory/localhost.yaml" -c local install.yml --ask-become-pass -CD -t $1 || exit 1
+fi
+
+echo "Do you want to install ? (Y/n)"
+read ok
+ok=${ok:-Y}
+
+if [[ "$ok" == "Y" ]]
+then
+    echo "### RUN ####################################################################"
+    ansible-playbook -i "inventory/localhost.yaml" -c local install.yml --ask-become-pass -t $1 || exit 1
+fi

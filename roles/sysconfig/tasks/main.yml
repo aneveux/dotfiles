@@ -1,0 +1,33 @@
+---
+- name: "Adding wheel group to the sudoers."
+  lineinfile:
+    path: /etc/sudoers
+    state: present
+    regexp: ^%wheel ALL=
+    line: "%wheel ALL=(ALL){{ ' NOPASSWD:' if system.preferences.sudo_nopassword else '' }} ALL"
+    validate: /usr/sbin/visudo -cf %s
+  become: True
+
+- name: "Enabling pacman easter egg."
+  lineinfile:
+    path: /etc/pacman.conf
+    state: present
+    insertafter: "^{{ '[options]' | regex_escape() }}"
+    line: "ILoveCandy"
+  become: True
+
+- name: "Executing dirty hack for rendering siji fonts."
+  file:
+    state: absent
+    path: /etc/fonts/conf.d/70-no-bitmaps.conf
+  become: True
+
+- name: "Creating git folder."
+  file:
+    path: ~/git
+    state: directory
+
+- name: "Creating tools folder."
+  file:
+    path: ~/tools
+    state: directory

@@ -1,0 +1,23 @@
+---
+- name: "Installing polybar tools dependencies."
+  pacman: name={{item}} state=present
+  with_items:
+    - wireless_tools
+  become: True
+
+- name: "Installing polybar and associated tooling."
+  packer: name={{item}} state=present
+  with_items:
+    - siji-git
+    - polybar-git
+
+- name: "Creating polybar configuration directory"
+  file:
+    path: ~/.config/polybar
+    state: directory
+
+- name: "Deploying polybar custom configuration files."
+  copy:
+    src: files/
+    dest: ~/.config/polybar/
+    mode: 0755

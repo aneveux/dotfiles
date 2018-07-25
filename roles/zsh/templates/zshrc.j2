@@ -1,0 +1,91 @@
+##############################################################
+#                    /)                                      #
+#           /\___/\ ((                                       #
+#           \`@_@'/  ))                                      #
+#           {_:Y:.}_//                                       #
+# ----------{_}^-'{_}----------------------------------------#
+#  _____  _____ __  __   __________  _   __________________  #
+# /__  / / ___// / / /  / ____/ __ \/ | / / ____/  _/ ____/  #
+#   / /  \__ \/ /_/ /  / /   / / / /  |/ / /_   / // / __    #
+#  / /_____/ / __  /  / /___/ /_/ / /|  / __/ _/ // /_/ /    #
+# /____/____/_/ /_/   \____/\____/_/ |_/_/   /___/\____/     #
+#                                                            #
+##############################################################
+
+# -----------------------------------------------------------
+# oh-my-zsh configuration
+# -----------------------------------------------------------
+
+export ZSH=~/.oh-my-zsh
+export ZSH_THEME=robbyrussell
+plugins=(git python colored-man-pages colorize sprunge web-search)
+
+# -----------------------------------------------------------
+# zsh cache and history configuration
+# -----------------------------------------------------------
+
+ZSHCACHE=${HOME}/.cache/zsh
+mkdir -p "${ZSHCACHE}"
+
+HISTFILE=${ZSHCACHE}/history
+HISTSIZE=4096
+SAVEHIST=2048
+
+# -----------------------------------------------------------
+# zsh global options
+# -----------------------------------------------------------
+
+setopt interactivecomments
+setopt append_history
+setopt auto_cd
+setopt correct_all
+setopt extended_glob
+setopt no_match
+setopt notify
+setopt print_exit_value
+
+# -----------------------------------------------------------
+# zsh functions loading
+# -----------------------------------------------------------
+
+fpath=( "$HOME/.zfunctions" $fpath )
+
+autoload -U compinit && compinit -d "${ZSHCACHE}/compdump"
+autoload -U select-word-style && select-word-style bash
+autoload -U zmv
+autoload -U extract
+
+# -----------------------------------------------------------
+# zsh features configuration
+# -----------------------------------------------------------
+
+zstyle ':completion:*:processes' command 'ps xfo pid,cmd'
+
+# -----------------------------------------------------------
+# zsh path configuration
+# -----------------------------------------------------------
+
+typeset -U path
+path=(~/bin ~/.local/bin $path[@])
+
+# -----------------------------------------------------------
+# source zshrc.d
+# -----------------------------------------------------------
+
+zshrcd="$HOME/.zshrc.d"
+if [ -d "$zshrcd" ]; then
+  zfiles=("$zshrcd/"*.zsh)
+  for zf in $zfiles; do
+    [ -r $zf ] && . $zf
+  done
+fi
+
+# -----------------------------------------------------------
+# zsh autosuggestions
+# -----------------------------------------------------------
+
+source {{ zsh_syntax_highlighting_dir.stdout }}
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
+
+source $ZSH/oh-my-zsh.sh

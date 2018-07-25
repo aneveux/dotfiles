@@ -1,0 +1,17 @@
+---
+- name: "Installing feh."
+  pacman: name=feh state=present
+  become: True
+
+- name: "Copying wallpaper to home folder."
+  copy:
+    src: files/wallpaper.jpg
+    dest: ~/wallpaper.jpg
+
+- name: "Setting up wallpaper from xprofile."
+  blockinfile:
+   path: ~/.xprofile
+   create: True
+   marker: "### {mark} DOTFILES wallpaper ###"
+   content: |
+    feh --bg-center ~/wallpaper.jpg

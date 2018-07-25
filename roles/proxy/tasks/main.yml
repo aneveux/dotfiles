@@ -1,0 +1,22 @@
+---
+- name: "Deploying proxy configuration file."
+  template:
+    src: templates/proxy.j2
+    dest: ~/.proxy
+  when: system.proxy.enabled
+
+- name: "Sourcing proxy configuration file from xprofile."
+  lineinfile:
+    path: ~/.xprofile
+    create: yes
+    state: present
+    line: '[[ -s ~/.proxy ]] && source ~/.proxy'
+  when: system.proxy.enabled
+
+- name: "Configuring sudoers to keep the proxy configuration."
+  lineinfile:
+    path: /etc/sudoers
+    state: present
+    line: Defaults env_keep += "http_proxy https_proxy no_proxy HTTP_PROXY HTTPS_PROXY NO_PROXY"
+    validate: /usr/sbin/visudo -cf %s
+  become: True

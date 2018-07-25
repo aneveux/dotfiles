@@ -1,0 +1,38 @@
+---
+- hosts: all
+  tasks:
+    - name: "Limiting the playbooks' execution to Archlinux."
+      fail:
+        msg: "{{ ansible_distribution }} is not supported by these playbooks!"
+      when: ansible_distribution != "Archlinux"
+
+- hosts: all
+  roles:
+    - { role: loader, tags: always}
+    - { role: proxy, tags: proxy }
+    - { role: locale, tags: locale }
+    - { role: sysconfig, tags: sysconfig }
+    - { role: bash, tags: bash }
+    - { role: packages-system, tags: packages-system }
+    - { role: vim, tags: vim }
+    - { role: zsh, tags: zsh }
+    - { role: fish, tags: fish }
+    - { role: screen, tags: screen }
+    - { role: ssh, tags: ssh }
+    - { role: npm, tags: npm }
+    - { role: packages-common, tags: packages-common }
+    - { role: cursor, tags: cursor }
+    - { role: gtk, tags: gtk }
+    - { role: i3-wm, tags: i3-wm }
+    - { role: compton, tags: compton }
+    - { role: polybar, tags: polybar }
+    - { role: rofi, tags: rofi }
+    - { role: dunst, tags: dunst }
+    - { role: termite, tags: termite }
+    - { role: lightdm, tags: lightdm }
+    - { role: ranger, tags: ranger }
+    - { role: git, tags: git }
+    - { role: atom, tags: atom }
+    - { role: idea, tags: idea }
+    - { role: wlppr, tags: wlppr }
+    - { role: virtualbox, tags: virtualbox }

@@ -1,0 +1,1 @@
+[[ -s ~/.proxy ]] && source ~/.proxy

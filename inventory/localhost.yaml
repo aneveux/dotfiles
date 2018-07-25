@@ -1,0 +1,132 @@
+---
+all:
+  hosts:
+    localhost:
+      ansible_connection: local
+
+      dotfiles_location: "~/dotfiles"
+      local_location: "{{ dotfiles_location }}/local"
+      local_configuration: "{{ local_location }}/local.yml"
+
+      user:
+        id: "{{ usr.id | default('john_doe') }}"
+        name: "{{ usr.name | default('John Doe') }}"
+        mail: "{{ usr.mail | default('john@doe.org') }}"
+        password: "{{ usr.password | default(omit) }}"
+        gpg_key: "{{ usr.gpg_key | default(omit) }}"
+        preferences:
+          shell: "{{ usr.preferences.shell | default('/usr/bin/zsh') }}"
+          xsession: "{{ usr.preferences.xsession | default('i3') }}"
+          keymap: "{{ usr.preferences.keymap | default('fr') }}"
+          locales: "{{ usr.preferences.locales | default('en_US.UTF-8') }}"
+
+      system:
+        proxy:
+          enabled: "{{ sys.proxy.enabled | default('false') }}"
+          host: "{{ sys.proxy.host | default('') }}"
+          port: "{{ sys.proxy.port | default('') }}"
+          noproxy: "{{ sys.proxy.noproxy | default ('') }}"
+        preferences:
+          sudo_nopassword: "{{ sys.preferences.sudo_nopassword | default('yes') }}"
+
+      sys_packages:
+        - name: "deps_packer"
+          pacman_packages:
+            - "jshon"
+            - "expac"
+            - "pygmentize"
+        - name: "deps_drivers"
+          pacman_packages:
+            - "acpi"
+            - "alsa-utils"
+            - "gvfs"
+        - name: "tools_basics"
+          pacman_packages:
+            - "curl"
+            - "gnupg" # TODO to be moved
+            - "gpa" # TODO to be moved
+            - "httpie"
+            - "jq"
+            - "tree"
+            - "thefuck"
+            - "yajl"
+            - "gnome-keyring"
+        - name: "tools_terminal"
+          pacman_packages:
+            - "cowsay"
+            - "lolcat"
+            - "playerctl"
+            - "tig"
+            - "w3m"
+        - name: "monitoring"
+          pacman_packages:
+            - "htop"
+            - "sysstat"
+
+      common_packages:
+        - name: "desktop_environment"
+          pacman_packages:
+            - "xorg-server"
+            - "xorg-xinit"
+            - "lxappearance-gtk3"
+            - "xorg-xrdb"
+            - "xorg-xfd"
+        - name: "fonts"
+          pacman_packages:
+            - "ttf-hack"
+            - "ttf-anonymous-pro"
+            - "ttf-droid"
+            - "ttf-freefont"
+            - "ttf-inconsolata"
+            - "ttf-liberation"
+            - "otf-ipafont"
+          aur_packages:
+            - "ttf-font-awesome"
+            - "ttf-unifont"
+            - "ttf-font-icons"
+            - "nerd-fonts-complete"
+            - "otf-font-awesome-4"
+            - "ttf-ms-fonts"
+        - name: "deps_tools"
+          pacman_packages:
+            - "slop"
+            - "maim"
+            - "feh"
+            - "xclip"
+            - "corkscrew"
+            - "mousepad"
+            - "scrot"
+            - "dmenu"
+            - "connman"
+            - "imagemagick"
+            - "archlinux-keyring"
+            - "polkit-gnome"
+          aur_packages:
+            - "gnome-ssh-askpass2"
+        - name: "apps"
+          pacman_packages:
+            - "chromium"
+            - "firefox"
+            - "keepassxc"
+            - "docker" # TODO to be moved
+            - "docker-compose" # TODO to be moved
+            - "docker-machine" # TODO to be moved
+            - "java-openjfx"
+            - "jdk8-openjdk"
+            - "pgadmin4"
+            - "ruby"
+            - "filezilla"
+            - "maven"
+            - "gradle"
+          aur_packages:
+            - "dropbox"
+            - "keybase-bin"
+            - "spotify"
+            - "xflux"
+            #- "franz-bin"
+            #- "pacli"
+            #- "ruby-jekyll" # TODO to be moved
+            #- "ruby-jekyll-gist" # TODO to be moved
+            #- "ruby-jekyll-paginate" # TODO to be moved
+            #- "ruby-jekyll-sitemap" # TODO to be moved
+            #- "ruby-jekyll-watch" # TODO to be moved

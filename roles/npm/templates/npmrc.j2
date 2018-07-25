@@ -1,0 +1,4 @@
+{% if system.proxy.enabled %}
+proxy="{{ system.proxy.host }}:{{ system.proxy.port }}"
+https-proxy="{{ system.proxy.host }}:{{ system.proxy.port }}"
+{% endif %}
