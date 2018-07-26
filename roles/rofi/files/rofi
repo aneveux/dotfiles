@@ -8,32 +8,35 @@ rofi.color-active:                   argb:00000000,  #6699CC , argb:00000000,  #
 rofi.color-window:                   argb:D0202020,  #f3f99d ,  #f3f99d
 rofi.separator-style:                solid
 
+rofi.width:                          33
+rofi.padding:                        30
 rofi.hide-scrollbar:                 true
-rofi.opacity:                        70
-rofi.font:                           hack 12
-rofi.width:                          100
-rofi.bw:                             0
+rofi.borderwidth:                    0
+rofi.columns:                        1
 rofi.lines:                          15
-rofi.location:			                 2
-rofi.yoffset:                        23
-rofi.padding:                        10
+rofi.separator-style:                solid
+rofi.font:                           Hack 10
+rofi.bw:                             0
+rofi.opacity:                        70
+rofi.location:                       0
+rofi.yoffset:                        -250
 
-rofi.display-run:		                 shell
-rofi.display-drun:		               app
+rofi.display-run:                    shell
+rofi.display-drun:                   app
 
 rofi.fixed-num-lines:                false
 
-rofi.terminal:             termite
-rofi.ssh-client:           ssh
-rofi.ssh-command:          {terminal} -e "{ssh-client} {host}"
-rofi.run-command:          {cmd}
-rofi.run-shell-command:    {terminal} -e {cmd}
+rofi.terminal:                       termite
+rofi.ssh-client:                     ssh
+rofi.ssh-command:                    {terminal} -e "{ssh-client} {host}"
+rofi.run-command:                    {cmd}
+rofi.run-shell-command:              {terminal} -e {cmd}
 
 rofi.levenshtein-sort:               true
 rofi.case-sensitive:                 false
 rofi.fuzzy:                          true
 rofi.tokenize:                       true
-rofi.disable-history: 				 true
+rofi.disable-history:                true
 
 rofi.parse-hosts:                    true
 rofi.parse-known-hosts:              true
