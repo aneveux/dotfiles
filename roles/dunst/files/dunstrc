@@ -1,72 +1,69 @@
 [global]
-    monitor = 0
-    follow = mouse
+font = Hack 8
 
-    geometry = "300x5-30+20"
-    indicate_hidden = yes
-    shrink = no
+markup = yes
+plain_text = no
 
-    notification_height = 0
-    separator_height = 2
-    padding = 8
-    horizontal_padding = 8
-    frame_width = 3
+format = "<i>%s</i>\n%b"
+alignment = center
+word_wrap = yes
+ignore_newline = no
+show_indicators = no
 
-    frame_color = "#f2f2f2"
-    transparency = 0
-    separator_color = frame
+sort = no
+indicate_hidden = yes
+bounce_freq = 0
+show_age_threshold = -1
+stack_duplicates = yes
+hide_duplicates_count = yes
+idle_threshold = 0
 
-    sort = yes
-    idle_threshold = 120
+monitor = 0
+follow = none
+geometry = "300x50-15+49"
+shrink = no
+transparency = 5
+line_height = 1
+separator_height = 2
+padding = 6
+horizontal_padding = 6
+frame_width = 3
 
-    font = hack 8
-    line_height = 0
+icon_position = off
+max_icon_size = 80
+icon_folders = /usr/share/icons/Paper/16x16/mimetypes/:/usr/share/icons/Paper/48x48/status/:/usr/share/icons/Paper/16x16/devices/:/usr/share/icons/Paper/48x48/notifications/:/usr/share/icons/Paper/48x48/emblems/
 
-    markup = full
-    format = "<b>%s</b>\n%b"
-    alignment = left
+sticky_history = yes
+history_length = 15
+startup_notification = false
 
-    show_age_threshold = 60
+frame_color = "#d8d8d8"
+separator_color = "#d8d8d8"
 
-    word_wrap = yes
-    ignore_newline = no
-    stack_duplicates = true
-    hide_duplicate_count = false
-    show_indicators = yes
-
-    icon_position = off
-    max_icon_size = 32
-    icon_folders = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
-
-    sticky_history = yes
-    history_length = 20
-
-    dmenu = /usr/bin/dmenu -p dunst:
-    browser = /usr/bin/firefox -new-tab
-    always_run_script = true
-
-    title = Dunst
-    class = Dunst
-    startup_notification = false
-
-    force_xinerama = false
+dmenu = /usr/bin/dmenu -p dunst:
+browser = /usr/bin/firefox -new-tab
 
 [shortcuts]
-    close = ctrl+space
-    close_all = ctrl+shift+space
 
-[urgency_low]
-    background = "#1d2021"
-    foreground = "#f2f2f2"
-    timeout = 10
+close = ctrl+space
+close_all = ctrl+shift+space
+history = ctrl+grave
+context = ctrl+shift+period
 
-[urgency_normal]
-    background = "#1d2021"
-    foreground = "#03adf1"
-    timeout = 10
+[base16_low]
+msg_urgency = low
+background = "#333344"
+foreground = "#65568a"
+timeout = 4
 
-[urgency_critical]
-    background = "#1d2021"
-    foreground = "#f02093"
-    frame_color = "#a23095"
-    timeout = 0
+[base16_normal]
+msg_urgency = normal
+background = "#474160"
+foreground = "#d8d8d8"
+timeout = 6
+
+[base16_critical]
+msg_urgency = critical
+background = "#f84547"
+foreground = "#e8e8e8"
+timeout = 8
