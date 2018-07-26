@@ -16,12 +16,6 @@
     line: "ILoveCandy"
   become: True
 
-- name: "Executing dirty hack for rendering siji fonts."
-  file:
-    state: absent
-    path: /etc/fonts/conf.d/70-no-bitmaps.conf
-  become: True
-
 - name: "Creating git folder."
   file:
     path: ~/git
