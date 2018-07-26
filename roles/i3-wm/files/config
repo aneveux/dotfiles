@@ -48,14 +48,14 @@ set $white #f2f2f2
 # -------------------
 
 set $WS1 "1:"
-set $WS2 "2:"
+set $WS2 "2:"
 set $WS3 "3:"
-set $WS4 "4:"
-set $WS5 "5:"
+set $WS4 "4:"
+set $WS5 "5:"
 set $WS6 "6:"
 set $WS7 "7:"
 set $WS8 "8:"
-set $WS9 "9:"
+set $WS9 "9:"
 set $WS10 "10:"
 
 # ---------------------------------------------------
@@ -235,18 +235,17 @@ new_window pixel
 hide_edge_borders smart
 
 for_window [class="^.*"] border pixel 0
-gaps inner 4
-gaps outer -4
+gaps inner 10
+gaps outer 0
 smart_gaps on
 smart_borders on
 
-# colors
-# class                 border  backgr. text    indicator child_border
-client.focused          #FFFFFF #FFFFFF #000000 #000000   #000000
-client.focused_inactive #333333 #5f676a #ffffff #484e50   #000000
-client.unfocused        #333333 #222222 #888888 #292d2e   #222222
-client.urgent           #2f343a #900000 #ffffff #900000   #900000
-client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+# class				border		background	text		indicator	child border
+client.focused          	#		#		#	 	#		#
+client.unfocused        	#		#		#		#		#
+client.focused_inactive 	#		#		#		#		#
+client.urgent           	#		#		#		#		#
+client.background #
 
 # ---------------------------------------------------
 # Applications Assignements
