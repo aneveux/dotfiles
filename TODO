@@ -3,6 +3,8 @@
   - Java + JAVA_HOME
   - GPG Client
   - Maven + Its configuration
+  - NPM with NVM. Don't forget proxy management.
+  - vscode.
 
 - Enhance existing roles for:
   - Managing Git authors depending on paths
@@ -11,4 +13,4 @@
 - Write about prerequisites (ansible, python, git)
 - Integrate compton properly
 
-- Rework the colors + polybar - https://www.reddit.com/r/unixporn/comments/8monwi/i3gapspolybar_my_first_attempt_at_ricing/
+- Check for a new prompt.
