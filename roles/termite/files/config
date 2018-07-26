@@ -20,34 +20,38 @@ allow_bold = true
 [colors]
 background = rgba(32,32,32,0.9)
 
-# Black + DarkGrey
-color0 = #282a36
-color8 = #686868
+# special
+foreground =   #d3d0c8
+cursorColor =  #d3d0c8
 
-# DarkRed + Red
-color1 = #ff5c57
-color9 = #ff5c57
+# black
+color0 =       #2d2d2d
+color8 =       #747369
 
-# DarkGreen + Green
-color2 = #5af78e
-color10 = #5af78e
+# red
+color1 =       #f2777a
+color9 =       #f2777a
 
-# DarkYellow + Yellow
-color3 = #f3f99d
-color11 = #f3f99d
+# green
+color2 =       #99cc99
+color10 =      #99cc99
 
-# DarkBlue + Blue
-color4 = #57c7ff
-color12 = #57c7ff
+# yellow
+color3 =       #ffcc66
+color11 =      #ffcc66
 
-# DarkMagenta + Magenta
-color5 = #ff6ac1
-color13 = #ff6ac1
+# blue
+color4 =       #6699cc
+color12 =      #6699cc
 
-# DarkCyan + Cyan (both
-color6 = #9aedfe
-color14 = #9aedfe
+# magenta
+color5 =       #cc99cc
+color13 =      #cc99cc
 
-# LightGrey + White
-color7= #eff0eb
-color15 = #f1f1f0
+# cyan
+color6 =       #66cccc
+color14 =      #66cccc
+
+# white
+color7 =       #d3d0c8
+color15 =      #f2f0ec
