@@ -21,8 +21,7 @@
     - { role: ssh, tags: ssh }
     - { role: npm, tags: npm }
     - { role: packages-common, tags: packages-common }
-    - { role: cursor, tags: cursor }
-    - { role: gtk, tags: gtk }
+    - { role: theming, tags: theming }
     - { role: i3-wm, tags: i3-wm }
     - { role: compton, tags: compton }
     - { role: polybar, tags: polybar }

@@ -1,0 +1,64 @@
+---
+- name: "Installing additional cursors."
+  packer: name=capitaine-cursors state=present
+
+- name: "Creating .Xresources.d directory."
+  file:
+    path: ~/.Xresources.d
+    state: directory
+
+- name: "Deploying cursors configuration file."
+  copy:
+    src: files/cursor
+    dest: ~/.Xresources.d/cursor
+
+- name: "Initializing cursors configuration in .Xresources.d."
+  lineinfile:
+    path: ~/.Xresources
+    create: yes
+    state: present
+    line: '#include ".Xresources.d/cursor"'
+
+- name: "Deploying colors configuration file."
+  copy:
+    src: files/colors
+    dest: ~/.Xresources.d/colors
+
+- name: "Initializing colors configuration in .Xresources.d."
+  lineinfile:
+    path: ~/.Xresources
+    create: yes
+    state: present
+    line: '#include ".Xresources.d/colors"'
+
+- name: "Installing numix theme and associated tooling."
+  packer: name={{item}} state=present
+  with_items:
+    - numix-themes-darkblue
+    - vibrancy-colors
+
+- name: "Creating gtk configuration directory."
+  file:
+    path: ~/.config/gtk-3.0/
+    state: directory
+
+- name: "Deploying gtk configuration file."
+  copy:
+    src: files/settings.ini
+    dest: ~/.config/gtk-3.0/settings.ini
+
+- name: "Configuring Qt as a GTK theme."
+  copy:
+    src: files/Trolltech.conf
+    dest: ~/.config/Trolltech.conf
+
+- name: "Updating font cache."
+  shell: creates=.Xdefaults fc-cache -f
+  changed_when: no
+
+- name: "Linking Xresources file to Xdefaults."
+  file:
+    src: ~/.Xresources
+    dest: ~/.Xdefaults
+    state: link
+    force: yes
