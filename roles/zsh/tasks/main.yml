@@ -22,7 +22,7 @@
 - name: "Deploying zsh configuration file."
   template:
     src: templates/zshrc.j2
-    dest: ~/.zshrc backup=yes
+    dest: ~/.zshrc
 
 - name: "Creating zsh configuration directories."
   file: path={{item}} state=directory
@@ -45,3 +45,14 @@
   git:
     repo: https://github.com/zsh-users/zsh-autosuggestions
     dest: ~/.zsh/zsh-autosuggestions
+
+- name: "Cloning spaceship-prompt theme."
+  git:
+    repo: https://github.com/denysdovhan/spaceship-prompt
+    dest: ~/.oh-my-zsh/custom/themes/spaceship-prompt
+
+- name: "Linking spaceship-prompt in the custom theme directory."
+  file:
+    src: ~/.oh-my-zsh/custom/themes/spaceship-prompt/spaceship.zsh-theme
+    dest: ~/.oh-my-zsh/custom/themes/spaceship.zsh-theme
+    state: link

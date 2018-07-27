@@ -1,5 +1,5 @@
 [options]
-font = FantasqueSansMono Nerd Font 10
+font = Source Code Pro 10
 scrollback_lines = 1000000
 
 dynamic_title = true

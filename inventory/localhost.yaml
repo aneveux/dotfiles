@@ -80,6 +80,7 @@ all:
             - "ttf-inconsolata"
             - "ttf-liberation"
             - "otf-ipafont"
+            - "adobe-source-code-pro-fonts"
           aur_packages:
             - "ttf-font-awesome"
             - "ttf-unifont"
