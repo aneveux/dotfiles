@@ -16,3 +16,8 @@
     src: files/config
     dest: ~/.config/termite/config
     backup: yes
+
+- name: "Deploying gtk css for having padding in termite."
+  copy:
+    src: files/gtk.css
+    dest: ~/.config/gtk-3.0/
