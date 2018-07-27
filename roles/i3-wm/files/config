@@ -234,7 +234,7 @@ font pango: hack, Awesome 10
 new_window pixel
 hide_edge_borders smart
 
-for_window [class="^.*"] border pixel 0
+for_window [class="^.*"] border pixel 1
 gaps inner 10
 gaps outer 0
 smart_gaps on
@@ -242,8 +242,8 @@ smart_borders on
 
 # colors
 # class                 border  backgr. text    indicator child_border
-client.focused          #c5a9f9 #c5a9f9 #000000 #000000   #000000
-client.focused_inactive #333333 #5f676a #c5a9f9 #484e50   #000000
+client.focused          #c5a9f9 #c5a9f9 #000000 #000000   #ddf9a9
+client.focused_inactive #333333 #5f676a #c5a9f9 #484e50   #5f676a
 client.unfocused        #333333 #222222 #888888 #292d2e   #222222
 client.urgent           #2f343a #900000 #ffffff #900000   #900000
 client.placeholder      #000000 #0c0c0c #c5a9f9 #000000   #0c0c0c
