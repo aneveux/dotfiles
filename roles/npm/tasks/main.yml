@@ -3,6 +3,16 @@
   pacman: name=npm state=present
   become: True
 
+- name: "Installing nvm."
+  packer: name={{item}} state=present
+  with_items:
+    - nvm
+
+- name: "Deploying nvm zsh configuration file."
+  copy:
+      src: files/nvm.zsh
+      dest: ~/.zshrc.d/
+
 - name: "Deploying npm configuration file."
   template:
     src: templates/npmrc.j2
