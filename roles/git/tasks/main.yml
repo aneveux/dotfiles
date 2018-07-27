@@ -21,3 +21,9 @@
     src: templates/gitconfig.j2
     dest: ~/.gitconfig
     backup: yes
+
+- name: "Installing gitmoji client."
+  npm:
+    name: gitmoji-cli
+    global: yes
+    state: present 
