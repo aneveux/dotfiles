@@ -3,7 +3,6 @@
   - Java + JAVA_HOME
   - GPG Client
   - Maven + Its configuration
-  - NPM with NVM. Don't forget proxy management.
   - vscode.
 
 - Enhance existing roles for:
@@ -12,5 +11,3 @@
 - Review the README and complete the resources
 - Write about prerequisites (ansible, python, git)
 - Integrate compton properly
-
-- Check for a new prompt.
