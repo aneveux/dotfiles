@@ -17,4 +17,3 @@
   template:
     src: templates/npmrc.j2
     dest: ~/.npmrc
-  when: system.proxy.enabled
