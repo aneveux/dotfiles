@@ -26,4 +26,9 @@
   npm:
     name: gitmoji-cli
     global: yes
-    state: present 
+    state: present
+
+- name: "Deploying gitmoji client configuration file."
+  copy:
+    src: files/config.json
+    dest: ~/.config/gitmoji-cli-nodejs/config.json
