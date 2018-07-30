@@ -47,3 +47,10 @@ export ANSIBLE_VAULT_PASSWORD_FILE=~/.ansible-vault/default_vault_pass
 # -----------------------------------------------------------
 
 export PATH="~/.local/bin:${PATH}"
+
+# -----------------------------------------------------------
+# spaceship theme options
+# -----------------------------------------------------------
+
+export SPACESHIP_PROMPT_SEPARATE_LINE=false
+export SPACESHIP_PROMPT_ADD_NEWLINE=false
