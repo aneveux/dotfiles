@@ -257,9 +257,8 @@ assign [class="Terminator"] $WS1
 assign [class="Termite"] $WS1
 
 # WS2: Text Editors
-assign [class="Sublime_text"] $WS2
 assign [class="Atom"] $WS2
-assign [class="Gvim"] $WS2
+for_window [title="vim"] move to workspace $WS2
 
 # WS3: IDE
 assign [class="jetbrains"] $WS3
