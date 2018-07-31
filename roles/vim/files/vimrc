@@ -31,7 +31,7 @@ Plugin 'scrooloose/nerdtree.git'      " file system explorer for vim
 Plugin 'Xuyuanp/nerdtree-git-plugin'  " git support for nerdtree
 Plugin 'itchyny/lightline.vim'        " replacement for powerline :)
 Plugin 'easymotion/vim-easymotion'    " eases navigation in vim
-Plugin 'wincent/Command-T'            " fast file navigation
+Plugin 'ctrlpvim/ctrlp.vim'	      " fuzzy search
 
 " - web development
 
@@ -130,9 +130,6 @@ inoremap <C-Space> <C-n>
 
 " use <C-n> to reach nerdtree
 nmap <silent> <C-n> :NERDTreeFocus<CR>
-
-" use <C-t> to reach commandt
-nmap <silent> <C-t> <Plug>(CommandT)
 
 " ---------------------------------------------
 " FileTypes Configuration -
