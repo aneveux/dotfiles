@@ -128,6 +128,12 @@ inoremap <Nul> <C-n>
 "  ...and in gui mode
 inoremap <C-Space> <C-n>
 
+" use <C-n> to reach nerdtree
+nmap <silent> <C-n> :NERDTreeFocus<CR>
+
+" use <C-t> to reach commandt
+nmap <silent> <C-t> <Plug>(CommandT)
+
 " ---------------------------------------------
 " FileTypes Configuration -
 " Special configuration depending on filetypes

@@ -34,3 +34,10 @@
 - name: "Installing vim plugins through Vundle."
   shell: vim +PluginInstall +qall
   changed_when: no
+
+- name: "Compiling necessary command-t scripts."
+  shell: |
+    cd ~/.vim/bundle/Command-T/ruby/command-t/ext/command-t
+    ruby extconf.rb
+    make
+  changed_when: no
