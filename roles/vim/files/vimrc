@@ -1,26 +1,157 @@
-"pathogen
-execute pathogen#infect()
+"                     /)
+"            /\___/\ ((
+"            \`@_@'/  ))
+"            {_:Y:.}_//
+"  ----------{_}^-'{_}-------------------------
+" .vimrc - Vim Configuration File
+"
 
-" lines numbers
-set number
-syntax on
+" ---------------------------------------------
+" Vundle Configuration -
+" Required for plugins installation & setup
+
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+
+" -- BEGIN LIST OF PLUGINS TO USE
+
+" - general plugins
+
+Plugin 'jiangmiao/auto-pairs'         " insert or delete brackts, parens, quotes in pair
+Plugin 'tpope/vim-sleuth'             " automatically adjusts shiftwidth & expandtab based on the current file
+Plugin 'lilydjwg/colorizer'           " allows to color all hexcodes found in a file
+Plugin 'tpope/vim-fugitive'           " git wrapper for vim
+Plugin 'scrooloose/nerdcommenter'     " manages functions comments
+Plugin 'adelarsq/vim-matchit'         " Extended matching for % operator
+Plugin 'scrooloose/nerdtree.git'      " file system explorer for vim
+Plugin 'Xuyuanp/nerdtree-git-plugin'  " git support for nerdtree
+Plugin 'itchyny/lightline.vim'        " replacement for powerline :)
+Plugin 'easymotion/vim-easymotion'    " eases navigation in vim
+Plugin 'wincent/Command-T'            " fast file navigation
+
+" - web development
+
+Plugin 'posva/vim-vue'            " syntax highlighting for vue components
+Plugin 'tpope/vim-surround'       " easily change surroundings of an element
+Plugin 'mattn/emmet-vim'          " expanding abbreviations the same way emmet does
+Plugin 'Shutnik/jshint2.vim'      " JShint integration
+Plugin 'hail2u/vim-css3-syntax'   " css3 syntax support
+Plugin 'kchmck/vim-coffee-script' " coffee script syntax support
+Plugin 'groenewege/vim-less'      " less syntax support
+Plugin 'tpope/vim-haml'           " sass syntax support
+
+" -- END LIST OF PLUGINS TO USE
+
+call vundle#end()
 filetype plugin indent on
-set background=dark
-set mouse=r
-set ruler		" show the cursor position all the time
-set autoindent		" always set autoindenting on
-set wildmenu
 
-" tab 4 spaces
-set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
+" ---------------------------------------------
+" General Configuration -
+" Global preferences
+
+" show line numbers and enable syntax highlighting
+syntax on
+set number
+
+" reload files changed outside vim
+set autoread
+
+" make vim try to detect file types and load plugins for them
+filetype on
+filetype plugin on
+filetype indent on
+
+" encoding is utf 8
+set encoding=utf-8
+set fileencoding=utf-8
+
+" enable matchit plugin which ships with vim and greatly enhances '%'
+runtime macros/matchit.vim
+
+" by default, in insert mode backspace won't delete over line breaks, or
+" automatically-inserted indentation, let's change that
+set backspace=indent,eol,start
+
+" dont't unload buffers when they are abandoned, instead stay in the
+" background
+set hidden
+
+" set unix line endings
+set fileformat=unix
+" when reading files try unix line endings then dos, also use unix for new
+" buffers
+set fileformats=unix,dos
+
+" ---------------------------------------------
+" Look'n'Feel -
+" Fonts, Colors and all those nice things!
+
+" set Adobe's Source Code Pro font as default
+set guifont=Source\ Code\ Pro
 
 " brackets highlight color
 autocmd VimEnter,Colorscheme * :hi MatchParen cterm=none ctermbg=white ctermfg=black
 
+colorscheme atomified
+
+" ---------------------------------------------
+" Editor Configuration -
+" All the things related to files content
+
+" indentation
+set expandtab       " use spaces instead of tabs
+set autoindent      " autoindent based on line above, works most of the time
+set smartindent     " smarter indent for C-like languages
+set shiftwidth=4    " when reading, tabs are 4 spaces
+set softtabstop=4   " in insert mode, tabs are 4 spaces
+
+" no lines longer than 120 cols
+set textwidth=120
+
+set mouse=r
+set ruler
+
 " remember last cursor place
 au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
 
-" powerline
-set laststatus=2
-set t_Co=256
-let g:powerline_pycmd="py3"
+" ---------------------------------------------
+" KeyMap Configuration -
+" Keyboard shortcuts to use in vim...
+
+" use <C-Space> for Vim's keyword autocomplete
+"  ...in the terminal
+inoremap <Nul> <C-n>
+"  ...and in gui mode
+inoremap <C-Space> <C-n>
+
+" ---------------------------------------------
+" FileTypes Configuration -
+" Special configuration depending on filetypes
+
+" On file types...
+"   .md files are markdown files
+autocmd BufNewFile,BufRead *.md setlocal ft=markdown
+"   .twig files use html syntax
+autocmd BufNewFile,BufRead *.twig setlocal ft=html
+"   .less files use less syntax
+autocmd BufNewFile,BufRead *.less setlocal ft=less
+"   .jade files use jade syntax
+autocmd BufNewFile,BufRead *.jade setlocal ft=jade
+
+" ---------------------------------------------
+" Plugins Configuration -
+" Specific configuration for plugins...
+
+" -- NERDTREE CONFIG
+" start NERDTree on start-up and focus active window
+autocmd VimEnter * NERDTree
+autocmd VimEnter * wincmd p
+
+" -- LIGHTLINE CONFIG
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ }

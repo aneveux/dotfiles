@@ -5,14 +5,6 @@
     - vim
   become: True
 
-- name : "Installing powerline and associated tooling."
-  pacman: name={{item}} state=present
-  with_items:
-    - powerline
-    - powerline-vim
-    - powerline-fonts
-  become: True
-
 - name: "Creating vim configuration directories."
   file:
     path: "{{item}}"
@@ -21,28 +13,24 @@
     - ~/.vim
     - ~/.vim/bundle
     - ~/.vim/autoload
+    - ~/.vim/colors
+
+- name: "Deploying vim-atomified colorscheme."
+  copy:
+    src: files/atomified.vim
+    dest: ~/.vim/colors/atomified.vim
 
 - name: "Deploying vim configuration file."
   copy:
     src: files/vimrc
     dest: ~/.vimrc
 
-- name: "Configuring pathogen loader."
-  copy:
-    src: files/pathogen.vim
-    dest: ~/.vim/autoload/pathogen.vim
-
-- name: "Cloning colorizer vim plugin for installation."
+- name: "Setting up Vundle."
   git:
-    repo: https://github.com/lilydjwg/colorizer
-    dest: ~/.vim/bundle/colorizer
+    repo: https://github.com/VundleVim/Vundle.vim
+    dest: ~/.vim/bundle/Vundle.vim
+  changed_when: no
 
-- name: "Cloning vim-sleught vim plugin for installation."
-  git:
-    repo: https://github.com/tpope/vim-sleuth
-    dest: ~/.vim/bundle/vim-sleuth
-
-- name: "Cloning auto-pairs vim plugin for installation."
-  git:
-    repo: https://github.com/jiangmiao/auto-pairs
-    dest: ~/.vim/bundle/auto-pairs
+- name: "Installing vim plugins through Vundle."
+  shell: vim +PluginInstall +qall
+  changed_when: no
