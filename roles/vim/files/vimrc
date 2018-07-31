@@ -86,6 +86,8 @@ set fileformat=unix
 " buffers
 set fileformats=unix,dos
 
+set history=1000
+
 " ---------------------------------------------
 " Look'n'Feel -
 " Fonts, Colors and all those nice things!
@@ -96,7 +98,10 @@ set guifont=Source\ Code\ Pro
 " brackets highlight color
 autocmd VimEnter,Colorscheme * :hi MatchParen cterm=none ctermbg=white ctermfg=black
 
+set background=dark
 colorscheme atomified
+
+set cursorline
 
 " ---------------------------------------------
 " Editor Configuration -
@@ -114,6 +119,7 @@ set textwidth=120
 
 set mouse=r
 set ruler
+set virtualedit=onemore
 
 " remember last cursor place
 au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
@@ -130,6 +136,7 @@ inoremap <C-Space> <C-n>
 
 " use <C-n> to reach nerdtree
 nmap <silent> <C-n> :NERDTreeFocus<CR>
+map <C-e> <plug>NERDTreeTabsToggle<CR>
 
 " ---------------------------------------------
 " FileTypes Configuration -
