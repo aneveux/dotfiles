@@ -258,7 +258,6 @@ assign [class="Termite"] $WS1
 
 # WS2: Text Editors
 assign [class="Atom"] $WS2
-for_window [title="vim"] move to workspace $WS2
 
 # WS3: IDE
 assign [class="jetbrains"] $WS3
