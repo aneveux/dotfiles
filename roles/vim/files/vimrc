@@ -44,6 +44,8 @@ Plugin 'kchmck/vim-coffee-script' " coffee script syntax support
 Plugin 'groenewege/vim-less'      " less syntax support
 Plugin 'tpope/vim-haml'           " sass syntax support
 
+Plugin 'pearofducks/ansible-vim'	" ansible syntax support
+
 " -- END LIST OF PLUGINS TO USE
 
 call vundle#end()
@@ -152,6 +154,9 @@ autocmd BufNewFile,BufRead *.twig setlocal ft=html
 autocmd BufNewFile,BufRead *.less setlocal ft=less
 "   .jade files use jade syntax
 autocmd BufNewFile,BufRead *.jade setlocal ft=jade
+" association of ansible files
+au BufRead,BufNewFile */playbooks/*.yml set filetype=yaml.ansible
+au BufRead,BufNewFile */roles/*.yml set filetype=yaml.ansible
 
 " ---------------------------------------------
 " Plugins Configuration -
