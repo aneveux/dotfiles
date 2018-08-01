@@ -32,6 +32,7 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'  " git support for nerdtree
 Plugin 'itchyny/lightline.vim'        " replacement for powerline :)
 Plugin 'easymotion/vim-easymotion'    " eases navigation in vim
 Plugin 'ctrlpvim/ctrlp.vim'	      " fuzzy search
+Plugin 'editorconfig/editorconfig-vim' " editorconfig integration
 
 " - web development
 
@@ -171,3 +172,7 @@ autocmd VimEnter * wincmd p
 let g:lightline = {
       \ 'colorscheme': 'wombat',
       \ }
+
+" -- EDITORCONFIG CONFIG
+let g:EditorConfig_exclude_patterns = ['fugitive://.*']
+let g:EditorConfig_exec_path = '/usr/bin/editorconfig'
