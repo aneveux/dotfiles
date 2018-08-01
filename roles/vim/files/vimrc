@@ -87,6 +87,7 @@ set fileformat=unix
 set fileformats=unix,dos
 
 set history=1000
+set ignorecase
 
 " ---------------------------------------------
 " Look'n'Feel -
@@ -136,7 +137,7 @@ inoremap <C-Space> <C-n>
 
 " use <C-n> to reach nerdtree
 nmap <silent> <C-n> :NERDTreeFocus<CR>
-map <C-e> <plug>NERDTreeTabsToggle<CR>
+nnoremap <C-e> :NERDTreeToggle<CR>
 
 " ---------------------------------------------
 " FileTypes Configuration -
