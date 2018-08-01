@@ -144,6 +144,7 @@ nmap <silent> <C-n> :NERDTreeFocus<CR>
 nnoremap <C-e> :NERDTreeToggle<CR>
 
 noremap <F3> :Autoformat<CR>
+map <Leader> <Plug>(easymotion-prefix)
 
 " ---------------------------------------------
 " FileTypes Configuration -
@@ -179,3 +180,7 @@ let g:lightline = {
 " -- EDITORCONFIG CONFIG
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 let g:EditorConfig_exec_path = '/usr/bin/editorconfig'
+
+" -- EASYMOTION CONFIG
+let g:EasyMotion_smartcase = 1
+
