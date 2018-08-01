@@ -6,6 +6,30 @@
     - editorconfig-core-c
   become: True
 
+- name: "Installing from pacman additional code formatters."
+  pacman: name={{item}} state=present
+  with_items:
+    - astyle
+  become: True
+
+- name: "Installing from pip additional code formatters."
+  pip:
+    name: yapf
+    state: latest
+    extra_args: --user
+
+- name: "Installing from npm additional code formatters."
+  npm:
+    name: "{{item}}"
+    global: yes
+    state: present
+  with_items:
+    - js-beautify
+    - eslint
+    - typescript-formatter
+    - remark-cli
+    - fixjson
+
 - name: "Creating vim configuration directories."
   file:
     path: "{{item}}"

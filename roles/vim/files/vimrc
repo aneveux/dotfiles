@@ -33,6 +33,7 @@ Plugin 'itchyny/lightline.vim'        " replacement for powerline :)
 Plugin 'easymotion/vim-easymotion'    " eases navigation in vim
 Plugin 'ctrlpvim/ctrlp.vim'	      " fuzzy search
 Plugin 'editorconfig/editorconfig-vim' " editorconfig integration
+Plugin 'Chiel92/vim-autoformat'		" formatters for lots of things
 
 " - web development
 
@@ -141,6 +142,8 @@ inoremap <C-Space> <C-n>
 " use <C-n> to reach nerdtree
 nmap <silent> <C-n> :NERDTreeFocus<CR>
 nnoremap <C-e> :NERDTreeToggle<CR>
+
+noremap <F3> :Autoformat<CR>
 
 " ---------------------------------------------
 " FileTypes Configuration -

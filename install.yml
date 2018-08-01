@@ -14,7 +14,6 @@
     - { role: sysconfig, tags: sysconfig }
     - { role: bash, tags: bash }
     - { role: packages-system, tags: packages-system }
-    - { role: vim, tags: vim }
     - { role: zsh, tags: zsh }
     - { role: fish, tags: fish }
     - { role: screen, tags: screen }
@@ -31,6 +30,7 @@
     - { role: lightdm, tags: lightdm }
     - { role: ranger, tags: ranger }
     - { role: git, tags: git }
+    - { role: vim, tags: vim }
     - { role: atom, tags: atom }
     - { role: idea, tags: idea }
     - { role: wlppr, tags: wlppr }
