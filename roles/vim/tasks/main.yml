@@ -29,6 +29,7 @@
     - typescript-formatter
     - remark-cli
     - fixjson
+  become: True
 
 - name: "Creating vim configuration directories."
   file:

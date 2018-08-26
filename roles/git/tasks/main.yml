@@ -27,6 +27,7 @@
     name: gitmoji-cli
     global: yes
     state: present
+  become: True
 
 - name: "Deploying gitmoji client configuration file."
   copy:
