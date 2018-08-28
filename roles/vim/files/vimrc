@@ -97,6 +97,8 @@ set fileformats=unix,dos
 
 set history=1000
 set ignorecase
+set smartcase
+set hlsearch
 
 " ---------------------------------------------
 " Look'n'Feel -
