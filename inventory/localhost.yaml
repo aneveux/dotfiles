@@ -51,6 +51,8 @@ all:
             - "thefuck"
             - "yajl"
             - "gnome-keyring"
+            - "tldr"
+            - "fasd"
         - name: "tools_terminal"
           pacman_packages:
             - "cowsay"
@@ -104,6 +106,7 @@ all:
             - "polkit-gnome"
           aur_packages:
             - "gnome-ssh-askpass2"
+            - "lnav"
         - name: "apps"
           pacman_packages:
             - "chromium"
