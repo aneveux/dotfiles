@@ -28,6 +28,7 @@ Plugin 'tpope/vim-fugitive'           " git wrapper for vim
 Plugin 'scrooloose/nerdcommenter'     " manages functions comments
 Plugin 'adelarsq/vim-matchit'         " Extended matching for % operator
 Plugin 'scrooloose/nerdtree.git'      " file system explorer for vim
+Bundle 'jistr/vim-nerdtree-tabs'
 Plugin 'Xuyuanp/nerdtree-git-plugin'  " git support for nerdtree
 Plugin 'itchyny/lightline.vim'        " replacement for powerline :)
 Plugin 'easymotion/vim-easymotion'    " eases navigation in vim
@@ -142,6 +143,7 @@ inoremap <C-Space> <C-n>
 " use <C-n> to reach nerdtree
 nmap <silent> <C-n> :NERDTreeFocus<CR>
 nnoremap <C-e> :NERDTreeToggle<CR>
+map <Leader>n <plug>NERDTreeTabsToggle<CR>
 
 noremap <F3> :Autoformat<CR>
 map <Leader> <Plug>(easymotion-prefix)
