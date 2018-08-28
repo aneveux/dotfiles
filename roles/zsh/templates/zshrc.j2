@@ -69,6 +69,16 @@ typeset -U path
 path=(~/bin ~/.local/bin $path[@])
 
 # -----------------------------------------------------------
+# zsh autosuggestions
+# -----------------------------------------------------------
+
+source {{ zsh_syntax_highlighting_dir.stdout }}
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
+
+source $ZSH/oh-my-zsh.sh
+
+# -----------------------------------------------------------
 # source zshrc.d
 # -----------------------------------------------------------
 
@@ -80,12 +90,4 @@ if [ -d "$zshrcd" ]; then
   done
 fi
 
-# -----------------------------------------------------------
-# zsh autosuggestions
-# -----------------------------------------------------------
 
-source {{ zsh_syntax_highlighting_dir.stdout }}
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
-
-source $ZSH/oh-my-zsh.sh

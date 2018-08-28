@@ -49,7 +49,6 @@ alias egrep='egrep --color=auto'
 
 alias vi='vim'
 alias compose='docker-compose'
-alias cat='bat'
 
 # -----------------------------------------------------------
 # misc aliases

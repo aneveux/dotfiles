@@ -53,6 +53,8 @@ all:
             - "gnome-keyring"
             - "tldr"
             - "fasd"
+            - "fd"
+            - "exa"
         - name: "tools_terminal"
           pacman_packages:
             - "cowsay"
