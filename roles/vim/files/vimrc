@@ -46,8 +46,12 @@ Plugin 'hail2u/vim-css3-syntax'   " css3 syntax support
 Plugin 'kchmck/vim-coffee-script' " coffee script syntax support
 Plugin 'groenewege/vim-less'      " less syntax support
 Plugin 'tpope/vim-haml'           " sass syntax support
+Plugin 'pangloss/vim-javascript'
 
 Plugin 'pearofducks/ansible-vim'	" ansible syntax support
+
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
 
 " -- END LIST OF PLUGINS TO USE
 
@@ -142,8 +146,7 @@ inoremap <C-Space> <C-n>
 
 " use <C-n> to reach nerdtree
 nmap <silent> <C-n> :NERDTreeFocus<CR>
-nnoremap <C-e> :NERDTreeToggle<CR>
-map <Leader>n <plug>NERDTreeTabsToggle<CR>
+nnoremap <C-e> :NERDTreeTabsToggle<CR>
 
 noremap <F3> :Autoformat<CR>
 map <Leader> <Plug>(easymotion-prefix)
