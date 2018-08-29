@@ -16,6 +16,7 @@
 - name: "Configuring sudoers to keep the proxy configuration."
   lineinfile:
     path: /etc/sudoers
+    create: yes
     state: present
     line: Defaults env_keep += "http_proxy https_proxy no_proxy HTTP_PROXY HTTPS_PROXY NO_PROXY"
     validate: /usr/sbin/visudo -cf %s
