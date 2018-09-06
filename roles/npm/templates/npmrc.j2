@@ -1,6 +1,5 @@
 registry=https://registry.npmjs.org
 {% if system.proxy.enabled %}
-proxy=http://{{ system.proxy.host }}:{{ system.proxy.port }}
 http-proxy=http://{{ system.proxy.host }}:{{ system.proxy.port }}
 https-proxy=http://{{ system.proxy.host }}:{{ system.proxy.port }}
 {% endif %}
