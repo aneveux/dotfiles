@@ -122,7 +122,6 @@ all:
             - "pgadmin4"
             - "ruby"
             - "filezilla"
-            - "maven"
             - "gradle"
           aur_packages:
             - "dropbox"

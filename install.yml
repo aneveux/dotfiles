@@ -31,6 +31,7 @@
     - { role: ranger, tags: ranger }
     - { role: git, tags: git }
     - { role: vim, tags: vim }
+    - { role: maven, tags: maven }
     - { role: atom, tags: atom }
     - { role: idea, tags: idea }
     - { role: wlppr, tags: wlppr }

@@ -1,0 +1,20 @@
+---
+- name: "Installing maven."
+  pacman: name=maven state=present
+  become: True
+
+- name: "Creating maven home directory."
+  file:
+    path: ~/.m2/
+    state: directory 
+
+- name: "Searching for local maven configuration files."
+  stat: path="{{ local_location }}/maven"
+  register: _maven_local_configuration
+
+- name: "Deploying local maven configuration files."
+  copy:
+    src: "{{ local_location }}/maven/"
+    dest: ~/.m2/
+  when: _maven_local_configuration.stat.exists
+
