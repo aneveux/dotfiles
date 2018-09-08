@@ -1,0 +1,42 @@
+---
+- name: "Installing docker and associated tooling."
+  pacman: name={{item}} state=present
+  with_items:
+    - docker
+    - docker-compose
+    - docker-machine
+  become: True
+
+- name: "Setting up the docker daemon service configuration"
+  file:
+    path: /etc/systemd/system/docker.service.d/
+    state: directory
+  become: True 
+
+- name: "Searching for local docker daemon service configuration files."
+  stat: path="{{ local_location }}/docker"
+  register: _docker_local_configuration
+
+- name: "Deploying docker daemon local configuration files."
+  copy:
+    src: "{{ local_location }}/docker/"
+    dest: /etc/systemd/system/docker.service.d/
+  when: _docker_local_configuration.stat.exists
+  become: True 
+
+- name: "Deploying default docker daemon configuration files."
+  copy:
+    src: files/custom-docker-daemon-opts.conf 
+    dest: /etc/systemd/system/docker.service.d/
+  when: _docker_local_configuration.stat.exists == False
+  become: True 
+
+- name: "Enabling docker-agent service."
+  systemd:
+    daemon_reload: yes
+    user: no 
+    name: docker.service
+    enabled: yes
+    state: started
+  become: True 
+

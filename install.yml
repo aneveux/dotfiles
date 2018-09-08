@@ -30,6 +30,7 @@
     - { role: lightdm, tags: lightdm }
     - { role: ranger, tags: ranger }
     - { role: git, tags: git }
+    - { role: docker, tags: docker }
     - { role: vim, tags: vim }
     - { role: maven, tags: maven }
     - { role: atom, tags: atom }

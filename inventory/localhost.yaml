@@ -114,9 +114,6 @@ all:
             - "chromium"
             - "firefox"
             - "keepassxc"
-            - "docker" # TODO to be moved
-            - "docker-compose" # TODO to be moved
-            - "docker-machine" # TODO to be moved
             - "java-openjfx"
             - "jdk8-openjdk"
             - "pgadmin4"
