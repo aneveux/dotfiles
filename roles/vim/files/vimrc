@@ -58,6 +58,7 @@ Plugin 'plasticboy/vim-markdown'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'terryma/vim-multiple-cursors'
+Plugin 'dracula/vim'
 
 " -- END LIST OF PLUGINS TO USE
 
@@ -117,7 +118,7 @@ set guifont=Source\ Code\ Pro
 autocmd VimEnter,Colorscheme * :hi MatchParen cterm=none ctermbg=white ctermfg=black
 
 set background=dark
-colorscheme atomified
+colorscheme dracula
 
 set cursorline
 
@@ -155,7 +156,7 @@ inoremap <Nul> <C-n>
 inoremap <C-Space> <C-n>
 
 " use <C-n> to reach nerdtree
-nmap <silent> <C-n> :NERDTreeFocus<CR>
+nmap <silent> <C-t> :NERDTreeFocus<CR>
 nnoremap <C-e> :NERDTreeTabsToggle<CR>
 map <leader>e :NERDTreeFind<CR>
 nmap <leader>nt :NERDTreeFind<CR>
@@ -168,6 +169,7 @@ nnoremap <C-Left> :tabprevious<CR>
 nnoremap <C-Right> :tabnext<CR>
 nnoremap <silent> <A-Left> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
 nnoremap <silent> <A-Right> :execute 'silent! tabmove ' . (tabpagenr()+1)<CR>
+nnoremap <F8> :tabo<CR>
 
 " ---------------------------------------------
 " FileTypes Configuration -
