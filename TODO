@@ -2,13 +2,9 @@
   - Docker Daemon
   - Java + JAVA_HOME
   - GPG Client
-  - Maven + Its configuration
-  - vscode.
 
 - Enhance existing roles for:
   - Managing Git authors depending on paths
-
-- Consider using https://github.com/Valloric/YouCompleteMe
 
 - Review the README and complete the resources
 - Write about prerequisites (ansible, python, git)
