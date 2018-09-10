@@ -31,12 +31,3 @@
   when: _docker_local_configuration.stat.exists == False
   become: True 
 
-- name: "Enabling docker-agent service."
-  systemd:
-    daemon_reload: yes
-    user: no 
-    name: docker.service
-    enabled: yes
-    state: started
-  become: True 
-
