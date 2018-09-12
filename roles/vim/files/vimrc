@@ -28,7 +28,7 @@ Plugin 'tpope/vim-fugitive'           " git wrapper for vim
 Plugin 'scrooloose/nerdcommenter'     " manages functions comments
 Plugin 'adelarsq/vim-matchit'         " Extended matching for % operator
 Plugin 'scrooloose/nerdtree.git'      " file system explorer for vim
-Bundle 'jistr/vim-nerdtree-tabs'
+Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'Xuyuanp/nerdtree-git-plugin'  " git support for nerdtree
 Plugin 'Nopik/vim-nerdtree-direnter'
 Plugin 'itchyny/lightline.vim'        " replacement for powerline :)
@@ -199,6 +199,8 @@ autocmd VimEnter * wincmd p
 let NERDTreeMapOpenInTab='<ENTER>'
 let NERDTreeKeepTreeInNewTab=1
 let g:nerdtree_tabs_open_on_new_tab=1
+let g:nerdtree_tabs_open_on_gui_startup=1
+let g:nerdtree_tabs_open_on_console_startup=1
 
 " -- LIGHTLINE CONFIG
 let g:lightline = {
@@ -222,3 +224,5 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
+" -- MARKDOWN CONFIG
+let g:vim_markdown_folding_disabled = 1
