@@ -9,3 +9,5 @@
 - Review the README and complete the resources
 - Write about prerequisites (ansible, python, git)
 - Integrate compton properly
+
+- add imagemagick, unzip, gnome-screenshot
