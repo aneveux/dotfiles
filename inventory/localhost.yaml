@@ -125,6 +125,7 @@ all:
             - "keybase-bin"
             - "spotify"
             - "xflux"
+            - "vivaldi"
             #- "franz-bin"
             #- "pacli"
             #- "ruby-jekyll" # TODO to be moved
