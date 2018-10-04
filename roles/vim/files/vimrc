@@ -28,9 +28,7 @@ Plugin 'tpope/vim-fugitive'           " git wrapper for vim
 Plugin 'scrooloose/nerdcommenter'     " manages functions comments
 Plugin 'adelarsq/vim-matchit'         " Extended matching for % operator
 Plugin 'scrooloose/nerdtree.git'      " file system explorer for vim
-Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'Xuyuanp/nerdtree-git-plugin'  " git support for nerdtree
-Plugin 'Nopik/vim-nerdtree-direnter'
 Plugin 'itchyny/lightline.vim'        " replacement for powerline :)
 Plugin 'easymotion/vim-easymotion'    " eases navigation in vim
 Plugin 'ctrlpvim/ctrlp.vim'	      " fuzzy search
@@ -165,10 +163,6 @@ noremap <F3> :Autoformat<CR>
 map <Leader> <Plug>(easymotion-prefix)
 
 " tab management
-nnoremap <C-Left> :tabprevious<CR>
-nnoremap <C-Right> :tabnext<CR>
-nnoremap <silent> <A-Left> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
-nnoremap <silent> <A-Right> :execute 'silent! tabmove ' . (tabpagenr()+1)<CR>
 nnoremap <F8> :tabo<CR>
 
 " ---------------------------------------------
@@ -196,11 +190,11 @@ au BufRead,BufNewFile */roles/*.yml set filetype=yaml.ansible
 " start NERDTree on start-up and focus active window
 autocmd VimEnter * NERDTree
 autocmd VimEnter * wincmd p
-let NERDTreeMapOpenInTab='<ENTER>'
 let NERDTreeKeepTreeInNewTab=1
 let g:nerdtree_tabs_open_on_new_tab=1
 let g:nerdtree_tabs_open_on_gui_startup=1
 let g:nerdtree_tabs_open_on_console_startup=1
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " -- LIGHTLINE CONFIG
 let g:lightline = {
@@ -226,3 +220,6 @@ let g:syntastic_check_on_wq = 0
 
 " -- MARKDOWN CONFIG
 let g:vim_markdown_folding_disabled = 1
+
+" -- CTRLP CONFIG
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store'
