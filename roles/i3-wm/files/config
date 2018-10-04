@@ -50,7 +50,7 @@ set $white #f2f2f2
 set $WS1 "1:"
 set $WS2 "2:"
 set $WS3 "3:"
-set $WS4 "4:"
+set $WS4 "4:"
 set $WS5 "5:"
 set $WS6 "6:"
 set $WS7 "7:"
@@ -215,7 +215,9 @@ bindsym $mod+Return mode $launcher_mode
 
 mode $launcher_mode {
   bindsym a exec atom, mode "default"
+  bindsym c exec code, mode "default"
   bindsym f exec firefox, mode "default"
+  bindsym v exec vivaldi-stable, mode "default"
   bindsym i exec idea, mode "default"
   bindsym k exec keepassxc, mode "default"
   bindsym s exec spotify, mode "default"
@@ -265,6 +267,7 @@ assign [class="Toolbox"] $WS3
 
 # WS4: Browsers
 assign [class="Firefox"] $WS4
+assign [class="vivaldi-stable"] $WS4
 
 # WS5: Media
 for_window [class="Spotify"] move to workspace $WS5
