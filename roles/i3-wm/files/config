@@ -267,7 +267,7 @@ assign [class="Toolbox"] $WS3
 
 # WS4: Browsers
 assign [class="Firefox"] $WS4
-assign [class="vivaldi-stable"] $WS4
+assign [class="Vivaldi-stable"] $WS4
 
 # WS5: Media
 for_window [class="Spotify"] move to workspace $WS5
