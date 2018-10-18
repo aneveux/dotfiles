@@ -1,0 +1,5 @@
+---
+- name: "Installing vscode."
+  packer: name=visual-studio-code-bin state=present
+
+
