@@ -126,7 +126,6 @@ all:
             - "spotify"
             - "xflux"
             - "vivaldi"
-            - "standardnotes-desktop"
             #- "franz-bin"
             #- "pacli"
             #- "ruby-jekyll" # TODO to be moved
