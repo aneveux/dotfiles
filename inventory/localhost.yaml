@@ -55,6 +55,7 @@ all:
             - "fasd"
             - "fd"
             - "exa"
+            - "xorg-xprop"
         - name: "tools_terminal"
           pacman_packages:
             - "cowsay"
