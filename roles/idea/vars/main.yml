@@ -1,6 +1,6 @@
 ---
 idea:
-  version: '2018.2.4'
-  checksum: '5e7ed7a2061b2b23c1c6600a045102dc0cbb2b78503c01fa5e25cd4beeecd9eb'
-  filename: 'ideaIC-2018.2.4.tar.gz'
+  version: '2018.2.5'
+  checksum: 'a91c327f85b04dacd287fa86f4d60d621a75fd80345f2f303846ad172cacd64a'
+  filename: 'ideaIC-2018.2.5.tar.gz'
   userdir: '.IdeaIC20182'

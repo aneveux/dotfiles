@@ -2,4 +2,22 @@
 - name: "Installing vscode."
   packer: name=visual-studio-code-bin state=present
 
+- name: "Creating vscode's configuration directory."
+  file:
+    path: ~/.config/Code/User/
+    state: directory
 
+- name: "Deploying vscode configuration file."
+  template:
+    src: templates/settings.json.j2
+    dest: ~/.config/Code/User/settings.json
+
+- name: "Installing vscode plugins."
+  shell: >
+    code --install-extension '{{ item }}'
+  with_items:
+    - "{{ code_packages }}"
+  loop_control:
+    label: "[{{ item }}]"
+  register: code_result
+  changed_when: "'is already installed.' not in code_result.stdout"

@@ -34,6 +34,7 @@
     - { role: vim, tags: vim }
     - { role: maven, tags: maven }
     - { role: atom, tags: atom }
+    - { role: vscode, tags: vscode }
     - { role: idea, tags: idea }
     - { role: wlppr, tags: wlppr }
     - { role: virtualbox, tags: virtualbox }

@@ -92,6 +92,7 @@ all:
             - "nerd-fonts-complete"
             - "otf-font-awesome-4"
             - "ttf-ms-fonts"
+            - "otf-fira-code-git"
         - name: "deps_tools"
           pacman_packages:
             - "slop"
