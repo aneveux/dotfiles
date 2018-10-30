@@ -165,6 +165,9 @@ map <Leader> <Plug>(easymotion-prefix)
 " tab management
 nnoremap <F8> :tabo<CR>
 
+" :w!! for auto sudo
+cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
+
 " ---------------------------------------------
 " FileTypes Configuration -
 " Special configuration depending on filetypes
