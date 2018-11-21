@@ -1,8 +1,8 @@
 // Place your settings in this file to overwrite the default settings
 {
 	{% if system.proxy.enabled %}
-    "http.proxy": "http://{{ system.proxy.host }}:{{ system.proxy.port }}",
-    "https.proxy": "http://{{ system.proxy.host }}:{{ system.proxy.port }}",
+    "http.proxy": "{{ system.proxy.host }}:{{ system.proxy.port }}",
+    "https.proxy": "{{ system.proxy.host }}:{{ system.proxy.port }}",
     "http.proxyStrictSSL": false,
     {% endif %}
 	"editor.fontLigatures": true,
