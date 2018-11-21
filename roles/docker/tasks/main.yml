@@ -4,7 +4,6 @@
   with_items:
     - docker
     - docker-compose
-    - docker-machine
   become: True
 
 - name: "Setting up the docker daemon service configuration"
@@ -24,10 +23,8 @@
   when: _docker_local_configuration.stat.exists
   become: True 
 
-- name: "Deploying default docker daemon configuration files."
-  copy:
-    src: files/custom-docker-daemon-opts.conf 
-    dest: /etc/systemd/system/docker.service.d/
-  when: _docker_local_configuration.stat.exists == False
-  become: True 
-
+- name: "Enabling the docker service."
+  service:
+    name: "docker.service"
+    enabled: "yes"
+  become: True
