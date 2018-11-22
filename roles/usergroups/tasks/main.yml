@@ -9,6 +9,8 @@
       system: yes
     - name: "{{ user.id }}"
       system: no
+    - name: "docker"
+      system: yes
   loop_control:
     label: "{{ item.name }}"
 
@@ -17,7 +19,7 @@
     name: "{{ user.id }}"
     comment: "{{ user.name }}"
     group: "{{ user.id }}"
-    groups: "wheel,audio,video"
+    groups: "wheel,audio,video,docker"
     password: "{{ user.password }}"
     shell: "{{ user.preferences.shell }}"
     createhome: yes
