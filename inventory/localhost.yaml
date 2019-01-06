@@ -122,7 +122,6 @@ all:
             - "ruby"
             - "filezilla"
             - "gradle"
-            - "redshift"
           aur_packages:
             - "dropbox"
             - "keybase-bin"
