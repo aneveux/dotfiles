@@ -267,7 +267,7 @@ assign [class="jetbrains"] $WS3
 assign [class="Toolbox"] $WS3
 
 # WS4: Browsers
-assign [class="Firefox"] $WS4
+assign [class="firefox"] $WS4
 assign [class="Vivaldi-stable"] $WS4
 
 # WS5: Media
@@ -276,6 +276,7 @@ for_window [class="Spotify"] move to workspace $WS5
 # WS6: Social / Chat
 assign [class="Franz"] $WS6
 assign [class="Keybase"] $WS6
+assign [class="discord"] $WS6
 
 # WS7: Keepass / Security
 assign [class="keepassxc"] $WS7
