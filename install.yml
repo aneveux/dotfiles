@@ -28,7 +28,7 @@
     - { role: rofi, tags: rofi }
     - { role: dunst, tags: dunst }
     - { role: termite, tags: termite }
-    - { role: lightdm, tags: lightdm }
+    # - { role: lightdm, tags: lightdm }
     - { role: ranger, tags: ranger }
     - { role: git, tags: git }
     - { role: docker, tags: docker }
@@ -36,6 +36,6 @@
     - { role: maven, tags: maven }
     - { role: atom, tags: atom }
     - { role: vscode, tags: vscode }
-    - { role: idea, tags: idea }
+    # - { role: idea, tags: idea }
     - { role: wlppr, tags: wlppr }
     - { role: virtualbox, tags: virtualbox }

@@ -32,50 +32,50 @@ all:
       sys_packages:
         - name: "deps_packer"
           pacman_packages:
-            - "jshon"
-            - "expac"
-            - "pygmentize"
+            - "jshon" # json parser for shell
+            - "expac" # pacman database extraction utility
+            - "pygmentize" # python syntax highlighter
         - name: "deps_drivers"
           pacman_packages:
-            - "acpi"
-            - "alsa-utils"
-            - "gvfs"
+            - "acpi" # kernel modules for acpi (advanced configuration and power interface) parts
+            - "alsa-utils" # kernel modules for linux sound architecture
+            - "gvfs" # virtual filesystem implementation
         - name: "tools_basics"
           pacman_packages:
-            - "curl"
-            - "gnupg" # TODO to be moved
-            - "gpa" # TODO to be moved
-            - "httpie"
-            - "jq"
-            - "tree"
-            - "thefuck"
-            - "yajl"
-            - "gnome-keyring"
-            - "tldr"
-            - "fasd"
-            - "fd"
-            - "exa"
-            - "xorg-xprop"
+            - "curl" # cli for interacting with urls
+            - "gnupg" # encryption software
+            - "gpa" # gui for gnupg
+            - "httpie" # command line http client
+            - "jq" # command line json processor
+            - "tree" # cli for listing directories in a tree
+            - "thefuck" # corrects errors in console commands
+            - "yajl" # yet another json library...
+            # - "gnome-keyring" # manjaro already has a keyring installed
+            - "tldr" # man pages, in a tldr format
+            - "fasd" # quick access to files and folders in shell
+            - "fd" # user friendly alternative to find
+            - "exa" # ls on steroids
+            - "xorg-xprop" # property displayer for X
         - name: "tools_terminal"
           pacman_packages:
-            - "cowsay"
-            - "lolcat"
-            - "playerctl"
-            - "tig"
-            - "w3m"
+            - "cowsay" # displays cows in shell
+            - "lolcat" # colors shell with rainbow colors
+            - "playerctl" # media player controller, lib for spotify
+            - "tig" # git lightweight client for shell
+            - "w3m" # text based web browser
         - name: "monitoring"
           pacman_packages:
-            - "htop"
-            - "sysstat"
+            - "htop" # interactive process viewer
+            - "sysstat" # collection of performance monitoring tools
 
       common_packages:
         - name: "desktop_environment"
           pacman_packages:
-            - "xorg-server"
-            - "xorg-xinit"
-            - "lxappearance-gtk3"
-            - "xorg-xrdb"
-            - "xorg-xfd"
+            - "xorg-server" # xorg x server
+            - "xorg-xinit" # xorg initialisation program
+            - "lxappearance-gtk3" # gtk+ theme switcher
+            - "xorg-xrdb" # xserver resource database utility
+            - "xorg-xfd" # displays all characters in a font using x11 core protocol
         - name: "fonts"
           pacman_packages:
             - "ttf-hack"
@@ -96,21 +96,21 @@ all:
             - "otf-fira-code-git"
         - name: "deps_tools"
           pacman_packages:
-            - "slop"
-            - "maim"
-            - "feh"
-            - "xclip"
-            - "corkscrew"
-            - "mousepad"
-            - "scrot"
-            - "dmenu"
-            - "connman"
-            - "imagemagick"
-            - "archlinux-keyring"
-            - "polkit-gnome"
+            - "slop" # select operation program
+            - "maim" # screenshot utility
+            - "feh" # lightweight image viewer
+            - "xclip" # command line interface for clipboard
+            - "corkscrew" # ssh tunneling through http proxies
+            - "mousepad" # simple text editor for xfce
+            - "scrot" # simple command line screenshot utility
+            - "dmenu" # generic menu for x
+            - "connman" # intel's network connection manager
+            - "imagemagick" # image viewing and manipulation program
+            # - "archlinux-keyring" # arch pgp keyring # already covered in manjaro
+            # - "polkit-gnome" # polkit authentication agent for gnome # already covered in manjaro
           aur_packages:
-            - "gnome-ssh-askpass2"
-            - "lnav"
+            # - "gnome-ssh-askpass2" # service for asking passwords # already covered in manjaro
+            - "lnav" # tool for viewing and analyzing log files
         - name: "apps"
           pacman_packages:
             - "chromium"
@@ -126,7 +126,7 @@ all:
             - "dropbox"
             - "keybase-bin"
             - "spotify"
-            - "vivaldi"
+            #- "vivaldi"
             #- "franz-bin"
             #- "pacli"
             #- "ruby-jekyll" # TODO to be moved
