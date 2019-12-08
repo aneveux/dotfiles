@@ -81,7 +81,6 @@ all:
             - "ttf-hack"
             - "ttf-anonymous-pro"
             - "ttf-droid"
-            - "ttf-freefont"
             - "ttf-inconsolata"
             - "ttf-liberation"
             - "otf-ipafont"
