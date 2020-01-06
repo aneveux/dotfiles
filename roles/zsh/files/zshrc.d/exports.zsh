@@ -47,6 +47,7 @@ export ANSIBLE_VAULT_PASSWORD_FILE=~/.ansible-vault/default_vault_pass
 # -----------------------------------------------------------
 
 export PATH="~/.local/bin:${PATH}"
+export PATH="${PATH}:$(ruby -e 'puts Gem.user_dir')/bin"
 
 # -----------------------------------------------------------
 # spaceship theme options

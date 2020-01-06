@@ -23,5 +23,16 @@
     label: "[{{ item.0.name }}] {{ item.1 }}"
   notify: "Cleaning packer temporary resources."
 
+- name: "Installing common gems."
+  gem:
+    name: "{{ item.1 }}"
+    state: latest
+  with_subelements:
+    - "{{ common_packages | selectattr('gems', 'defined') | list }}"
+    - gems
+  when: item.0.when | default(True)
+  loop_control:
+    label: "[{{ item.0.name }}] {{ item.1 }}"
+
 - name: "Flushing handlers to clean /tmp."
   meta: flush_handlers

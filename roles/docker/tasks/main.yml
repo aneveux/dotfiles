@@ -10,7 +10,7 @@
   file:
     path: /etc/systemd/system/docker.service.d/
     state: directory
-  become: True 
+  become: True
 
 - name: "Searching for local docker daemon service configuration files."
   stat: path="{{ local_location }}/docker"
@@ -21,10 +21,10 @@
     src: "{{ local_location }}/docker/"
     dest: /etc/systemd/system/docker.service.d/
   when: _docker_local_configuration.stat.exists
-  become: True 
+  become: True
 
 - name: "Enabling the docker service."
   service:
     name: "docker.service"
-    enabled: "yes"
+    enabled: "no"
   become: True

@@ -125,6 +125,11 @@ all:
             - "dropbox"
             - "keybase-bin"
             - "spotify"
+          gems:
+            - "bundler"
+            - "jekyll"
+            - "github-pages"
+            - "jekyll-gist"
             #- "vivaldi"
             #- "franz-bin"
             #- "pacli"
