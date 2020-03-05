@@ -18,3 +18,5 @@
   with_items:
     - jdk11-graalvm-bin
     - native-image-jdk11-bin
+    - jdk8-graalvm-bin
+    - native-image-jdk8-bin
