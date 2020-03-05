@@ -93,6 +93,7 @@ all:
             - "otf-font-awesome-4"
             - "ttf-ms-fonts"
             - "otf-fira-code-git"
+            - "ttf-jetbrains-mono-git"
         - name: "deps_tools"
           pacman_packages:
             - "slop" # select operation program
@@ -115,9 +116,6 @@ all:
             - "chromium"
             - "firefox"
             - "keepassxc"
-            - "java-openjfx"
-            - "jdk8-openjdk"
-            - "pgadmin4"
             - "ruby"
             - "filezilla"
             - "gradle"
@@ -125,6 +123,7 @@ all:
             - "dropbox"
             - "keybase-bin"
             - "spotify"
+            - "dbeaver"
           gems:
             - "bundler"
             - "jekyll"

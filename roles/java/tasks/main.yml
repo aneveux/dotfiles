@@ -1,0 +1,20 @@
+---
+- name: "Installing JDKs."
+  pacman: name={{item}} state=present
+  become: True
+  with_items:
+    - jdk8-openjdk
+    - openjdk8-doc
+    - openjdk8-src
+    - jdk11-openjdk
+    - openjdk11-doc
+    - openjdk11-src
+    - jdk-openjdk
+    - openjdk-doc
+    - openjdk-src
+
+- name: "Installing GraalVM."
+  packer: name={{item}} state=present
+  with_items:
+    - jdk11-graalvm-bin
+    - native-image-jdk11-bin
