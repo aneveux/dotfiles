@@ -116,7 +116,7 @@ set guifont=Source\ Code\ Pro
 autocmd VimEnter,Colorscheme * :hi MatchParen cterm=none ctermbg=white ctermfg=black
 
 set background=dark
-colorscheme dracula
+colorscheme ThemerVim
 
 set cursorline
 
@@ -201,7 +201,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 
 " -- LIGHTLINE CONFIG
 let g:lightline = {
-      \ 'colorscheme': 'wombat',
+      \ 'colorscheme': 'ThemerVimLightline',
       \ }
 
 " -- EDITORCONFIG CONFIG

@@ -7,6 +7,12 @@
     path: ~/.config/Code/User/
     state: directory
 
+- name: "Deploying Themer theme for vscode"
+  copy:
+    src: files/theme-themer-vscode
+    dest: ~/.vscode/extensions/
+    backup: no
+
 - name: "Deploying vscode configuration file."
   template:
     src: templates/settings.json.j2

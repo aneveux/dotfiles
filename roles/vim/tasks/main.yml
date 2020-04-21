@@ -42,10 +42,10 @@
     - ~/.vim/autoload
     - ~/.vim/colors
 
-- name: "Deploying vim-atomified colorscheme."
+- name: "Deploying vim-themer colorscheme."
   copy:
-    src: files/atomified.vim
-    dest: ~/.vim/colors/atomified.vim
+    src: files/ThemerVim.vim
+    dest: ~/.vim/colors/ThemerVim.vim
 
 - name: "Deploying vim configuration file."
   copy:
@@ -66,3 +66,8 @@
   shell: cd ~/.vim/bundle/YouCompleteMe && ./install.py
   changed_when: no
 
+- name: "Deploying ThemerVimLightline theme"
+  copy:
+    src: files/ThemerVimLightline.vim
+    dest: ~/.vim/bundle/lightline.vim/autoload/lightline/colorscheme/
+    backup: no

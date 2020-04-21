@@ -37,8 +37,8 @@ sticky_history = yes
 history_length = 15
 startup_notification = false
 
-frame_color = "#d8d8d8"
-separator_color = "#d8d8d8"
+frame_color = "#b8bbba"
+separator_color = "#b8bbba"
 
 dmenu = /usr/bin/dmenu -p dunst:
 browser = /usr/bin/firefox -new-tab
@@ -52,18 +52,18 @@ context = ctrl+shift+period
 
 [base16_low]
 msg_urgency = low
-background = "#333344"
-foreground = "#65568a"
+background = "#7494a3"
+foreground = "#0e1112"
 timeout = 4
 
 [base16_normal]
 msg_urgency = normal
-background = "#474160"
-foreground = "#d8d8d8"
+background = "#0e1112"
+foreground = "#b8bbba"
 timeout = 6
 
 [base16_critical]
 msg_urgency = critical
-background = "#f84547"
-foreground = "#e8e8e8"
+background = "#cc3e44"
+foreground = "#d4d7d6"
 timeout = 8

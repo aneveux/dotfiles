@@ -31,7 +31,7 @@ font-2 = "Font Awesome 5 Free:style=Regular:pixelsize=12;3"
 font-3 = "Font Awesome 5 Brands:pixelsize=12;3"
 
 background = 0
-foreground = #c5a9f9
+foreground = #519aba
 border-color = 0
 
 fixed-center = true
@@ -57,9 +57,9 @@ pin-workspaces = true
 strip-wsnumbers = true
 enable-scroll = false
 
-label-unfocused-foreground = #afafaf
-label-focused-foreground = #ddf9a9
-label-urgent-foreground = #ff0000
+label-unfocused-foreground = #7494a3
+label-focused-foreground = #f55385
+label-urgent-foreground = #e37933
 
 [module/time]
 type = internal/date
@@ -91,11 +91,11 @@ label =  %gb_used%
 type = custom/menu
 
 label-open = 
-label-open-foreground = #ff5c56
+label-open-foreground = #cc3e44
 label-close =  cancel
-label-close-foreground = #c5a9f9
+label-close-foreground = #519aba
 label-separator = " | "
-label-separator-foreground = #c5a9f9
+label-separator-foreground = #519aba
 
 menu-0-0 = reboot
 menu-0-0-exec = menu-open-1
@@ -129,5 +129,5 @@ interval = 2
 
 [bar/float]
 inherit = bar/top
-background = #ffffff
+background = #d4d7d6
 tray-position = center

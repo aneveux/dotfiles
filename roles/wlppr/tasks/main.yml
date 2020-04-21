@@ -5,8 +5,8 @@
 
 - name: "Copying wallpaper to home folder."
   copy:
-    src: files/wallpaper.jpg
-    dest: ~/wallpaper.jpg
+    src: files/wallpaper.png
+    dest: ~/wallpaper.png
 
 - name: "Setting up wallpaper from xprofile."
   blockinfile:
@@ -14,4 +14,4 @@
    create: True
    marker: "### {mark} DOTFILES wallpaper ###"
    content: |
-    feh --bg-center ~/wallpaper.jpg
+    feh --bg-center ~/wallpaper.png

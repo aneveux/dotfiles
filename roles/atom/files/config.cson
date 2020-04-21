@@ -11,11 +11,11 @@
     restorePreviousWindowsOnStart: "no"
     telemetryConsent: "no"
     themes: [
-      "isotope-ui"
-      "monokai"
+      "themer-dark-ui"
+      "themer-dark-syntax"
     ]
   editor:
-    fontFamily: "Fira Sans"
+    fontFamily: "JetBrainsMono"
     fontSize: 15
     preferredLineLength: 150
     softWrap: true

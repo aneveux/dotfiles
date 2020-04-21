@@ -36,3 +36,15 @@
     src: files/config.cson
     dest: ~/.atom/config.cson
     backup: yes
+
+- name: "Deploying themer dark ui"
+  copy:
+    src: files/themer-dark-ui
+    dest: ~/.atom/packages
+    backup: no
+
+- name: "Deploying themer dark syntax"
+  copy:
+    src: files/themer-dark-syntax
+    dest: ~/.atom/packages
+    backup: no

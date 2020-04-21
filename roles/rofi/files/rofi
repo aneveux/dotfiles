@@ -2,10 +2,10 @@ rofi.modi:                           window,drun,run,ssh
 rofi.combi-modi:                     window,drun,run,ssh
 
 rofi.color-enabled:                  true
-rofi.color-normal:                   argb:00000000,  #D8DEE9 , argb:00000000,  #f3f99d ,  #1B2B34
-rofi.color-urgent:                   argb:00000000,  #F99157 , argb:00000000,  #F99157 ,  #1B2B34
-rofi.color-active:                   argb:00000000,  #6699CC , argb:00000000,  #6699CC ,  #1B2B34
-rofi.color-window:                   argb:D0202020,  #f3f99d ,  #f3f99d
+rofi.color-normal:                   argb:00000000,  #d4d7d6 , argb:00000000,  #cbcb41 ,  #0e1112
+rofi.color-urgent:                   argb:00000000,  #e37933 , argb:00000000,  #e37933 ,  #0e1112
+rofi.color-active:                   argb:00000000,  #519aba , argb:00000000,  #519aba ,  #0e1112
+rofi.color-window:                   argb:D0202020,  #cbcb41 ,  #cbcb41
 rofi.separator-style:                solid
 
 rofi.width:                          33

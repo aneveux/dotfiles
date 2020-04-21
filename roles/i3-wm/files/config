@@ -32,16 +32,16 @@
 
 set $mod Mod4
 
-set $pink #f02093
-set $yellow #fdf215
-set $green #abd543
-set $blue #03adf1
-set $purple #a23095
+set $pink #f55385
+set $yellow #cbcb41
+set $green #8dc149
+set $blue #519aba
+set $orange #e37933
 
-set $grey #c0c0c0
-set $black #1d2021
-set $darkblack #0c0c0c
-set $white #f2f2f2
+set $grey #b8bbba
+set $black #2a2d2e
+set $darkblack #0e1112
+set $white #d4d7d6
 
 # ---------------------------------------------------
 # Defining Workspaces
@@ -244,11 +244,11 @@ smart_borders on
 
 # colors
 # class                 border  backgr. text    indicator child_border
-client.focused          #c5a9f9 #c5a9f9 #000000 #000000   #ddf9a9
-client.focused_inactive #333333 #5f676a #c5a9f9 #484e50   #5f676a
-client.unfocused        #333333 #222222 #888888 #292d2e   #222222
-client.urgent           #2f343a #900000 #ffffff #900000   #900000
-client.placeholder      #000000 #0c0c0c #c5a9f9 #000000   #0c0c0c
+client.focused          #e37933 #e37933 #0e1112 #0e1112   #519aba
+client.focused_inactive #2a2d2e #b8bbba #519aba #2a2d2e   #7494a3
+client.unfocused        #2a2d2e #0e1112 #b8bbba #2a2d2e   #0e1112
+client.urgent           #2a2d2e #cc3e44 #d4d7d6 #cc3e44   #cc3e44
+client.placeholder      #0e1112 #2a2d2e #519aba #0e1112   #2a2d2e
 
 # ---------------------------------------------------
 # Applications Assignements
