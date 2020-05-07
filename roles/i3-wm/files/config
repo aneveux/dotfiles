@@ -217,7 +217,6 @@ mode $launcher_mode {
   bindsym a exec atom, mode "default"
   bindsym c exec code, mode "default"
   bindsym f exec firefox, mode "default"
-  bindsym v exec vivaldi-stable, mode "default"
   bindsym i exec idea, mode "default"
   bindsym k exec keepassxc, mode "default"
   bindsym s exec spotify, mode "default"
@@ -268,7 +267,6 @@ assign [class="Toolbox"] $WS3
 
 # WS4: Browsers
 assign [class="firefox"] $WS4
-assign [class="Vivaldi-stable"] $WS4
 
 # WS5: Media
 for_window [class="Spotify"] move to workspace $WS5
@@ -280,9 +278,13 @@ assign [class="discord"] $WS6
 
 # WS7: Keepass / Security
 assign [class="keepassxc"] $WS7
+for_window [class="keepassxc"] move to workspace $WS7
 
 # WS8: Server tooling / Database Management
 assign [class="pgadmin4"] $WS8
+
+# WS9: Notes and TODOS
+assign [class="joplin"] $WS9
 
 # WS10: Mail client
 assign [class="Thunderbird"] $WS10
@@ -317,6 +319,7 @@ exec --no-startup-id keepassxc
 exec --no-startup-id dropbox
 exec --no-startup-id redshift-gtk
 exec --no-startup-id dunst
+exec --no-startup-id nextcloud
 
 # hacks
 
