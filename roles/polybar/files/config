@@ -48,6 +48,8 @@ tray-padding = 4
 tray-transparent = true
 tray-background = 0
 
+monitor = ${env:MONITOR:DP-0}
+
 ; -------------------------------------
 
 [module/i3]

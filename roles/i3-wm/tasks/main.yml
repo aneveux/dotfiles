@@ -36,6 +36,18 @@
     dest: ~/.xinitrc
     backup: yes
 
+- name: "Creating the scripts directory for i3."
+  file:
+    path: ~/.config/i3/scripts/
+    state: directory
+
+- name: "Deploying i3 multiple screen script."
+  copy:
+    src: files/i3-locked-ws-switch
+    dest: ~/.config/i3/scripts/i3-locked-ws-switch
+    mode: '0744'
+    backup: no
+
 - name: "Deploying i3 main configuration file."
   copy:
     src: files/config

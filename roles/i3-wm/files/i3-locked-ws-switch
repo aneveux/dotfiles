@@ -1,0 +1,22 @@
+#!/bin/env bash
+
+ws_to_focus="$1"
+ws_pre_focus=$(i3-msg -t get_workspaces | jq -r '.[] | select(.focused==true).name')
+locked_display=$(i3-msg -t get_workspaces | jq -r '.[] | select(.focused==true).output')
+
+i3-msg -- workspace number "$ws_to_focus"
+after_focus_display=$(i3-msg -t get_workspaces | jq -r '.[] | select(.focused==true).output')
+
+if test "$locked_display" != "$after_focus_display"; then
+  if test "$ws_to_focus" = "$ws_pre_focus"; then
+    ws_to_focus=$(i3-msg -t get_workspaces | jq -r '.[] | select(.focused==true).name')
+  fi
+
+  i3-msg -- workspace number "$ws_pre_focus"
+  i3-msg -- move workspace to output "$after_focus_display"
+
+  i3-msg -- workspace number "$ws_to_focus"
+  # Prevent mouse from jumping on the wrong screen
+  sleep 0.1
+  i3-msg -- move workspace to output "$locked_display"
+fi

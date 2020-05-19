@@ -161,16 +161,16 @@ bindsym $mod+h split h
 bindsym $mod+v split v
 
 # workspace direct switch
-bindsym $mod+ampersand workspace $WS1
-bindsym $mod+eacute workspace $WS2
-bindsym $mod+quotedbl workspace $WS3
-bindsym $mod+apostrophe workspace $WS4
-bindsym $mod+parenleft workspace $WS5
-bindsym $mod+minus workspace $WS6
-bindsym $mod+egrave workspace $WS7
-bindsym $mod+underscore workspace $WS8
-bindsym $mod+ccedilla workspace $WS9
-bindsym $mod+agrave workspace $WS10
+bindsym $mod+ampersand exec --no-startup-id $HOME/.config/i3/scripts/i3-locked-ws-switch "$WS1"
+bindsym $mod+eacute exec --no-startup-id $HOME/.config/i3/scripts/i3-locked-ws-switch "$WS2"
+bindsym $mod+quotedbl exec --no-startup-id $HOME/.config/i3/scripts/i3-locked-ws-switch "$WS3"
+bindsym $mod+apostrophe exec --no-startup-id $HOME/.config/i3/scripts/i3-locked-ws-switch "$WS4"
+bindsym $mod+parenleft exec --no-startup-id $HOME/.config/i3/scripts/i3-locked-ws-switch "$WS5"
+bindsym $mod+minus exec --no-startup-id $HOME/.config/i3/scripts/i3-locked-ws-switch "$WS6"
+bindsym $mod+egrave exec --no-startup-id $HOME/.config/i3/scripts/i3-locked-ws-switch "$WS7"
+bindsym $mod+underscore exec --no-startup-id $HOME/.config/i3/scripts/i3-locked-ws-switch "$WS8"
+bindsym $mod+ccedilla exec --no-startup-id $HOME/.config/i3/scripts/i3-locked-ws-switch "$WS9"
+bindsym $mod+agrave exec --no-startup-id $HOME/.config/i3/scripts/i3-locked-ws-switch "$WS10"
 
 # move window to workspace
 bindsym $mod+Shift+ampersand move container to workspace $WS1
@@ -190,6 +190,18 @@ bindsym $mod+t exec i3-input -F 'rename workspace to "%s"' -P 'New name: '
 # move workspaces to other outputs (ie. screens)
 bindsym $mod+Ctrl+Shift+Left move workspace to output left
 bindsym $mod+Ctrl+Shift+Right move workspace to output right
+
+# i3 move a workspace to another monitor (multi monitor setup)
+
+mode "move_workspace" {
+ bindsym Left move workspace to output left
+ bindsym Right move workspace to output right
+
+ bindsym Return mode "default"
+ bindsym Escape mode "default"
+}
+
+bindsym $mod+o mode "move_workspace"
 
 # ---------------------------------------------------
 # Program Launchers & Switchers
@@ -307,7 +319,7 @@ for_window [class="feh"] floating enable, border normal
 # system
 
 # polybar
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh top
 # https://forum.manjaro.org/t/pamac-manager-issues/9813/26
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 # numlock on
