@@ -13,6 +13,11 @@ function jdk13() {
     export PATH=$JAVA_HOME/bin:$PATH
 }
 
+function jdk14() {
+    export JAVA_HOME=/usr/lib/jvm/java-14-openjdk/
+    export PATH=$JAVA_HOME/bin:$PATH
+}
+
 function graal8() {
     export JAVA_HOME=/usr/lib/jvm/java-8-openjdk/
     export GRAALVM_HOME=/usr/lib/jvm/java-8-graalvm/
@@ -25,6 +30,6 @@ function graal11() {
     export PATH=$GRAALVM_HOME/bin:$JAVA_HOME/bin:$PATH
 }
 
-# Default to JDK 13
+# Default to JDK 14
 
-jdk13
+jdk14
