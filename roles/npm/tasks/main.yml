@@ -4,9 +4,7 @@
   become: True
 
 - name: "Installing nvm."
-  packer: name={{item}} state=present
-  with_items:
-    - nvm
+  aur: name=nvm state=present
 
 - name: "Deploying nvm zsh configuration file."
   copy:

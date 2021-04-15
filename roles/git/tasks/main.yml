@@ -1,9 +1,10 @@
 ---
 - name: "Installing git and associated tooling."
-  pacman: name={{item}} state=present
-  with_items:
-    - git
-    - diff-so-fancy
+  pacman:
+    name:
+      - git
+      - diff-so-fancy
+    state: present
   become: True
 
 - name: "Deploying a global gitignore file."
@@ -21,15 +22,3 @@
     src: templates/gitconfig.j2
     dest: ~/.gitconfig
     backup: yes
-
-- name: "Installing gitmoji client."
-  npm:
-    name: gitmoji-cli
-    global: yes
-    state: present
-  become: True
-
-- name: "Deploying gitmoji client configuration file."
-  copy:
-    src: files/config.json
-    dest: ~/.config/gitmoji-cli-nodejs/config.json

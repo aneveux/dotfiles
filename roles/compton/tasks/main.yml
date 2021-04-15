@@ -1,18 +1,12 @@
 ---
 - name: "Installing compton."
-  packer: name=compton-git state=present
+  aur:
+    use: yay
+    name:
+      - compton-git
+    state: present
 
 - name: "Deploying compton configuration file."
   copy:
     src: files/compton
     dest: ~/.compton
-
-# TODO: Disabled for now : need to find proper config for laptop at work.
-#
-# - name: "Initializing compton from xprofile."
-#   blockinfile:
-#     path: ~/.xprofile
-#     create: True
-#     marker: "### {mark} DOTFILES compton ###"
-#     content: |
-#       compton --backend glx --vsync opengl-swc -GCb --config ~/.compton &

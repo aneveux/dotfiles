@@ -44,7 +44,7 @@
 - name: "Enabling ssh-agent service."
   systemd:
     daemon_reload: yes
-    user: yes
+    scope: user
     name: ssh-agent.service
     enabled: yes
     state: started

@@ -1,9 +1,10 @@
 ---
 - name: "Installing docker and associated tooling."
-  pacman: name={{item}} state=present
-  with_items:
-    - docker
-    - docker-compose
+  pacman:
+    name:
+      - docker
+      - docker-compose
+    state: present
   become: True
 
 - name: "Setting up the docker daemon service configuration"
@@ -23,7 +24,7 @@
   when: _docker_local_configuration.stat.exists
   become: True
 
-- name: "Enabling the docker service."
+- name: "Disabling the docker service by default."
   service:
     name: "docker.service"
     enabled: "no"

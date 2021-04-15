@@ -1,6 +1,6 @@
 ---
-- name: "Installing feh."
-  pacman: name=feh state=present
+- name: "Installing nitrogen."
+  pacman: name=nitrogen state=present
   become: True
 
 - name: "Copying wallpaper to home folder."
@@ -8,10 +8,17 @@
     src: files/wallpaper.png
     dest: ~/wallpaper.png
 
-- name: "Setting up wallpaper from xprofile."
-  blockinfile:
-   path: ~/.xprofile
-   create: True
-   marker: "### {mark} DOTFILES wallpaper ###"
-   content: |
-    feh --bg-center ~/wallpaper.png
+- name: "Creating nitrogen configuration directory."
+  file:
+    path: ~/.config/nitrogen
+    state: directory
+
+- name: "Deploying nitrogen configuration file."
+  copy:
+    src: files/nitrogen.cfg
+    dest: ~/.config/nitrogen/nitrogen.cfg
+
+- name: "Deploying nitrogen wallpaper definition file."
+  copy:
+    src: files/bg-saved.cfg
+    dest: ~/.config/nitrogen/bg-saved.cfg

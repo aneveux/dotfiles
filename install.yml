@@ -10,33 +10,27 @@
   roles:
     - { role: loader, tags: always}
     - { role: proxy, tags: proxy }
-    - { role: locale, tags: locale }
+    # - { role: locale, tags: locale }
     - { role: sysconfig, tags: sysconfig }
     - { role: bash, tags: bash }
-    - { role: packages-system, tags: packages-system }
     - { role: java, tags: java }
     - { role: zsh, tags: zsh }
-    - { role: fish, tags: fish }
-    - { role: screen, tags: screen }
     - { role: ssh, tags: ssh }
     - { role: npm, tags: npm }
-    - { role: packages-common, tags: packages-common }
+    - { role: packages, tags: packages }
     - { role: theming, tags: theming }
     - { role: redshift, tags: redshift }
-    - { role: i3-wm, tags: i3-wm }
+    - { role: i3, tags: i3 }
     - { role: compton, tags: compton }
     - { role: polybar, tags: polybar }
     - { role: rofi, tags: rofi }
     - { role: dunst, tags: dunst }
-    - { role: termite, tags: termite }
-    # - { role: lightdm, tags: lightdm }
+    - { role: terminator, tags: terminator }
     - { role: ranger, tags: ranger }
     - { role: git, tags: git }
     - { role: docker, tags: docker }
     - { role: vim, tags: vim }
     - { role: maven, tags: maven }
-    - { role: atom, tags: atom }
     - { role: vscode, tags: vscode }
-    # - { role: idea, tags: idea }
     - { role: wlppr, tags: wlppr }
-    - { role: virtualbox, tags: virtualbox }
+    - { role: emoji, tags: emoji }

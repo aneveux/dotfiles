@@ -1,14 +1,10 @@
 ---
 - name: "Installing polybar tools dependencies."
-  pacman: name={{item}} state=present
-  with_items:
-    - wireless_tools
+  pacman: name=wireless_tools state=present
   become: True
 
 - name: "Installing polybar and associated tooling."
-  packer: name={{item}} state=present
-  with_items:
-    - polybar-git
+  aur: name=polybar-git state=present
 
 - name: "Creating polybar configuration directory"
   file:

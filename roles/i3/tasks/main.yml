@@ -1,0 +1,46 @@
+---
+# Note that I'm actually using i3-gaps, a fork of i3wm.
+# That is because I like fancy gaps around windows.
+- name: "Installing i3-gaps and theming dependencies."
+  aur:
+    use: yay
+    name:
+      - git
+      - nitrogen
+      - rofi
+      - python-pip
+      - ttf-font-awesome
+      - adobe-source-code-pro-fonts
+      - binutils
+      - gcc
+      - make
+      - pkg-config
+      - fakeroot
+      - python-yaml
+      - nerd-fonts-complete
+    state: present
+  become: True
+
+- name: "Installing i3-gaps and associated tooling."
+  aur:
+    use: yay
+    name:
+      - i3-gaps
+    state: present
+
+- name: "Deploying xinitrc configuration file."
+  copy:
+    src: files/xinitrc
+    dest: ~/.xinitrc
+    backup: yes
+
+- name: "Creating the scripts directory for i3."
+  file:
+    path: ~/.config/i3/scripts/
+    state: directory
+
+- name: "Deploying i3 main configuration file."
+  copy:
+    src: files/config
+    dest: ~/.i3/config
+    backup: yes

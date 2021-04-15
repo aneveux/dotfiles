@@ -13,14 +13,6 @@
 ##############################################################
 
 # -----------------------------------------------------------
-# oh-my-zsh configuration
-# -----------------------------------------------------------
-
-export ZSH=~/.oh-my-zsh
-export ZSH_THEME=spaceship
-plugins=(git python colored-man-pages colorize sprunge web-search)
-
-# -----------------------------------------------------------
 # zsh cache and history configuration
 # -----------------------------------------------------------
 
@@ -50,7 +42,6 @@ setopt print_exit_value
 
 fpath=( "$HOME/.zfunctions" $fpath )
 
-autoload -U compinit && compinit -d "${ZSHCACHE}/compdump"
 autoload -U select-word-style && select-word-style bash
 autoload -U zmv
 autoload -U extract
@@ -76,11 +67,14 @@ source {{ zsh_syntax_highlighting_dir.stdout }}
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
 
-source $ZSH/oh-my-zsh.sh
 
 # -----------------------------------------------------------
 # source zshrc.d
 # -----------------------------------------------------------
+
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
 
 zshrcd="$HOME/.zshrc.d"
 if [ -d "$zshrcd" ]; then
@@ -89,5 +83,3 @@ if [ -d "$zshrcd" ]; then
     [ -r $zf ] && . $zf
   done
 fi
-
-

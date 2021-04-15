@@ -1,0 +1,15 @@
+---
+- name: "Installing terminator and associated tooling."
+  pacman: name=terminator state=present
+  become: True
+
+- name: "Creating terminator configuration directory."
+  file:
+    path: ~/.config/terminator
+    state: directory
+
+- name: "Deploying terminator configuration file."
+  copy:
+    src: files/config
+    dest: ~/.config/terminator/config
+    backup: yes

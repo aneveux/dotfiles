@@ -1,22 +1,23 @@
 rofi.modi:                           window,drun,run,ssh
 rofi.combi-modi:                     window,drun,run,ssh
 
-rofi.color-enabled:                  true
-rofi.color-normal:                   argb:00000000,  #d4d7d6 , argb:00000000,  #cbcb41 ,  #0e1112
-rofi.color-urgent:                   argb:00000000,  #e37933 , argb:00000000,  #e37933 ,  #0e1112
-rofi.color-active:                   argb:00000000,  #519aba , argb:00000000,  #519aba ,  #0e1112
-rofi.color-window:                   argb:D0202020,  #cbcb41 ,  #cbcb41
+rofi.color-enabled: true
+rofi.color-window: #1E272B, #9D6A47, #9D6A47
+rofi.color-normal: #1E272B, #EAD49B, #1E272B, #1E272B, #78824B
+rofi.color-active: #1E272B, #EAD49B, #1E272B, #1E272B, #78824B
+rofi.color-urgent: #1E272B, #EAD49B, #1E272B, #1E272B, #78824B
 rofi.separator-style:                solid
+rofi.sidebar-mode: false
 
 rofi.width:                          33
-rofi.padding:                        30
+rofi.padding:                        5
 rofi.hide-scrollbar:                 true
 rofi.borderwidth:                    0
-rofi.columns:                        1
-rofi.lines:                          15
+rofi.columns:                        2
+rofi.lines:                          5
 rofi.separator-style:                solid
-rofi.font:                           Hack 10
-rofi.bw:                             0
+rofi.font:                           Source Code Pro Semibold 10.5
+rofi.bw:                             1
 rofi.opacity:                        70
 rofi.location:                       0
 rofi.yoffset:                        -250
@@ -24,9 +25,9 @@ rofi.yoffset:                        -250
 rofi.display-run:                    shell
 rofi.display-drun:                   app
 
-rofi.fixed-num-lines:                false
+rofi.fixed-num-lines:                true
 
-rofi.terminal:                       termite
+rofi.terminal:                       terminator
 rofi.ssh-client:                     ssh
 rofi.ssh-command:                    {terminal} -e "{ssh-client} {host}"
 rofi.run-command:                    {cmd}

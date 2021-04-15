@@ -21,7 +21,6 @@ alias -- -='cd -'
 # --------------------------------------------
 # Folder Shortcuts
 
-alias d='cd ~/Dropbox'
 alias dl='cd ~/Downloads'
 alias dt='cd ~/Desktop'
 alias g='cd ~/git'

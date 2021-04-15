@@ -22,7 +22,6 @@ export GPG_TTY=$(tty)
 export BROWSER='firefox'
 export EDITOR='vim'
 export VISUAL='vim'
-export POWERLINE_CONFIG_COMMAND='powerline-config'
 
 # -----------------------------------------------------------
 # java exports
@@ -48,10 +47,3 @@ export ANSIBLE_VAULT_PASSWORD_FILE=~/.ansible-vault/default_vault_pass
 
 export PATH="~/.local/bin:${PATH}"
 export PATH="${PATH}:$(ruby -e 'puts Gem.user_dir')/bin"
-
-# -----------------------------------------------------------
-# spaceship theme options
-# -----------------------------------------------------------
-
-export SPACESHIP_PROMPT_SEPARATE_LINE=false
-export SPACESHIP_PROMPT_ADD_NEWLINE=false

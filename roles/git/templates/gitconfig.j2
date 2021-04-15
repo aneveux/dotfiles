@@ -16,6 +16,7 @@
 
 [pull]
 	default = simple
+	rebase = true
 
 [fetch]
 	prune = true
@@ -111,11 +112,6 @@
 	lol = log --graph --decorate --pretty=oneline --abbrev-commit
 	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
 	lg = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
-
-	# Functions
-	report = !fish -c 'git-report'
-	re = !git report
-	open = !fish -c 'git-open'
 
 	# Remote
 	currentbranch = !git branch --contains HEAD | tr -s ' ' | cut -d ' ' -f2

@@ -1,16 +1,20 @@
 ---
 - name: "Installing zsh and associated tooling."
-  pacman: name={{item}} state=present
-  with_items:
-    - zsh
-    - most
-    - zsh-syntax-highlighting
-    - bat # TODO to be moved in some "shell stuff"
+  pacman:
+    name:
+      - zsh
+      - most
+      - zsh-syntax-highlighting
+      - bat # TODO to be moved in some "shell stuff"
+    state: present
   become: True
 
-- name: "Installing oh-my-zsh."
-  shell: creates=~/.oh-my-zsh sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh) ||:"
-  changed_when: no
+- name: "Cloning prezto for installation."
+  git:
+    repo: https://github.com/sorin-ionescu/prezto.git
+    dest: ~/.zprezto
+    recursive: yes
+    update: no
 
 - name: "Searching for zsh-syntax-highlighting script."
   shell: find /usr -name zsh-syntax-highlighting.zsh 2>/dev/null
@@ -46,13 +50,36 @@
     repo: https://github.com/zsh-users/zsh-autosuggestions
     dest: ~/.zsh/zsh-autosuggestions
 
-- name: "Cloning spaceship-prompt theme."
-  git:
-    repo: https://github.com/denysdovhan/spaceship-prompt
-    dest: ~/.oh-my-zsh/custom/themes/spaceship-prompt
-
-- name: "Linking spaceship-prompt in the custom theme directory."
+- name: "Linking zprezto login configuration."
   file:
-    src: ~/.oh-my-zsh/custom/themes/spaceship-prompt/spaceship.zsh-theme
-    dest: ~/.oh-my-zsh/custom/themes/spaceship.zsh-theme
+    src: ~/.zprezto/runcoms/zlogin
+    dest: ~/.zlogin
     state: link
+
+- name: "Linking zprezto logout configuration."
+  file:
+    src: ~/.zprezto/runcoms/zlogout
+    dest: ~/.zlogout
+    state: link
+
+- name: "Linking zprezto profile configuration."
+  file:
+    src: ~/.zprezto/runcoms/zprofile
+    dest: ~/.zprofile
+    state: link
+
+- name: "Linking zprezto env configuration."
+  file:
+    src: ~/.zprezto/runcoms/zshenv
+    dest: ~/.zshenv
+    state: link
+
+- name: "Deploying zpreztorc configuration file."
+  copy:
+    src: files/zpreztorc
+    dest: ~/.zpreztorc
+
+- name: "Deploying garrett prompt."
+  copy:
+    src: files/prompt_garrett_setup
+    dest: ~/.zprezto/modules/prompt/functions/prompt_garrett_setup

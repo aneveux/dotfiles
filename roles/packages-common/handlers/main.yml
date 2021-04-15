@@ -1,2 +1,0 @@
-- name: "Cleaning packer temporary resources."
-  shell: rm -Rf /tmp/packer*

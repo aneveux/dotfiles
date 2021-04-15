@@ -1,17 +1,11 @@
 ---
 - name: "Installing rofi."
-  packer: name=rofi state=present
+  aur: name=rofi state=present
 
 - name: "Creating rofi configuration directory."
   file:
     path: ~/.config/rofi
     state: directory
-
-- name: "Deploying powermenu configuration script."
-  copy:
-    src: files/powermenu.sh
-    dest: ~/.config/rofi/powermenu.sh
-    mode: 0755
 
 - name: "Creating .Xresources.d configuration directory."
   file:

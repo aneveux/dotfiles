@@ -1,9 +1,0 @@
----
-- name: "Installing screen."
-  pacman: name=screen state=present
-  become: True
-
-- name: "Deploying screen configuration file."
-  copy:
-    src: files/screenrc
-    dest: ~/.screenrc

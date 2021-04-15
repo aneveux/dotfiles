@@ -1,0 +1,33 @@
+---
+
+# Dealing with emoji on Linux, thanks a lot to:
+# https://pat-s.me/post/emoji-support-for-notion-so-on-linux/
+
+- name: "Installing fonts allowing emojis."
+  pacman:
+    name:
+      - ttf-liberation
+      - noto-fonts
+      - noto-fonts-emoji
+    state: present
+  become: True
+
+- name: "Creating emoji font configuration directory."
+  file:
+    path: /etc/fonts/conf.avail/
+    state: directory
+  become: True
+
+- name: "Deploying emoji font configuration file."
+  copy:
+    src: files/75-noto-color-emoji.conf
+    dest: /etc/fonts/conf.avail/75-noto-color-emoji.conf
+    backup: no
+  become: True
+
+- name: "Linking emoji font configuration."
+  file:
+    src: /etc/fonts/conf.avail/75-noto-color-emoji.conf
+    dest: /etc/fonts/conf.d/75-noto-color-emoji.conf
+    state: link
+  become: True

@@ -1,28 +1,106 @@
-# My Dotfiles.
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]
+[![Twitter][twitter-shield]][twitter-url]
 
-![Archlinux Logo](https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Archlinux-vert-dark.svg/1280px-Archlinux-vert-dark.svg.png)
+<br />
+<p align="center">
+  <a href="https://github.com/aneveux/dotfiles">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Manjaro-logo.svg/200px-Manjaro-logo.svg.png" alt="Manjaro Logo" width="200" height="200" />
+  </a>
 
-Hi people!
+  <h3 align="center">🦕 Antoine's `.`files </h3>
 
-This repository contains all the things I'm using in order to set up my development environment! There's nothing too crazy in it, but I'd be really happy if it could help you in case you'd like to set up kind of a similar environment!
+  <p align="center">
+    Personal dotfiles repository of [Antoine](https://twitter.com/antoineneveux), provisioned by [Ansible](https://www.ansible.com/).
+  </p>
+</p>
 
-Otherwise, it'll actually help me provisioning my laptops!
+<details open="open">
+  <summary><h2 style="display: inline-block">Table of Contents</h2></summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#using">Using</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#acknowledgements">Acknowledgements</a></li>
+  </ol>
+</details>
 
-## Operating System.
+## About The Project
 
-I've been converted to [Archlinux](https://www.archlinux.org/) by [@ThomasFerreira](https://github.com/ThomasFerreira/) and I'm really happy about it!
+Hello World 👋
 
-This repository doesn't intend to deal with the whole Operating System installation, so I'll instead let you rely on the [awesome installation guide from arch wiki](https://wiki.archlinux.org/index.php/Installation_guide)!
+This repository is *yet another dotfiles repository*, containing all the things I'm using to bootstrap and configure my development environment.
 
-But as soon as you have a running system (by the end of the wiki page actually), you'll be able to use this repository! There is a small playbook provided in the `playbooks` directory allowing to let you deal with the *locale* and *user* creation. If you never played with Ansible, have a look at the `install.sh` script to get examples of how to use the `ansible-playbook` command.
+There's nothing too crazy in it, except things making my life easier, and a bunch of stuff I installed at some point and forgot why. Quite a lot of things are inspired from various dotfiles projects I found here and there, and I'll try my best to credit all the references I used at the end of that README.
 
-Once your user is created, you can directly run the installation script :)
+There were numerous versions of my dotfiles, using various tools and provisioning mechanisms. I tried lots of different things, from window managers to shells, but this current version is probably the one I've been comfortable with for the longest time, and it's been around 3 years of me using it I believe.
 
-## Customizing the dotfiles.
+If you'd like to setup your environment with that project, feel free to use it. I would highly recommand taking a bit of time to understand it and adapt it to your needs though, to avoid hurting your computer too much. Of course if you have questions about something in that project and would like to talk about it, feel free to message me 😀
 
-I'm using a particular variables loader allowing you to override some properties of the playbooks! All you have to do is create a `local` folder at the root of the repository, and put a `local.yml` file in it. You can then customize values used to provision the system!
+Have fun!
 
-Here's an example of a `local/local.yml` file you could be using:
+### Using
+
+Here's what my desktop looks like:
+
+<img src="screenshot.png" alt="Desktop Screenshot" width="500" />
+
+I'm using [Manjaro](https://manjaro.org/) as my main operating system for years now. My window manager is [i3-gaps](https://github.com/Airblader/i3), a fork of [i3wm](https://i3wm.org/).
+
+To complete my desktop environment, I'm using [Polybar](https://polybar.github.io/) to manage my status bar, [Rofi](https://github.com/davatorium/rofi) as my application launcher, [Dunst](https://dunst-project.org/) for managing notifications.
+
+I'm using [zsh](https://www.zsh.org/), nowadays completed by [Prezto](https://github.com/sorin-ionescu/prezto) (after years of using [oh-my-zsh](https://ohmyz.sh/)).
+
+And you'll find plenty of other things here and there in that repository, from the code editors I use to some helpful programs I find interesting.
+
+Don't hesitate to let me know if you'd have any recommendation to make!
+
+## Getting Started
+
+All of my dotfiles are managed with [Ansible](https://www.ansible.com/), allowing me to provision multiple environments and customize what's being deployed if necessary.
+
+Configuration can be done through a yml file overriding the default values of this repository.
+
+The `install.sh` script provided at the root of this repository allows you to execute the ansible commands easily.
+
+### Prerequisites
+
+Ansible tasks will most of the time automatically install software requirements, but there are a few things you need to install beforehand, like `ansible` itself for example, or `git` to retrieve that repository.
+
+Some tools will be installed from the [aur](https://aur.archlinux.org/). We'll need an Ansible module in order to ease the installation for us, so we'll use [Ansible AUR](https://github.com/kewlfft/ansible-aur). It can use lots of AUR clients. I'm using [yay](https://github.com/Jguer/yay) myself, which is easy to install.
+
+If you want to follow the way I do, I simply install `yay`, then use `yay` in order to install ansible-aur with `yay -S ansible-aur-git`.
+
+In order to ease a little bit the installation, you can run the `requirements.sh` script allowing to install all the things which are needed by the whole environment.
+
+With `yay`, `ansible`, and `ansible-aur` installed, you're ready to use the playbooks to start bootstraping your environment.
+
+### Installation
+
+After checking that the repository contains what you want, you can:
+
+1. Create a local configuration file at `local/local.yml` (this repository assumes your dotfiles are located at `~/dotfiles`)
+
+The content of this local configuration file should look like:
 
 ```yml
 ---
@@ -48,55 +126,81 @@ sys:
     sudo_nopassword: yes
 ```
 
-Basically, it allows you to customize your user's information, as well as the shell you'd like to use, or the keymap and locales to use.
+2. Customize the configuration the way you like
+3. Execute the `install.sh` script
 
-Please note that it is a bit linked to what's in the playbooks though. For example, I'm only provisioning i3 as a window manager, so if you put gnome or kde here, it won't work instead you actually install and configure it yourself ;)
+The script will let you install everything, or select exactly what you'd like to provision tool by tool.
 
-Do not hesitate to have a look at `inventory/localhost.yml` as well. It is the main inventory for these playbooks, and contains all the information used to provision the environment.
+## Usage
 
-## Provisioning the environment.
+The `install.sh` script allows you to provision everything you need. Roles are supposed to be idempotent, so you can execute them multiple times and nothing will change if their content has already been applied.
 
-This repository comes with a small shell script allowing to easily run the Ansible playbooks! Simply run `./install.sh all` to provision everything in one command line!
+If you were about to use that repository for yourself, I'd highly recommend you to fork the repository, and modify it accordingly with your preferences.
 
-If you'd like to only provision a particular tool, you can simply name it like this: `./install.sh git` for example.
+## Roadmap
 
-The provided shell script allows to dry run the execution as well so you can have a look at the changes it would cause on your environment.
+See the [open issues](https://github.com/aneveux/dotfiles/issues) for a list of proposed features (and known issues).
 
-## Updating some files.
+## Contributing
 
-These playbooks are idempotent. Which means you can run them again and again and they won't do anything if nothing has changed on your system.
+This project really is my setup for my development environment, so it's not that much a perfect fit for external contributions.
 
-To update anything, simply do the modifications in this repository, and run the provisioning again, it'll simply modify the things which changed ;)
+But if you have any recommendations, or if you see any bugs that could be fixed, feel free to let me know.
 
-## Resources I use.
+## License
 
-- [Archlinux](https://www.archlinux.org/) - My favorite Linux distribution for a development environment!
-   - Note that you could have a look at [Manjaro](https://manjaro.org/) if you struggle with Arch installation ;)
-- [zsh](http://www.zsh.org/) - The shell I'm using, even though I'm still switching to fish once in a while.
-- [oh-my-zsh](http://ohmyz.sh/) - Making zsh a bit easier to extend :)
-- [fish shell](http://fishshell.com/) - A really friendly shell I'm sometimes using.
-- [oh-my-fish](https://github.com/oh-my-fish/oh-my-fish) - Kinda similar to *oh-my-zsh* but for fish.
-- [git](https://git-scm.com/) - I love Git.
-- [i3-gaps](https://github.com/Airblader/i3) - A fork of *i3wm* which I love. I never found a better window manager ever.
-- [atom](https://atom.io/) - I'd like to use vim more but I'm still kinda bad with it.
-- [terminal sexy](http://terminal.sexy/) - For nice terminal color schemes
-- [rofi](https://davedavenport.github.io/rofi/) - A powerful window switcher!
-- [IntelliJ IDEA](https://www.jetbrains.com/idea/) - my favourite IDE,
+Distributed under the MIT License. See `LICENSE` for more information.
 
-And some useless, but absolutely necessary resources:
+## Contact
 
-- [Table flipping emoticons](http://japaneseemoticons.me/table-flipping-emoticons/) - cause commit messages,
-- [Shields](http://shields.io/) - cause opensource projects are all doing it,
-- [Commit Message](http://whatthecommit.com/) - when you lack inspiration,
+Antoine Neveux - [@antoineneveux](https://twitter.com/antoineneveux) - aneveux `at` protonmail `dot` com
 
-## Thanks!
+Project Link: [https://github.com/aneveux/dotfiles](https://github.com/aneveux/dotfiles)
 
-I really wanted to thank a lot all those really nice people/projects for the great inspiration:
+## Acknowledgements
 
-- [Jean-Marc Desprez](https://github.com/jmdesprez)
-- [Thomas Ferreira](https://github.com/ThomasFerreira)
+### Ansible Resources
+
+- [Ansible AUR](https://github.com/kewlfft/ansible-aur)
+
+### i3 themes
+
+- [i3wm-themer](https://github.com/unix121/i3wm-themer)
+
+### Zsh Stuff
+
+- [prezto](https://github.com/sorin-ionescu/prezto)
+
+### Dotfiles inspiration
+
 - [GitHub does dotfiles](https://dotfiles.github.io/)
 - [Mathias Bynens' dotfiles](https://github.com/mathiasbynens/dotfiles)
 - [dotbot](https://github.com/anishathalye/dotbot)
 - [Airblader's dotfiles](https://github.com/Airblader/dotfiles-manjaro)
 - [eoli3n](https://github.com/eoli3n/dotfiles)
+
+### Useless but funny
+
+- [Table flipping emoticons](http://japaneseemoticons.me/table-flipping-emoticons/) - cause commit messages,
+- [Shields](http://shields.io/) - cause opensource projects are all doing it,
+- [Commit Message](http://whatthecommit.com/) - when you lack inspiration,
+
+### Special thank you to:
+
+- [Jean-Marc Desprez](https://github.com/jmdesprez)
+- [@ThomasFerreira](https://github.com/ThomasFerreira)
+
+[contributors-shield]: https://img.shields.io/github/contributors/aneveux/dotfiles.svg?style=for-the-badge
+[contributors-url]: https://github.com/aneveux/dotfiles/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/aneveux/dotfiles.svg?style=for-the-badge
+[forks-url]: https://github.com/aneveux/dotfiles/network/members
+[stars-shield]: https://img.shields.io/github/stars/aneveux/dotfiles.svg?style=for-the-badge
+[stars-url]: https://github.com/aneveux/dotfiles/stargazers
+[issues-shield]: https://img.shields.io/github/issues/aneveux/dotfiles.svg?style=for-the-badge
+[issues-url]: https://github.com/aneveux/dotfiles/issues
+[license-shield]: https://img.shields.io/github/license/aneveux/dotfiles.svg?style=for-the-badge
+[license-url]: https://github.com/aneveux/dotfiles/blob/master/LICENSE.txt
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-url]: https://linkedin.com/in/aneveux
+[twitter-shield]: https://img.shields.io/twitter/follow/antoineneveux?style=for-the-badge
+[twitter-url]: https://twitter.com/antoineneveux

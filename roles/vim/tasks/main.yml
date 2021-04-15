@@ -1,15 +1,14 @@
 ---
 - name: "Installing vim and associated tooling."
-  pacman: name={{item}} state=present
-  with_items:
-    - vim
-    - editorconfig-core-c
+  pacman:
+    name:
+      - vim
+      - editorconfig-core-c
+    state: present
   become: True
 
 - name: "Installing from pacman additional code formatters."
-  pacman: name={{item}} state=present
-  with_items:
-    - astyle
+  pacman: name=astyle state=present
   become: True
 
 - name: "Installing from pip additional code formatters."
@@ -18,19 +17,18 @@
     state: latest
     extra_args: --user
 
-- name: "Installing from npm additional code formatters."
-  npm:
-    name: "{{item}}"
-    global: yes
-    state: present
-  with_items:
-    - typescript
-    - js-beautify
-    - eslint
-    - typescript-formatter
-    - remark-cli
-    - fixjson
-  become: True
+# - name: "Installing from npm additional code formatters."
+#   npm:
+#     name:
+#       - typescript
+#       - js-beautify
+#       - eslint
+#       - typescript-formatter
+#       - remark-cli
+#       - fixjson
+#     global: yes
+#     state: present
+#   become: True
 
 - name: "Creating vim configuration directories."
   file:
