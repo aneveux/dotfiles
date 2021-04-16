@@ -1,6 +1,6 @@
 ---
 - name: "Installing nitrogen."
-  pacman: name=nitrogen state=present
+  aur: name=nitrogen-git state=present
   become: True
 
 - name: "Copying wallpaper to home folder."

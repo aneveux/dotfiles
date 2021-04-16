@@ -454,7 +454,6 @@ workspace $WS12 output $RIGHT
 # Autostart Services
 # --------------
 
-exec --no-startup-id feh --bg-center ~/wallpaper.png
 exec --no-startup-id compton -b
 exec --no-startup-id nm-applet
 # exec --no-startup-id xfce4-power-manager
@@ -464,6 +463,7 @@ exec --no-startup-id clipit
 # exec_always --no-startup-id fix_xcursor
 exec_always --no-startup-id $HOME/.config/polybar/i3wmthemer_bar_launch.sh i3wmthemer_bar
 exec --no-startup-id numlockx on
+exec_always feh --bg-center ~/wallpaper.png
 
 # --------------
 # Autostart Applications
