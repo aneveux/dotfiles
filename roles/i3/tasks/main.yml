@@ -6,7 +6,6 @@
     use: yay
     name:
       - git
-      - nitrogen
       - rofi
       - python-pip
       - ttf-font-awesome
@@ -18,6 +17,7 @@
       - fakeroot
       - python-yaml
       - nerd-fonts-complete
+      - feh
     state: present
   become: True
 
