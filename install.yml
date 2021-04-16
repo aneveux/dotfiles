@@ -32,5 +32,6 @@
     - { role: vim, tags: vim }
     - { role: maven, tags: maven }
     - { role: vscode, tags: vscode }
+    - { role: micro, tags: micro }
     - { role: wlppr, tags: wlppr }
     - { role: emoji, tags: emoji }

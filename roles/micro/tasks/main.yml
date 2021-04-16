@@ -1,0 +1,7 @@
+---
+- name: "Installing micro."
+  pacman:
+    name:
+      - micro
+    state: present
+  become: True

@@ -375,6 +375,9 @@ for_window [class="Xfburn"] floating enable
 bindsym $mod+d exec "rofi -combi-modi window,drun -modi combi,ssh,run -show combi -show-icons"
 bindsym $mod+Shift+d exec "rofi -combi-modi ssh -modi ssh -show combi"
 
+# rofimoji
+bindsym $mod+Shift+colon exec rofimoji
+
 # custom dmenu script for switching through open applications
 bindsym $mod+Tab exec "fish -c 'i3-switch'"
 

@@ -1,6 +1,12 @@
 ---
 - name: "Installing rofi."
-  aur: name=rofi state=present
+  aur:
+    name:
+      - rofi
+      - rofimoji
+      - xdotool
+      - xclip
+    state: present
 
 - name: "Creating rofi configuration directory."
   file:
