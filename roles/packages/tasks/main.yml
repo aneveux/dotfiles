@@ -1,2 +1,103 @@
 ---
-# to be done from scratch
+- name: "Installing general Linux tools."
+  pacman:
+    name:
+      - acpi # kernel modules for acpi (advanced configuration and power interface) parts
+      - alsa-utils # kernel modules for linux sound architecture
+      - gvfs # virtual filesystem implementation
+      - python-pip
+    state: present
+  become: True
+
+- name: "Installing basic CLI tools."
+  pacman:
+    name:
+      - jshon # json parser for shell
+      - expac # pacman database extraction utility
+      - pygmentize # python syntax highlighter
+      - curl # cli for interacting with urls
+      - gnupg # encryption software
+      - gpa # gui for gnupg
+      - httpie # command line http client
+      - jq # command line json processor
+      - tree # cli for listing directories in a tree
+      - thefuck # corrects errors in console commands
+      - yajl # yet another json library...
+      - tldr # man pages, in a tldr format
+      - fasd # quick access to files and folders in shell
+      - fd # user friendly alternative to find
+      - exa # ls on steroids
+      - xorg-xprop # property displayer for X
+      - cowsay # displays cows in shell
+      - lolcat # colors shell with rainbow colors
+      - playerctl # media player controller, lib for spotify
+      - tig # git lightweight client for shell
+      - w3m # text based web browser
+      - htop # interactive process viewer
+      - sysstat # collection of performance monitoring tools
+      - slop # select operation program
+      - maim # screenshot utility
+      - feh # lightweight image viewer
+      - xclip # command line interface for clipboard
+      - corkscrew # ssh tunneling through http proxies
+      - mousepad # simple text editor for xfce
+      - scrot # simple command line screenshot utility
+      - dmenu # generic menu for x
+      - connman # intel's network connection manager
+      - imagemagick # image viewing and manipulation program
+      - bat # enhanced cat
+      - lnav # log navigator
+    state: present
+  become: True
+
+- name: "Installing additional fonts."
+  pacman:
+    name:
+      - ttf-hack
+      - ttf-anonymous-pro
+      - ttf-droid
+      - ttf-inconsolata
+      - ttf-liberation
+      - otf-ipafont
+      - adobe-source-code-pro-fonts
+    state: present
+  become: True
+
+- name: "Installing additional fonts from aur."
+  aur:
+    name:
+      - ttf-font-awesome
+      - ttf-unifont
+      - ttf-font-icons
+      - nerd-fonts-complete
+      - otf-font-awesome-4
+      - ttf-ms-fonts
+      - ttf-jetbrains-mono-git
+    state: present
+
+- name: "Installing software I use."
+  pacman:
+    name:
+      - chromium
+      - firefox
+      - keepassxc
+      - ruby
+      - filezilla
+      - gradle
+      - nextcloud-client
+      - redshift
+      - terminator
+      - vlc
+    state: present
+  become: True
+
+- name: "Installing software I use from AUR."
+  aur:
+    name:
+      - spotify
+      - dbeaver
+      - jetbrains-toolbox
+      # - notion-app
+      - obs-studio-git
+      - zoom
+    state: present
