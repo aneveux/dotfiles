@@ -117,6 +117,7 @@ usr:
     keymap: fr
     locales:
       - "en_US.UTF-8"
+    multiscreen: True
 
 sys:
   proxy:

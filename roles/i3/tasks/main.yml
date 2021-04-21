@@ -19,7 +19,6 @@
       - nerd-fonts-complete
       - feh
     state: present
-  become: True
 
 - name: "Installing i3-gaps and associated tooling."
   aur:
@@ -45,7 +44,7 @@
     state: directory
 
 - name: "Deploying i3 main configuration file."
-  copy:
-    src: files/config
+  template:
+    src: templates/config.j2
     dest: ~/.i3/config
     backup: yes

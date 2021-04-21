@@ -19,6 +19,7 @@ all:
           xsession: "{{ usr.preferences.xsession | default('i3') }}"
           keymap: "{{ usr.preferences.keymap | default('fr') }}"
           locales: "{{ usr.preferences.locales | default('en_US.UTF-8') }}"
+          multiscreen: "{{ usr.preferences.multiscreen | default('false') }}"
 
       system:
         proxy:

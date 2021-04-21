@@ -426,6 +426,8 @@ mode "$mode_system" {
     bindsym Escape mode "default"
 }
 
+{% if user.preferences.multiscreen %}
+
 # ---------------------------------------------------
 # Multiple Monitors Hack
 # ---------------------
@@ -452,6 +454,7 @@ workspace $WS10 output $MAIN
 workspace $WS11 output $LEFT
 workspace $WS12 output $RIGHT
 
+{% endif %}
 
 # --------------
 # Autostart Services
