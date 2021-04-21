@@ -92,8 +92,6 @@ Some tools will be installed from the [aur](https://aur.archlinux.org/). We'll n
 
 If you want to follow the way I do, I simply install `yay`, then use `yay` in order to install ansible-aur with `yay -S ansible-aur-git`.
 
-In order to ease a little bit the installation, you can run the `requirements.sh` script allowing to install all the things which are needed by the whole environment.
-
 With `yay`, `ansible`, and `ansible-aur` installed, you're ready to use the playbooks to start bootstraping your environment.
 
 ### Installation
@@ -133,6 +131,8 @@ sys:
 3. Execute the `install.sh` script
 
 The script will let you install everything, or select exactly what you'd like to provision tool by tool.
+
+If you want to install everything, simply run `./install.sh all`, otherwise, you can simply write the tag of a component you'd like to install, like `./install.sh i3` for example.
 
 ## Usage
 
