@@ -34,6 +34,11 @@
     dest: ~/.xinitrc
     backup: yes
 
+- name: "Creating the configuration folder for i3."
+  file:
+    path: ~/.i3/
+    state: directory
+
 - name: "Creating the scripts directory for i3."
   file:
     path: ~/.config/i3/scripts/

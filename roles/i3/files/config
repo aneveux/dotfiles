@@ -430,7 +430,7 @@ mode "$mode_system" {
 # Multiple Monitors Hack
 # ---------------------
 
-exec --no-startup-id /home/antoine/dotfiles/local/monitor_configuration.sh
+exec_always --no-startup-id /home/antoine/dotfiles/local/monitor_configuration.sh
 
 set $WS11 "11:"
 set $WS12 "12:"
@@ -457,16 +457,12 @@ workspace $WS12 output $RIGHT
 # Autostart Services
 # --------------
 
-exec --no-startup-id compton -b
+exec_always --no-startup-id feh --bg-center ~/wallpaper.png
 exec --no-startup-id nm-applet
-# exec --no-startup-id xfce4-power-manager
 exec --no-startup-id pamac-tray
 exec --no-startup-id clipit
-# exec_always --no-startup-id ff-theme-util
-# exec_always --no-startup-id fix_xcursor
 exec_always --no-startup-id $HOME/.config/polybar/i3wmthemer_bar_launch.sh i3wmthemer_bar
 exec --no-startup-id numlockx on
-exec_always feh --bg-center ~/wallpaper.png
 
 # --------------
 # Autostart Applications

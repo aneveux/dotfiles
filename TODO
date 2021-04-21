@@ -1,3 +1,5 @@
+inclure les modifs dans la conf dunst pour les icones
+
 - Create roles for managing:
   - Docker Daemon
   - Java + JAVA_HOME

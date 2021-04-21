@@ -29,9 +29,8 @@ padding = 6
 horizontal_padding = 6
 frame_width = 3
 
-icon_position = off
+icon_position = left
 max_icon_size = 80
-icon_folders = /usr/share/icons/Paper/16x16/mimetypes/:/usr/share/icons/Paper/48x48/status/:/usr/share/icons/Paper/16x16/devices/:/usr/share/icons/Paper/48x48/notifications/:/usr/share/icons/Paper/48x48/emblems/
 
 sticky_history = yes
 history_length = 15

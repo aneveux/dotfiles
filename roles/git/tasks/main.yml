@@ -4,6 +4,7 @@
     name:
       - git
       - diff-so-fancy
+      - kdiff3
     state: present
   become: True
 

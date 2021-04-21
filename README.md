@@ -12,10 +12,10 @@
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Manjaro-logo.svg/200px-Manjaro-logo.svg.png" alt="Manjaro Logo" width="200" height="200" />
   </a>
 
-  <h3 align="center">🦕 Antoine's `.`files </h3>
+  <h3 align="center">🦕 Antoine`.`files </h3>
 
   <p align="center">
-    Personal dotfiles repository of [Antoine](https://twitter.com/antoineneveux), provisioned by [Ansible](https://www.ansible.com/).
+    Personal dotfiles repository of <a href="https://twitter.com/antoineneveux">Antoine</a>, provisioned by <a href="https://www.ansible.com/">Ansible</a>.
   </p>
 </p>
 
@@ -62,7 +62,9 @@ Have fun!
 
 Here's what my desktop looks like:
 
-<img src="screenshot.png" alt="Desktop Screenshot" width="500" />
+<p align="center">
+  <img src="screenshot.png" alt="Desktop Screenshot" width="500" />
+</p>
 
 I'm using [Manjaro](https://manjaro.org/) as my main operating system for years now. My window manager is [i3-gaps](https://github.com/Airblader/i3), a fork of [i3wm](https://i3wm.org/).
 
