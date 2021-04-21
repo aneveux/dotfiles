@@ -5,3 +5,23 @@
       - micro
     state: present
   become: True
+
+- name: "Deploying micro exports for zsh."
+  copy:
+    src: files/micro.zsh
+    dest: ~/.zshrc.d/micro.zsh
+
+- name: "Creating micro colors configuration directory."
+  file:
+    path: ~/.config/micro/colorschemes
+    state: directory
+
+- name: "Deploying micro colors theme file."
+  copy:
+    src: files/gruvbox-tc.micro
+    dest: ~/.config/micro/colorschemes/gruvbox-tc.micro
+
+- name: "Deploying micro configuration file."
+  copy:
+    src: files/settings.json
+    dest: ~/.config/micro/settings.json
