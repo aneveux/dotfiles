@@ -12,6 +12,7 @@
     - { role: proxy, tags: proxy }
     # - { role: locale, tags: locale }
     - { role: sysconfig, tags: sysconfig }
+    - { role: bluetooth, tags: bluetooth }
     - { role: bash, tags: bash }
     - { role: java, tags: java }
     - { role: zsh, tags: zsh }

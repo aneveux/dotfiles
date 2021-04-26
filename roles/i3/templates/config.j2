@@ -467,6 +467,10 @@ exec --no-startup-id clipit
 exec_always --no-startup-id $HOME/.config/polybar/i3wmthemer_bar_launch.sh i3wmthemer_bar
 exec --no-startup-id numlockx on
 
+{% if user.preferences.laptop %}
+exec_always --no-startup-id xfce4-power-manager
+{% endif %}
+
 # --------------
 # Autostart Applications
 # --------------

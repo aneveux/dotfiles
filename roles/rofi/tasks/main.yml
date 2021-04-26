@@ -6,6 +6,7 @@
       - rofimoji
       - xdotool
       - xclip
+      - xsel
     state: present
 
 - name: "Creating rofi configuration directory."

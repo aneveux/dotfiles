@@ -3,6 +3,11 @@
   pacman: name=openssh state=present
   become: True
 
+- name: "Creating the configuration folder for ssh."
+  file:
+    path: ~/.ssh/
+    state: directory
+
 - name: "Deploying ssh configuration file."
   copy:
     src: files/config
