@@ -25,3 +25,18 @@
   file:
     path: ~/tools
     state: directory
+
+- name: "Installing packages for trackpad support on laptop."
+  pacman:
+    name:
+      - xf86-input-synaptics
+    state: present
+  become: True
+  when: user.preferences.laptop == True
+
+- name: "Deploying trackpad configuration file for laptop."
+  copy:
+    src: files/90-touchpad.conf
+    dest: /etc/X11/xorg.conf.d/90-touchpad.conf
+  become: True
+  when: user.preferences.laptop == True

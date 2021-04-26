@@ -20,6 +20,7 @@ all:
           keymap: "{{ usr.preferences.keymap | default('fr') }}"
           locales: "{{ usr.preferences.locales | default('en_US.UTF-8') }}"
           multiscreen: "{{ usr.preferences.multiscreen | default('false') }}"
+          laptop: "{{ usr.preferences.laptop | default('false') }}"
 
       system:
         proxy:

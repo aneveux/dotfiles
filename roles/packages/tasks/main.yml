@@ -72,7 +72,7 @@
       - nerd-fonts-complete
       - otf-font-awesome-4
       - ttf-ms-fonts
-      - ttf-jetbrains-mono-git
+      - ttf-jetbrains-mono
     state: present
 
 - name: "Installing software I use."
@@ -88,6 +88,7 @@
       - redshift
       - terminator
       - vlc
+      - discord
     state: present
   become: True
 

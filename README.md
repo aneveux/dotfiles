@@ -116,6 +116,7 @@ usr:
     locales:
       - "en_US.UTF-8"
     multiscreen: True
+    laptop: True
 
 sys:
   proxy:
