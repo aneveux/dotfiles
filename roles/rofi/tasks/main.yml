@@ -14,19 +14,17 @@
     path: ~/.config/rofi
     state: directory
 
-- name: "Creating .Xresources.d configuration directory."
+- name: "Creating rofi themes directory."
   file:
-    path: ~/.Xresources.d
+    path: ~/.config/rofi/themes
     state: directory
 
 - name: "Deploying rofi configuration file."
   copy:
-    src: files/rofi
-    dest: ~/.Xresources.d/rofi
+    src: files/config.rasi
+    dest: ~/.config/rofi/config.rasi
 
-- name: "Initializing rofi from Xresources configuration file."
-  lineinfile:
-    path: ~/.Xresources
-    create: yes
-    state: present
-    line: '#include ".Xresources.d/rofi"'
+- name: "Deploying rofi slate theme configuration file."
+  copy:
+    src: files/slate.rasi
+    dest: ~/.config/rofi/themes/slate.rasi

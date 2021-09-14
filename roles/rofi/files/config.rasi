@@ -1,0 +1,55 @@
+configuration {
+	modi: "window,drun,run,ssh";
+  combi-modi: "window,drun,run,ssh";
+
+	font: "Source Code Pro Semibold 10.5";
+  fixed-num-lines: true;
+  show-icons: true;
+  icon-theme: "default";
+
+  sidebar-mode: false;
+  location: 0;
+  yoffset: 0;
+  xoffset: 0;
+
+  terminal: "terminator";
+  ssh-client: "ssh";
+  ssh-command: "{terminal} -e {ssh-client} {host}";
+  run-command: "{cmd}";
+  run-list-command: "";
+  run-shell-command: "{terminal} -e {cmd}";
+
+  case-sensitive: false;
+  sort: true;
+  sorting-method: "levenshtein";
+  disable-history: true;
+  matching: "fuzzy";
+  tokenize: true;
+
+  drun {
+    display-name: "app";
+  }
+
+  run {
+    display-name: "shell";
+  }
+
+  combi {
+    display-name: "switch";
+  }
+
+	parse-hosts: true;
+	parse-known-hosts: true;
+
+  timeout {
+      action: "kb-cancel";
+      delay:  0;
+  }
+  filebrowser {
+      directories-first: true;
+      sorting-method:    "name";
+  }
+}
+
+@import "slate"
+@theme "slate"

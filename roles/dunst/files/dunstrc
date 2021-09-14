@@ -1,46 +1,54 @@
 [global]
-font = "Source Code Pro Semibold:size=11;1"
+font = "Source Code Pro Semibold:size=10;1"
 
-markup = yes
+markup = full
 plain_text = no
 
-format = "<i>%s</i>\n%b"
-alignment = center
+format = "%s %p\n%b\n- %a"
+alignment = left
+vertical_alignment = center
 word_wrap = yes
 ignore_newline = no
-show_indicators = no
+show_indicators = yes
+ellipsize = middle
 
-sort = no
+sort = yes
 indicate_hidden = yes
 bounce_freq = 0
-show_age_threshold = -1
+show_age_threshold = 60
 stack_duplicates = yes
-hide_duplicates_count = yes
-idle_threshold = 0
+hide_duplicates_count = false
+idle_threshold = 120
 
 monitor = 0
-follow = none
-geometry = "300x50-15+49"
+follow = mouse
+geometry = "0x4-40+40"
 shrink = no
-transparency = 5
-line_height = 1
-separator_height = 2
-padding = 6
-horizontal_padding = 6
-frame_width = 3
+transparency = 25
+line_height = 0
+separator_height = 1
+padding = 12
+horizontal_padding = 15
+frame_width = 0
+notification_height = 0
+
+corner_radius = 8
 
 icon_position = left
+min_icon_size = 0
 max_icon_size = 80
 
 sticky_history = yes
 history_length = 15
 startup_notification = false
 
-frame_color = "#EAD49B"
-separator_color = "#EAD49B"
+frame_color = "#282a36"
+separator_color = frame
 
 dmenu = /usr/bin/dmenu -p dunst:
 browser = /usr/bin/firefox -new-tab
+
+class = Dunst
 
 [shortcuts]
 
@@ -49,20 +57,23 @@ close_all = ctrl+shift+space
 history = ctrl+grave
 context = ctrl+shift+period
 
-[base16_low]
-msg_urgency = low
-background = "#1E272B"
-foreground = "#78824b"
-timeout = 4
+[urgency_low]
+    # IMPORTANT: colors have to be defined in quotation marks.
+    # Otherwise the "#" and following would be interpreted as a comment.
+    background = "#282a36"
+    foreground = "#6272a4"
+    timeout = 10
+    # Icon for notifications with low urgency, uncomment to enable
+    #icon = /path/to/icon
 
-[base16_normal]
-msg_urgency = normal
-background = "#1E272B"
-foreground = "#EAD49B"
-timeout = 6
+[urgency_normal]
+    background = "#282a36"
+    foreground = "#bd93f9"
+    timeout = 10
+    # Icon for notifications with normal urgency, uncomment to enable
+    #icon = /path/to/icon
 
-[base16_critical]
-msg_urgency = critical
-background = "#1E272B"
-foreground = "#cc3e44"
-timeout = 8
+[urgency_critical]
+    background = "#ff5555"
+    foreground = "#f8f8f2"
+    timeout = 0

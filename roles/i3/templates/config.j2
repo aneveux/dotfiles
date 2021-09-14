@@ -478,6 +478,8 @@ exec_always --no-startup-id xfce4-power-manager
 # https://forum.manjaro.org/t/pamac-manager-issues/9813/26
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
+exec --no-startup-id compton --opacity-rule '100:window_type = "dock" && class_g = "i3bar"' --config ~/.config/compton.conf -b
+
 exec --no-startup-id dunst
 exec --no-startup-id nextcloud --background
 

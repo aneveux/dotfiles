@@ -1,4 +1,3 @@
-#include ".Xresources.d/rofi"
 #include ".Xresources.d/cursor"
 
 *background: #1E272B

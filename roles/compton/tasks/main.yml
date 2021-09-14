@@ -8,5 +8,5 @@
 
 - name: "Deploying compton configuration file."
   copy:
-    src: files/compton
-    dest: ~/.compton
+    src: files/compton.conf
+    dest: ~/.config/compton.conf
