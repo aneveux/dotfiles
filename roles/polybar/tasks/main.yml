@@ -4,15 +4,26 @@
   become: True
 
 - name: "Installing polybar and associated tooling."
-  aur: name=polybar-git state=present
+  aur:
+    name:
+      - polybar-git
+      - zscroll
+      - playerctl
+      - ttf-material-design-icons
+    state: present
 
-- name: "Creating polybar configuration directory"
+- name: "Creating polybar configuration directory."
   file:
     path: ~/.config/polybar
     state: directory
 
+- name: "Deploying polybar fonts."
+  copy:
+    src: files/fonts/
+    dest: ~/.fonts/
+
 - name: "Deploying polybar custom configuration files."
   copy:
-    src: files/
+    src: files/config/
     dest: ~/.config/polybar/
     mode: 0755

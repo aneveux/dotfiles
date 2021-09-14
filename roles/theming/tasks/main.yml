@@ -19,10 +19,10 @@
     state: present
     line: '#include ".Xresources.d/cursor"'
 
-- name: "Installing numix theme and associated tooling."
+- name: "Installing Dracula theme and associated tooling."
   aur:
     name:
-      - numix-themes-darkblue
+      - dracula-gtk-theme-git
       - vibrancy-colors
     state: present
 
@@ -57,3 +57,17 @@
     dest: ~/.Xdefaults
     state: link
     force: yes
+
+- name: "Installing pywal."
+  pacman: name=python-pywal state=present
+  become: True
+
+- name: "Creating user icons directory."
+  file:
+    path: ~/.icons
+    state: directory
+
+- name: "Installing Dracula icons."
+  ansible.builtin.unarchive:
+    src: files/Dracula.zip
+    dest: ~/.icons/

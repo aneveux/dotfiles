@@ -1,25 +1,24 @@
 #include ".Xresources.d/cursor"
 
-*background: #1E272B
-*foreground: #EAD49B
-*cursorColor: #EAD49B
-
-*color0: #1E272B
-*color8: #666666
-*color1: #685742
-*color9: #685743
-*color2: #9D6A47
-*color10: #9D6A47
-*color3: #B36D43
-*color11: #B36D43
-*color4: #78824B
-*color12: #78824B
-*color5: #D99F57
-*color13: #D99F57
-*color6: #C9A554
-*color14: #C9A554
-*color7: #EAD49B
-*color15: #EAD49B
+! Dracula Xresources palette
+*.foreground: #F8F8F2
+*.background: #282A36
+*.color0:     #000000
+*.color8:     #4D4D4D
+*.color1:     #FF5555
+*.color9:     #FF6E67
+*.color2:     #50FA7B
+*.color10:    #5AF78E
+*.color3:     #F1FA8C
+*.color11:    #F4F99D
+*.color4:     #BD93F9
+*.color12:    #CAA9FA
+*.color5:     #FF79C6
+*.color13:    #FF92D0
+*.color6:     #8BE9FD
+*.color14:    #9AEDFE
+*.color7:     #BFBFBF
+*.color15:    #E6E6E6
 
 URxvt.font: xft:Source Code Pro:size=10.5
 URxvt.depth:                      32

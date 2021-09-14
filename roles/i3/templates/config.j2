@@ -434,12 +434,12 @@ mode "$mode_system" {
 
 exec_always --no-startup-id /home/antoine/dotfiles/local/monitor_configuration.sh
 
-set $WS11 "11:"
-set $WS12 "12:"
+set $WS11 "11:🦖"
+set $WS12 "12:🦖"
 
-set $MAIN DP-0
+set $MAIN DP-4
 set $LEFT HDMI-0
-set $RIGHT DP-5
+set $RIGHT DP-1
 
 workspace $WS1 output $MAIN
 workspace $WS2 output $MAIN
@@ -464,7 +464,7 @@ exec_always --no-startup-id feh --bg-center ~/wallpaper.png
 exec --no-startup-id nm-applet
 exec --no-startup-id pamac-tray
 exec --no-startup-id clipit
-exec_always --no-startup-id $HOME/.config/polybar/i3wmthemer_bar_launch.sh i3wmthemer_bar
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh main
 exec --no-startup-id numlockx on
 
 {% if user.preferences.laptop %}
@@ -478,7 +478,7 @@ exec_always --no-startup-id xfce4-power-manager
 # https://forum.manjaro.org/t/pamac-manager-issues/9813/26
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
-exec --no-startup-id compton --opacity-rule '100:window_type = "dock" && class_g = "i3bar"' --config ~/.config/compton.conf -b
+exec --no-startup-id compton --config ~/.config/compton.conf -b
 
 exec --no-startup-id dunst
 exec --no-startup-id nextcloud --background
