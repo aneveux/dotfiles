@@ -372,8 +372,8 @@ for_window [class="Xfburn"] floating enable
 # -------------------------
 
 # rofi for running applications or ssh-ing to machines
-bindsym $mod+d exec "rofi -combi-modi window,drun -modi combi,ssh,run -show combi -show-icons"
-bindsym $mod+Shift+d exec "rofi -combi-modi ssh -modi ssh -show combi"
+bindsym $mod+d exec "rofi -combi-modi window,drun -modi combi,ssh,run -show combi -show-icons -config ~/.config/rofi/fuzzyconfig.rasi"
+bindsym $mod+Shift+d exec "rofi -combi-modi ssh -modi ssh -show combi -config ~/.config/rofi/fuzzyconfig.rasi"
 
 # rofimoji
 bindsym $mod+Shift+colon exec rofimoji
@@ -462,7 +462,7 @@ workspace $WS12 output $RIGHT
 
 bar {
     status_command i3blocks
-	i3bar_command i3bar -t
+    i3bar_command i3bar -t
 
     strip_workspace_numbers yes
 
@@ -471,7 +471,7 @@ bar {
 
     position top
     height 25
-    font pango: FontAwesome, JetBrainsMono 14
+    font pango: FontAwesome, JetBrainsMono 13
 
     workspace_buttons yes
 

@@ -14,17 +14,7 @@
     path: ~/.config/rofi
     state: directory
 
-- name: "Creating rofi themes directory."
-  file:
-    path: ~/.config/rofi/themes
-    state: directory
-
-- name: "Deploying rofi configuration file."
+- name: "Deploying rofi configuration files."
   copy:
-    src: files/config.rasi
-    dest: ~/.config/rofi/config.rasi
-
-- name: "Deploying rofi slate theme configuration file."
-  copy:
-    src: files/slate.rasi
-    dest: ~/.config/rofi/themes/slate.rasi
+    src: files/
+    dest: ~/.config/rofi/

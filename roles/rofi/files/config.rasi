@@ -2,10 +2,10 @@ configuration {
 	modi: "window,drun,run,ssh";
   combi-modi: "window,drun,run,ssh";
 
-	font: "Source Code Pro Semibold 10.5";
+	font: "Jetbrains Mono 12";
   fixed-num-lines: true;
   show-icons: true;
-  icon-theme: "default";
+  icon-theme: "Dracula";
 
   sidebar-mode: false;
   location: 0;
@@ -18,13 +18,6 @@ configuration {
   run-command: "{cmd}";
   run-list-command: "";
   run-shell-command: "{terminal} -e {cmd}";
-
-  case-sensitive: false;
-  sort: true;
-  sorting-method: "levenshtein";
-  disable-history: true;
-  matching: "fuzzy";
-  tokenize: true;
 
   drun {
     display-name: "app";
@@ -49,7 +42,6 @@ configuration {
       directories-first: true;
       sorting-method:    "name";
   }
-}
 
-@import "slate"
-@theme "slate"
+  theme: "~/.config/rofi/theme.rasi";
+}
