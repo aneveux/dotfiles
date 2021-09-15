@@ -18,9 +18,9 @@ def get_notifications():
 
     if notifications > 0:
         return {
-            "full_text": f"<span font='Font Awesome 5 Free Solid'>&#xf09b; {notifications}</span>"
+            "full_text": f"<span>{notifications}</span>"
         }
-    return {"full_text": "<span font='Font Awesome 5 Free Solid'>&#xf09b;</span>"}
+    return {"full_text": "<span>0</span>"}
 
 
 def clicked():
