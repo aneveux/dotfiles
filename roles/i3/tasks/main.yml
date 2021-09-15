@@ -18,6 +18,12 @@
       - python-yaml
       - nerd-fonts-complete
       - feh
+      - gsimplecal
+      - xdotool
+      - playerctl
+      - wireless_tools
+      - tk
+      - github-cli
     state: present
 
 - name: "Installing i3-gaps and associated tooling."
@@ -25,6 +31,7 @@
     use: yay
     name:
       - i3-gaps
+      - i3blocks
     state: present
 
 - name: "Deploying xinitrc configuration file."
@@ -38,13 +45,28 @@
     path: ~/.i3/
     state: directory
 
-- name: "Creating the scripts directory for i3."
-  file:
-    path: ~/.config/i3/scripts/
-    state: directory
-
 - name: "Deploying i3 main configuration file."
   template:
     src: templates/config.j2
     dest: ~/.i3/config
-    backup: yes
+
+- name: "Creating i3blocks configuration directory."
+  file:
+    path: ~/.config/i3blocks/
+    state: directory
+
+- name: "Creating i3blocks scripts directory."
+  file:
+    path: ~/.config/i3blocks/scripts/
+    state: directory
+
+- name: "Copying i3blocks scripts in configuration directory."
+  copy:
+    src: files/scripts/
+    dest: ~/.config/i3blocks/scripts/
+    mode: 0755
+
+- name: "Deploying i3blocks configuration file."
+  copy:
+    src: files/i3blocks.conf
+    dest: ~/.config/i3blocks/config

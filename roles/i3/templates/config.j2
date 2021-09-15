@@ -92,14 +92,14 @@ smart_borders on
 # Colors
 # --------------
 
-# class                 border  backgr. text    indicator child_border
-client.focused          #d99f57 #d99f57 #1E272B #9D6A47 #78824B
-client.focused_inactive #9D6A47 #EAD49B #1E272B #78824B #9D6A47
-client.unfocused        #EAD49B #1E272B #EAD49B #78824B #9D6A47
-client.urgent           #1E272B #cc3e44 #EAD49B #cc3e44 #cc3e44
-client.placeholder      #EAD49B #1E272B #EAD49B #78824B #9D6A47
+# class                 border  bground text    indicator child_border
+client.focused          #6272A4 #6272A4 #F8F8F2 #6272A4   #6272A4
+client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #44475A
+client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #282A36
+client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
+client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
 
-client.background #1E272B
+client.background       #F8F8F2
 
 # --------------
 # Gaps
@@ -158,13 +158,13 @@ mode "$mode_gaps_outer" {
 set $WS1 "1:"
 set $WS2 "2:"
 set $WS3 "3:"
-set $WS4 "4:"
+set $WS4 "4:"
 set $WS5 "5:"
-set $WS6 "6:"
-set $WS7 "7:"
-set $WS8 "8:"
-set $WS9 "9:"
-set $WS10 "10:"
+set $WS6 "6:"
+set $WS7 "7:"
+set $WS8 "8:"
+set $WS9 "9:"
+set $WS10 "10:"
 
 # ---------------------------------------------------
 # Workspaces Switcher
@@ -434,8 +434,8 @@ mode "$mode_system" {
 
 exec_always --no-startup-id /home/antoine/dotfiles/local/monitor_configuration.sh
 
-set $WS11 "11:🦖"
-set $WS12 "12:🦖"
+set $WS11 "11:"
+set $WS12 "12:"
 
 set $MAIN DP-4
 set $LEFT HDMI-0
@@ -457,6 +457,38 @@ workspace $WS12 output $RIGHT
 {% endif %}
 
 # --------------
+# bar with i3blocks
+# --------------
+
+bar {
+    status_command i3blocks
+	i3bar_command i3bar -t
+
+    strip_workspace_numbers yes
+
+    tray_output primary
+    tray_padding 5
+
+    position top
+    height 25
+    font pango: FontAwesome, JetBrainsMono 14
+
+    workspace_buttons yes
+
+  colors {
+    background #282A36aa
+    statusline #F8F8F2
+    separator  #44475A
+
+    focused_workspace  #44475A #44475A #F8F8F2
+    active_workspace   #282A36 #44475A #F8F8F2
+    inactive_workspace #282A36 #282A36 #BFBFBF
+    urgent_workspace   #FF5555 #FF5555 #F8F8F2
+    binding_mode       #FF5555 #FF5555 #F8F8F2
+  }
+}
+
+# --------------
 # Autostart Services
 # --------------
 
@@ -464,7 +496,6 @@ exec_always --no-startup-id feh --bg-center ~/wallpaper.png
 exec --no-startup-id nm-applet
 exec --no-startup-id pamac-tray
 exec --no-startup-id clipit
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh main
 exec --no-startup-id numlockx on
 
 {% if user.preferences.laptop %}

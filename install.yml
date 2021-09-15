@@ -23,7 +23,6 @@
     - { role: redshift, tags: redshift }
     - { role: i3, tags: i3 }
     - { role: compton, tags: compton }
-    - { role: polybar, tags: polybar }
     - { role: rofi, tags: rofi }
     - { role: dunst, tags: dunst }
     - { role: terminator, tags: terminator }
