@@ -17,19 +17,6 @@
     state: latest
     extra_args: --user
 
-# - name: "Installing from npm additional code formatters."
-#   npm:
-#     name:
-#       - typescript
-#       - js-beautify
-#       - eslint
-#       - typescript-formatter
-#       - remark-cli
-#       - fixjson
-#     global: yes
-#     state: present
-#   become: True
-
 - name: "Creating vim configuration directories."
   file:
     path: "{{item}}"
@@ -39,11 +26,6 @@
     - ~/.vim/bundle
     - ~/.vim/autoload
     - ~/.vim/colors
-
-- name: "Deploying vim-themer colorscheme."
-  copy:
-    src: files/ThemerVim.vim
-    dest: ~/.vim/colors/ThemerVim.vim
 
 - name: "Deploying vim configuration file."
   copy:
@@ -63,9 +45,3 @@
 - name: "Installing YouCompleteMe scripts."
   shell: cd ~/.vim/bundle/YouCompleteMe && ./install.py
   changed_when: no
-
-- name: "Deploying ThemerVimLightline theme"
-  copy:
-    src: files/ThemerVimLightline.vim
-    dest: ~/.vim/bundle/lightline.vim/autoload/lightline/colorscheme/
-    backup: no

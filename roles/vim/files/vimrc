@@ -109,14 +109,14 @@ set hlsearch
 " Look'n'Feel -
 " Fonts, Colors and all those nice things!
 
-" set Adobe's Source Code Pro font as default
-set guifont=Source\ Code\ Pro
+" set Jetbrains Mono font as default
+set guifont=Jetbrains\ Mono
 
 " brackets highlight color
 autocmd VimEnter,Colorscheme * :hi MatchParen cterm=none ctermbg=white ctermfg=black
 
 set background=dark
-colorscheme ThemerVim
+colorscheme dracula
 
 set cursorline
 
@@ -201,7 +201,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 
 " -- LIGHTLINE CONFIG
 let g:lightline = {
-      \ 'colorscheme': 'ThemerVimLightline',
+      \ 'colorscheme': 'dracula',
       \ }
 
 " -- EDITORCONFIG CONFIG
