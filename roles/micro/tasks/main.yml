@@ -18,8 +18,8 @@
 
 - name: "Deploying micro colors theme file."
   copy:
-    src: files/gruvbox-tc.micro
-    dest: ~/.config/micro/colorschemes/gruvbox-tc.micro
+    src: files/dracula.micro
+    dest: ~/.config/micro/colorschemes/dracula.micro
 
 - name: "Deploying micro configuration file."
   copy:
