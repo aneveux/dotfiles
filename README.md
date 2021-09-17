@@ -68,9 +68,11 @@ Here's what my desktop looks like:
 
 I'm using [Manjaro](https://manjaro.org/) as my main operating system for years now. My window manager is [i3-gaps](https://github.com/Airblader/i3), a fork of [i3wm](https://i3wm.org/).
 
-To complete my desktop environment, I'm using [Polybar](https://polybar.github.io/) to manage my status bar, [Rofi](https://github.com/davatorium/rofi) as my application launcher, [Dunst](https://dunst-project.org/) for managing notifications.
+To complete my desktop environment, I'm using [i3blocks](https://vivien.github.io/i3blocks/) to manage my status bar, [Rofi](https://github.com/davatorium/rofi) as my application launcher, [Dunst](https://dunst-project.org/) for managing notifications.
 
 I'm using [zsh](https://www.zsh.org/), nowadays completed by [Prezto](https://github.com/sorin-ionescu/prezto) (after years of using [oh-my-zsh](https://ohmyz.sh/)).
+
+Almost everything is using the [Dracula theme](https://draculatheme.com/), but I tend to change it once in a while.
 
 And you'll find plenty of other things here and there in that repository, from the code editors I use to some helpful programs I find interesting.
 
@@ -167,9 +169,10 @@ Project Link: [https://github.com/aneveux/dotfiles](https://github.com/aneveux/d
 
 - [Ansible AUR](https://github.com/kewlfft/ansible-aur)
 
-### i3 themes
+### Themes
 
-- [i3wm-themer](https://github.com/unix121/i3wm-themer)
+- [Dracula Theme](https://draculatheme.com/) (*which I used for almost everything*)
+- [Pywal](https://github.com/dylanaraps/pywal/) (*which I'm trying once in a while when needing a change*)
 
 ### Zsh Stuff
 
@@ -182,6 +185,7 @@ Project Link: [https://github.com/aneveux/dotfiles](https://github.com/aneveux/d
 - [dotbot](https://github.com/anishathalye/dotbot)
 - [Airblader's dotfiles](https://github.com/Airblader/dotfiles-manjaro)
 - [eoli3n](https://github.com/eoli3n/dotfiles)
+- [i3blocks contributions](https://github.com/vivien/i3blocks-contrib)
 
 ### Useless but funny
 

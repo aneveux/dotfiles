@@ -164,7 +164,7 @@ set $WS6 "6:"
 set $WS7 "7:"
 set $WS8 "8:"
 set $WS9 "9:"
-set $WS10 "10:"
+set $WS10 "10:"
 
 # ---------------------------------------------------
 # Workspaces Switcher
@@ -325,6 +325,9 @@ assign [class="discord"] $WS6
 assign [class="KeePassXC"] $WS7
 for_window [class="KeePassXC"] move to workspace $WS7
 
+# WS10: Notion
+assign [class="Notion"] $WS10
+
 # --------------
 # Auto-Floating
 # --------------
@@ -397,6 +400,7 @@ mode $launcher_mode {
   bindsym k exec keepassxc, mode "default"
   bindsym s exec spotify, mode "default"
   bindsym d exec discord, mode "default"
+  bindsym n exec notion-app, mode "default"
   bindsym Return exec i3-sensible-terminal, mode "default"
 
   bindsym Escape mode "default"
@@ -500,6 +504,7 @@ exec --no-startup-id numlockx on
 
 {% if user.preferences.laptop %}
 exec_always --no-startup-id xfce4-power-manager
+exec_always --no-startup-id blueman
 {% endif %}
 
 # --------------
