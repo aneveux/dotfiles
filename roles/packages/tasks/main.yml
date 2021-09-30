@@ -98,7 +98,25 @@
       - spotify
       - dbeaver
       - jetbrains-toolbox
-      # - notion-app
-      - obs-studio-git
+      - notion-app
+      # - obs-studio-git
       - zoom
+    state: present
+
+- name: "Installing some utilities."
+  aur:
+    name:
+      - google-cloud-sdk
+      - git-secrets
+      - ufw
+      - gufw
+      - slack-desktop
+      - kubectl-bin
+      - openssl
+      - jq
+      - curl
+      - xz
+      - asdf
+      - asdf-vm
+      - origin-client
     state: present

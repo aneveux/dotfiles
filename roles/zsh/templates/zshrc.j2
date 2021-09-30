@@ -35,6 +35,7 @@ setopt extended_glob
 setopt no_match
 setopt notify
 setopt print_exit_value
+setopt COMPLETE_ALIASES
 
 # -----------------------------------------------------------
 # zsh functions loading
@@ -67,6 +68,9 @@ source {{ zsh_syntax_highlighting_dir.stdout }}
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
 
+autoload -Uz compinit promptinit
+compinit
+promptinit
 
 # -----------------------------------------------------------
 # source zshrc.d
@@ -82,4 +86,17 @@ if [ -d "$zshrcd" ]; then
   for zf in $zfiles; do
     [ -r $zf ] && . $zf
   done
+fi
+
+if [[ -s "/opt/asdf-vm/asdf.sh" ]]; then
+  . /opt/asdf-vm/asdf.sh
+fi
+
+if [[ -s "/home/antoine/.shinobi-config" ]]; then
+  source /home/antoine/.shinobi-config
+fi
+autoload -U +X bashcompinit && bashcompinit
+
+if [ -d "/home/antoine/tools/support-shinobi-tools/" ]; then
+  source /home/antoine/tools/support-shinobi-tools/lib/shinobi_bash_completion.sh
 fi

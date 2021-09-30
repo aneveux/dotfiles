@@ -8,13 +8,8 @@ function jdk11() {
     export PATH=$JAVA_HOME/bin:$PATH
 }
 
-function jdk13() {
-    export JAVA_HOME=/usr/lib/jvm/java-13-openjdk/
-    export PATH=$JAVA_HOME/bin:$PATH
-}
-
-function jdk15() {
-    export JAVA_HOME=/usr/lib/jvm/java-15-openjdk/
+function jdk16() {
+    export JAVA_HOME=/usr/lib/jvm/java-16-openjdk/
     export PATH=$JAVA_HOME/bin:$PATH
 }
 
@@ -30,6 +25,6 @@ function graal11() {
     export PATH=$GRAALVM_HOME/bin:$JAVA_HOME/bin:$PATH
 }
 
-# Default to JDK 15
+# Default to JDK 11
 
-jdk15
+jdk11

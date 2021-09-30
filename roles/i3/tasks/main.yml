@@ -32,6 +32,8 @@
     name:
       - i3-gaps
       - i3blocks
+      - i3lock-color
+      - xautolock
     state: present
 
 - name: "Deploying xinitrc configuration file."
@@ -70,3 +72,9 @@
   copy:
     src: files/i3blocks.conf
     dest: ~/.config/i3blocks/config
+
+- name: "Copying i3lock script."
+  copy:
+    src: files/lock.sh
+    dest: ~/.i3/lock.sh
+    mode: 0755

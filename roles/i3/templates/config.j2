@@ -413,22 +413,22 @@ mode $launcher_mode {
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
-# Set shut down, restart and locking features
-bindsym $mod+0 mode "$mode_system"
+# exit i3 (logs you out of your X session)
+bindsym $mod+End mode "$mode_system"
 set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
 mode "$mode_system" {
-    bindsym l exec --no-startup-id i3exit lock, mode "default"
-    bindsym s exec --no-startup-id i3exit suspend, mode "default"
-    bindsym u exec --no-startup-id i3exit switch_user, mode "default"
-    bindsym e exec --no-startup-id i3exit logout, mode "default"
-    bindsym h exec --no-startup-id i3exit hibernate, mode "default"
-    bindsym r exec --no-startup-id i3exit reboot, mode "default"
-    bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
+    bindsym l exec --no-startup-id ~/.i3/lock.sh, mode "default"
+    bindsym s exec --no-startup-id systemctl suspend, mode "default"
+    bindsym h exec --no-startup-id systemctl hibernate, mode "default"
+    bindsym r exec --no-startup-id systemctl reboot, mode "default"
+    bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"
 
-    # exit system mode: "Enter" or "Escape"
+    # back to normal: Enter or Escape
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
+
+bindsym $mod+Shift+l exec ~/.i3/lock.sh
 
 {% if user.preferences.multiscreen %}
 
@@ -501,6 +501,8 @@ exec --no-startup-id nm-applet
 exec --no-startup-id pamac-tray
 exec --no-startup-id clipit
 exec --no-startup-id numlockx on
+
+exec --no-startup-id xautolock -detectsleep -time 10 -locker "~/.i3/lock.sh" -notify 30 -notifier "notify-send -u critical -t 10000 -- 'locking screen in 30 seconds'"
 
 {% if user.preferences.laptop %}
 exec_always --no-startup-id xfce4-power-manager

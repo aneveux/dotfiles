@@ -22,6 +22,7 @@ export GPG_TTY=$(tty)
 export BROWSER='firefox'
 export EDITOR='vim'
 export VISUAL='vim'
+export TEXT_EDITOR='vim'
 
 # -----------------------------------------------------------
 # java exports
@@ -39,5 +40,6 @@ export DOCKER_HOST='tcp://127.0.0.1:2375'
 # path
 # -----------------------------------------------------------
 
-export PATH="~/.local/bin:${PATH}"
-export PATH="${PATH}:$(ruby -e 'puts Gem.user_dir')/bin"
+typeset -U PATH path
+path=("$HOME/.local/bin" "$path[@]" "$(ruby -e 'puts Gem.user_dir')/bin")
+export PATH
