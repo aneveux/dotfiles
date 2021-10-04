@@ -79,7 +79,13 @@
     src: files/zpreztorc
     dest: ~/.zpreztorc
 
-- name: "Deploying garrett prompt."
+- name: "Deploying p10k recommended fonts."
   copy:
-    src: files/prompt_garrett_setup
-    dest: ~/.zprezto/modules/prompt/functions/prompt_garrett_setup
+    src: files/fonts/
+    dest: /usr/share/fonts/TTF/
+  become: True
+
+- name: "Deploying p10k configuration."
+  copy:
+    src: files/p10k.zsh
+    dest: ~/.p10k.zsh

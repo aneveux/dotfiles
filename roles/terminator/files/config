@@ -15,7 +15,7 @@
     background_image = None
     cursor_shape = ibeam
     cursor_color = "#aaaaaa"
-    font = JetBrains Mono 12
+    font = MesloLGS NF 12
     foreground_color = "#f8f8f2"
     show_titlebar = False
     scrollbar_position = hidden
