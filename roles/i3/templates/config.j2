@@ -162,8 +162,8 @@ set $WS4 "4:"
 set $WS5 "5:"
 set $WS6 "6:"
 set $WS7 "7:"
-set $WS8 "8:"
-set $WS9 "9:"
+set $WS8 "8:"
+set $WS9 "9:"
 set $WS10 "10:"
 
 # ---------------------------------------------------
@@ -320,10 +320,15 @@ for_window [class="Spotify"] move to workspace $WS5
 
 # WS6: Social / Chat
 assign [class="discord"] $WS6
+assign [class="slack"] $WS6
+for_window [class="slack"] move to workspace $WS6
 
 # WS7: Keepass / Security
 assign [class="KeePassXC"] $WS7
 for_window [class="KeePassXC"] move to workspace $WS7
+
+# WS8: Mail
+assign [class="Thunderbird"] $WS8
 
 # WS10: Notion
 assign [class="Notion"] $WS10
@@ -401,6 +406,7 @@ mode $launcher_mode {
   bindsym s exec spotify, mode "default"
   bindsym d exec discord, mode "default"
   bindsym n exec notion-app, mode "default"
+  bindsym t exec thunderbird, mode "default"
   bindsym Return exec i3-sensible-terminal, mode "default"
 
   bindsym Escape mode "default"
