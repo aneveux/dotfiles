@@ -18,3 +18,8 @@
   copy:
     src: files/
     dest: ~/.config/rofi/
+
+- name: "Deploying rofimoji configuration file."
+  copy:
+    src: files/rofimoji.rc
+    dest: ~/.config/rofimoji.rc

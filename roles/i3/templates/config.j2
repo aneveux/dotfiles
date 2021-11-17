@@ -471,6 +471,36 @@ workspace $WS12 output $RIGHT
 # --------------
 
 bar {
+    output nonprimary
+    status_command i3blocks -c ~/.config/i3blocks/config-minimal
+    i3bar_command i3bar -t
+
+    strip_workspace_numbers yes
+
+    tray_output primary
+    tray_padding 5
+
+    position top
+    height 25
+    font pango: FontAwesome, JetBrainsMono 12
+
+    workspace_buttons yes
+
+  colors {
+    background #282A36aa
+    statusline #F8F8F2
+    separator  #44475A
+
+    focused_workspace  #44475A #44475A #F8F8F2
+    active_workspace   #282A36 #44475A #F8F8F2
+    inactive_workspace #282A36 #282A36 #BFBFBF
+    urgent_workspace   #FF5555 #FF5555 #F8F8F2
+    binding_mode       #FF5555 #FF5555 #F8F8F2
+  }
+}
+
+bar {
+    output primary
     status_command i3blocks
     i3bar_command i3bar -t
 
@@ -481,7 +511,7 @@ bar {
 
     position top
     height 25
-    font pango: FontAwesome, JetBrainsMono 13
+    font pango: FontAwesome, JetBrainsMono 12
 
     workspace_buttons yes
 

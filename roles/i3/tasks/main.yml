@@ -73,6 +73,11 @@
     src: files/i3blocks.conf
     dest: ~/.config/i3blocks/config
 
+- name: "Deploying i3blocks minimal configuration file."
+  copy:
+    src: files/i3blocks-minimal.conf
+    dest: ~/.config/i3blocks/config-minimal
+
 - name: "Copying i3lock script."
   copy:
     src: files/lock.sh
