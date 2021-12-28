@@ -200,3 +200,7 @@ gradle-app.setting
 **/build/
 
 # End of https://www.toptal.com/developers/gitignore/api/maven,java,kotlin,intellij,vscode,linux,gradle
+
+# ASDF
+
+.tool-versions

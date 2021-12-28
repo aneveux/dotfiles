@@ -47,11 +47,6 @@
     path: ~/.i3/
     state: directory
 
-- name: "Deploying i3 main configuration file."
-  template:
-    src: templates/config.j2
-    dest: ~/.i3/config
-
 - name: "Creating i3blocks configuration directory."
   file:
     path: ~/.config/i3blocks/
@@ -83,3 +78,21 @@
     src: files/lock.sh
     dest: ~/.i3/lock.sh
     mode: 0755
+
+- name: "Searching for local i3 scripts."
+  stat: path="{{ local_location }}/i3/scripts"
+  register: _i3_local_scripts
+
+- name: "Deploying local i3 scripts."
+  copy:
+    src: "{{ local_location }}/i3/scripts/"
+    dest: ~/.i3/
+  when: _i3_local_scripts.stat.exists
+
+- name: "Deploying i3 main configuration file."
+  vars:
+    additional_local_config: '{{lookup("file", vars["local_location"] + "/i3/config") }}'
+  template:
+    src: templates/config.j2
+    dest: ~/.i3/config
+    backup: True

@@ -14,9 +14,5 @@ export EDITOR='vim'
 # Set some default java options
 export JAVA_OPTS='-Xms128m -Xmx256m'
 
-# Helpers/Reminders for docker hosts
-export DOCKER_DEFAULT=tcp://127.0.0.1:2375
-export DOCKER_HOST=$DOCKER_DEFAULT
-
 # Don’t clear the screen after quitting a manual page.
 export MANPAGER='less -X'

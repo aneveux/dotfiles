@@ -1,12 +1,13 @@
 ---
 - name: "Installing git and associated tooling."
-  pacman:
+  aur:
+    use: yay
     name:
       - git
       - diff-so-fancy
       - kdiff3
+      - git-secrets
     state: present
-  become: True
 
 - name: "Deploying a global gitignore file."
   copy:
@@ -19,6 +20,8 @@
     dest: ~/.gitattributes
 
 - name: "Deploying git configuration file."
+  vars:
+    additional_local_config: '{{lookup("file", vars["local_location"] + "/git/config") }}'
   template:
     src: templates/gitconfig.j2
     dest: ~/.gitconfig

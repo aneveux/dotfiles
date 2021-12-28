@@ -386,9 +386,6 @@ bindsym $mod+Shift+d exec "rofi -combi-modi ssh -modi ssh -show combi -config ~/
 # rofimoji
 bindsym $mod+Shift+colon exec rofimoji
 
-# custom dmenu script for switching through open applications
-bindsym $mod+Tab exec "fish -c 'i3-switch'"
-
 # --------------
 # Launcher Mode
 # --------------
@@ -442,27 +439,10 @@ bindsym $mod+Shift+l exec ~/.i3/lock.sh
 # Multiple Monitors Hack
 # ---------------------
 
-exec_always --no-startup-id /home/antoine/dotfiles/local/monitor_configuration.sh
+exec_always --no-startup-id {{ local_location }}/monitor_configuration.sh
 
 set $WS11 "11:"
 set $WS12 "12:"
-
-set $MAIN DP-4
-set $LEFT HDMI-0
-set $RIGHT DP-1
-
-workspace $WS1 output $MAIN
-workspace $WS2 output $MAIN
-workspace $WS3 output $MAIN
-workspace $WS4 output $MAIN
-workspace $WS5 output $MAIN
-workspace $WS6 output $MAIN
-workspace $WS7 output $MAIN
-workspace $WS8 output $MAIN
-workspace $WS9 output $MAIN
-workspace $WS10 output $MAIN
-workspace $WS11 output $LEFT
-workspace $WS12 output $RIGHT
 
 {% endif %}
 
@@ -571,3 +551,7 @@ bindsym XF86AudioMute exec amixer -q set Master toggle
 # touchpad on and off controller on laptop with Fn+<touchpad control functional key>
 bindsym XF86TouchpadOn exec --no-startup-id synclient Touchpadoff=0
 bindsym XF86TouchpadOff exec --no-startup-id synclient Touchpadoff=1
+
+{% if additional_local_config is defined %}
+{{ additional_local_config }}
+{% endif %}

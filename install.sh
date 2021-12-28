@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd "$( dirname "${BASH_SOURCE[0]}" )"
+cd "$( dirname "${BASH_SOURCE[0]}" )" || exit
 
 command -v ansible-playbook >/dev/null 2>&1 || { echo >&2 "I require ansible but it's not installed.  Aborting."; exit 1; }
 
@@ -13,24 +13,24 @@ fi
 
 echo "### LIST TASKS #################################################################"
 
-ansible-playbook -i "inventory/localhost.yaml" -c local install.yml --list-tasks -t $1 | grep TAGS | egrep -v 'play|debug|include_role' | sed 's/\ *\(.*\)TAGS.*$/\1/'
+ansible-playbook -i "inventory/localhost.yaml" -c local install.yml --list-tasks -t "$1" | grep TAGS | grep -E -v 'play|debug|include_role' | sed 's/\ *\(.*\)TAGS.*$/\1/'
 
 echo "Do you want to dryrun ? (y/N)"
-read ok
+read -r ok
 ok=${ok:-N}
 
 if [[ "$ok" == "y" ]]
 then
     echo "### DRYRUN ###################################################################"
-    ansible-playbook -i "inventory/localhost.yaml" -c local install.yml --ask-become-pass -CD -t $1 || exit 1
+    ansible-playbook -i "inventory/localhost.yaml" -c local install.yml --ask-become-pass -CD -t "$1" || exit 1
 fi
 
 echo "Do you want to install ? (Y/n)"
-read ok
+read -r ok
 ok=${ok:-Y}
 
 if [[ "$ok" == "Y" ]]
 then
     echo "### RUN ####################################################################"
-    ansible-playbook -i "inventory/localhost.yaml" -c local install.yml --ask-become-pass -t $1 || exit 1
+    ansible-playbook -i "inventory/localhost.yaml" -c local install.yml --ask-become-pass -t "$1" || exit 1
 fi

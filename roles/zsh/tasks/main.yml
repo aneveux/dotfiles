@@ -5,9 +5,15 @@
       - zsh
       - most
       - zsh-syntax-highlighting
-      - bat # TODO to be moved in some "shell stuff"
     state: present
   become: True
+
+- name: "Installing asdf."
+  aur:
+    name:
+      - asdf
+      - asdf-vm
+    state: present
 
 - name: "Cloning prezto for installation."
   git:
@@ -22,11 +28,6 @@
   check_mode: no
   register: zsh_syntax_highlighting_dir
   changed_when: no
-
-- name: "Deploying zsh configuration file."
-  template:
-    src: templates/zshrc.j2
-    dest: ~/.zshrc
 
 - name: "Creating zsh configuration directories."
   file: path={{item}} state=directory
@@ -89,3 +90,21 @@
   copy:
     src: files/p10k.zsh
     dest: ~/.p10k.zsh
+
+- name: "Searching for local zsh scripts."
+  stat: path="{{ local_location }}/zsh/zshrcd"
+  register: _zsh_local_scripts
+
+- name: "Deploying local zsh scripts."
+  copy:
+    src: "{{ local_location }}/zsh/zshrcd/"
+    dest: ~/.zshrc.d/
+  when: _zsh_local_scripts.stat.exists
+
+- name: "Deploying zsh configuration file."
+  vars:
+    additional_local_config: '{{lookup("file", vars["local_location"] + "/zsh/config") }}'
+  template:
+    src: templates/zshrc.j2
+    dest: ~/.zshrc
+    backup: True

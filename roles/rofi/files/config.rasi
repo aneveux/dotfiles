@@ -42,6 +42,6 @@ configuration {
       directories-first: true;
       sorting-method:    "name";
   }
-
-  theme: "~/.config/rofi/theme.rasi";
 }
+
+@theme "~/.config/rofi/theme.rasi"

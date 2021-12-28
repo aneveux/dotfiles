@@ -12,9 +12,11 @@
 #                                                            #
 ##############################################################
 
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
+
+# -----------------------------------------------------------
+# powerlevel10k
+# -----------------------------------------------------------
+
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
@@ -75,17 +77,28 @@ source {{ zsh_syntax_highlighting_dir.stdout }}
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
 
-autoload -Uz compinit promptinit
-compinit
-promptinit
-
 # -----------------------------------------------------------
-# source zshrc.d
+# source zprezto
 # -----------------------------------------------------------
 
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
+
+# -----------------------------------------------------------
+# source asdf
+# -----------------------------------------------------------
+
+if [[ -s "$HOME/.asdf/asdf.sh" ]]; then
+  . $HOME/.asdf/asdf.sh
+fi
+
+# append completions to fpath
+fpath=(${ASDF_DIR}/completions $fpath)
+
+# -----------------------------------------------------------
+# source zshrc.d
+# -----------------------------------------------------------
 
 zshrcd="$HOME/.zshrc.d"
 if [ -d "$zshrcd" ]; then
@@ -95,18 +108,25 @@ if [ -d "$zshrcd" ]; then
   done
 fi
 
-if [[ -s "/opt/asdf-vm/asdf.sh" ]]; then
-  . /opt/asdf-vm/asdf.sh
-fi
+# -----------------------------------------------------------
+# completions
+# -----------------------------------------------------------
 
-if [[ -s "/home/antoine/.shinobi-config" ]]; then
-  source /home/antoine/.shinobi-config
-fi
-autoload -U +X bashcompinit && bashcompinit
+autoload -Uz compinit promptinit
+compinit
+promptinit
 
-if [ -d "/home/antoine/tools/support-shinobi-tools/" ]; then
-  source /home/antoine/tools/support-shinobi-tools/lib/shinobi_bash_completion.sh
-fi
+# -----------------------------------------------------------
+# custom local configuration
+# -----------------------------------------------------------
+
+{% if additional_local_config is defined %}
+{{ additional_local_config }}
+{% endif %}
+
+# -----------------------------------------------------------
+# p10k sourcing
+# -----------------------------------------------------------
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

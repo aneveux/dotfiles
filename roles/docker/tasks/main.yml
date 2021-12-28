@@ -24,8 +24,8 @@
   when: _docker_local_configuration.stat.exists
   become: True
 
-- name: "Disabling the docker service by default."
+- name: "Enabling the docker service by default."
   service:
     name: "docker.service"
-    enabled: "no"
+    enabled: "yes"
   become: True

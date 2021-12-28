@@ -99,7 +99,6 @@
       - dbeaver
       - jetbrains-toolbox
       - notion-app
-      # - obs-studio-git
       - zoom
     state: present
 

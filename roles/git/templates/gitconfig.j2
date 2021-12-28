@@ -1,9 +1,9 @@
 [user]
-  name = {{ user.name | default('john_doe') }}
-  email = {{ user.mail | default('john@doe.org') }}
-  {% if user.gpg_key is defined %}
-  signingkey = {{ user.gpg_key }}
-  {% endif %}
+	name = {{ user.name | default('john_doe') }}
+	email = {{ user.mail | default('john@doe.org') }}
+{% if user.gpg_key is defined %}
+	signingkey = {{ user.gpg_key }}
+{% endif %}
 
 {% if user.gpg_key is defined %}
 [commit]
@@ -74,8 +74,8 @@
 	whitespace = red reverse
 
 [color "status"]
-  added = green reverse
-  changed = yellow reverse
+	added = green reverse
+	changed = yellow reverse
 	untracked = red reverse
 
 [mergetool]
@@ -139,11 +139,11 @@
 	dad = !curl https://icanhazdadjoke.com/ && git add
 
 [pretty]
-  custom = "%C(magenta)%h%C(red)%d %C(yellow)%ar %C(green)%s %C(yellow)(%an)"
-  #                     ¦        ¦            ¦            ¦             +- author name
-  #                     ¦        ¦            ¦            +- message
-  #                     ¦        ¦            +- date (relative)
-  #                     ¦        +- decorations (branch, heads or tags)
+	custom = "%C(magenta)%h%C(red)%d %C(yellow)%ar %C(green)%s %C(yellow)(%an)"
+	#                     ¦        ¦            ¦            ¦             +- author name
+	#                     ¦        ¦            ¦            +- message
+	#                     ¦        ¦            +- date (relative)
+	#                     ¦        +- decorations (branch, heads or tags)
 	#                     +- hash (abbreviated)
 
 [url "git@github.com:"]
@@ -160,3 +160,7 @@
 	pushInsteadOf = git://gist.github.com/
 
 [url "git://gist.github.com/"]
+
+{% if additional_local_config is defined %}
+{{ additional_local_config }}
+{% endif %}

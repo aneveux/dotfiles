@@ -14,6 +14,8 @@ CACHE="$HOME/.cache/i3blocks/message"
 mkdir -p $(dirname $CACHE)
 touch $CACHE
 
+[ -s "$CACHE" ] || echo "ʕノ•ᴥ•ʔノ ︵ ┻━┻" > "$CACHE"
+
 if env | grep -q BLOCK_
 then # called by i3blocks
 

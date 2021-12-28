@@ -7,16 +7,6 @@
 #
 
 # -----------------------------------------------------------
-# shortcuts
-# -----------------------------------------------------------
-
-alias d='cd ~/Dropbox'
-alias dl='cd ~/Downloads'
-alias dt='cd ~/Desktop'
-alias g='cd ~/git'
-alias tools='cd ~/tools'
-
-# -----------------------------------------------------------
 # ls aliases
 # -----------------------------------------------------------
 
@@ -31,7 +21,7 @@ alias ll='ls -Al --color=auto'
 
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
-alias egrep='egrep --color=auto'
+alias egrep='grep -E --color=auto'
 
 # -----------------------------------------------------------
 # tools aliases
