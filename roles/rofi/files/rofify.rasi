@@ -1,0 +1,5 @@
+configuration {
+  font: "MesloLGS NF 12";
+  show-icons: true;
+  auto-select: true;
+}

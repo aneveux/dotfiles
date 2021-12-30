@@ -34,6 +34,10 @@
       - i3blocks
       - i3lock-color
       - xautolock
+      - rofi
+      - ffcast
+      - slop
+      - xclip
     state: present
 
 - name: "Deploying xinitrc configuration file."
@@ -77,6 +81,18 @@
   copy:
     src: files/lock.sh
     dest: ~/.i3/lock.sh
+    mode: 0755
+
+- name: "Copying search script."
+  copy:
+    src: files/search.sh
+    dest: ~/.i3/search.sh
+    mode: 0755
+
+- name: "Copying screenshot script."
+  copy:
+    src: files/screenshot.sh
+    dest: ~/.i3/screenshot.sh
     mode: 0755
 
 - name: "Searching for local i3 scripts."

@@ -1,6 +1,6 @@
 configuration {
-    modi: "window,drun,run,ssh";
-    combi-modi: "window,drun,run,ssh";
+    modi: "combi,window,drun";
+    combi-modi: "window,drun";
 
     case-sensitive: false;
     sort: true;
@@ -9,15 +9,9 @@ configuration {
     matching: "fuzzy";
     tokenize: true;
 
-    font: "Jetbrains Mono 12";
     fixed-num-lines: true;
     show-icons: true;
-    icon-theme: "Dracula";
-
-    sidebar-mode: false;
-    location: 0;
-    yoffset: 0;
-    xoffset: 0;
+    icon-theme: "Papirus";
 
     terminal: "terminator";
     ssh-client: "ssh";
@@ -26,18 +20,6 @@ configuration {
     run-list-command: "";
     run-shell-command: "{terminal} -e {cmd}";
 
-  drun {
-    display-name: "app";
-  }
-
-  run {
-    display-name: "shell";
-  }
-
-  combi {
-    display-name: "switch";
-  }
-
 	parse-hosts: true;
 	parse-known-hosts: true;
 
@@ -45,10 +27,10 @@ configuration {
       action: "kb-cancel";
       delay:  0;
   }
+
   filebrowser {
       directories-first: true;
-      sorting-method:    "name";
+      sorting-method: "name";
   }
-}
 
-@theme "~/.config/rofi/theme.rasi"
+}

@@ -1,0 +1,118 @@
+configuration {
+  mymenu-display-format: "{icon} {name}";
+  font: "MesloLGS NF 12";
+  modi: "spotify";
+  show-icons: true;
+}
+
+* {
+  bg: #282a36;
+  bg-alt: #44475a;
+
+  fg: #f8f8f2;
+
+  accent: #32a852;
+
+  blue: #6272a4;
+  purple: #bd93f9;
+
+  green: #16c780;
+  background-color: @bg;
+
+  border: 0;
+  margin: 0;
+  padding: 0;
+  spacing: 0;
+}
+
+element {
+  padding: 5;
+  orientation: horizontal;
+  text-color: @blue;
+}
+
+element-icon {
+  size:   1.8ch;
+}
+
+element selected {
+  text-color: @purple;
+}
+
+element-text, element-icon {
+    background-color: #00000000;
+    text-color:       @fg;
+}
+
+element normal.normal {
+    background-color: 				@bg;
+    text-color:       				@fg;
+}
+
+element selected.normal {
+    background-color: 				@purple;
+    text-color:       				@fg;
+}
+
+entry {
+  background-color: @bg;
+  padding: 12px 0 12px 3px;
+  margin: 0 5px 0 15px;
+  text-color: @fg;
+}
+
+listview {
+  columns: 1;
+  lines: 8;
+}
+
+mainbox {
+  children: [inputbar, listview];
+  spacing: 12px;
+  margin: 12px;
+}
+
+prompt {
+    enabled: 						true;
+    padding:                        10px;
+	background-color: 				@background-light;
+	text-color: 					@accent;
+    border:                  		2px 2px 2px 2px;
+    border-radius:                  0px;
+    border-color:                  	@accent;
+}
+
+textbox-prompt-spotify {
+	expand: 						false;
+	str: 							"Spotify";
+	background-color: 				@accent;
+	text-color: 					@bg;
+    padding:                        12px 10px 0px 10px;
+}
+
+textbox-prompt-spotifyicon {
+	expand: 						false;
+	str: 							"";
+	background-color: 				@accent;
+    font: "Hurmit Nerd Font 20";
+	text-color: 					@bg;
+    padding:                        12px 10px 0px 10px;
+}
+
+inputbar {
+	children: 						[textbox-prompt-spotifyicon, textbox-prompt-spotify, prompt, entry];
+    spacing:                        0px;
+    background-color:               @bg;
+    text-color:                     @fg;
+    expand:                         false;
+    border:                  		    0px;
+    border-radius:                  0px;
+    border-color:                  	@accent;
+    margin:                         0px 0px 0px 0px;
+    padding:                        0px;
+    position:                       center;
+}
+
+window {
+  transparency: "real";
+}

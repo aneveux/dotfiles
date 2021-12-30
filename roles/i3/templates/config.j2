@@ -320,8 +320,8 @@ for_window [class="Spotify"] move to workspace $WS5
 
 # WS6: Social / Chat
 assign [class="discord"] $WS6
-assign [class="slack"] $WS6
-for_window [class="slack"] move to workspace $WS6
+assign [class="Slack"] $WS6
+for_window [class="Slack"] move to workspace $WS6
 
 # WS7: Keepass / Security
 assign [class="KeePassXC"] $WS7
@@ -332,6 +332,7 @@ assign [class="Thunderbird"] $WS8
 
 # WS10: Notion
 assign [class="Notion"] $WS10
+for_window [class="Notion"] move to workspace $WS10
 
 # --------------
 # Auto-Floating
@@ -380,8 +381,13 @@ for_window [class="Xfburn"] floating enable
 # -------------------------
 
 # rofi for running applications or ssh-ing to machines
-bindsym $mod+d exec "rofi -combi-modi window,drun -modi combi,ssh,run -show combi -show-icons -config ~/.config/rofi/fuzzyconfig.rasi"
-bindsym $mod+Shift+d exec "rofi -combi-modi ssh -modi ssh -show combi -config ~/.config/rofi/fuzzyconfig.rasi"
+bindsym $mod+d exec "~/.config/rofi/launchers/colorful/launcher.sh -combi-modi window,drun -modi combi,window,drun,ssh -show combi -config ~/.config/rofi/fuzzyconfig.rasi"
+bindsym $mod+Shift+d exec "~/.config/rofi/launchers/text/launcher.sh -modi ssh,window,drun -show ssh -config ~/.config/rofi/fuzzyconfig.rasi"
+
+bindsym $mod+Shift+f exec "~/.i3/search.sh"
+bindsym $mod+Shift+p exec "~/.i3/screenshot.sh"
+
+bindsym $mod+twosuperior exec "rofi -modi 'spotify:python -m rofify' -show spotify -theme ~/.config/rofi/rofify_theme.rasi -config ~/.config/rofi/rofify.rasi -show-icons"
 
 # rofimoji
 bindsym $mod+Shift+colon exec rofimoji
@@ -395,7 +401,6 @@ set $launcher_mode "launcher"
 bindsym $mod+Return mode $launcher_mode
 
 mode $launcher_mode {
-  bindsym a exec atom, mode "default"
   bindsym c exec code, mode "default"
   bindsym f exec firefox, mode "default"
   bindsym i exec idea, mode "default"
@@ -414,7 +419,7 @@ mode $launcher_mode {
 # --------------
 
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec "~/.config/rofi/powermenu/powermenu.sh"
 
 # exit i3 (logs you out of your X session)
 bindsym $mod+End mode "$mode_system"
