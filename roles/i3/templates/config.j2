@@ -263,8 +263,8 @@ bindsym $mod+s layout stacking
 bindsym $mod+z layout tabbed
 bindsym $mod+e layout toggle split
 
-bindsym $mod+Shift+space floating toggle
-bindsym $mod+space focus mode_toggle
+bindsym $mod+Shift+enter floating toggle
+bindsym $mod+enter focus mode_toggle
 
 # --------------
 # Scratchpad & Sticky
@@ -541,6 +541,14 @@ exec --no-startup-id compton --config ~/.config/compton.conf -b
 
 exec --no-startup-id dunst
 exec --no-startup-id nextcloud --background
+
+# --------------
+# dunstctl bindings
+# --------------
+
+bindsym $mod+Shift+space exec dunstctl close-all
+bindsym $mod+space exec dunstctl close
+bindsym $mod+Ctrl+Shift+space exec dunstctl history-pop
 
 # --------------
 # Power / Sound / etc.

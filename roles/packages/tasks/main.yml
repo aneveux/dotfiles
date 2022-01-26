@@ -118,4 +118,6 @@
       - asdf
       - asdf-vm
       - origin-client
+      - pass
+      - docker-credential-pass
     state: present
