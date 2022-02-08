@@ -103,6 +103,7 @@
   copy:
     src: "{{ local_location }}/i3/scripts/"
     dest: ~/.i3/
+    mode: 0755
   when: _i3_local_scripts.stat.exists
 
 - name: "Deploying i3 main configuration file."

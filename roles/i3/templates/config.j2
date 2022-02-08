@@ -314,6 +314,7 @@ assign [class="Toolbox"] $WS3
 
 # WS4: Browsers
 assign [class="firefox"] $WS4
+assign [class="brave-browser"] $WS4
 
 # WS5: Media
 for_window [class="Spotify"] move to workspace $WS5
@@ -403,6 +404,7 @@ bindsym $mod+Return mode $launcher_mode
 mode $launcher_mode {
   bindsym c exec code, mode "default"
   bindsym f exec firefox, mode "default"
+  bindsym b exec brave, mode "default"
   bindsym i exec idea, mode "default"
   bindsym k exec keepassxc, mode "default"
   bindsym s exec spotify, mode "default"

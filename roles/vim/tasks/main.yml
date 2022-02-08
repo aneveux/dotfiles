@@ -42,6 +42,10 @@
   shell: vim +PluginInstall +qall
   changed_when: no
 
+- name: "Updating vim plugins through Vundle."
+  shell: vim +PluginUpdate +qall
+  changed_when: no
+
 - name: "Installing YouCompleteMe scripts."
   shell: cd ~/.vim/bundle/YouCompleteMe && ./install.py
   changed_when: no
