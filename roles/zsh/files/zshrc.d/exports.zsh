@@ -19,7 +19,7 @@ export SHELL='/usr/bin/zsh'
 
 export GPG_TTY=$(tty)
 
-export BROWSER='firefox'
+export BROWSER='brave'
 export EDITOR='vim'
 export VISUAL='vim'
 export TEXT_EDITOR='vim'
