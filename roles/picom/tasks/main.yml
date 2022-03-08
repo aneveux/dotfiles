@@ -1,0 +1,17 @@
+---
+- name: "Installing picom."
+  aur:
+    use: yay
+    name:
+      - picom-git
+    state: present
+
+- name: "Creating picom configuration directory."
+  file:
+    path: ~/.config/picom/
+    state: directory
+
+- name: "Deploying picom configuration file."
+  copy:
+    src: files/picom.conf
+    dest: ~/.config/picom/picom.conf

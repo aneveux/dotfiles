@@ -5,5 +5,5 @@
 
 - name: "Copying wallpaper to home folder."
   copy:
-    src: files/wallpaper.jpg
-    dest: ~/wallpaper.jpg
+    src: files/wallpaper.png
+    dest: ~/wallpaper.png

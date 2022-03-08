@@ -66,8 +66,8 @@ bindsym $mod+colon exec i3-input -P ":"
 # Fonts
 # --------------
 
-font pango: hack, Awesome 10
 font xft:URWGothic-Book 11
+font pango: hack, Awesome 10
 
 # --------------
 # Windows & Borders
@@ -93,13 +93,13 @@ smart_borders on
 # --------------
 
 # class                 border  bground text    indicator child_border
-client.focused          #6272A4 #6272A4 #F8F8F2 #6272A4   #6272A4
-client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #44475A
-client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #282A36
-client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
-client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
+client.focused          #A3BE8C #434C5E #E5E9F0 #5E81AC   #5E81AC
+client.focused_inactive #4C566A #434C5E #E5E9F0 #5E81AC   #5E81AC
+client.unfocused        #2E3440 #2E3440 #D8DEE9 #434C5E   #434C5E
+client.urgent           #2E3440 #BF616A #E5E9F0 #BF616A   #BF616A
+client.placeholder      #2E3440 #2E3440 #E5E9F0 #2E3440   #2E3440
 
-client.background       #F8F8F2
+client.background       #E5E9F0
 
 # --------------
 # Gaps
@@ -263,8 +263,8 @@ bindsym $mod+s layout stacking
 bindsym $mod+z layout tabbed
 bindsym $mod+e layout toggle split
 
-bindsym $mod+Shift+enter floating toggle
-bindsym $mod+enter focus mode_toggle
+bindsym $mod+Shift+space floating toggle
+bindsym $mod+space focus mode_toggle
 
 # --------------
 # Scratchpad & Sticky
@@ -474,15 +474,15 @@ bar {
     workspace_buttons yes
 
   colors {
-    background #282A36aa
-    statusline #F8F8F2
-    separator  #44475A
+    background #434C5E
+    statusline #E5E9F0
+    separator  #4C566A
 
-    focused_workspace  #44475A #44475A #F8F8F2
-    active_workspace   #282A36 #44475A #F8F8F2
-    inactive_workspace #282A36 #282A36 #BFBFBF
-    urgent_workspace   #FF5555 #FF5555 #F8F8F2
-    binding_mode       #FF5555 #FF5555 #F8F8F2
+    focused_workspace  #434C5E #ECEFF4 #2E3440
+    active_workspace   #434C5E #434C5E #ECEFF4
+    inactive_workspace #434C5E #434C5E #D8DEE9
+    urgent_workspace   #BF616A #BF616A #ECEFF4
+    binding_mode       #BF616A #BF616A #ECEFF4
   }
 }
 
@@ -503,15 +503,15 @@ bar {
     workspace_buttons yes
 
   colors {
-    background #282A36aa
-    statusline #F8F8F2
-    separator  #44475A
+    background #434C5E
+    statusline #E5E9F0
+    separator  #4C566A
 
-    focused_workspace  #44475A #44475A #F8F8F2
-    active_workspace   #282A36 #44475A #F8F8F2
-    inactive_workspace #282A36 #282A36 #BFBFBF
-    urgent_workspace   #FF5555 #FF5555 #F8F8F2
-    binding_mode       #FF5555 #FF5555 #F8F8F2
+    focused_workspace  #434C5E #ECEFF4 #2E3440
+    active_workspace   #434C5E #434C5E #ECEFF4
+    inactive_workspace #434C5E #434C5E #D8DEE9
+    urgent_workspace   #BF616A #BF616A #ECEFF4
+    binding_mode       #BF616A #BF616A #ECEFF4
   }
 }
 
@@ -519,7 +519,7 @@ bar {
 # Autostart Services
 # --------------
 
-exec_always --no-startup-id feh --bg-center ~/wallpaper.jpg
+exec_always --no-startup-id feh --bg-center ~/wallpaper.png
 exec --no-startup-id nm-applet
 exec --no-startup-id pamac-tray
 exec --no-startup-id clipit
@@ -539,18 +539,10 @@ exec_always --no-startup-id blueman
 # https://forum.manjaro.org/t/pamac-manager-issues/9813/26
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
-exec --no-startup-id compton --config ~/.config/compton.conf -b
+exec --no-startup-id picom --conf ~/.config/picom/picom.conf -b
 
 exec --no-startup-id dunst
 exec --no-startup-id nextcloud --background
-
-# --------------
-# dunstctl bindings
-# --------------
-
-bindsym $mod+Shift+space exec dunstctl close-all
-bindsym $mod+space exec dunstctl close
-bindsym $mod+Ctrl+Shift+space exec dunstctl history-pop
 
 # --------------
 # Power / Sound / etc.

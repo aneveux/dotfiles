@@ -8,7 +8,7 @@
 
 - hosts: all
   roles:
-    - { role: loader, tags: always}
+    - { role: loader, tags: always }
     - { role: proxy, tags: proxy }
     # - { role: locale, tags: locale }
     - { role: sysconfig, tags: sysconfig }
@@ -22,7 +22,7 @@
     - { role: theming, tags: theming }
     - { role: redshift, tags: redshift }
     - { role: i3, tags: i3 }
-    - { role: compton, tags: compton }
+    - { role: picom, tags: picom }
     - { role: rofi, tags: rofi }
     - { role: dunst, tags: dunst }
     - { role: terminator, tags: terminator }

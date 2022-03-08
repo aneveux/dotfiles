@@ -56,7 +56,7 @@ Plugin 'plasticboy/vim-markdown'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'terryma/vim-multiple-cursors'
-Plugin 'dracula/vim'
+Plugin 'arcticicestudio/nord-vim'
 
 " -- END LIST OF PLUGINS TO USE
 
@@ -116,7 +116,7 @@ set guifont=Jetbrains\ Mono
 autocmd VimEnter,Colorscheme * :hi MatchParen cterm=none ctermbg=white ctermfg=black
 
 set background=dark
-colorscheme dracula
+colorscheme nord
 
 set cursorline
 

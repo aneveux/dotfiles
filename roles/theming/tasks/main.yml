@@ -24,6 +24,7 @@
     name:
       - dracula-gtk-theme-git
       - vibrancy-colors
+      - nordic-theme-git
     state: present
 
 - name: "Creating gtk configuration directory."

@@ -120,4 +120,5 @@
       - origin-client
       - pass
       - docker-credential-pass
+      - brave-bin
     state: present
