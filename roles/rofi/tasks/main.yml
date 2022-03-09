@@ -12,9 +12,10 @@
       - scrot
     state: present
 
-- name: "Installing rofify."
-  pip:
-    name: rofify
+- name: "Installing rofi fonts."
+  copy:
+    src: files/fonts/
+    dest: ~/.local/share/fonts
 
 - name: "Creating rofi configuration directory."
   file:
@@ -30,16 +31,6 @@
   copy:
     src: files/configuration/fuzzy.rasi
     dest: ~/.config/rofi/config-fuzzy.rasi
-
-- name: "Deploying rofify configuration file."
-  copy:
-    src: files/rofify/rofify.rasi
-    dest: ~/.config/rofi/rofify.rasi
-
-- name: "Deploying rofify theme file."
-  copy:
-    src: files/rofify/rofify-theme.rasi
-    dest: ~/.config/rofi/rofify-theme.rasi
 
 - name: "Deploying rofimoji configuration file."
   copy:
@@ -60,4 +51,15 @@
   copy:
     src: files/powermenu.sh
     dest: ~/.config/rofi/powermenu.sh
+    mode: 0755
+
+- name: "Creating rofi music configuration directory."
+  file:
+    path: ~/.config/rofi/music
+    state: directory
+
+- name: "Deploying rofi music files."
+  copy:
+    src: files/music/
+    dest: ~/.config/rofi/music/
     mode: 0755

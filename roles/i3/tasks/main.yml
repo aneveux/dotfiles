@@ -39,7 +39,13 @@
       - slop
       - xclip
       - ffmpeg
+      - eww-git
     state: present
+
+- name: "Installing i3 eww fonts."
+  copy:
+    src: files/fonts/
+    dest: ~/.local/share/fonts
 
 - name: "Deploying xinitrc configuration file."
   copy:
