@@ -75,8 +75,8 @@ font pango: hack, Awesome 10
 
 new_window pixel 1
 new_float normal
-# hide_edge_borders none
-hide_edge_borders smart
+# hide_edge_borders smart
+hide_edge_borders none
 for_window [class="^.*"] border pixel 2
 smart_borders on
 
@@ -382,13 +382,13 @@ for_window [class="Xfburn"] floating enable
 # -------------------------
 
 # rofi for running applications or ssh-ing to machines
-bindsym $mod+d exec "~/.config/rofi/launchers/colorful/launcher.sh -combi-modi window,drun -modi combi,window,drun,ssh -show combi -config ~/.config/rofi/fuzzyconfig.rasi"
-bindsym $mod+Shift+d exec "~/.config/rofi/launchers/text/launcher.sh -modi ssh,window,drun -show ssh -config ~/.config/rofi/fuzzyconfig.rasi"
+bindsym $mod+d exec "rofi -no-lazy-grab -combi-modi window,drun -modi combi,window,drun,ssh -show combi -config ~/.config/rofi/config-fuzzy.rasi -theme ~/.config/rofi/nord.rasi"
+bindsym $mod+Shift+d exec "rofi -no-lazy-grab -modi ssh,window,drun -show ssh -config ~/.config/rofi/config-fuzzy.rasi -theme ~/.config/rofi/nord.rasi"
 
 bindsym $mod+Shift+f exec "~/.i3/search.sh"
 bindsym $mod+Shift+p exec "~/.i3/screenshot.sh"
 
-bindsym $mod+twosuperior exec "rofi -modi 'spotify:python -m rofify' -show spotify -theme ~/.config/rofi/rofify_theme.rasi -config ~/.config/rofi/rofify.rasi -show-icons"
+bindsym $mod+twosuperior exec "rofi -modi 'spotify:python -m rofify' -show spotify -theme ~/.config/rofi/rofify-theme.rasi -config ~/.config/rofi/rofify.rasi -show-icons"
 
 # rofimoji
 bindsym $mod+Shift+colon exec rofimoji
@@ -421,7 +421,7 @@ mode $launcher_mode {
 # --------------
 
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "~/.config/rofi/powermenu/powermenu.sh"
+bindsym $mod+Shift+e exec "~/.config/rofi/powermenu.sh"
 
 # exit i3 (logs you out of your X session)
 bindsym $mod+End mode "$mode_system"

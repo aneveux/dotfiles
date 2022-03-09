@@ -28,4 +28,4 @@ configuration {
 
 }
 
-@theme "~/.config/rofi/launchers/text/rofimoji_theme"
+@theme "~/.config/rofi/rofimoji-theme.rasi"

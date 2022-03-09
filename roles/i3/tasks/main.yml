@@ -38,6 +38,7 @@
       - ffcast
       - slop
       - xclip
+      - ffmpeg
     state: present
 
 - name: "Deploying xinitrc configuration file."

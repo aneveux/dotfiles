@@ -1,0 +1,5 @@
+@import "nord.rasi"
+
+window {
+    width: 50%;
+}

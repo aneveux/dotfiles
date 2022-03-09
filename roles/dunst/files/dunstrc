@@ -64,7 +64,7 @@
     show_indicators = yes
 
     icon_position = left
-    text_icon_padding = 3
+    text_icon_padding = 10
     min_icon_size = 0
     max_icon_size = 64
     icon_path = ~/.icons/Dracula/16/:~/.icons/Dracula/actions/24/:~/.icons/Dracula/apps/scalable/:~/.icons/Dracula/Places/48/

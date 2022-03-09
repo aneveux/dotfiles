@@ -15,23 +15,9 @@
 # full_circle     full_square     full_rounded     full_alt
 # row_circle      row_square      row_rounded      row_alt
 
-theme="card_circle"
-dir="$HOME/.config/rofi/powermenu"
-
-# random colors
-styles=($(ls -p --hide="colors.rasi" $dir/styles))
-color="${styles[$(( $RANDOM % 8 ))]}"
-
-# comment this line to disable random colors
-# sed -i -e "s/@import .*/@import \"$color\"/g" $dir/styles/colors.rasi
-
-# comment these lines to disable random style
-# themes=($(ls -p --hide="powermenu.sh" --hide="styles" --hide="confirm.rasi" --hide="message.rasi" $dir))
-# theme="${themes[$(( $RANDOM % 24 ))]}"
-
 uptime=$(uptime -p | sed -e 's/up //g')
 
-rofi_command="rofi -theme $dir/$theme"
+rofi_command="rofi -theme ~/.config/rofi/powermenu.rasi -config ~/.config/rofi/config-fuzzy.rasi"
 
 # Options
 shutdown=""
@@ -45,13 +31,12 @@ confirm_exit() {
 	rofi -dmenu\
 		-i\
 		-no-fixed-num-lines\
-		-p "Are You Sure? : "\
-		-theme $dir/confirm.rasi
+		-p "Are You Sure? : "
 }
 
 # Message
 msg() {
-	rofi -theme "$dir/message.rasi" -e "Available Options  -  yes / y / no / n"
+	rofi -e "Available Options  -  yes / y / no / n"
 }
 
 # Variable passed to rofi

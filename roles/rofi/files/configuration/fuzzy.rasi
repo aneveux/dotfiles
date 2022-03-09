@@ -11,7 +11,7 @@ configuration {
 
     fixed-num-lines: true;
     show-icons: true;
-    icon-theme: "Papirus";
+    icon-theme: "Dracula";
 
     terminal: "terminator";
     ssh-client: "ssh";

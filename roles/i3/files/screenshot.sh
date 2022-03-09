@@ -138,7 +138,7 @@ main() {
   fi
 
   # Get choice from rofi
-  choice=$( (get_options) | rofi -dmenu -i -fuzzy -p "Screenshot" -theme ~/.config/rofi/launchers/text/style_3 -config ~/.config/rofi/fuzzyconfig.rasi )
+  choice=$( (get_options) | rofi -dmenu -i -fuzzy -p "Screenshot" -theme ~/.config/rofi/nord.rasi -config ~/.config/rofi/config-fuzzy.rasi )
 
   # If user has not picked anything, exit
   if [[ -z "${choice// }" ]]; then

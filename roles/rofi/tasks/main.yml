@@ -21,102 +21,43 @@
     path: ~/.config/rofi
     state: directory
 
-- name: "Deploying rofimoji configuration file."
-  copy:
-    src: files/rofimoji.rc
-    dest: ~/.config/rofimoji.rc
-
-- name: "Creating tools directory."
-  file:
-    path: ~/tools
-    state: directory
-
-- name: "Setting up Rofi themes."
-  git:
-    repo: https://github.com/adi1090x/rofi
-    dest: ~/tools/rofi
-  changed_when: no
-
-- name: "Making setup.sh executable."
-  file:
-    dest: ~/tools/rofi/setup.sh
-    mode: a+x
-
-- name: "Setup rofi themes."
-  shell: echo 1 | ~/tools/rofi/setup.sh
-  changed_when: no
-
-- name: "Add dracula theme."
-  copy:
-    src: files/dracula.rasi
-    dest: ~/.config/rofi/applets/styles/dracula.rasi
-
-- name: "Add dracula theme for powermenu."
-  copy:
-    src: files/dracula_powermenu.rasi
-    dest: ~/.config/rofi/powermenu/styles/dracula.rasi
-
-- name: "Add dracula theme for rofi text."
-  copy:
-    src: files/dracula_text.rasi
-    dest: ~/.config/rofi/launchers/text/styles/dracula.rasi
-
-- name: "Setup rofi color scheme."
-  copy:
-    src: files/colors.rasi
-    dest: ~/.config/rofi/applets/styles/colors.rasi
-
-- name: "Setup rofi powermenu color scheme."
-  copy:
-    src: files/colors.rasi
-    dest: ~/.config/rofi/powermenu/styles/colors.rasi
-
-- name: "Setup rofi text color scheme."
-  copy:
-    src: files/colors.rasi
-    dest: ~/.config/rofi/launchers/text/styles/colors.rasi
-
-- name: "Setup rofi circle style."
-  copy:
-    src: files/style.sh
-    dest: ~/.config/rofi/applets/applets/style.sh
-
-- name: "Deploy configured powermenu script."
-  copy:
-    src: files/powermenu.sh
-    dest: ~/.config/rofi/powermenu/powermenu.sh
-
-- name: "Deploy updated launcher script."
-  copy:
-    src: files/launcher.sh
-    dest: ~/.config/rofi/launchers/colorful/launcher.sh
-
-- name: "Deploy updated text launcher script."
-  copy:
-    src: files/text_launcher.sh
-    dest: ~/.config/rofi/launchers/text/launcher.sh
-
 - name: "Deploying rofi main configuration file."
   copy:
-    src: files/config.rasi
+    src: files/configuration/default.rasi
     dest: ~/.config/rofi/config.rasi
 
 - name: "Deploying rofi fuzzy configuration file."
   copy:
-    src: files/fuzzyconfig.rasi
-    dest: ~/.config/rofi/fuzzyconfig.rasi
+    src: files/configuration/fuzzy.rasi
+    dest: ~/.config/rofi/config-fuzzy.rasi
 
 - name: "Deploying rofify configuration file."
   copy:
-    src: files/rofify.rasi
+    src: files/rofify/rofify.rasi
     dest: ~/.config/rofi/rofify.rasi
 
 - name: "Deploying rofify theme file."
   copy:
-    src: files/rofify_theme.rasi
-    dest: ~/.config/rofi/rofify_theme.rasi
+    src: files/rofify/rofify-theme.rasi
+    dest: ~/.config/rofi/rofify-theme.rasi
+
+- name: "Deploying rofimoji configuration file."
+  copy:
+    src: files/rofimoji/rofimoji.rc
+    dest: ~/.config/rofimoji.rc
 
 - name: "Deploying rofimoji theme file."
   copy:
-    src: files/rofimoji_theme.rasi
-    dest: ~/.config/rofi/launchers/text/rofimoji_theme.rasi
+    src: files/rofimoji/rofimoji-theme.rasi
+    dest: ~/.config/rofi/rofimoji-theme.rasi
+
+- name: "Deploying rofi themes."
+  copy:
+    src: files/themes/
+    dest: ~/.config/rofi/
+
+- name: "Deploying powermenu."
+  copy:
+    src: files/powermenu.sh
+    dest: ~/.config/rofi/powermenu.sh
+    mode: 0755

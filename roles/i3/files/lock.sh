@@ -1,11 +1,11 @@
 #!/bin/sh
 
 BLANK='#00000000'
-CLEAR='#282A36'
-DEFAULT='#BD93F9'
-TEXT='#CAA9FA'
-WRONG='#FF5555'
-VERIFYING='#FF79C6'
+CLEAR='#2E3440'
+DEFAULT='#5E81AC'
+TEXT='#E5E9F0'
+WRONG='#BF616A'
+VERIFYING='#B48EAD'
 
 i3lock \
 --insidever-color=$CLEAR     \
@@ -33,4 +33,4 @@ i3lock \
 --indicator                  \
 --time-str="%H:%M:%S"        \
 --date-str="%A, %m %Y"       \
---keylayout 1                \
+--keylayout 1
