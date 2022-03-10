@@ -36,7 +36,7 @@ bkpCover=~/.config/rofi/music/music.jpg
 # Save Lyrics here
 lyricsdir=/tmp/lyrics
 # for ncmpcpp and echo lyrics
-terminal=terminator
+terminal=kitty
 # Rofi
 roficonfig="$HOME/.config/rofi/music/config.rasi"
 

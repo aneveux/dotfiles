@@ -1,0 +1,22 @@
+---
+- name: "Installing Kitty."
+  aur:
+    use: yay
+    name:
+      - kitty
+    state: present
+
+- name: "Creating the configuration folder for Kitty."
+  file:
+    path: ~/.config/kitty/
+    state: directory
+
+- name: "Deploying Nord theme for Kitty."
+  copy:
+    src: files/nord.conf
+    dest: ~/.config/kitty/
+
+- name: "Deploying Kitty configuration."
+  copy:
+    src: files/kitty.conf
+    dest: ~/.config/kitty/

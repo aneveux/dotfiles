@@ -72,3 +72,8 @@
   ansible.builtin.unarchive:
     src: files/Dracula.zip
     dest: ~/.icons/
+
+- name: "Deploying xprofile file."
+  copy:
+    src: "files/xprofile"
+    dest: ~/.xprofile
