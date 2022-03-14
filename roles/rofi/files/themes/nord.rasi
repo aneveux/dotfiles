@@ -46,6 +46,7 @@ element {
 
 element-icon {
   padding: 10px 10px;
+  size: 32px;
 }
 
 element-text {

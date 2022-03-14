@@ -121,3 +121,13 @@
     src: templates/config.j2
     dest: ~/.i3/config
     backup: True
+
+- name: "Creating emoji-picker configuration directory."
+  file:
+    path: ~/.config/gazatu.xyz
+    state: directory
+
+- name: "Deploying emoji-picker configuration."
+  copy:
+    src: files/emoji-picker.ini
+    dest: ~/.config/gazatu.xyz/

@@ -3,7 +3,7 @@
   aur:
     name:
       - rofi
-      - rofimoji
+      - x11-emoji-picker-git
       - xdotool
       - xclip
       - xsel
@@ -26,21 +26,6 @@
   copy:
     src: files/configuration/default.rasi
     dest: ~/.config/rofi/config.rasi
-
-- name: "Deploying rofi fuzzy configuration file."
-  copy:
-    src: files/configuration/fuzzy.rasi
-    dest: ~/.config/rofi/config-fuzzy.rasi
-
-- name: "Deploying rofimoji configuration file."
-  copy:
-    src: files/rofimoji/rofimoji.rc
-    dest: ~/.config/rofimoji.rc
-
-- name: "Deploying rofimoji theme file."
-  copy:
-    src: files/rofimoji/rofimoji-theme.rasi
-    dest: ~/.config/rofi/rofimoji-theme.rasi
 
 - name: "Deploying rofi themes."
   copy:

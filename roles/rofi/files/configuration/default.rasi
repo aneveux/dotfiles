@@ -1,17 +1,26 @@
 configuration {
-  modi: "combi,window,drun";
-  combi-modi: "window,drun";
+    font: "JetbrainsMono Nerd Font 12";
 
-  fixed-num-lines: true;
-  show-icons: true;
-  icon-theme: "Dracula";
+    modi: "combi,window,drun";
+    combi-modi: "window,drun";
 
-  terminal: "kitty";
-  ssh-client: "ssh";
-  ssh-command: "{terminal} -e {ssh-client} {host}";
-  run-command: "{cmd}";
-  run-list-command: "";
-  run-shell-command: "{terminal} -e {cmd}";
+    case-sensitive: false;
+    sort: true;
+    sorting-method: "levenshtein";
+    disable-history: true;
+    matching: "fuzzy";
+    tokenize: true;
+
+    fixed-num-lines: true;
+    show-icons: true;
+    icon-theme: "Dracula";
+
+    terminal: "kitty";
+    ssh-client: "ssh";
+    ssh-command: "{terminal} -e {ssh-client} {host}";
+    run-command: "{cmd}";
+    run-list-command: "";
+    run-shell-command: "{terminal} -e {cmd}";
 
 	parse-hosts: true;
 	parse-known-hosts: true;
@@ -27,5 +36,3 @@ configuration {
   }
 
 }
-
-@theme "~/.config/rofi/rofimoji-theme.rasi"
