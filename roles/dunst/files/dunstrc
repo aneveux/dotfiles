@@ -67,9 +67,7 @@
     text_icon_padding = 10
     min_icon_size = 0
     max_icon_size = 64
-    #icon_path = ~/.icons/Dracula/16/:~/.icons/Dracula/actions/24/:~/.icons/Dracula/apps/scalable/:~/.icons/Dracula/Places/48/
-    enable_recursive_icon_lookup = true
-    icon_theme = Papirus, Dracula, Adwaita
+    icon_path = /usr/share/icons/Papirus/symbolic/actions:/usr/share/icons/Papirus/symbolic/apps:/usr/share/icons/Papirus/symbolic/categories:/usr/share/icons/Papirus/symbolic/devices:/usr/share/icons/Papirus/symbolic/emblems:/usr/share/icons/Papirus/symbolic/emotes:/usr/share/icons/Papirus/symbolic/mimetypes:/usr/share/icons/Papirus/symbolic/places:/usr/share/icons/Papirus/symbolic/status
 
     sticky_history = yes
     history_length = 20
@@ -91,9 +89,6 @@
 
     close = ctrl+space
     close_all = ctrl+shift+space
-
-[experimental]
-    icon_size = 64
 
 [urgency_low]
     background = "#3B4252"
