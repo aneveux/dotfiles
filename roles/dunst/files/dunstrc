@@ -21,7 +21,7 @@
 
     transparency = 10
 
-    separator_height = 2
+    separator_height = 1
     padding = 12
     horizontal_padding = 12
     frame_width = 0
@@ -47,7 +47,7 @@
     #   %n  progress value if set without any extra characters
     #   %%  Literal %
     # Markup is allowed
-    format = "<b>/%a</b>\n%s %p\n%b"
+    format = "<b>[%a]</b>\n%s %p\n%b"
 
     alignment = left
     vertical_alignment = center
@@ -67,7 +67,9 @@
     text_icon_padding = 10
     min_icon_size = 0
     max_icon_size = 64
-    icon_path = ~/.icons/Dracula/16/:~/.icons/Dracula/actions/24/:~/.icons/Dracula/apps/scalable/:~/.icons/Dracula/Places/48/
+    #icon_path = ~/.icons/Dracula/16/:~/.icons/Dracula/actions/24/:~/.icons/Dracula/apps/scalable/:~/.icons/Dracula/Places/48/
+    enable_recursive_icon_lookup = true
+    icon_theme = Papirus, Dracula, Adwaita
 
     sticky_history = yes
     history_length = 20
@@ -89,6 +91,9 @@
 
     close = ctrl+space
     close_all = ctrl+shift+space
+
+[experimental]
+    icon_size = 64
 
 [urgency_low]
     background = "#3B4252"
