@@ -13,7 +13,7 @@ configuration {
 
     fixed-num-lines: true;
     show-icons: true;
-    icon-theme: "Dracula";
+    icon-theme: "Papirus";
 
     terminal: "kitty";
     ssh-client: "ssh";
