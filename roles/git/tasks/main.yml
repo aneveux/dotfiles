@@ -19,6 +19,28 @@
     src: files/gitattributes
     dest: ~/.gitattributes
 
+- name: "Deploying a global commit template file."
+  copy:
+    src: files/gitmessage
+    dest: ~/.gitmessage
+
+- name: "Searching for local git hooks."
+  stat: path="{{ local_location }}/git/hooks"
+  register: _git_local_hooks
+
+- name: "Creating global git hooks directory."
+  file:
+    path: ~/.githooks/
+    state: directory
+  when: _git_local_hooks
+
+- name: "Deploying local git hooks."
+  copy:
+    src: "{{ local_location }}/git/hooks/"
+    dest: ~/.githooks/
+    mode: 0755
+  when: _git_local_hooks
+
 - name: "Deploying git configuration file."
   vars:
     additional_local_config: '{{lookup("file", vars["local_location"] + "/git/config") }}'

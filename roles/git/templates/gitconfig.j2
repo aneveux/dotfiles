@@ -5,8 +5,9 @@
 	signingkey = {{ user.gpg_key }}
 {% endif %}
 
-{% if user.gpg_key is defined %}
 [commit]
+	template = ~/.gitmessage
+{% if user.gpg_key is defined %}
 	gpgsign = true
 {% endif %}
 
@@ -43,6 +44,9 @@
 	trustctime = false
 	autocrlf = input
 	pager = diff-so-fancy | less --tabs=4 -RFX
+{% if _git_local_hooks %}
+	hooksPath = ~/.githooks/
+{% endif %}
 
 [interactive]
 	diffFilter = diff-so-fancy
