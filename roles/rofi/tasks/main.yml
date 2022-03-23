@@ -24,7 +24,7 @@
 
 - name: "Deploying rofi main configuration file."
   copy:
-    src: files/configuration/default.rasi
+    src: files/configuration/config.rasi
     dest: ~/.config/rofi/config.rasi
 
 - name: "Deploying rofi themes."

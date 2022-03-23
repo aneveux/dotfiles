@@ -36,3 +36,5 @@ configuration {
   }
 
 }
+
+@theme "nord"
