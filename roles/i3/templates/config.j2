@@ -155,16 +155,16 @@ mode "$mode_gaps_outer" {
 # Workspaces
 # -------------------
 
-set $WS1 "1:"
-set $WS2 "2:"
-set $WS3 "3:"
-set $WS4 "4:"
-set $WS5 "5:"
-set $WS6 "6:"
-set $WS7 "7:"
-set $WS8 "8:"
-set $WS9 "9:"
-set $WS10 "10:"
+set $WS1 "1:"
+set $WS2 "2:"
+set $WS3 "3:"
+set $WS4 "4:"
+set $WS5 "5:"
+set $WS6 "6:"
+set $WS7 "7:"
+set $WS8 "8:"
+set $WS9 "9:"
+set $WS10 "10:"
 
 # ---------------------------------------------------
 # Workspaces Switcher
@@ -449,72 +449,10 @@ bindsym $mod+Shift+l exec ~/.i3/lock.sh
 
 exec_always --no-startup-id {{ local_location }}/monitor_configuration.sh
 
-set $WS11 "11:"
-set $WS12 "12:"
+set $WS11 "11:"
+set $WS12 "12:"
 
 {% endif %}
-
-# --------------
-# bar with i3blocks
-# --------------
-
-bar {
-    output nonprimary
-    status_command i3blocks -c ~/.config/i3blocks/config-minimal
-    i3bar_command i3bar -t
-
-    strip_workspace_numbers yes
-
-    tray_output primary
-    tray_padding 5
-
-    position top
-    height 25
-    font pango: FontAwesome, JetBrainsMono 12
-
-    workspace_buttons yes
-
-  colors {
-    background #434C5E
-    statusline #E5E9F0
-    separator  #4C566A
-
-    focused_workspace  #434C5E #ECEFF4 #2E3440
-    active_workspace   #434C5E #434C5E #ECEFF4
-    inactive_workspace #434C5E #434C5E #D8DEE9
-    urgent_workspace   #BF616A #BF616A #ECEFF4
-    binding_mode       #BF616A #BF616A #ECEFF4
-  }
-}
-
-bar {
-    output primary
-    status_command i3blocks
-    i3bar_command i3bar -t
-
-    strip_workspace_numbers yes
-
-    tray_output primary
-    tray_padding 5
-
-    position top
-    height 25
-    font pango: FontAwesome, JetBrainsMono 12
-
-    workspace_buttons yes
-
-  colors {
-    background #434C5E
-    statusline #E5E9F0
-    separator  #4C566A
-
-    focused_workspace  #434C5E #ECEFF4 #2E3440
-    active_workspace   #434C5E #434C5E #ECEFF4
-    inactive_workspace #434C5E #434C5E #D8DEE9
-    urgent_workspace   #BF616A #BF616A #ECEFF4
-    binding_mode       #BF616A #BF616A #ECEFF4
-  }
-}
 
 # --------------
 # Autostart Services
@@ -527,6 +465,8 @@ exec --no-startup-id clipit
 exec --no-startup-id numlockx on
 
 exec --no-startup-id xautolock -detectsleep -time 10 -locker "~/.i3/lock.sh" -notify 30 -notifier "notify-send -u critical -t 10000 -- 'locking screen in 30 seconds'"
+
+exec_always --no-startup-id $HOME/.config/polybar/polybar.sh main
 
 {% if user.preferences.laptop %}
 exec_always --no-startup-id xfce4-power-manager
