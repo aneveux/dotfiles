@@ -9,7 +9,8 @@
 
   outputs=$(xrandr --query | grep " connected " | cut -d" " -f1)
   primary=$(xrandr --query | grep " primary " | cut -d" " -f1)
-  tray_output='DP-2-1'
+  tray_output='DP-3-1'
+  bar_config='main'
 
   for m in $outputs; do
     if test "$m" = "$primary"; then
@@ -23,7 +24,12 @@
     if test "$m" = "$tray_output"; then
       TRAY_POSITION=right
     fi
-    polybar --reload "$1" -c ~/.config/polybar/config.ini </dev/null > "polybar-$m.log" 2>&1 200>&- &
+    if test "$m" = "$primary"; then
+      bar_config='main'
+    else
+      bar_config='secondary'
+    fi
+    polybar --reload "$bar_config" -c ~/.config/polybar/config.ini </dev/null > "polybar-$m.log" 2>&1 200>&- &
     disown
   done
 ) 200>polybar-launch.lock

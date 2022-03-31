@@ -466,7 +466,7 @@ exec --no-startup-id numlockx on
 
 exec --no-startup-id xautolock -detectsleep -time 10 -locker "~/.i3/lock.sh" -notify 30 -notifier "notify-send -u critical -t 10000 -- 'locking screen in 30 seconds'"
 
-exec_always --no-startup-id $HOME/.config/polybar/polybar.sh main
+exec_always --no-startup-id $HOME/.config/polybar/polybar.sh
 
 {% if user.preferences.laptop %}
 exec_always --no-startup-id xfce4-power-manager
