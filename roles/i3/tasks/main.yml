@@ -39,8 +39,6 @@
       - slop
       - xclip
       - ffmpeg
-      - eww-git
-      - ncspot
     state: present
 
 - name: "Installing i3 eww fonts."
