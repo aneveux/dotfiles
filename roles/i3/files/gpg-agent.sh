@@ -1,5 +1,4 @@
-export TERMINAL=kitty
-export EDITOR=vim
+#!/usr/bin/env bash
 
 export GPG_TTY="$(tty)"
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)

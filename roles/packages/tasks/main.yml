@@ -89,6 +89,10 @@
       - terminator
       - vlc
       - discord
+      - hugo
+      - peek-git
+      - pgadmin4
+      - 1password
     state: present
   become: True
 

@@ -17,6 +17,7 @@
     - { role: java, tags: java }
     - { role: zsh, tags: zsh }
     - { role: ssh, tags: ssh }
+    - { role: gpg, tags: gpg }
     - { role: npm, tags: npm }
     - { role: packages, tags: packages }
     - { role: theming, tags: theming }

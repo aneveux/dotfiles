@@ -101,6 +101,12 @@
     dest: ~/.i3/screenshot.sh
     mode: 0755
 
+- name: "Copying gpg-agent script."
+  copy:
+    src: files/gpg-agent.sh
+    dest: ~/.gpg-agent.sh
+    mode: 0755
+
 - name: "Searching for local i3 scripts."
   stat: path="{{ local_location }}/i3/scripts"
   register: _i3_local_scripts

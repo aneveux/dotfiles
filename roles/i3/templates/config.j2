@@ -308,6 +308,7 @@ assign [class="Termite"] $WS1
 # WS2: Text Editors
 assign [class="Atom"] $WS2
 assign [class="Code"] $WS2
+assign [class="Fleet"] $WS2
 
 # WS3: IDE
 assign [class="jetbrains"] $WS3
@@ -484,6 +485,8 @@ exec --no-startup-id picom --conf ~/.config/picom/picom.conf -b
 
 exec --no-startup-id dunst
 exec --no-startup-id nextcloud --background
+
+exec --no-startup-id ~/.gpg-agent.sh
 
 # --------------
 # Power / Sound / etc.
