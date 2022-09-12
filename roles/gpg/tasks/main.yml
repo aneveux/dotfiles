@@ -9,7 +9,6 @@
       - yubikey-personalization
       - yubikey-manager
       - rng-tools
-      - yubioath-desktop
     state: present
   become: True
 
@@ -33,3 +32,10 @@
   copy:
     src: files/gpg-agent.conf
     dest: ~/.gnupg/gpg-agent.conf
+
+- name: "Enabling pcscd service."
+  systemd:
+    daemon_reload: yes
+    name: pcscd.service
+    enabled: yes
+    state: started
