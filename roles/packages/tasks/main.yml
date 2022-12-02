@@ -88,11 +88,14 @@
       - redshift
       - terminator
       - vlc
-      - discord
+      - discord_arch_electron
       - hugo
       - peek-git
       - pgadmin4
       - 1password
+      - 1password-cli
+      - skopeo # for docker
+      - topgrade
     state: present
   become: True
 
