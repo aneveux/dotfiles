@@ -17,8 +17,6 @@ export MANPAGER='most'
 export PAGER='most'
 export SHELL='/usr/bin/zsh'
 
-export GPG_TTY=$(tty)
-
 export BROWSER='brave'
 export EDITOR='vim'
 export VISUAL='vim'
@@ -35,5 +33,13 @@ export JAVA_OPTS='-Xms128m -Xmx256m'
 # -----------------------------------------------------------
 
 typeset -U PATH path
-path=("$HOME/.local/bin" "$path[@]" "$(ruby -e 'puts Gem.user_dir')/bin")
+path=("$HOME/.local/bin" "$HOME/bin" "$HOME/.cargo/bin" "$path[@]" "$(ruby -e 'puts Gem.user_dir')/bin")
 export PATH
+
+export GPG_TTY=$TTY
+export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+
+if asdf current java > /dev/null 2>&1
+then
+    export JAVA_HOME=$(asdf where java)
+fi

@@ -56,7 +56,7 @@ Plugin 'plasticboy/vim-markdown'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'terryma/vim-multiple-cursors'
-Plugin 'arcticicestudio/nord-vim'
+Plugin 'catppuccin/vim'
 
 " -- END LIST OF PLUGINS TO USE
 
@@ -111,12 +111,14 @@ set hlsearch
 
 " set Jetbrains Mono font as default
 set guifont=Jetbrains\ Mono
+set termguicolors
+set noshowmode
 
 " brackets highlight color
 autocmd VimEnter,Colorscheme * :hi MatchParen cterm=none ctermbg=white ctermfg=black
 
-set background=dark
-colorscheme nord
+set background=light
+colorscheme catppuccin_latte
 
 set cursorline
 
@@ -201,7 +203,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 
 " -- LIGHTLINE CONFIG
 let g:lightline = {
-      \ 'colorscheme': 'dracula',
+      \ 'colorscheme': 'catppuccin_latte',
       \ }
 
 " -- EDITORCONFIG CONFIG

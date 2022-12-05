@@ -9,18 +9,11 @@ all:
       local_configuration: "{{ local_location }}/local.yml"
 
       user:
-        id: "{{ usr.id | default('john_doe') }}"
-        name: "{{ usr.name | default('John Doe') }}"
-        mail: "{{ usr.mail | default('john@doe.org') }}"
+        id: "{{ usr.id | default('antoine') }}"
+        name: "{{ usr.name | default('Antoine Neveux') }}"
+        mail: "{{ usr.mail | default('antoine@neveux.me') }}"
         password: "{{ usr.password | default(omit) }}"
         gpg_key: "{{ usr.gpg_key | default(omit) }}"
-        preferences:
-          shell: "{{ usr.preferences.shell | default('/usr/bin/zsh') }}"
-          xsession: "{{ usr.preferences.xsession | default('i3') }}"
-          keymap: "{{ usr.preferences.keymap | default('fr') }}"
-          locales: "{{ usr.preferences.locales | default('en_US.UTF-8') }}"
-          multiscreen: "{{ usr.preferences.multiscreen | default('false') }}"
-          laptop: "{{ usr.preferences.laptop | default('false') }}"
 
       system:
         proxy:
@@ -28,5 +21,3 @@ all:
           host: "{{ sys.proxy.host | default('') }}"
           port: "{{ sys.proxy.port | default('') }}"
           noproxy: "{{ sys.proxy.noproxy | default ('') }}"
-        preferences:
-          sudo_nopassword: "{{ sys.preferences.sudo_nopassword | default('yes') }}"

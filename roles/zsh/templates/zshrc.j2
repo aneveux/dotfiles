@@ -1,24 +1,9 @@
-##############################################################
-#                    /)                                      #
-#           /\___/\ ((                                       #
-#           \`@_@'/  ))                                      #
-#           {_:Y:.}_//                                       #
-# ----------{_}^-'{_}----------------------------------------#
-#  _____  _____ __  __   __________  _   __________________  #
-# /__  / / ___// / / /  / ____/ __ \/ | / / ____/  _/ ____/  #
-#   / /  \__ \/ /_/ /  / /   / / / /  |/ / /_   / // / __    #
-#  / /_____/ / __  /  / /___/ /_/ / /|  / __/ _/ // /_/ /    #
-# /____/____/_/ /_/   \____/\____/_/ |_/_/   /___/\____/     #
-#                                                            #
-##############################################################
-
-
 # -----------------------------------------------------------
 # powerlevel10k
 # -----------------------------------------------------------
 
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+    source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
 # -----------------------------------------------------------
@@ -36,15 +21,19 @@ SAVEHIST=2048
 # zsh global options
 # -----------------------------------------------------------
 
+ENABLE_CORRECTION="false"
 setopt interactivecomments
 setopt append_history
 setopt auto_cd
-unsetopt correctall
+unsetopt correct
+unsetopt correct_all
 setopt extended_glob
 setopt no_match
 setopt notify
 setopt print_exit_value
 setopt COMPLETE_ALIASES
+setopt no_list_ambiguous
+setopt MENU_COMPLETE
 
 # -----------------------------------------------------------
 # zsh functions loading
@@ -57,12 +46,6 @@ autoload -U zmv
 autoload -U extract
 
 # -----------------------------------------------------------
-# zsh features configuration
-# -----------------------------------------------------------
-
-zstyle ':completion:*:processes' command 'ps xfo pid,cmd'
-
-# -----------------------------------------------------------
 # zsh path configuration
 # -----------------------------------------------------------
 
@@ -70,51 +53,46 @@ typeset -U path
 path=(~/bin ~/.local/bin $path[@])
 
 # -----------------------------------------------------------
-# zsh autosuggestions
-# -----------------------------------------------------------
-
-source {{ zsh_syntax_highlighting_dir.stdout }}
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
-
-# -----------------------------------------------------------
-# source zprezto
-# -----------------------------------------------------------
-
-if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
-  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
-fi
-
-# -----------------------------------------------------------
 # source asdf
 # -----------------------------------------------------------
 
 if [[ -s "$HOME/.asdf/asdf.sh" ]]; then
-  . $HOME/.asdf/asdf.sh
+    . $HOME/.asdf/asdf.sh
 fi
 
 # append completions to fpath
 fpath=(${ASDF_DIR}/completions $fpath)
 
 # -----------------------------------------------------------
-# source zshrc.d
-# -----------------------------------------------------------
-
-zshrcd="$HOME/.zshrc.d"
-if [ -d "$zshrcd" ]; then
-  zfiles=("$zshrcd/"*.zsh)
-  for zf in $zfiles; do
-    [ -r $zf ] && . $zf
-  done
-fi
-
-# -----------------------------------------------------------
 # completions
 # -----------------------------------------------------------
 
 autoload -Uz compinit promptinit
-compinit
+compinit -u
 promptinit
+
+# -----------------------------------------------------------
+# fzf
+# -----------------------------------------------------------
+
+# Completion caching
+zstyle ':completion::complete:*' use-cache on
+zstyle ':completion::complete:*' cache-path .zcache
+zstyle ':completion:*:cd:*' ignore-parents parent pwd
+
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+
+zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+zstyle ':fzf-tab:*' switch-group ';' ':'
+
+zstyle ':fzf-tab:*' show-group none
+zstyle ':fzf-tab:*' single-group header
+
+zstyle ':completion:*:git-checkout:*' sort false
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa -1 --color=always $realpath'
+
+zstyle ':completion:*:descriptions' format '[%d]'
+zstyle ':completion:*' group-name ''
 
 # -----------------------------------------------------------
 # custom local configuration
@@ -125,12 +103,43 @@ promptinit
 {% endif %}
 
 # -----------------------------------------------------------
+# source zprezto
+# -----------------------------------------------------------
+
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+    source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
+
+# -----------------------------------------------------------
+# source zshrc.d
+# -----------------------------------------------------------
+
+zshrcd="$HOME/.zshrc.d"
+if [ -d "$zshrcd" ]; then
+    zfiles=("$zshrcd/"*.zsh)
+    for zf in $zfiles; do
+        [ -r $zf ] && . $zf
+    done
+fi
+
+# -----------------------------------------------------------
+# zsh autosuggestions
+# -----------------------------------------------------------
+
+source ~/.zsh/catppuccin_*-zsh-syntax-highlighting.zsh
+source {{ zsh_syntax_highlighting_dir.stdout }}
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
+
+# -----------------------------------------------------------
+# zsh autosuggestions
+# -----------------------------------------------------------
+
+. ~/tools/z/z.sh
+
+# -----------------------------------------------------------
 # p10k sourcing
 # -----------------------------------------------------------
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-export GPG_TTY="$(tty)"
-export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
-gpgconf --launch gpg-agent

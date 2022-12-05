@@ -1,6 +1,0 @@
----
-- name: "Installing vscode."
-  aur: name=visual-studio-code-bin state=present
-
-# All configuration and plugins are managed through
-# https://code.visualstudio.com/docs/editor/settings-sync

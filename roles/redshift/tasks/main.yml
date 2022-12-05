@@ -1,9 +1,0 @@
----
-- name: "Installing redshift."
-  pacman: name=redshift state=present
-  become: True
-
-- name: "Deploying redshift configuration file."
-  copy:
-    src: files/redshift.conf
-    dest: ~/.config/redshift.conf

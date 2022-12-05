@@ -1,9 +1,0 @@
----
-- name: "Installing feh."
-  aur: name=feh state=present
-  become: True
-
-- name: "Copying wallpaper to home folder."
-  copy:
-    src: files/wallpaper.png
-    dest: ~/wallpaper.png

@@ -2,6 +2,7 @@
 - name: "Installing terminator and associated tooling."
   pacman: name=terminator state=present
   become: True
+  when: ansible_distribution == "Archlinux"
 
 - name: "Creating terminator configuration directory."
   file:
@@ -12,4 +13,3 @@
   copy:
     src: files/config
     dest: ~/.config/terminator/config
-    backup: yes

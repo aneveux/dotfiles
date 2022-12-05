@@ -3,25 +3,22 @@
   pacman:
     name:
       - docker
-      - docker-compose
+      - ctop
+    state: present
+  become: True
+  when: ansible_distribution == "Archlinux"
+
+- name: "Creating gorup docker."
+  group:
+    name: docker
     state: present
   become: True
 
-- name: "Setting up the docker daemon service configuration"
-  file:
-    path: /etc/systemd/system/docker.service.d/
-    state: directory
-  become: True
-
-- name: "Searching for local docker daemon service configuration files."
-  stat: path="{{ local_location }}/docker"
-  register: _docker_local_configuration
-
-- name: "Deploying docker daemon local configuration files."
-  copy:
-    src: "{{ local_location }}/docker/"
-    dest: /etc/systemd/system/docker.service.d/
-  when: _docker_local_configuration.stat.exists
+- name: "Adding current user to docker group."
+  user:
+    name: "{{ user.id }}"
+    groups: docker
+    append: true
   become: True
 
 - name: "Enabling the docker service by default."

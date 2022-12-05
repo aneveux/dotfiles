@@ -6,10 +6,12 @@
       - editorconfig-core-c
     state: present
   become: True
+  when: ansible_distribution == "Archlinux"
 
 - name: "Installing from pacman additional code formatters."
   pacman: name=astyle state=present
   become: True
+  when: ansible_distribution == "Archlinux"
 
 - name: "Installing from pip additional code formatters."
   pip:
@@ -36,7 +38,7 @@
   git:
     repo: https://github.com/VundleVim/Vundle.vim
     dest: ~/.vim/bundle/Vundle.vim
-  changed_when: no
+    update: yes
 
 - name: "Installing vim plugins through Vundle."
   shell: vim +PluginInstall +qall

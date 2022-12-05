@@ -2,6 +2,7 @@
 - name: "Installing openssh."
   pacman: name=openssh state=present
   become: True
+  when: ansible_distribution == "Archlinux"
 
 - name: "Creating the configuration folder for ssh."
   file:
@@ -12,7 +13,6 @@
   copy:
     src: files/config
     dest: ~/.ssh/config
-    backup: yes
 
 - name: "Searching for local ssh configuration files."
   stat: path="{{ local_location }}/ssh/config.d"

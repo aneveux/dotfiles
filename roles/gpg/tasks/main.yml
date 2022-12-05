@@ -1,22 +1,24 @@
 ---
-- name: "Installing GPG and required tools."
-  pacman:
-    name:
-      - gnupg
-      - hopenpgp-tools
-      - pcsclite
-      - ccid
-      - yubikey-personalization
-      - yubikey-manager
-      - rng-tools
-    state: present
-  become: True
+# - name: "Installing GPG and required tools."
+#   pacman:
+#     name:
+#       - gnupg
+#       - hopenpgp-tools
+#       - pcsclite
+#       - ccid
+#       - yubikey-personalization
+#       - yubikey-manager
+#       - rng-tools
+#     state: present
+#   become: True
+#   when: ansible_distribution == "Archlinux"
 
-- name: "Installing Yubikey tools."
-  aur:
-    name:
-      - yubioath-desktop
-    state: present
+# - name: "Installing Yubikey tools."
+#   aur:
+#     name:
+#       - yubioath-desktop
+#     state: present
+#   when: ansible_distribution == "Archlinux"
 
 - name: "Creating the configuration folder for gpg."
   file:
@@ -37,5 +39,24 @@
   systemd:
     daemon_reload: yes
     name: pcscd.service
+    enabled: yes
+    state: started
+  become: True
+
+- name: "Creating user systemd config folder."
+  file:
+    path: ~/.config/systemd/user/
+    state: directory
+
+- name: "Copying gpg-agent user service."
+  copy:
+    src: files/gpg-agent.service
+    dest: ~/.config/systemd/user/
+
+- name: "Enabling gpg-agent service."
+  systemd:
+    daemon_reload: yes
+    scope: user
+    name: gpg-agent.service
     enabled: yes
     state: started

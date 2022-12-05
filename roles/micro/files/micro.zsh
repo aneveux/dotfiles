@@ -1,1 +1,0 @@
-export MICRO_TRUECOLOR=1

@@ -1,13 +1,14 @@
 ---
-- name: "Installing git and associated tooling."
-  aur:
-    use: yay
-    name:
-      - git
-      - diff-so-fancy
-      - kdiff3
-      - git-secrets
-    state: present
+# - name: "Installing git and associated tooling."
+#   aur:
+#     use: yay
+#     name:
+#       - git
+#       - diff-so-fancy
+#       - kdiff3
+#       - git-secrets
+#     state: present
+#   when: ansible_distribution == "Archlinux"
 
 - name: "Deploying a global gitignore file."
   copy:

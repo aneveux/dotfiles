@@ -1,7 +1,4 @@
-Manage terraform autocomplete
-Manage first set of tools with ASDF (tools-version file)
-Manage bar on second screen
-Fix GitHub notification
-Fix Battery
-Change window/drun in rofi
-Refactor and cleanup
+ASDF
+script Jira sur wayland
+topgrade config
+

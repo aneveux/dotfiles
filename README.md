@@ -4,18 +4,13 @@
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
-[![Twitter][twitter-shield]][twitter-url]
 
 <br />
 <p align="center">
-  <a href="https://github.com/aneveux/dotfiles">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Manjaro-logo.svg/200px-Manjaro-logo.svg.png" alt="Manjaro Logo" width="200" height="200" />
-  </a>
-
   <h3 align="center">🦕 Antoine`.`files </h3>
 
   <p align="center">
-    Personal dotfiles repository of <a href="https://twitter.com/antoineneveux">Antoine</a>, provisioned by <a href="https://www.ansible.com/">Ansible</a>.
+    Personal dotfiles repository, provisioned by <a href="https://www.ansible.com/">Ansible</a>.
   </p>
 </p>
 
@@ -59,12 +54,6 @@ If you'd like to setup your environment with that project, feel free to use it. 
 Have fun!
 
 ### Using
-
-Here's what my desktop looks like:
-
-<p align="center">
-  <img src="screenshot.png" alt="Desktop Screenshot" width="500" />
-</p>
 
 I'm using [Manjaro](https://manjaro.org/) as my main operating system for years now. My window manager is [i3-gaps](https://github.com/Airblader/i3), a fork of [i3wm](https://i3wm.org/).
 
@@ -210,5 +199,4 @@ Project Link: [https://github.com/aneveux/dotfiles](https://github.com/aneveux/d
 [license-url]: https://github.com/aneveux/dotfiles/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/aneveux
-[twitter-shield]: https://img.shields.io/twitter/follow/antoineneveux?style=for-the-badge
-[twitter-url]: https://twitter.com/antoineneveux
+

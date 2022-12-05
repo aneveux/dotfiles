@@ -33,11 +33,12 @@ zstyle ':prezto:load' pmodule \
   'environment' \
   'terminal' \
   'editor' \
+  'fzf-tab' \
+  'completion' \
   'history' \
   'directory' \
   'spectrum' \
   'utility' \
-  'completion' \
   'history-substring-search' \
   'git' \
   'prompt'
@@ -109,7 +110,7 @@ zstyle ':prezto:module:editor' dot-expansion 'yes'
 #
 
 # Set the Pacman frontend.
-zstyle ':prezto:module:pacman' frontend 'yay'
+#zstyle ':prezto:module:pacman' frontend 'yay'
 
 #
 # Prompt

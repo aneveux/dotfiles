@@ -1,0 +1,5 @@
+---
+- name: "Deploying topgrade configuration file."
+  copy:
+    src: files/topgrade.toml
+    dest: ~/.config/topgrade.toml

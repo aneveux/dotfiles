@@ -1,0 +1,5 @@
+[commands]
+"OpsCore" = "opscore update"
+"OpsCoreSecurity" = "opscore security update"
+"Shinobi" = "shinobi update"
+"asdf" = "asdf update"

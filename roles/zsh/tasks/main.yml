@@ -7,13 +7,7 @@
       - zsh-syntax-highlighting
     state: present
   become: True
-
-- name: "Installing asdf."
-  aur:
-    name:
-      - asdf
-      - asdf-vm
-    state: present
+  when: ansible_distribution == "Archlinux"
 
 - name: "Cloning prezto for installation."
   git:
@@ -51,6 +45,31 @@
     repo: https://github.com/zsh-users/zsh-autosuggestions
     dest: ~/.zsh/zsh-autosuggestions
 
+- name: "Cloning catppuccin zsh-syntax theme."
+  git:
+    repo: https://github.com/catppuccin/zsh-syntax-highlighting.git
+    dest: ~/tools/zsh-syntax-highlighting
+
+- name: "Copying catppuccin zsh-syntax theme."
+  copy:
+    src: ~/tools/zsh-syntax-highlighting/themes/catppuccin_latte-zsh-syntax-highlighting.zsh
+    dest: ~/.zsh/
+
+- name: "Cloning fzf-tab to zprezto modules."
+  git:
+    repo: https://github.com/Aloxaf/fzf-tab
+    dest: ~/.zprezto/modules/fzf-tab
+
+- name: "Creating the tools directory."
+  file:
+    path: ~/tools
+    state: directory
+
+- name: "Cloning z navigation tool."
+  git:
+    repo: https://github.com/rupa/z.git
+    dest: ~/tools/z
+
 - name: "Linking zprezto login configuration."
   file:
     src: ~/.zprezto/runcoms/zlogin
@@ -62,12 +81,6 @@
     src: ~/.zprezto/runcoms/zlogout
     dest: ~/.zlogout
     state: link
-
-#- name: "Linking zprezto profile configuration."
-#  file:
-#   src: ~/.zprezto/runcoms/zprofile
-#    dest: ~/.zprofile
-#    state: link
 
 - name: "Linking zprezto env configuration."
   file:
@@ -107,4 +120,3 @@
   template:
     src: templates/zshrc.j2
     dest: ~/.zshrc
-    backup: True

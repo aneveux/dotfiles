@@ -2,6 +2,7 @@
 - name: "Installing ranger."
   pacman: name=ranger state=present
   become: True
+  when: ansible_distribution == "Archlinux"
 
 - name: "Configuring ranger to allow images preview."
   shell: "ranger --copy-config=scope"

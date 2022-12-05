@@ -1,37 +1,10 @@
 ---
-- name: "Adding wheel group to the sudoers."
-  lineinfile:
-    path: /etc/sudoers
-    state: present
-    regexp: ^%wheel ALL=
-    line: "%wheel ALL=(ALL){{ ' NOPASSWD:' if system.preferences.sudo_nopassword else '' }} ALL"
-    validate: /usr/sbin/visudo -cf %s
-  become: True
-
-- name: "Enabling pacman easter egg."
-  lineinfile:
-    path: /etc/pacman.conf
-    state: present
-    insertafter: "^{{ '[options]' | regex_escape() }}"
-    line: "ILoveCandy"
-  become: True
-
 - name: "Creating tools folder."
   file:
     path: ~/tools
     state: directory
 
-- name: "Installing packages for trackpad support on laptop."
-  pacman:
-    name:
-      - xf86-input-synaptics
-    state: present
-  become: True
-  when: user.preferences.laptop == True
-
-- name: "Deploying trackpad configuration file for laptop."
-  copy:
-    src: files/90-touchpad.conf
-    dest: /etc/X11/xorg.conf.d/90-touchpad.conf
-  become: True
-  when: user.preferences.laptop == True
+- name: "Creating projects folder."
+  file:
+    path: ~/projects
+    state: directory
