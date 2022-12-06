@@ -132,10 +132,13 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
 
 # -----------------------------------------------------------
-# zsh autosuggestions
+# tools
 # -----------------------------------------------------------
 
 . ~/tools/z/z.sh
+
+if [ -f "${HOME}/.shinobirc" ]; then source "${HOME}/.shinobirc"; fi
+source <(opscore generate-completion --shell zsh)
 
 # -----------------------------------------------------------
 # p10k sourcing
