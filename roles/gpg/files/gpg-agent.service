@@ -1,5 +1,0 @@
-[Unit]
-Description=Custom GPG Agent
-
-[Service]
-ExecStart=export GPG_TTY=$TTY && export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket) && gpgconf --launch gpg-agent

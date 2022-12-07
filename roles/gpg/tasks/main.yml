@@ -43,16 +43,6 @@
     state: started
   become: True
 
-- name: "Creating user systemd config folder."
-  file:
-    path: ~/.config/systemd/user/
-    state: directory
-
-- name: "Copying gpg-agent user service."
-  copy:
-    src: files/gpg-agent.service
-    dest: ~/.config/systemd/user/
-
 - name: "Enabling gpg-agent service."
   systemd:
     daemon_reload: yes
@@ -60,3 +50,8 @@
     name: gpg-agent.service
     enabled: yes
     state: started
+
+- name: "Copying xprofile file."
+  copy:
+    src: files/xprofile
+    dest: ~/.xprofile

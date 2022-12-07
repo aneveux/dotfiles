@@ -1,15 +1,3 @@
-#                    /)
-#           /\___/\ ((
-#           \`@_@'/  ))
-#           {_:Y:.}_//
-# ----------{_}^-'{_}-------------------------
-# ZSH Exports.
-#
-
-# -----------------------------------------------------------
-# system exports
-# -----------------------------------------------------------
-
 export LANG='en_US.UTF-8'
 export LC_ALL='en_US.UTF-8'
 
@@ -33,7 +21,7 @@ export JAVA_OPTS='-Xms128m -Xmx256m'
 # -----------------------------------------------------------
 
 typeset -U PATH path
-path=("$HOME/.local/bin" "$HOME/bin" "$HOME/.cargo/bin" "$path[@]" "$(ruby -e 'puts Gem.user_dir')/bin")
+path=("$HOME/.local/bin" "$HOME/bin" "$HOME/.cargo/bin" "$HOME/.local/share/JetBrains/Toolbox/scripts" "$path[@]" "$(ruby -e 'puts Gem.user_dir')/bin")
 export PATH
 
 export GPG_TTY=$TTY

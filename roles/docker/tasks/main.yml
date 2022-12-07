@@ -8,7 +8,7 @@
   become: True
   when: ansible_distribution == "Archlinux"
 
-- name: "Creating gorup docker."
+- name: "Creating group docker."
   group:
     name: docker
     state: present
