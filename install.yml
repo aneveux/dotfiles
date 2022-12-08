@@ -13,3 +13,4 @@
     - { role: sysconfig, tags: sysconfig }
     - { role: topgrade, tags: topgrade }
     - { role: vim, tags: vim }
+    - { role: asdf, tags: asdf }
