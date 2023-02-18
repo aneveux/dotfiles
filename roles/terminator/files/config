@@ -3,12 +3,12 @@
   inactive_color_offset = 0.61
   suppress_multiple_term_dialog = True
   title_hide_sizetext = True
-  title_inactive_bg_color = "#4c4f69"
-  title_inactive_fg_color = "#eff1f5"
-  title_receive_bg_color = "#4c4f69"
-  title_receive_fg_color = "#eff1f5"
-  title_transmit_bg_color = "#4c4f69"
-  title_transmit_fg_color = "#eff1f5"
+  title_inactive_bg_color = "#45475a"
+  title_inactive_fg_color = "#cdd6f4"
+  title_receive_bg_color = "#45475a"
+  title_receive_fg_color = "#cdd6f4"
+  title_transmit_bg_color = "#45475a"
+  title_transmit_fg_color = "#cdd6f4"
 [keybindings]
   split_horiz = <Primary><Shift>d
   broadcast_off = <Primary><Alt>b
@@ -17,13 +17,13 @@
   [[default]]
     visible_bell = True
     icon_bell = False
-    background_image = None
     cursor_shape = ibeam
     font = JetbrainsMono Nerd Font 13
-    cursor_color = "#dc8a78"
-    background_color = "#eff1f5"
-    foreground_color = "#4c4f69"
-    palette = "#5c5f77:#d20f39:#40a02b:#df8e1d:#1e66f5:#ea76cb:#179299:#acb0be:#6c6f85:#d20f39:#40a02b:#df8e1d:#1e66f5:#ea76cb:#179299:#bcc0cc"
+    cursor_color = "f5e0dc"
+    background_color = "#1e1e2e"
+    foreground_color = "#cdd6f4"
+    palette = "#45475a:#f38ba8:#a6e3a1:#f9e2af:#89b4fa:#f5c2e7:#94e2d5:#bac2de:#585b70:#f38ba8:#a6e3a1:#f9e2af:#89b4fa:#f5c2e7:#94e2d5:#a6adc8"
+    background_image = None
     show_titlebar = True
     scrollbar_position = hidden
     use_system_font = False

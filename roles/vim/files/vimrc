@@ -117,8 +117,8 @@ set noshowmode
 " brackets highlight color
 autocmd VimEnter,Colorscheme * :hi MatchParen cterm=none ctermbg=white ctermfg=black
 
-set background=light
-colorscheme catppuccin_latte
+set background=dark
+colorscheme catppuccin_mocha
 
 set cursorline
 
