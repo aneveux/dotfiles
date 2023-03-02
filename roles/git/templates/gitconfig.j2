@@ -32,6 +32,9 @@
 	autostash = true
 	autosquash = true
 
+[submodule]
+	recurse = true 
+
 [diff]
 	indentHeuristic = true
 	wordRegex = [A-Za-z0-9]+|[^[:space:]]
@@ -93,6 +96,7 @@
 
 [alias]
 	# Basic
+	clone = clone --recurse-submodules
 	addp = add -p
 	co = checkout
 	ci = commit
