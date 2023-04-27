@@ -45,7 +45,7 @@
 
 [core]
 	excludesfile = ~/.gitignore
-	editor = vim
+	editor = nvim
 	filemode = false
 	trustctime = false
 	autocrlf = input
@@ -172,9 +172,10 @@
 
 [url "git://gist.github.com/"]
 
-[url "git@github.com:"]
-	insteadOf = "https://github.com/"
-	pushInsteadOf = "https://github.com/"
+# cargo does not like this
+#[url "git@github.com:"]
+#	insteadOf = "https://github.com/"
+#	pushInsteadOf = "https://github.com/"
 
 {% if additional_local_config is defined %}
 {{ additional_local_config }}

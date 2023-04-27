@@ -12,5 +12,5 @@
     - { role: ranger, tags: ranger }
     - { role: sysconfig, tags: sysconfig }
     - { role: topgrade, tags: topgrade }
-    - { role: vim, tags: vim }
+    - { role: neovim, tags: neovim }
     - { role: asdf, tags: asdf }

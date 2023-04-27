@@ -34,18 +34,10 @@ dependencies:
           versions:
             - "1.6"
           global: "1.6"
-        - name: "kind"
-          versions:
-            - "0.17.0"
-          global: "0.17.0"
         - name: "kotlin"
           versions:
             - "1.7.22"
           global: "1.7.22"
-        - name: "kubectl"
-          versions:
-            - "1.25.4"
-          global: "1.25.4"
         - name: "maven"
           versions:
             - "3.8.6"

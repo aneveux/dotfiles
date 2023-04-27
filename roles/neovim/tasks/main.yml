@@ -1,0 +1,7 @@
+---
+- name: "Deploying neovim configuration files."
+  copy:
+    src: files/nvim
+    dest: ~/.config/
+    backup: True
+

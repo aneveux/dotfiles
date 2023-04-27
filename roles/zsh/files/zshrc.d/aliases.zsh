@@ -1,4 +1,5 @@
-alias vi='vim'
+alias vi='nvim'
+alias vim='nvim'
 alias d='docker'
 alias g='git'
 alias k='kubectl'
