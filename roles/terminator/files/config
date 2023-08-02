@@ -19,10 +19,11 @@
     icon_bell = False
     cursor_shape = ibeam
     font = JetbrainsMono Nerd Font 13
-    cursor_color = "f5e0dc"
-    background_color = "#1e1e2e"
-    foreground_color = "#cdd6f4"
-    palette = "#45475a:#f38ba8:#a6e3a1:#f9e2af:#89b4fa:#f5c2e7:#94e2d5:#bac2de:#585b70:#f38ba8:#a6e3a1:#f9e2af:#89b4fa:#f5c2e7:#94e2d5:#a6adc8"
+    cursor_color = "#dc8a78"
+    background_color = "#eff1f5"
+    foreground_color = "#4c4f69"
+    palette = "#5c5f77:#d20f39:#40a02b:#df8e1d:#1e66f5:#ea76cb:#179299:#acb0be:#6c6f85:#d20f39:#40a02b:#df8e1d:#1e66f5:#ea76cb:#179299:#bcc0cc"
+    background_image = None
     background_image = None
     show_titlebar = True
     scrollbar_position = hidden

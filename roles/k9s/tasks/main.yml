@@ -1,0 +1,10 @@
+---
+- name: "Creating the configuration folder for k9s."
+  file:
+    path: ~/.config/k9s/
+    state: directory
+
+- name: "Deploying k9s configuration file."
+  copy:
+    src: files/skin.yml
+    dest: ~/.config/k9s/
