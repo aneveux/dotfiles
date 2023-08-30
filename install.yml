@@ -2,8 +2,8 @@
 - hosts: all
   roles:
     - { role: loader, tags: always }
-#    - { role: packages, tags: packages }
-    - { role: terminator, tags: terminator }
+    #    - { role: packages, tags: packages }
+    - { role: kitty, tags: kitty }
     - { role: zsh, tags: zsh }
     - { role: gpg, tags: gpg }
     - { role: ssh, tags: ssh }

@@ -1,0 +1,15 @@
+---
+- name: "Creating the configuration folder for Kitty."
+  file:
+    path: ~/.config/kitty/
+    state: directory
+
+- name: "Deploying Catpuccin theme for Kitty."
+  copy:
+    src: files/catpuccin.conf
+    dest: ~/.config/kitty/
+
+- name: "Deploying Kitty configuration."
+  copy:
+    src: files/kitty.conf
+    dest: ~/.config/kitty/

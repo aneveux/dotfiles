@@ -5,7 +5,7 @@ export MANPAGER='most'
 export PAGER='most'
 export SHELL='/usr/bin/zsh'
 
-export BROWSER='brave'
+export BROWSER='firefox'
 export EDITOR='nvim'
 export VISUAL='nvim'
 export TEXT_EDITOR='nvim'
