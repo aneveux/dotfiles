@@ -82,3 +82,15 @@ dependencies:
           versions:
             - "1.2.26"
           global: "1.2.26"
+        - name: "pnpm"
+          versions:
+            - "8.7.0-2"
+          global: "8.7.0-2"
+        - name: "nodejs"
+          versions:
+            - "20.5.1"
+          global: "20.5.1"
+        - name: "yarn"
+          versions:
+            - "1.22.19"
+          global: "1.22.19"
