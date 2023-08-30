@@ -7,7 +7,7 @@ Host *
   #AddKeysToAgent yes
   AddressFamily inet
   HashKnownHosts yes
-  VisualHostKey yes
+  VisualHostKey no
   PasswordAuthentication no
   ChallengeResponseAuthentication no
   StrictHostKeyChecking ask
