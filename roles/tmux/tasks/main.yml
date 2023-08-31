@@ -1,0 +1,17 @@
+---
+- name: "Creating tmux configuration directory."
+  file:
+    path: ~/.tmux/plugins
+    state: directory
+
+- name: "Cloning tpm for installation."
+  git:
+    repo: https://github.com/tmux-plugins/tpm
+    dest: ~/.tmux/plugins/tpm
+    recursive: yes
+    update: yes
+
+- name: "Deploying tmux configuration file."
+  copy:
+    src: files/tmux.conf 
+    dest: ~/.tmux.conf

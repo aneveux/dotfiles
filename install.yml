@@ -5,6 +5,7 @@
     #    - { role: packages, tags: packages }
     - { role: kitty, tags: kitty }
     - { role: zsh, tags: zsh }
+    - { role: tmux, tags: tmux }
     - { role: gpg, tags: gpg }
     - { role: ssh, tags: ssh }
     - { role: git, tags: git }
