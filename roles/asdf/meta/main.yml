@@ -94,3 +94,7 @@ dependencies:
           versions:
             - "1.22.19"
           global: "1.22.19"
+        - name: "bun"
+          versions:
+            - "1.0.1"
+          global: "1.0.1"
