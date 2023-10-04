@@ -1,0 +1,495 @@
+#                    /)
+#           /\___/\ ((
+#           \`@_@'/  ))
+#           {_:Y:.}_//
+# ----------{_}^-'{_}-------------------------
+# i3 configuration
+#
+# ---------------------------------------------------
+#
+# Interesting articles to have a look at:
+#
+# - https://github.com/Airblader/i3
+# - http://i3wm.org/docs/userguide.html
+# - http://vivien.github.io/i3blocks/
+# - https://wiki.archlinux.org/index.php/I3
+# - https://www.reddit.com/r/archlinux/comments/2k2aym/how_can_i_get_i3_to_properly_do_multimonitor/?st=j62ony4b&sh=06185201
+#
+# Resources:
+# - Font Icons: http://fontawesome.io/cheatsheet/
+# - `xprop` for information about the windows
+# - `lxappearance` for setting some visual look'n'feel
+#
+# Take care of:
+# - https://i3wm.org/docs/userguide.html#command_criteria
+# - https://github.com/i3/i3/issues/2060
+#
+
+exec "setxkbmap -layout us"
+
+# ---------------------------------------------------
+# Variables Declaration
+# ---------------------
+
+set $mod Mod4
+
+# ---------------------------------------------------
+# Global Configuration
+# ---------------------
+
+focus_follows_mouse no
+
+# https://i3wm.org/docs/userguide.html#floating_modifier
+floating_modifier $mod
+
+# https://i3wm.org/docs/userguide.html#_automatic_back_and_forth_when_switching_to_the_current_workspace
+workspace_auto_back_and_forth yes
+
+# https://i3wm.org/docs/userguide.html#_delaying_urgency_hint_reset_on_workspace_change
+force_display_urgency_hint 500 ms
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+
+# switch to workspace with urgent window automatically
+# for_window [urgent=latest] focus
+
+# i3-input for i3 commands interpretation
+bindsym $mod+colon exec i3-input -P ":"
+
+# ---------------------------------------------------
+# Look'n'Feel
+# ---------------------
+
+# --------------
+# Fonts
+# --------------
+
+font xft:URWGothic-Book 11
+font pango: hack, Awesome 10
+
+# --------------
+# Windows & Borders
+# --------------
+
+new_window pixel 1
+new_float normal
+# hide_edge_borders smart
+hide_edge_borders none
+for_window [class="^.*"] border pixel 2
+smart_borders on
+
+# --------------
+# Customization Functions
+# --------------
+
+# bindsym $mod+u border none
+# bindsym $mod+y border pixel 1
+# bindsym $mod+n border normal
+
+# --------------
+# Colors
+# --------------
+
+set $rosewater #dc8a78
+set $flamingo  #dd7878
+set $pink      #ea76cb
+set $mauve     #8839ef
+set $red       #d20f39
+set $maroon    #e64553
+set $peach     #fe640b
+set $green     #40a02b
+set $teal      #179299
+set $sky       #04a5e5
+set $sapphire  #209fb5
+set $blue      #1e66f5
+set $lavender  #7287fd
+set $text      #4c4f69
+set $subtext1  #5c5f77
+set $subtext0  #6c6f85
+set $overlay2  #7c7f93
+set $overlay1  #8c8fa1
+set $overlay0  #9ca0b0
+set $surface2  #acb0be
+set $surface1  #bcc0cc
+set $surface0  #ccd0da
+set $base      #eff1f5
+set $mantle    #e6e9ef
+set $crust     #dce0e8
+
+# target                 title     bg    text   indicator  border
+client.focused           $lavender $base $text  $rosewater $lavender
+client.focused_inactive  $overlay0 $base $text  $rosewater $overlay0
+client.unfocused         $overlay0 $base $text  $rosewater $overlay0
+client.urgent            $peach    $base $peach $overlay0  $peach
+client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
+client.background        $base
+
+# --------------
+# Gaps
+# --------------
+
+gaps inner 10
+gaps outer 0
+# gaps outer -4
+smart_gaps on
+
+# --------------
+# Customization Modes
+# --------------
+
+# Press $mod+Shift+g to enter the gap mode. Choose o or i for modifying outer/inner gaps. Press one of + / - (in-/decrement for current workspace) or 0 (remove gaps for current workspace). If you also press Shift with these keys, the change will be global for all workspaces.
+set $mode_gaps Gaps: (o) outer, (i) inner
+set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
+set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
+bindsym $mod+Shift+g mode "$mode_gaps"
+
+mode "$mode_gaps" {
+        bindsym o      mode "$mode_gaps_outer"
+        bindsym i      mode "$mode_gaps_inner"
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+mode "$mode_gaps_inner" {
+        bindsym plus  gaps inner current plus 5
+        bindsym minus gaps inner current minus 5
+        bindsym 0     gaps inner current set 0
+
+        bindsym Shift+plus  gaps inner all plus 5
+        bindsym Shift+minus gaps inner all minus 5
+        bindsym Shift+0     gaps inner all set 0
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+mode "$mode_gaps_outer" {
+        bindsym plus  gaps outer current plus 5
+        bindsym minus gaps outer current minus 5
+        bindsym 0     gaps outer current set 0
+
+        bindsym Shift+plus  gaps outer all plus 5
+        bindsym Shift+minus gaps outer all minus 5
+        bindsym Shift+0     gaps outer all set 0
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+# ---------------------------------------------------
+# Workspaces
+# -------------------
+
+set $WS1 "1:"
+set $WS2 "2:"
+set $WS3 "3:"
+set $WS4 "4:"
+set $WS5 "5:"
+set $WS6 "6:"
+set $WS7 "7:"
+set $WS8 "8:"
+set $WS9 "9:"
+set $WS10 "10:"
+
+# ---------------------------------------------------
+# Workspaces Switcher
+# -------------------
+
+# workspace direct switch
+bindsym $mod+1 workspace $WS1
+bindsym $mod+2 workspace $WS2
+bindsym $mod+3 workspace $WS3
+bindsym $mod+4 workspace $WS4
+bindsym $mod+5 workspace $WS5
+bindsym $mod+6 workspace $WS6
+bindsym $mod+7 workspace $WS7
+bindsym $mod+8 workspace $WS8
+bindsym $mod+9 workspace $WS9
+bindsym $mod+0 workspace $WS10
+
+# workspace selection
+bindsym $mod+Ctrl+Left workspace prev
+bindsym $mod+Ctrl+Right workspace next
+
+# ---------------------------------------------------
+# Window Management
+# -----------------
+
+# Window kill command
+bindsym $mod+Shift+q kill
+
+# --------------
+# Focus
+# --------------
+
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+bindsym $mod+Shift+a focus parent
+bindsym $mod+a focus child
+
+# jump to urgent window
+bindsym $mod+x [urgent=latest] focus
+
+# --------------
+# Move
+# --------------
+
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# move container to workspace
+bindsym $mod+Shift+1 move container to workspace $WS1
+bindsym $mod+Shift+2 move container to workspace $WS2
+bindsym $mod+Shift+3 move container to workspace $WS3
+bindsym $mod+Shift+4 move container to workspace $WS4
+bindsym $mod+Shift+5 move container to workspace $WS5
+bindsym $mod+Shift+6 move container to workspace $WS6
+bindsym $mod+Shift+7 move container to workspace $WS7
+bindsym $mod+Shift+8 move container to workspace $WS8
+bindsym $mod+Shift+9 move container to workspace $WS9
+bindsym $mod+Shift+0 move container to workspace $WS10
+
+# move workspaces to other outputs (ie. screens)
+bindsym $mod+Ctrl+Shift+Left move workspace to output left
+bindsym $mod+Ctrl+Shift+Right move workspace to output right
+
+# i3 move a workspace to another monitor (multi monitor setup)
+mode "move_workspace" {
+ bindsym Left move workspace to output left
+ bindsym Right move workspace to output right
+
+ bindsym Return mode "default"
+ bindsym Escape mode "default"
+}
+bindsym $mod+o mode "move_workspace"
+
+# --------------
+# Back and Forth
+# --------------
+
+bindsym $mod+b workspace back_and_forth
+bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_and_forth
+
+# --------------
+# Layouts Splits
+# --------------
+
+bindsym $mod+minus split h;exec notify-send 'tile horizontally'
+bindsym $mod+bar split v;exec notify-send 'tile vertically'
+bindsym $mod+q split toggle
+bindsym $mod+f fullscreen toggle
+
+bindsym $mod+w layout stacking
+bindsym $mod+s layout tabbed
+bindsym $mod+e layout toggle split
+
+bindsym $mod+Shift+space floating toggle
+bindsym $mod+space focus mode_toggle
+
+# --------------
+# Scratchpad & Sticky
+# --------------
+
+# make window a scratchpad
+bindsym $mod+Shift+z move scratchpad
+# show scratchpad window
+bindsym $mod+z scratchpad show
+# toggle sticky
+bindsym $mod+Shift+s sticky toggle
+
+# ---------------------------------------------------
+# Resize Mode
+# -----------
+
+set $resize_mode "resize"
+
+# resize shortcut
+bindsym $mod+r mode $resize_mode
+
+mode $resize_mode {
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+# ---------------------------------------------------
+# Applications Assignements
+# -------------------------
+
+# WS1: Terminals
+assign [class="kitty"] $WS1
+
+# WS2: IDE
+assign [class="jetbrains"] $WS2
+assign [class="Toolbox"] $WS2
+
+# WS3: Browsers
+assign [class="firefox"] $WS3
+assign [class="chromium"] $WS3
+
+# WS4: Media
+for_window [class="Spotify"] move to workspace $WS4
+
+# WS6: Social / Chat
+assign [class="discord"] $WS6
+assign [class="Slack"] $WS6
+for_window [class="Slack"] move to workspace $WS6
+
+# --------------
+# Auto-Floating
+# --------------
+
+for_window [class="Pinentry"] floating enable
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="bubble"] floating enable
+for_window [window_role="task_dialog"] floating enable
+for_window [window_role="Preferences"] floating enable
+for_window [window_type="dialog"] floating enable
+for_window [window_type="menu"] floating enable
+for_window [class="XTerm"] floating enable, border normal
+for_window [class="feh"] floating enable, border normal
+# ---
+for_window [title="alsamixer"] floating enable border pixel 1
+for_window [class="Calamares"] floating enable border normal
+for_window [class="Clipgrab"] floating enable
+for_window [title="File Transfer*"] floating enable
+for_window [class="Galculator"] floating enable border pixel 1
+for_window [class="GParted"] floating enable border normal
+for_window [title="i3_help"] floating enable sticky enable border normal
+for_window [class="Lightdm-gtk-greeter-settings"] floating enable
+for_window [class="Lxappearance"] floating enable sticky enable border normal
+for_window [class="Manjaro-hello"] floating enable
+for_window [class="Manjaro Settings Manager"] floating enable border normal
+for_window [title="MuseScore: Play Panel"] floating enable
+for_window [class="Nitrogen"] floating enable sticky enable border normal
+for_window [class="Oblogout"] fullscreen enable
+for_window [class="octopi"] floating enable
+for_window [title="About Pale Moon"] floating enable
+for_window [class="Pamac-manager"] floating enable
+for_window [class="Pavucontrol"] floating enable
+for_window [class="qt5ct"] floating enable sticky enable border normal
+for_window [class="Qtconfig-qt4"] floating enable sticky enable border normal
+for_window [class="Simple-scan"] floating enable border normal
+for_window [class="(?i)System-config-printer.py"] floating enable border normal
+for_window [class="Skype"] floating enable border normal
+for_window [class="Thus"] floating enable border normal
+for_window [class="Timeset-gui"] floating enable border normal
+for_window [class="(?i)virtualbox"] floating enable border normal
+for_window [class="Xfburn"] floating enable
+
+# ---------------------------------------------------
+# Applications
+# -------------------------
+
+# rofi for running applications or ssh-ing to machines
+bindsym $mod+d exec "rofi -no-lazy-grab -combi-modi window,drun -modi combi,window,drun,ssh -show combi -config ~/.config/rofi/config-fuzzy.rasi -theme ~/.config/rofi/nord.rasi"
+bindsym $mod+Shift+d exec "rofi -no-lazy-grab -modi ssh,window,drun -show ssh -config ~/.config/rofi/config-fuzzy.rasi -theme ~/.config/rofi/nord.rasi"
+
+bindsym $mod+Shift+f exec "~/.i3/search.sh"
+bindsym $mod+Shift+p exec "flameshot gui"
+
+bindsym $mod+grave exec "~/.config/rofi/music/music"
+
+# emoji-picker
+bindsym $mod+Shift+colon exec emoji-picker
+
+# --------------
+# Launcher Mode
+# --------------
+
+set $launcher_mode "launcher"
+
+bindsym $mod+Return mode $launcher_mode
+
+mode $launcher_mode {
+  bindsym f exec firefox, mode "default"
+  bindsym i exec idea, mode "default"
+  bindsym s exec spotify, mode "default"
+  bindsym d exec discord, mode "default"
+  bindsym n exec notion-app, mode "default"
+  bindsym Return exec i3-sensible-terminal, mode "default"
+
+  bindsym Escape mode "default"
+}
+
+# --------------
+# Exit Management
+# --------------
+
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec "~/.config/rofi/powermenu.sh"
+
+# exit i3 (logs you out of your X session)
+bindsym $mod+End mode "$mode_system"
+set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
+mode "$mode_system" {
+    bindsym l exec --no-startup-id ~/.i3/lock.sh, mode "default"
+    bindsym s exec --no-startup-id systemctl suspend, mode "default"
+    bindsym h exec --no-startup-id systemctl hibernate, mode "default"
+    bindsym r exec --no-startup-id systemctl reboot, mode "default"
+    bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+bindsym $mod+Shift+l exec ~/.i3/lock.sh
+
+{% if user.preferences.multiscreen %}
+
+# ---------------------------------------------------
+# Multiple Monitors Hack
+# ---------------------
+
+exec_always --no-startup-id {{ local_location }}/multiscreen.sh
+
+set $WS11 "11:"
+set $WS12 "12:"
+
+{% endif %}
+
+# --------------
+# Autostart Services
+# --------------
+
+exec_always --no-startup-id feh --bg-center ~/wallpaper.jpg
+exec --no-startup-id pamac-tray
+exec --no-startup-id clipit
+exec --no-startup-id nm-applet 
+exec --no-startup-id dex --autostart --environment i3
+
+exec --no-startup-id xautolock -detectsleep -time 10 -locker "~/.i3/lock.sh" -notify 30 -notifier "notify-send -u critical -t 10000 -- 'locking screen in 30 seconds'"
+
+exec_always --no-startup-id $HOME/.config/polybar/polybar.sh
+
+exec --no-startup-id redshift
+
+# --------------
+# Autostart Applications
+# --------------
+
+# https://forum.manjaro.org/t/pamac-manager-issues/9813/26
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+
+exec --no-startup-id picom --conf ~/.config/picom/picom.conf -b
+
+exec --no-startup-id dunst
+exec --no-startup-id nextcloud --background
+
+exec --no-startup-id ~/.gpg-agent.sh
+
+{% if additional_local_config is defined %}
+{{ additional_local_config }}
+{% endif %}

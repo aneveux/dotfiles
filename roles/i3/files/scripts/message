@@ -1,0 +1,50 @@
+#!/bin/sh
+#
+# Largely inspired by script from Vivien Didelot <vivien.didelot@gmail.com>
+#
+# Add this block in your ~/.i3blocks.conf:
+#
+#     [message]
+#     command=THIS_SCRIPT
+#     signal=12
+
+CACHE="$HOME/.cache/i3blocks/message"
+
+# Ensure the cache exists
+mkdir -p $(dirname $CACHE)
+touch $CACHE
+
+[ -s "$CACHE" ] || echo "ʕノ•ᴥ•ʔノ ︵ ┻━┻" > "$CACHE"
+
+if env | grep -q BLOCK_
+then # called by i3blocks
+
+  # clear notification on click
+  if test $BLOCK_BUTTON -ne 0
+  then
+    NEW_MSG=$(zenity --title="Set message" --entry --text="Enter the message" --entry-text="$(cat $CACHE)")
+    if test "$?" -eq 0
+    then
+      echo "$NEW_MSG" > $CACHE
+    fi
+  fi
+
+  #echo -n '['
+  MSG=$(cat $CACHE | tr -d '\n' | sed -r 's/_(.*?)_/<u>\1<\/u>/g' | sed -r 's/\*(.*?)\*/<b>\1<\/b>/g')
+  test -z "$MSG" && echo '-' || echo $MSG
+  test -z "$MSG" && echo '-' || echo $MSG
+  #echo -n ']'
+  exit 0
+
+else
+
+  # store the message
+  echo "$@" > $CACHE
+
+  # signal i3blocks that there is a new notification
+  pkill -RTMIN+12 i3blocks
+  exit
+
+fi
+
+# vim: ts=2 sw=2 et

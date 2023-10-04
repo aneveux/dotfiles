@@ -1,0 +1,11 @@
+#!/bin/bash
+
+playerctl play-pause spotify
+
+status=$(eval playerctl status spotify)
+
+if [ $status = 'Playing' ]; then
+  echo 
+else
+  echo 
+fi

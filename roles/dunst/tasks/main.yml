@@ -1,0 +1,10 @@
+---
+- name: "Creating dunst configuration directory."
+  file:
+    path: ~/.config/dunst
+    state: directory
+
+- name: "Deploying dunst configuration file."
+  copy:
+    src: files/dunstrc
+    dest: ~/.config/dunst/dunstrc

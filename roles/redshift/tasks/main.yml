@@ -1,0 +1,5 @@
+---
+- name: "Deploying redshift configuration file."
+  copy:
+    src: files/redshift.conf
+    dest: ~/.config/redshift.conf

@@ -14,6 +14,11 @@ all:
         mail: "{{ usr.mail | default('antoine@neveux.me') }}"
         password: "{{ usr.password | default(omit) }}"
         gpg_key: "{{ usr.gpg_key | default(omit) }}"
+        preferences:
+          shell: "{{ usr.preferences.shell | default('/usr/bin/zsh') }}"
+          xsession: "{{ usr.preferences.xsession | default('i3') }}"
+          multiscreen: "{{ usr.preferences.multiscreen | default('false') }}"
+          laptop: "{{ usr.preferences.laptop | default('false') }}"
 
       system:
         proxy:
