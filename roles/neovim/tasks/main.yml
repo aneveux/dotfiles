@@ -5,3 +5,9 @@
     dest: ~/.config/
     backup: True
 
+- name: "Deploying .ideavimrc configuration file."
+  copy:
+    src: files/ideavimrc
+    dest: ~/.ideavimrc
+    backup: True
+
