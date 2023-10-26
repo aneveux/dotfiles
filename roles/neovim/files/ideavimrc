@@ -1,29 +1,74 @@
-""" Map leader to space ---------------------
+""" -------------------------------------------------------------------
+""" Map leader to space
 let mapleader=" "
 
-""" Plugins  --------------------------------
-set surround
-set multiple-cursors
-set commentary
-set argtextobj
-set easymotion
-set textobj-entire
-set ReplaceWithRegister
-set NERDTree
+""" -------------------------------------------------------------------
+""" Clipboard management
 
+" Use system clipboard by default for y and p operations
+nnoremap yy "+yy
+vnoremap y "+y
+nnoremap p "+p
+vnoremap p "+p
+nnoremap P "+P
+vnoremap P "+P
+
+" Allow access to original y and p operations with leader key
+nnoremap <leader>yy yy
+vnoremap <leader>y y
+nnoremap <leader>p p
+vnoremap <leader>p p
+nnoremap <leader>P P
+vnoremap <leader>P P
+
+" Allow to cut to system clipboard by using leader key with d
+nnoremap <leader>dd "+dd
+vnoremap <leader>d "+d
+
+""" -------------------------------------------------------------------
+""" Plugins
+
+" https://github.com/tpope/vim-surround/blob/master/doc/surround.txt
+" plugin for managing surroundings (parenthesis, quotes, etc)
+set surround
+
+" https://github.com/terryma/vim-multiple-cursors/blob/master/doc/multiple_cursors.txt
+set multiple-cursors
+
+" https://github.com/tpope/vim-commentary/blob/master/doc/commentary.txt
+" comment and uncomment with `gc`
+set commentary
+
+" https://www.vim.org/scripts/script.php?script_id=2699
+set argtextobj
+let g:argtextobj_pairs="[:],(:),<:>"
+
+" https://github.com/easymotion/vim-easymotion
+" acejump with leader+e/f
+set easymotion
+
+" https://github.com/kana/vim-textobj-entire/blob/master/doc/textobj-entire.txt
+set textobj-entire
+
+" https://github.com/vim-scripts/ReplaceWithRegister/blob/master/doc/ReplaceWithRegister.txt
+set ReplaceWithRegister
+
+" https://raw.githubusercontent.com/wiki/JetBrains/ideavim/NERDTree-support.md
+set NERDTree
 let g:NERDTreeMapActivateNode='l'
 let g:NERDTreeMapJumpParent='h'
 
-""" Plugin settings -------------------------
-let g:argtextobj_pairs="[:],(:),<:>"
+""" -------------------------------------------------------------------
+""" Idea specific settings
 
-""" Idea specific settings ------------------
 set ideajoin
 set ideastatusicon=gray
 set idearefactormode=keep
+" use `m`+letter to create a bookmark. `'`+letter to jump to it. F11 to delete.
 set ideamarks
 
-""" Common settings -------------------------
+""" -------------------------------------------------------------------
+""" Common settings
 
 set nu
 set number relativenumber
@@ -35,9 +80,12 @@ set scrolloff=5
 " Do incremental searching.
 set incsearch
 
-""" Mappings --------------------------------
+""" -------------------------------------------------------------------
+""" Mappings
+
 map <leader>f <Plug>(easymotion-s)
 map <leader>e <Plug>(easymotion-f)
 
 map <leader>o <Action>(FileStructurePopup)
-
+nmap <leader>i <action>(Generate)
+nmap <leader>s <action>(QuickChangeScheme)
