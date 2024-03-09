@@ -1,3 +1,5 @@
+**This repository is not used anymore. I am now using [aneveux/.dotfiles](https://github.com/aneveux/.dotfiles) to manage my dotfiles.**
+
 <p align="center">
   <h3 align="center">🦕 Antoine`.`files </h3>
 
@@ -10,7 +12,7 @@
 
 Hello World 👋
 
-This repository is *yet another dotfiles repository*, containing all the things I'm using to bootstrap and configure my development environment.
+This repository is _yet another dotfiles repository_, containing all the things I'm using to bootstrap and configure my development environment.
 
 There's nothing too crazy in it, except things making my life easier, and a bunch of stuff I installed at some point and forgot why. Quite a lot of things are inspired from various dotfiles projects I found here and there.
 
